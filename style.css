@@ -1,0 +1,407 @@
+body {
+  font-family: "Courier New", monospace;
+  margin: 0;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+header {
+  text-align: center;
+  padding: 40px;
+  background: #020617;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+nav {
+  margin-top: 15px;
+}
+
+nav a {
+  margin: 0 10px;
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+section:not(.hero) {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px;
+}
+
+h2 {
+  color: #38bdf8;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  padding: 8px 0;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background: #38bdf8;
+  color: #020617;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #0ea5e9;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #020617;
+  font-size: 0.9rem;
+}
+.navbar {
+  position: fixed;        /* đi theo khi kéo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;   
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+
+  background: rgba(2, 6, 23, 0.6); /* màu tối, trong suốt */
+  backdrop-filter: blur(10px);    /* hiệu ứng mờ kính */
+  -webkit-backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* LOGO */
+.logo img {
+  height: 60px;
+  width: auto;
+}
+
+/* MENU */
+.menu {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  width: 500px;              
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 👈 CHIA ĐỀU KHOẢNG CÁCH */
+}
+
+.menu a {
+  /* Xóa flex: 1 đi */
+  text-align: center;
+  padding-bottom: 18px;
+  line-height: 56px;
+  font-size: 18px;
+  color: #e5e7eb;
+  text-decoration: none;
+  flex-shrink: 0; /* Không bị co lại */
+}
+
+.menu a:hover {
+  color: #38bdf8;
+}
+.logo img:hover {
+  opacity: 0.8;
+}
+.hero {
+  width: 100vw;          /* FULL chiều ngang */
+  height: 100vh;         /* FULL chiều cao màn hình */
+  margin: 0;
+  padding: 0;
+
+  background:
+    linear-gradient(rgba(2,6,23,0.6), rgba(2,6,23,0.6)),
+    url("img/z7363321585018_0a19bab3e4960c30a63b52d4fc4cb1c0.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: #e5e7eb;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #38bdf8;
+  letter-spacing: 1px;
+}
+.footer {
+  background: #020617;
+  color: #e5e7eb;
+  padding: 60px 0 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px;
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+/* LOGO */
+.footer-logo img {
+  width: 120px;
+  margin-bottom: 16px;
+}
+
+.footer-logo p {
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+/* TABLE */
+.footer-table {
+  border-collapse: collapse;
+  flex: 1; /* Chiếm không gian còn lại */
+  table-layout: fixed; /* Để các cột đều nhau */
+  width: 100%;
+}
+
+/* CĂN GIỮA TIÊU ĐỀ CỘT */
+.footer-table th {
+  text-align: center; /* 👈 CĂN GIỮA */
+  padding-bottom: 16px;
+  font-size: 16px;
+  color: #ffffff; /* Màu trắng cho tiêu đề */
+  font-weight: bold;
+}
+
+/* CÁC CỘT CÓ ĐỘ RỘNG BẰNG NHAU */
+.footer-table th,
+.footer-table td {
+  width: 33.33%;
+  vertical-align: top;
+}
+
+/* CĂN GIỮA HOẶC TRÁI CHO NỘI DUNG LINK */
+.footer-table td {
+  text-align: center; /* 👈 CĂN GIỮA NỘI DUNG */
+  padding: 0 20px 12px 20px; /* Padding đều các bên */
+  font-size: 14px;
+}
+
+/* STYLE CHO LINK - MÀU BÌNH THƯỜNG */
+.footer-table a {
+  color: #e5e7eb; /* 👈 MÀU TRẮNG/XÁM NHẠT BÌNH THƯỜNG */
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 10px; /* Khoảng cách giữa các link */
+  transition: color 0.3s ease;
+  font-weight: normal; /* Không in đậm */
+}
+
+/* MÀU KHI HOVER - KHÔNG QUÁ NỔI BẬT */
+.footer-table a:hover {
+  color: #d1d5db; /* 👈 MÀU XÁM SÁNG HƠN MỘT CHÚT */
+  text-decoration: underline; /* Hoặc có thể bỏ nếu không muốn */
+}
+
+/* BOTTOM */
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 13px;
+  color: #6b7280;
+}
+.footer-email {
+  color: #d1d5db; /* Màu giống link */
+  display: inline-block;
+  margin-bottom: 8px;
+  cursor: default; /* Con trỏ bình thường, không phải pointer */
+}
+/* SPLASH SCREEN STYLES */
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #020617;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Trên tất cả */
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.splash-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.splash-logo {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+  animation: pulse 1.5s infinite alternate;
+}
+
+.splash-screen h1 {
+  color: #38bdf8;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.splash-screen p {
+  color: #e5e7eb;
+  font-size: 1rem;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); opacity: 0.7; }
+  to { transform: scale(1.05); opacity: 1; }
+}
+
+/* Thêm vào body để tránh scroll khi đang hiển thị splash */
+body.splash-active {
+  overflow: hidden;
+}
+/* ===== GLITCH EFFECT CHO HERO ===== */
+.hero-content h1 {
+  font-size: 3rem;
+  color: #e5e7eb;
+  margin-bottom: 10px;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  color: #38bdf8;
+  letter-spacing: 1px;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+
+/* Hiệu ứng glitch đơn giản khi hover */
+.hero-content h1:hover,
+.hero-content p:hover {
+  animation: simpleGlitch 0.3s;
+}
+
+@keyframes simpleGlitch {
+  0%, 100% {
+    transform: translateX(0);
+    text-shadow: 0 0 0 transparent;
+  }
+  25% {
+    transform: translateX(-2px);
+    text-shadow: -2px 0 0 #ff00ff;
+  }
+  50% {
+    transform: translateX(2px);
+    text-shadow: 2px 0 0 #00ffff;
+  }
+  75% {
+    transform: translateX(-1px);
+    text-shadow: -1px 0 0 #ffff00;
+  }
+}
+
+/* Hoặc hiệu ứng rung đơn giản hơn */
+@keyframes shakeGlitch {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-3px); }
+  40%, 80% { transform: translateX(3px); }
+}
+
+/* Thêm class này nếu muốn dùng hiệu ứng rung */
+.hero-content h1:hover.shake,
+.hero-content p:hover.shake {
+  animation: shakeGlitch 0.3s;
+}
+/* CORNER ELEMENT - TO và ẩn ban đầu */
+.corner-element {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100px;    /* TO hơn (100px) */
+  height: 100px;   /* TO hơn (100px) */
+  z-index: 10000;
+  
+  /* Ẩn ban đầu */
+  opacity: 0;
+  visibility: hidden;
+  
+  /* Hiện ra sau khi splash screen ẩn */
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Class này sẽ được thêm bằng JS sau khi splash ẩn */
+.corner-element.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.corner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.4));
+  
+  /* Hiệu ứng hover */
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+
+/* Thậm chí TO hơn nữa */
+.corner-element.large {
+  width: 120px;
+  height: 120px;
+}
+
+.corner-element.x-large {
+  width: 150px;
+  height: 150px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .corner-element {
+    width: 80px;    /* Vẫn to trên mobile */
+    height: 80px;
+  }
+  
+  .corner-element.large {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .corner-element.x-large {
+    width: 120px;
+    height: 120px;
+  }
+}
