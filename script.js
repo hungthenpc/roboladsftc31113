@@ -92,3 +92,59 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }, 2000); // 2 giây splash screen
 });
+document.addEventListener('DOMContentLoaded', function() {
+  const slides = document.querySelectorAll('.event-slide');
+  const indicators = document.querySelectorAll('.indicator');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  
+  let currentSlide = 0;
+  
+  function showSlide(index) {
+    slides[currentSlide].classList.remove('active');
+    indicators[currentSlide].classList.remove('active');
+    
+    currentSlide = (index + slides.length) % slides.length;
+    
+    slides[currentSlide].classList.add('active');
+    indicators[currentSlide].classList.add('active');
+  }
+  
+  function nextSlide() {
+    showSlide(currentSlide + 1);
+  }
+  
+  function prevSlide() {
+    showSlide(currentSlide - 1);
+  }
+  
+  prevBtn.addEventListener('click', prevSlide);
+  nextBtn.addEventListener('click', nextSlide);
+  
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      showSlide(index);
+    });
+  });
+  
+  // Auto slide mỗi 5 giây
+  let slideInterval = setInterval(nextSlide, 5000);
+  
+  // Dừng khi hover
+  const container = document.querySelector('.slides-container');
+  container.addEventListener('mouseenter', () => {
+    clearInterval(slideInterval);
+  });
+  
+  container.addEventListener('mouseleave', () => {
+    slideInterval = setInterval(nextSlide, 5000);
+  });
+  
+  // Keyboard
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') prevSlide();
+    if (e.key === 'ArrowRight') nextSlide();
+  });
+  
+  showSlide(0);
+});
