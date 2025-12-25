@@ -405,3 +405,98 @@ body.splash-active {
     height: 120px;
   }
 }
+/* ELECTRIC BLUE */
+:root {
+  --electric: #0066ff;
+  --neon-blue: #00ccff;
+  --cyan: #00ffff;
+  --dark-electric: #0052cc;
+}
+
+body {
+  background: #000814;
+  color: #ccf5ff;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(0, 102, 255, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(0, 204, 255, 0.1) 0%, transparent 20%);
+}
+
+.navbar {
+  background: rgba(0, 20, 40, 0.95);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(0, 204, 255, 0.4);
+}
+
+.menu a {
+  color: #66d9ff;
+  position: relative;
+}
+
+.menu a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+}
+
+.menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #0066ff, #00ffff);
+  transition: width 0.3s;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+.hero-content h1 {
+  color: #00ccff;
+  text-shadow: 
+    0 0 10px #0066ff,
+    0 0 20px #00ccff,
+    0 0 30px rgba(0, 204, 255, 0.5);
+}
+
+.hero-content p {
+  color: #66d9ff;
+  letter-spacing: 3px;
+}
+
+.footer {
+  background: linear-gradient(to top, #001a33 0%, #003366 100%);
+}
+
+.footer-table th {
+  color: #00ccff;
+}
+
+.footer-table a {
+  color: #99e6ff;
+}
+
+.footer-table a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Ẩn scroll ngang */
+}
+
+/* 2. Đảm bảo footer không vượt quá màn hình */
+footer {
+    width: 100%;
+    box-sizing: border-box; /* Bao gồm padding trong width */
+    padding: 20px;
+    word-wrap: break-word; /* Ngắt chữ nếu dài */
+}
+
+/* 3. Kiểm tra các phần tử con */
+footer a, footer p, footer div {
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
