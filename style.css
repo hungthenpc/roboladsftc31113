@@ -231,7 +231,7 @@ footer {
   color: #6b7280;
 }
 .footer-email {
-  color: #d1d5db; /* Màu giống link */
+  color: #99e6ff; /* Màu giống link */
   display: inline-block;
   margin-bottom: 8px;
   cursor: default; /* Con trỏ bình thường, không phải pointer */
@@ -414,11 +414,9 @@ body.splash-active {
 }
 
 body {
-  background: #000814;
+  background: #02263f;
   color: #ccf5ff;
-  background-image: 
-    radial-gradient(circle at 10% 20%, rgba(0, 102, 255, 0.1) 0%, transparent 20%),
-    radial-gradient(circle at 90% 80%, rgba(0, 204, 255, 0.1) 0%, transparent 20%);
+  
 }
 
 .navbar {
@@ -499,4 +497,329 @@ footer {
 footer a, footer p, footer div {
     max-width: 100%;
     overflow-wrap: break-word;
+}
+/* Events Slider với nền xanh */
+.events-slider {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #02263f; /* Nền xanh nhạt */
+}
+
+/* Header với "Our Events" canh trái */
+.slider-header {
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #0d47a1; /* Màu xanh đậm */
+  font-weight: 700;
+  margin: 0;
+  text-align: left;
+}
+
+/* Slides container với nền xanh */
+.slides-container {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  height: 600px;
+  box-shadow: 0 10px 30px rgba(13, 71, 161, 0.1);
+  border: 1px solid #bbdefb;
+}
+
+/* Nút chuyển slide TRONG container */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  color: #0d47a1;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: #0d47a1;
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(13, 71, 161, 0.3);
+}
+
+.prev-btn {
+  left: 15px;
+}
+
+.next-btn {
+  right: 15px;
+}
+
+/* Mỗi slide */
+.event-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  
+  box-sizing: border-box;
+}
+
+.event-slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Grid 2x2 đơn giản */
+.grid-2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 100%;
+  height: 100%;
+  gap: 0;
+  border-collapse: collapse;
+}
+
+/* Các ô cell */
+.cell {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Ô chứa ảnh */
+.img-cell {
+  background: #f5f5f5;
+}
+
+.img-cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Ô chứa text */
+.text-cell {
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  background: white;
+}
+
+.content {
+  width: 100%;
+}
+
+/* Tiêu đề */
+.event-title {
+  font-size: 2rem;
+  margin: 0 0 8px 0;
+  color: #0d47a1;
+  font-weight: 700;
+}
+
+.event-subtitle {
+  font-size: 1.2rem;
+  margin: 0 0 15px 0;
+  color: #546e7a;
+  font-weight: 500;
+}
+
+/* Mô tả */
+.event-description {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #37474f;
+  margin-bottom: 20px;
+}
+
+.event-info {
+  font-size: 1rem;
+  color: #546e7a;
+}
+
+.event-info p {
+  margin: 6px 0;
+  padding: 3px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.event-info strong {
+  color: #0d47a1;
+  min-width: 100px;
+  display: inline-block;
+}
+
+/* Chia đường kẻ giữa các ô */
+.top-left {
+  border-right: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.top-right {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.bottom-left {
+  border-right: 1px solid #e0e0e0;
+}
+
+/* Indicators */
+.slide-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #0d47a1;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: #0d47a1;
+  transform: scale(1.2);
+}
+
+.indicator:hover {
+  background: rgba(13, 71, 161, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .slides-container {
+    height: 500px;
+  }
+  
+  .text-cell {
+    padding: 20px;
+  }
+  
+  .event-title {
+    font-size: 1.7rem;
+  }
+  
+  .nav-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-2x2 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 180px 180px 250px 180px;
+  }
+  
+  .slides-container {
+    height: 790px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .prev-btn {
+    left: 10px;
+  }
+  
+  .next-btn {
+    right: 10px;
+  }
+  
+  /* Ẩn border trên mobile */
+  .top-left, .top-right, .bottom-left {
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
+}
+
+@media (max-width: 480px) {
+  .events-slider {
+    padding: 40px 15px;
+  }
+  
+  .slides-container {
+    height: 700px;
+  }
+  
+  .grid-2x2 {
+    grid-template-rows: 150px 150px 220px 150px;
+  }
+  
+  .text-cell {
+    padding: 15px;
+  }
+  
+  .event-title {
+    font-size: 1.5rem;
+  }
+  
+  .event-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .event-description {
+    font-size: 1rem;
+  }
+}
+/* ====== XÓA TẤT CẢ ĐƯỜNG LINE GIỮA CÁC Ô ====== */
+
+/* XÓA LINE TRÊN TẤT CẢ CÁC Ô */
+.grid-2x2 .cell {
+  border: none !important;
+}
+
+/* Đặc biệt xóa ở các ô cụ thể */
+.grid-2x2 .top-left,
+.grid-2x2 .top-right,
+.grid-2x2 .bottom-left,
+.grid-2x2 .bottom-right {
+  border: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-top: none !important;
+}
+
+/* Xóa border của cả grid container */
+.grid-2x2 {
+  border: none !important;
+  outline: none !important;
+}
+
+/* Nếu có border từ parent */
+.slides-container,
+.event-slide {
+  border: none !important;
 }
