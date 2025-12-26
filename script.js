@@ -148,3 +148,75 @@ document.addEventListener('DOMContentLoaded', function() {
   
   showSlide(0);
 });
+// ========== HIỆU ỨNG TUYẾT RƠI ==========
+
+function createSnowEffect() {
+  const container = document.getElementById('snow-container');
+  if (!container) return;
+  
+  // Số lượng bông tuyết
+  const snowflakeCount = 80;
+  
+  // Tạo bông tuyết
+  for (let i = 0; i < snowflakeCount; i++) {
+    createSnowflake(container);
+  }
+  
+  function createSnowflake(parent) {
+    const snowflake = document.createElement('div');
+    snowflake.className = 'snowflake';
+    
+    // Kích thước ngẫu nhiên
+    const size = Math.random() * 5 + 2; // 2px - 7px
+    snowflake.style.width = `${size}px`;
+    snowflake.style.height = `${size}px`;
+    
+    // Vị trí bắt đầu ngẫu nhiên
+    snowflake.style.left = `${Math.random() * 100}vw`;
+    snowflake.style.top = `-10px`;
+    
+    // Tốc độ rơi
+    const fallSpeed = Math.random() * 3 + 1; // 1 - 4 giây
+    const swaySpeed = Math.random() * 5 + 2; // 2 - 7 giây
+    const swayDistance = Math.random() * 50 + 20; // 20px - 70px
+    
+    // Thêm vào container
+    parent.appendChild(snowflake);
+    
+    // Animation rơi
+    const animation = snowflake.animate([
+      { 
+        transform: 'translate(0, 0) rotate(0deg)',
+        opacity: 0.8 
+      },
+      { 
+        transform: `translate(${swayDistance}px, 100vh) rotate(${Math.random() * 360}deg)`,
+        opacity: 0 
+      }
+    ], {
+      duration: fallSpeed * 1000,
+      easing: 'linear'
+    });
+    
+    // Khi animation kết thúc, reset và chạy lại
+    animation.onfinish = () => {
+      snowflake.style.left = `${Math.random() * 100}vw`;
+      snowflake.style.top = `-10px`;
+      animation.play();
+    };
+  }
+}
+
+// Gọi hàm khi trang load xong
+document.addEventListener('DOMContentLoaded', function() {
+  // Đợi 1 giây để trang load hoàn toàn
+  setTimeout(createSnowEffect, 1000);
+});
+
+// Tắt/bật tuyết khi cần
+function toggleSnow() {
+  const container = document.getElementById('snow-container');
+  if (container) {
+    container.style.display = container.style.display === 'none' ? 'block' : 'none';
+  }
+}
