@@ -4,6 +4,15 @@ body {
   background: #0f172a;
   color: #e5e7eb;
 }
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* 2. CHỈ CÁC THẺ H DÙNG BUNGEE */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bungee', cursive !important;
+    font-weight: 400;
+}
 
 header {
   text-align: center;
@@ -495,9 +504,9 @@ footer a, footer p, footer div {
 }
 /* Events Slider với nền xanh */
 .events-slider {
-  padding: 80px;
+  padding: 5%;
   max-width: 1200px;
-  margin: 200px;
+  margin: 15%;
   margin-top: 0px;
   margin-bottom: 0px;
   background: #02263f; /* Nền xanh nhạt */
@@ -1208,4 +1217,1033 @@ h1, h2, h3, h4, h5, h6 {
   );
   margin: 0;
   border: none;
+}
+/* === TEAM SECTION === */
+.team-section {
+  background: linear-gradient(135deg, #0f1a30 0%, #1a2b4d 100%);
+  padding: 100px 20px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #0066ff, #00ffff, #0066ff);
+}
+
+.team-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.team-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.team-header .section-title {
+  color: #00ffff;
+  margin-bottom: 15px;
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.team-header .section-subtitle {
+  color: #99e6ff;
+  font-size: 1.3rem;
+}
+
+/* Stats */
+.team-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .team-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .team-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 204, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  border-color: #00ffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #00ffff;
+  margin-bottom: 10px;
+  font-family: 'Bungee', cursive;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.stat-label {
+  color: #ccf5ff;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Department Cards */
+.department-section {
+  margin-bottom: 80px;
+}
+
+.department-title {
+  text-align: center;
+  color: #00ccff;
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  font-family: 'Bungee', cursive;
+}
+
+.department-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.department-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 102, 255, 0.2);
+  border-color: rgba(0, 204, 255, 0.4);
+}
+
+/* Card header */
+.department-header {
+  padding: 25px 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mechanical .department-header {
+  background: linear-gradient(135deg, rgba(255, 100, 100, 0.1), rgba(255, 150, 150, 0.05));
+  border-left: 5px solid #ff6666;
+}
+
+.programming .department-header {
+  background: linear-gradient(135deg, rgba(100, 200, 255, 0.1), rgba(150, 220, 255, 0.05));
+  border-left: 5px solid #66ccff;
+}
+
+.business .department-header {
+  background: linear-gradient(135deg, rgba(100, 255, 150, 0.1), rgba(150, 255, 180, 0.05));
+  border-left: 5px solid #66ff99;
+}
+
+.department-icon {
+  font-size: 2.5rem;
+}
+
+.department-info h4 {
+  color: white;
+  margin: 0 0 8px 0;
+  font-size: 1.6rem;
+}
+
+.department-count {
+  color: #99e6ff;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Card content */
+.department-content {
+  padding: 30px;
+}
+
+.department-description {
+  margin-bottom: 25px;
+}
+
+.department-description p {
+  color: #ccf5ff;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.department-skills {
+  margin-bottom: 25px;
+}
+
+.department-skills h5 {
+  color: #00ccff;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  background: rgba(0, 204, 255, 0.1);
+  color: #66d9ff;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(0, 204, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: rgba(0, 204, 255, 0.2);
+  color: #00ffff;
+  transform: translateY(-2px);
+}
+
+.department-members {
+  margin-bottom: 25px;
+}
+
+.department-members h5 {
+  color: #00ccff;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.department-members ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.department-members li {
+  color: #ccf5ff;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+/* Member list */
+.member-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.member-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 12px;
+  min-width: 180px;
+  transition: all 0.3s ease;
+}
+
+.member-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(5px);
+}
+
+.member-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0066ff, #00ccff);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.member-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.member-name {
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.member-role {
+  color: #99e6ff;
+  font-size: 0.85rem;
+  margin-top: 3px;
+}
+
+.more-members {
+  color: #66d9ff;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+
+/* Workflow */
+.workflow-section {
+  margin-bottom: 60px;
+}
+
+.workflow-title {
+  text-align: center;
+  color: #00ccff;
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  font-family: 'Bungee', cursive;
+}
+
+.workflow-steps {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.workflow-steps::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #0066ff, #00ffff, #0066ff);
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .workflow-steps::before {
+    display: none;
+  }
+}
+
+.workflow-step {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .workflow-step {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.step-number {
+  background: linear-gradient(135deg, #0066ff, #00ccff);
+  color: white;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-right: 30px;
+  flex-shrink: 0;
+  box-shadow: 0 5px 20px rgba(0, 102, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+  .step-number {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.step-content {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 15px;
+  flex: 1;
+  border: 1px solid rgba(0, 204, 255, 0.2);
+}
+
+.step-content h4 {
+  color: #00ffff;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.step-content p {
+  color: #ccf5ff;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Team message */
+.team-message {
+  background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(0, 204, 255, 0.05));
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  border: 1px solid rgba(0, 204, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .team-message {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.message-icon {
+  font-size: 3rem;
+  flex-shrink: 0;
+}
+
+.message-content h3 {
+  color: #00ffff;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.message-content p {
+  color: #ccf5ff;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Animation for workflow steps */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.workflow-step {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.workflow-step:nth-child(1) { animation-delay: 0.1s; }
+.workflow-step:nth-child(2) { animation-delay: 0.2s; }
+.workflow-step:nth-child(3) { animation-delay: 0.3s; }
+.workflow-step:nth-child(4) { animation-delay: 0.4s; }
+.workflow-step:nth-child(5) { animation-delay: 0.5s; }
+
+/* Responsive */
+@media (max-width: 992px) {
+  .team-section {
+    padding: 80px 15px;
+  }
+  
+  .department-content {
+    padding: 20px;
+  }
+  
+  .member-list {
+    flex-direction: column;
+  }
+  
+  .member-item {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .team-header .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .department-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .workflow-step .step-number {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+}
+/* === FIX WORKFLOW LINE & MEMBER GRID === */
+
+/* Sửa workflow line không đè lên content */
+.workflow-steps {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 40px; /* Thêm padding để line không đè */
+}
+
+.workflow-steps::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #0066ff, #00ffff, #0066ff);
+  z-index: 1;
+}
+
+.workflow-step {
+  position: relative;
+  z-index: 2;
+  background: rgba(13, 26, 51, 0.7); /* Thêm nền cho step */
+  border-radius: 15px;
+}
+
+.step-number {
+  position: relative;
+  z-index: 3;
+  background: linear-gradient(135deg, #0066ff, #00ccff);
+  color: white;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-right: 30px;
+  flex-shrink: 0;
+  box-shadow: 0 5px 20px rgba(0, 102, 255, 0.4);
+}
+
+.step-content {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 15px;
+  flex: 1;
+  border: 1px solid rgba(0, 204, 255, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+/* === MEMBER GRID STYLES === */
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.member-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.member-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(0, 204, 255, 0.4);
+  box-shadow: 0 10px 25px rgba(0, 102, 255, 0.2);
+  z-index: 100;
+}
+
+/* Avatar trong grid */
+.member-card .member-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0066ff, #00ccff);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+/* Basic info */
+.member-basic {
+  width: 100%;
+}
+
+.member-card .member-name {
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.member-card .member-role {
+  color: #66d9ff;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Hover card - hiển thị chi tiết */
+.member-hover-card {
+  position: absolute;
+  bottom: calc(100% + 15px);
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+  width: 200px;
+  background: linear-gradient(135deg, #0a1a3a 0%, #1a2b5a 100%);
+  border-radius: 15px;
+  padding: 25px;
+  border: 2px solid #00ccff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.member-card:hover .member-hover-card {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) scale(1);
+  pointer-events: auto;
+}
+
+.member-hover-card::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 10px solid transparent;
+  border-top-color: #00ccff;
+}
+
+.member-hover-card h5 {
+  color: #00ffff;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 204, 255, 0.3);
+  padding-bottom: 10px;
+}
+
+.member-details {
+  color: #ccf5ff;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.member-details p {
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.member-details strong {
+  color: #66d9ff;
+  min-width: 100px;
+  display: inline-block;
+}
+
+/* More card */
+.more-card {
+  background: rgba(255, 255, 255, 0.02);
+  border-style: dashed;
+  border-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.more-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.more-icon {
+  font-size: 2rem;
+  color: #66d9ff;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.more-text {
+  color: #99e6ff;
+  font-size: 0.9rem;
+}
+
+/* === MENTOR SECTION === */
+.mentor-section {
+  margin-top: 80px;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(0, 51, 102, 0.3), rgba(0, 102, 204, 0.2));
+  border-radius: 20px;
+  border: 1px solid rgba(0, 204, 255, 0.3);
+}
+
+.mentor-title {
+  text-align: center;
+  color: #00ffff;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-family: 'Bungee', cursive;
+}
+
+.mentor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.mentor-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 204, 255, 0.2);
+  transition: all 0.4s ease;
+}
+
+.mentor-card:hover {
+  transform: translateY(-10px);
+  border-color: #00ffff;
+  box-shadow: 0 20px 40px rgba(0, 102, 255, 0.3);
+}
+
+.mentor-header {
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 165, 0, 0.05));
+  border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+  text-align: center;
+}
+
+.mentor-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #ffd700, #ffaa00);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: white;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+}
+
+.mentor-name {
+  color: #ffd700;
+  font-size: 1.8rem;
+  margin: 0 0 5px 0;
+}
+
+.mentor-position {
+  color: #ffcc66;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.mentor-content {
+  padding: 25px;
+}
+
+.mentor-details {
+  color: #ccf5ff;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.mentor-details p {
+  margin: 12px 0;
+  display: flex;
+}
+
+.mentor-details strong {
+  color: #66d9ff;
+  min-width: 120px;
+  display: inline-block;
+}
+
+.mentor-expertise {
+  margin-top: 20px;
+}
+
+.mentor-expertise h5 {
+  color: #00ccff;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.expertise-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.expertise-tag {
+  background: rgba(0, 204, 255, 0.1);
+  color: #66d9ff;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(0, 204, 255, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .member-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  
+  .mentor-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .workflow-steps::before {
+    left: 40px;
+    right: 40px;
+  }
+  
+  .member-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .member-hover-card {
+    width: 250px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.95);
+  }
+  
+  .mentor-section {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 576px) {
+  .member-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .workflow-steps {
+    padding-left: 20px;
+  }
+  
+  .workflow-steps::before {
+    left: 30px;
+    right: 30px;
+  }
+}
+.mentor-note {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(255, 215, 0, 0.1);
+  border-radius: 12px;
+  border-left: 4px solid #ffd700;
+}
+
+.mentor-note p {
+  color: #ffcc66;
+  margin: 0;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+
+/* 3. GIỮ MENU LÀ BUNGEE (như yêu cầu của bạn) */
+.menu a {
+    font-family: 'Bungee', cursive !important;
+}
+/* ACTIVE = HOVER (bao gồm dòng xanh) */
+.menu a.active {
+  color: #00ffff !important;
+  position: relative; /* Quan trọng cho ::after */
+}
+
+/* Dòng xanh ở dưới - Y HỆT hover */
+.menu a.active::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important; /* FULL WIDTH */
+  height: 2px !important;
+  background: linear-gradient(90deg, #0066ff, #00ffff) !important;
+  transition: width 0.3s ease !important;
+}
+
+/* Đảm bảo active:hover vẫn giữ dòng xanh */
+.menu a.active:hover::after {
+  width: 100% !important; /* Vẫn 100% */
+}
+/* Thêm vào style.css */
+.menu a.active {
+  color: #00ffff !important;
+}
+
+.menu a.active::after {
+  width: 100% !important;
+}
+/* === SLIDER VỚI HIỆU ỨNG SLIDE LIỀN MẠCH === */
+
+/* Reset transition cho slides */
+.event-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              opacity 0.4s ease;
+  will-change: transform, opacity;
+}
+
+/* Slide active - ở vị trí trung tâm */
+.event-slide.active {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 2;
+}
+
+/* Slide đi ra bên trái */
+.event-slide.prev {
+  transform: translateX(-100%);
+  opacity: 0;
+  z-index: 1;
+}
+
+/* Slide đi ra bên phải */
+.event-slide.next {
+  transform: translateX(100%);
+  opacity: 0;
+  z-index: 1;
+}
+
+/* Ẩn tất cả slides mặc định */
+.event-slide:not(.active):not(.prev):not(.next) {
+  opacity: 0;
+  transform: translateX(100%);
+  pointer-events: none;
+}
+
+/* Hiệu ứng mượt cho nút navigation */
+.nav-btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Hiệu ứng cho indicators */
+.indicator {
+  transition: all 0.3s ease !important;
+}
+
+/* Thêm perspective cho container */
+.slides-container {
+  perspective: 1000px;
+  overflow: hidden;
+}
+/* ====== FIX KHOẢNG TRẮNG KHI CHUYỂN SLIDE ====== */
+
+/* Đảm bảo slides-container luôn có nền xanh */
+.slides-container {
+  background: #104266 !important; /* Màu nền xanh đậm */
+  overflow: hidden;
+}
+
+/* Đảm bảo mỗi slide có nền trắng đầy đủ */
+.event-slide {
+  background: white;
+  border-radius: 10px;
+}
+
+/* Grid 2x2 cũng cần nền trắng */
+.grid-2x2 {
+  background: white;
+}
+
+/* Tất cả các cell đều có nền tương ứng */
+.cell {
+  background: inherit; /* Kế thừa nền từ parent */
+}
+
+/* Đảm bảo không có khoảng trắng khi chuyển slide */
+.event-slide.active,
+.event-slide.prev,
+.event-slide.next {
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(13, 71, 161, 0.1);
+}
+
+/* Fix animation để không lộ nền xanh */
+.event-slide {
+  transform: translateX(100%); /* Mặc định ẩn bên phải */
+}
+
+.event-slide.active {
+  transform: translateX(0);
+}
+
+.event-slide.prev {
+  transform: translateX(-100%);
+}
+
+/* Hiệu ứng smooth hơn */
+.slides-container {
+  perspective: 1200px;
+}
+
+.event-slide {
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.5s ease;
+  backface-visibility: hidden;
+}
+
+/* Đảm bảo không có flicker */
+.slides-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #104266;
+  z-index: -1;
 }
