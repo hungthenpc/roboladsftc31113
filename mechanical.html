@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>FTC31113 Robolads</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="img/Logo Cắt nền.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="FTC31113 Roboladshttps://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <style>
+    /* Mechanical-specific styles */
+    .mechanical-header {
+      background: linear-gradient(135deg, rgba(255, 100, 100, 0.2), rgba(255, 150, 150, 0.1));
+      padding: 100px 20px;
+      padding-bottom: 40px;
+      text-align: center;
+      border-bottom: 3px solid #ff6666;
+    }
+    
+    .mechanical-header h1 {
+      color: #ff6666;
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      text-shadow: 0 0 15px rgba(255, 100, 100, 0.3);
+    }
+    
+    .mechanical-header p {
+      color: #ff9999;
+      font-size: 1.3rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .mechanical-content {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+      margin-bottom: 80px;
+    }
+    
+    .article-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 100, 100, 0.3);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    
+    .article-card:hover {
+      transform: translateY(-10px);
+      border-color: #ff6666;
+      box-shadow: 0 15px 35px rgba(255, 100, 100, 0.2);
+    }
+    
+    .article-card a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      height: 100%;
+    }
+    
+    /* XÓA PHẦN ARTICLE-IMAGE MÀU ĐỎ */
+    .article-image {
+      display: none; /* Ẩn phần ảnh màu đỏ */
+    }
+    
+    .article-content {
+      padding: 25px;
+    }
+    
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+    
+    .article-tag {
+      background: rgba(255, 100, 100, 0.2);
+      color: #ff9999;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      border: 1px solid rgba(255, 100, 100, 0.4);
+    }
+    
+    .article-title {
+      color: white;
+      font-size: 1.4rem;
+      margin: 0 0 15px 0;
+      line-height: 1.4;
+    }
+    
+    .article-excerpt {
+      color: #ccf5ff;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    
+    .article-meta {
+      display: flex;
+      justify-content: space-between;
+      color: #99e6ff;
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 15px;
+    }
+    
+    .topic-section {
+      margin-bottom: 60px;
+    }
+    
+    .topic-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 30px;
+      border-bottom: 2px solid rgba(255, 100, 100, 0.3);
+      padding-bottom: 15px;
+    }
+    
+    .topic-icon {
+      font-size: 2.5rem;
+      color: #ff6666;
+    }
+    
+    .topic-header h2 {
+      color: #ff9999;
+      margin: 0;
+      font-size: 2rem;
+    }
+    
+    .resources-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .resource-item {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 4px solid #ff6666;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: all 0.3s ease;
+    }
+    
+    .resource-item:hover {
+      background: rgba(255, 255, 255, 0.07);
+      transform: translateX(10px);
+    }
+    
+    .resource-icon {
+      font-size: 1.8rem;
+      color: #ff6666;
+      min-width: 50px;
+      text-align: center;
+    }
+    
+    .resource-info h4 {
+      color: white;
+      margin: 0 0 8px 0;
+      font-size: 1.2rem;
+    }
+    
+    .resource-info p {
+      color: #ccf5ff;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+    
+    .resource-link {
+      margin-left: auto;
+      color: #ff9999;
+      text-decoration: none;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .resource-link:hover {
+      color: #ff6666;
+      text-decoration: underline;
+    }
+    
+    .back-to-resources {
+      text-align: center;
+      margin: 40px 0;
+    }
+    
+    .back-to-resources a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #00ccff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 12px 25px;
+      background: rgba(0, 204, 255, 0.1);
+      border-radius: 25px;
+      border: 1px solid rgba(0, 204, 255, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .back-to-resources a:hover {
+      background: rgba(0, 204, 255, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 204, 255, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <img src="img/Logo Cắt nền.png" alt="Robotics Team Logo">
+    </a>
+    <nav class="menu" style="font-family: 'Bungee', cursive;">
+  <a href="index.html#about" class="menu-link">About</a>
+  <a href="ftc.html" class="menu-link">FTC Team</a>
+  <a href="resources.html" class="menu-link active" >Resources</a>
+  <a href="index.html#events" class="menu-link">Events</a>
+</nav>
+  </header>
+
+  <section class="mechanical-header">
+    <h1>⚙️ CƠ KHÍ & THIẾT KẾ</h1>
+  </section>
+
+  <div class="mechanical-content">
+    <!-- Bài viết mới nhất -->
+    <div class="topic-section">
+      
+      <div class="articles-grid">
+        <article class="article-card">
+          <a href="m1.html">
+            <!-- XÓA DIV ARTICLE-IMAGE -->
+            <div class="article-content">
+              <div class="article-tags">
+                <span class="article-tag">CAD Design</span>
+                <span class="article-tag">Gripper</span>
+                <span class="article-tag">Tutorial</span>
+              </div>
+              <h3 class="article-title">Thiết Kế Cơ Cấu Gắp (Gripper) Cho Robot FTC</h3>
+              <p class="article-excerpt">Hướng dẫn chi tiết từ thiết kế CAD đến chế tạo cơ cấu gắp vật thể hiệu quả cho robot thi đấu FTC. Bao gồm phân tích lực, lựa chọn vật liệu và tối ưu hóa.</p>
+              <div class="article-meta">
+                <span>15/03/2025</span>
+                <span>Độ khó: Trung cấp</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <article class="article-card">
+          <a href="#">
+            <!-- XÓA DIV ARTICLE-IMAGE -->
+            <div class="article-content">
+              <div class="article-tags">
+                <span class="article-tag">Mechanism</span>
+                <span class="article-tag">Lift System</span>
+                <span class="article-tag">Optimization</span>
+              </div>
+              <h3 class="article-title">Hệ Thống Nâng Hạ (Lift) Hiệu Quả Cao</h3>
+              <p class="article-excerpt">Phân tích các loại hệ thống nâng hạ phổ biến trong FTC: linear slides, cascade lift, 4-bar lift. Ưu nhược điểm và lựa chọn phù hợp.</p>
+              <div class="article-meta">
+                <span>10/03/2025</span>
+                <span>Độ khó: Nâng cao</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <article class="article-card">
+          <a href="#">
+            <!-- XÓA DIV ARTICLE-IMAGE -->
+            <div class="article-content">
+              <div class="article-tags">
+                <span class="article-tag">3D Printing</span>
+                <span class="article-tag">Materials</span>
+                <span class="article-tag">Guide</span>
+              </div>
+              <h3 class="article-title">In 3D Cho FTC: Vật Liệu & Cài Đặt Tối Ưu</h3>
+              <p class="article-excerpt">So sánh các vật liệu in 3D (PLA, PETG, ABS, Nylon) và cài đặt máy in cho các bộ phận chịu lực trong robot FTC.</p>
+              <div class="article-meta">
+                <span>05/03/2025</span>
+                <span>Độ khó: Cơ bản</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <article class="article-card">
+          <a href="article-example.html">
+            <!-- XÓA DIV ARTICLE-IMAGE -->
+            <div class="article-content">
+              <div class="article-tags">
+                <span class="article-tag">CAD Design</span>
+                <span class="article-tag">Gripper</span>
+                <span class="article-tag">Tutorial</span>
+              </div>
+              <h3 class="article-title">Thiết Kế Cơ Cấu Gắp (Gripper) Cho Robot FTC</h3>
+              <p class="article-excerpt">Hướng dẫn chi tiết từ thiết kế CAD đến chế tạo cơ cấu gắp vật thể hiệu quả cho robot thi đấu FTC. Bao gồm phân tích lực, lựa chọn vật liệu và tối ưu hóa.</p>
+              <div class="article-meta">
+                <span>15/03/2025</span>
+                <span>Độ khó: Trung cấp</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+
+
+      </div>
+    </div>
+
+    <!-- Chủ đề học tập -->
+   
+
+    <!-- Tutorials -->
+    
+
+    <div class="back-to-resources">
+      <a href="resources.html">
+        <span>←</span> Quay lại Trang Tài Liệu Chính
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <hr class="divider-blue">
+  <footer class="footer" id="contact">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="img/Logo Cắt nền.png" alt="FTC 31113 Logo">
+        <p>FTC 31113<br>High School for Gifted Students</p>
+      </div>
+      <table class="footer-table">
+        <tr>
+          <th>Contact</th>
+          <th>Sponsors</th>
+          <th>Resources</th>
+        </tr>
+        <tr>
+          <td>
+            <span class="footer-email">robotics.hsgs@gmail.com</span><br>
+            <a href="https://www.facebook.com/HSGSRoboLads?locale=vi_VN" target="_blank" rel="noopener noreferrer">Facebook</a><br>
+            <a href="https://www.instagram.com/robolads_31113/?igsh=MWFiaTcycXVpcnNkYQ%3D%3D#" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </td>
+          <td>
+            <a href="#">Samsung</a><br>
+            <a href="#">Vingroup</a><br>
+            <a href="#">Future Sponsors</a>
+          </td>
+          <td>
+            <a href="resources.html" class="active">Learning</a><br>
+            <a href="#">Projects</a><br>
+            <a href="#">Gallery</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="footer-bottom">
+      © 2025 FTC 31113. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

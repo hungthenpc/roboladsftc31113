@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>FTC31113 Robolads</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="img/Logo Cắt nền.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <style>
+    /* Style cho resources header giống ftc.html */
+    .resources-header-simple {
+      text-align: center;
+      padding-top: 2%;
+      padding-bottom: 2%;
+      background: linear-gradient(135deg, #0f1a30 0%, #1a2b4d 100%);
+       border-bottom: 3px solid #00ffff; 
+      margin-top: 80px;
+    }
+    
+    .resources-header-simple h2 {
+      color: #00ffff;
+      font-size: 3rem;
+      margin-bottom: 15px;
+      text-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    }
+    
+    .resources-header-simple p {
+      color: #99e6ff;
+      font-size: 1.3rem;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <img src="img/Logo Cắt nền.png" alt="Robotics Team Logo">
+    </a>
+    <nav class="menu" style="font-family: 'Bungee', cursive;">
+      <a href="index.html#about" class="menu-link">About</a>
+      <a href="ftc.html" class="menu-link">FTC Team</a>
+      <a href="resources.html" class="menu-link active">Resources</a>
+      <a href="index.html#events" class="menu-link">Events</a>
+    </nav>
+  </header>
+
+  <!-- Header đơn giản giống ftc.html -->
+  <section class="resources-header-simple">
+    <h2>📚 Robotics Learning Resources</h2>
+  </section>
+
+  <!-- Resources Main Section -->
+  <section class="resources-main">
+    <div class="resources-container">
+      <!-- Categories Grid - ĐƯA LÊN ĐẦU -->
+      <div class="categories-section">
+        <h3>📂 Chuyên Ngành</h3>
+        <div class="categories-grid">
+          <a href="mechanical.html" class="category-card mechanical-card">
+            <div class="category-icon">⚙️</div>
+            <div class="category-content">
+              <h4>Cơ Khí & Thiết Kế</h4>
+              <p>CAD Design, 3D Printing, Cơ cấu chuyển động, Vật liệu</p>
+              <div class="category-stats">
+                <span>12 bài viết</span>
+                <span>5 tutorials</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="programming.html" class="category-card programming-card">
+            <div class="category-icon">💻</div>
+            <div class="category-content">
+              <h4>Lập Trình & Điện Tử</h4>
+              <p>Java/Android, Cảm biến, Điều khiển, Thuật toán</p>
+              <div class="category-stats">
+                <span>18 bài viết</span>
+                <span>8 tutorials</span>
+              </div>
+            </div>
+          </a>
+
+          <div class="category-card strategy-card">
+            <div class="category-icon">🎯</div>
+            <div class="category-content">
+              <h4>Chiến Lược & Tối Ưu</h4>
+              <p>Game analysis, Strategy, Optimization, Scouting</p>
+              <div class="category-stats">
+                <span>6 bài viết</span>
+                <span>3 case studies</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="category-card business-card">
+            <div class="category-icon">📊</div>
+            <div class="category-content">
+              <h4>Business & Outreach</h4>
+              <p>Sponsorship, Marketing, Documentation, PR</p>
+              <div class="category-stats">
+                <span>8 bài viết</span>
+                <span>4 templates</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Articles - THỨ 2 -->
+      <div class="featured-section">
+        <h3>📌 Bài Viết Nổi Bật</h3>
+        <div class="featured-grid">
+          <a href="article-example.html" class="featured-article-card">
+            <div class="article-badge">MỚI</div>
+            <div class="article-category mechanical-badge">Cơ Khí</div>
+            <div class="article-content">
+              <h4>Thiết Kế Cơ Cấu Gắp (Gripper) Cho Robot FTC</h4>
+              <p>Hướng dẫn chi tiết từ thiết kế CAD đến chế tạo cơ cấu gắp vật thể hiệu quả cho robot thi đấu FTC.</p>
+              <div class="article-meta">
+                <span class="meta-date">15/03/2025</span>
+                <span class="meta-author">Lê Đức</span>
+                <span class="meta-level">Trung cấp</span>
+              </div>
+            </div>
+          </a>
+
+          <div class="featured-article-card">
+            <div class="article-category programming-badge">Lập Trình</div>
+            <div class="article-content">
+              <h4>PID Control Cho Robot Di Chuyển Chính Xác</h4>
+              <p>Giới thiệu thuật toán PID và ứng dụng trong điều khiển robot di chuyển thẳng và quay góc chính xác.</p>
+              <div class="article-meta">
+                <span class="meta-date">10/03/2025</span>
+                <span class="meta-author">Nguyễn Tuấn</span>
+                <span class="meta-level">Nâng cao</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="featured-article-card">
+            <div class="article-category electronics-badge">Điện Tử</div>
+            <div class="article-content">
+              <h4>Hướng Dẫn Sử Dụng Cảm Biến IMU Trong FTC</h4>
+              <p>Tích hợp và hiệu chỉnh cảm biến IMU để xác định hướng và góc nghiêng của robot.</p>
+              <div class="article-meta">
+                <span class="meta-date">05/03/2025</span>
+                <span class="meta-author">Trần Minh</span>
+                <span class="meta-level">Cơ bản</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- External Resources - CUỐI CÙNG (bỏ Learning Paths) -->
+      <div class="external-resources-section">
+        <h3>🔗 Tài Nguyên Bên Ngoài</h3>
+        <div class="external-grid">
+          <a href="https://ftc-docs.firstinspires.org" target="_blank" class="external-card">
+            <div class="external-logo">🏢</div>
+            <div class="external-info">
+              <h5>FTC Official Docs</h5>
+              <p>Tài liệu chính thức từ FIRST Tech Challenge</p>
+            </div>
+          </a>
+
+          <a href="https://github.com/FIRST-Tech-Challenge" target="_blank" class="external-card">
+            <div class="external-logo">💾</div>
+            <div class="external-info">
+              <h5>FTC GitHub</h5>
+              <p>Mã nguồn mẫu và thư viện chính thức</p>
+            </div>
+          </a>
+
+          <a href="https://cad.onshape.com" target="_blank" class="external-card">
+            <div class="external-logo">🖥️</div>
+            <div class="external-info">
+              <h5>Onshape (FREE)</h5>
+              <p>Công cụ CAD trực tuyến miễn phí cho FTC</p>
+            </div>
+          </a>
+
+          <a href="https://www.chiefdelphi.com" target="_blank" class="external-card">
+            <div class="external-logo">👥</div>
+            <div class="external-info">
+              <h5>Chief Delphi Forum</h5>
+              <p>Diễn đàn cộng đồng FRC/FTC lớn nhất</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <hr class="divider-blue">
+  <footer class="footer" id="contact">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="img/Logo Cắt nền.png" alt="FTC 31113 Logo">
+        <p>FTC 31113<br>High School for Gifted Students</p>
+      </div>
+      <table class="footer-table">
+        <tr>
+          <th>Contact</th>
+          <th>Sponsors</th>
+          <th>Resources</th>
+        </tr>
+        <tr>
+          <td>
+            <span class="footer-email">robotics.hsgs@gmail.com</span><br>
+            <a href="https://www.facebook.com/HSGSRoboLads?locale=vi_VN" target="_blank" rel="noopener noreferrer">Facebook</a><br>
+            <a href="https://www.instagram.com/robolads_31113/?igsh=MWFiaTcycXVpcnNkYQ%3D%3D#" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </td>
+          <td>
+            <a href="#">Samsung</a><br>
+            <a href="#">Vingroup</a><br>
+            <a href="#">Future Sponsors</a>
+          </td>
+          <td>
+            <a href="resources.html" class="active">Resources</a><br>
+            <a href="#">Projects</a><br>
+            <a href="#">Gallery</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="footer-bottom">
+      © 2025 FTC 31113. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  
+</body>
+</html>
