@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Thiết Kế Cơ Cấu Gắp Cho Robot FTC - FTC 31113</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="img/Logo Cắt nền.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <style>
+    /* Article-specific styles */
+    .article-header {
+      background: linear-gradient(135deg, rgba(255, 100, 100, 0.15), rgba(255, 150, 150, 0.1));
+      padding: 100px 20px 60px;
+      text-align: center;
+      border-bottom: 3px solid #ff6666;
+      position: relative;
+    }
+    
+    .article-header h1 {
+      color: #ff6666;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.3;
+    }
+    
+    .article-meta {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      color: #ff9999;
+      margin: 30px 0;
+      font-size: 1rem;
+    }
+    
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .article-tags {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    
+    .article-tag {
+      background: rgba(255, 100, 100, 0.2);
+      color: #ff9999;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      border: 1px solid rgba(255, 100, 100, 0.4);
+    }
+    
+    .article-content {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    
+    .article-section {
+      margin-bottom: 60px;
+    }
+    
+    .article-section h2 {
+      color: #ff6666;
+      font-size: 2rem;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid rgba(255, 100, 100, 0.3);
+    }
+    
+    .article-section h3 {
+      color: #ff9999;
+      font-size: 1.5rem;
+      margin: 35px 0 20px;
+    }
+    
+    .article-section p {
+      color: #ccf5ff;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    
+    .article-section ul, .article-section ol {
+      color: #ccf5ff;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      padding-left: 30px;
+      margin-bottom: 25px;
+    }
+    
+    .article-section li {
+      margin-bottom: 10px;
+    }
+    
+    .article-image {
+      width: 100%;
+      margin: 30px 0;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .article-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .image-caption {
+      text-align: center;
+      color: #99e6ff;
+      font-style: italic;
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+    
+    .design-diagram {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 30px;
+      margin: 40px 0;
+      border: 1px solid rgba(255, 100, 100, 0.3);
+    }
+    
+    .design-diagram h4 {
+      color: #ff9999;
+      margin-top: 0;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .code-block {
+      background: #1a1a2e;
+      border-radius: 10px;
+      padding: 25px;
+      margin: 30px 0;
+      border-left: 4px solid #66ccff;
+      overflow-x: auto;
+    }
+    
+    .code-block pre {
+      margin: 0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #e0e0ff;
+    }
+    
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 40px 0;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .comparison-table th {
+      background: rgba(255, 100, 100, 0.2);
+      color: #ff9999;
+      padding: 15px;
+      text-align: left;
+      font-weight: 600;
+    }
+    
+    .comparison-table td {
+      padding: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      color: #ccf5ff;
+    }
+    
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .comparison-table tr:hover {
+      background: rgba(255, 100, 100, 0.05);
+    }
+    
+    .tip-box {
+      background: rgba(255, 215, 0, 0.1);
+      border-left: 4px solid #ffd700;
+      padding: 25px;
+      margin: 40px 0;
+      border-radius: 0 10px 10px 0;
+    }
+    
+    .tip-box h4 {
+      color: #ffd700;
+      margin-top: 0;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .tip-box p {
+      color: #ffef99;
+      margin: 0;
+    }
+    
+    .navigation-links {
+      display: flex;
+      justify-content: space-between;
+      margin: 60px 0;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      color: #00ccff;
+      text-decoration: none;
+      padding: 15px 25px;
+      background: rgba(0, 204, 255, 0.1);
+      border-radius: 10px;
+      border: 1px solid rgba(0, 204, 255, 0.3);
+      transition: all 0.3s ease;
+      max-width: 300px;
+    }
+    
+    .nav-link:hover {
+      background: rgba(0, 204, 255, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 204, 255, 0.2);
+    }
+    
+    .nav-link.prev {
+      text-align: left;
+    }
+    
+    .nav-link.next {
+      text-align: right;
+    }
+    
+    .nav-link .arrow {
+      font-size: 1.5rem;
+    }
+    
+    .nav-link .nav-text {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .nav-link .nav-direction {
+      font-size: 0.9rem;
+      color: #99e6ff;
+    }
+    
+    .nav-link .nav-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    
+    .author-box {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 30px;
+      margin: 60px 0;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      border: 1px solid rgba(255, 100, 100, 0.3);
+    }
+    
+    .author-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff6666, #ff9999);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: white;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    
+    .author-info h4 {
+      color: #ff9999;
+      margin: 0 0 10px 0;
+      font-size: 1.5rem;
+    }
+    
+    .author-info p {
+      color: #ccf5ff;
+      margin: 0;
+      line-height: 1.6;
+    }
+    
+    .back-to-category {
+      text-align: center;
+      margin: 40px 0;
+    }
+    
+    .back-to-category a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #00ccff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 12px 25px;
+      background: rgba(0, 204, 255, 0.1);
+      border-radius: 25px;
+      border: 1px solid rgba(0, 204, 255, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .back-to-category a:hover {
+      background: rgba(0, 204, 255, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 204, 255, 0.2);
+    }
+    
+    @media (max-width: 768px) {
+      .article-header h1 {
+        font-size: 2.2rem;
+      }
+      
+      .navigation-links {
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      .nav-link {
+        max-width: 100%;
+      }
+      
+      .author-box {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <img src="img/Logo Cắt nền.png" alt="Robotics Team Logo">
+    </a>
+    <nav class="menu" style="font-family: 'Bungee', cursive;">
+      <a href="index.html#about">About</a>
+      <a href="ftc.html">FTC Team</a>
+      <a href="resources.html" class="active">Learning Resources</a>
+      <a href="index.html#events">Events</a>
+    </nav>
+  </header>
+
+  <article class="article-page">
+    <header class="article-header">
+      <div class="article-tags">
+        <span class="article-tag">CAD Design</span>
+        <span class="article-tag">Gripper Mechanism</span>
+        <span class="article-tag">FTC Tutorial</span>
+        <span class="article-tag">Intermediate</span>
+      </div>
+      <h1>Thiết Kế Cơ Cấu Gắp (Gripper) Cho Robot FTC: Từ Ý Tưởng Đến Thực Tế</h1>
+      <div class="article-meta">
+        <div class="meta-item">
+          <span>📅</span>
+          <span>15 tháng 3, 2025</span>
+        </div>
+        <div class="meta-item">
+          <span>👨‍💻</span>
+          <span>Lê Đức - Trưởng ban Cơ Khí</span>
+        </div>
+        <div class="meta-item">
+          <span>⏱️</span>
+          <span>Đọc: 12 phút</span>
+        </div>
+        <div class="meta-item">
+          <span>📊</span>
+          <span>Độ khó: Trung cấp</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <!-- Giới thiệu -->
+      <section class="article-section">
+        <h2>Giới Thiệu</h2>
+        <p>Cơ cấu gắp (gripper) là một trong những thành phần quan trọng nhất của robot FTC, quyết định khả năng tương tác với các game elements. Một gripper được thiết kế tốt không chỉ giúp robot hoạt động hiệu quả mà còn tăng độ tin cậy trong suốt trận đấu.</p>
+        <p>Trong bài viết này, chúng ta sẽ cùng tìm hiểu quy trình thiết kế một gripper cho robot FTC, từ phân tích yêu cầu, thiết kế CAD, đến chế tạo và thử nghiệm.</p>
+        
+        <div class="article-image">
+          <!-- Placeholder for image -->
+          <div style="background: linear-gradient(135deg, #ff6666, #ff9999); height: 300px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+            [Hình ảnh: Cơ cấu gắp FTC]
+          </div>
+          <div class="image-caption">Hình 1: Cơ cấu gắp 4-bar sử dụng trong robot FTC mùa giải CENTERSTAGE</div>
+        </div>
+      </section>
+
+      <!-- Phân tích yêu cầu -->
+      <section class="article-section">
+        <h2>Phân Tích Yêu Cầu & Lựa Chọn Thiết Kế</h2>
+        
+        <h3>1. Xác Định Game Elements</h3>
+        <p>Trước khi bắt đầu thiết kế, cần phân tích kỹ các game elements mà gripper cần tương tác:</p>
+        <ul>
+          <li><strong>Kích thước:</strong> Đo đạc chính xác kích thước vật thể</li>
+          <li><strong>Trọng lượng:</strong> Xác định lực cần thiết để giữ vật</li>
+          <li><strong>Bề mặt:</strong> Độ nhám, hình dạng, điểm tiếp xúc</li>
+          <li><strong>Tần suất gắp/thả:</strong> Số lần thao tác trong một trận</li>
+        </ul>
+
+        <h3>2. Lựa Chọn Loại Gripper</h3>
+        <p>Có nhiều loại gripper khác nhau, mỗi loại phù hợp với các ứng dụng cụ thể:</p>
+        
+        <div class="comparison-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Loại Gripper</th>
+                <th>Ưu Điểm</th>
+                <th>Nhược Điểm</th>
+                <th>Ứng Dụng</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Parallel Jaw</td>
+                <td>Đơn giản, dễ chế tạo, độ chính xác cao</td>
+                <td>Lực kẹp hạn chế, không phù hợp vật thể tròn</td>
+                <td>Pixel, cones, vật thể vuông</td>
+              </tr>
+              <tr>
+                <td>4-Bar Linkage</td>
+                <td>Lực kẹp lớn, chuyển động ổn định</td>
+                <td>Thiết kế phức tạp, chiếm nhiều không gian</td>
+                <td>Game elements lớn, nặng</td>
+              </tr>
+              <tr>
+                <td>Roller Intake</td>
+                <td>Tốc độ cao, phù hợp nhiều hình dạng</td>
+                <td>Tiêu thụ nhiều năng lượng, độ chính xác thấp</td>
+                <td>Balls, vật thể tròn</td>
+              </tr>
+              <tr>
+                <td>Passive Grab</td>
+                <td>Không cần actuator, đơn giản</td>
+                <td>Không chủ động thả được</td>
+                <td>Vận chuyển một chiều</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tip-box">
+          <h4>💡 Mẹo Thiết Kế</h4>
+          <p>Đối với FTC, 4-bar linkage thường là lựa chọn tốt nhất vì cân bằng giữa độ phức tạp, hiệu suất và độ tin cậy. Tuy nhiên, cần tối ưu hóa kích thước để phù hợp với không gian hạn chế của robot.</p>
+        </div>
+      </section>
+
+      <!-- Thiết kế CAD -->
+      <section class="article-section">
+        <h2>Thiết Kế CAD Trong Fusion 360</h2>
+        
+        <h3>1. Phác Thảo & Ràng Buộc (Sketches & Constraints)</h3>
+        <p>Bắt đầu với các sketch 2D, xác định các điểm quan trọng và ràng buộc hình học:</p>
+        
+        <div class="design-diagram">
+          <h4>Thông Số Thiết Kế Cơ Bản</h4>
+          <ul>
+            <li><strong>Stroke length:</strong> 50-100mm (tùy vật thể)</li>
+            <li><strong>Grip force:</strong> 10-30N (đủ để giữ vật)</li>
+            <li><strong>Actuation:</strong> Servo (HS-645MG) hoặc motor với encoder</li>
+            <li><strong>Linkage ratio:</strong> 1:2 đến 1:4 (lực:khoảng cách)</li>
+          </ul>
+        </div>
+
+        <h3>2. Mô Phỏng Chuyển Động (Motion Study)</h3>
+        <p>Sử dụng công cụ Motion Study trong Fusion 360 để mô phỏng chuyển động và kiểm tra va chạm:</p>
+        
+        <div class="code-block">
+          <pre><code>// Thiết lập các joints trong Fusion 360
+1. Revolute Joint - Khớp quay giữa các link
+2. Slider Joint - Khớp trượt cho actuator
+3. Contact Set - Thiết lập va chạm giữa jaw và vật thể
+
+// Phân tích lực
+- Tính toán moment tại các khớp
+- Xác định lực cần thiết từ actuator
+- Kiểm tra ứng suất tại các điểm then chốt</code></pre>
+        </div>
+
+        <div class="tip-box">
+          <h4>⚠️ Lưu Ý Quan Trọng</h4>
+          <p>Luôn để dư hệ số an toàn (safety factor) ít nhất 2.0 cho các bộ phận chịu lực. Sử dụng FEA (Finite Element Analysis) để kiểm tra ứng suất trước khi sản xuất.</p>
+        </div>
+      </section>
+
+      <!-- Vật liệu và chế tạo -->
+      <section class="article-section">
+        <h2>Vật Liệu & Phương Pháp Chế Tạo</h2>
+        
+        <h3>1. Lựa Chọn Vật Liệu</h3>
+        <p>Tùy thuộc vào yêu cầu về trọng lượng, độ cứng và khả năng gia công:</p>
+        
+        <div class="comparison-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Vật Liệu</th>
+                <th>Độ Cứng</th>
+                <th>Trọng Lượng</th>
+                <th>Giá Thành</th>
+                <th>Phù Hợp Cho</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>PLA (3D Print)</td>
+                <td>Trung bình</td>
+                <td>Nhẹ</td>
+                <td>Rẻ</td>
+                <td>Prototype, bộ phận không chịu lực</td>
+              </tr>
+              <tr>
+                <td>PETG (3D Print)</td>
+                <td>Cao</td>
+                <td>Nhẹ</td>
+                <td>Trung bình</td>
+                <td>Bộ phận chịu lực vừa</td>
+              </tr>
+              <tr>
+                <td>Nhôm 6061</td>
+                <td>Rất cao</td>
+                <td>Nhẹ</td>
+                <td>Cao</td>
+                <td>Linkage, bracket chính</td>
+              </tr>
+              <tr>
+                <td>Thép C45</td>
+                <td>Cao nhất</td>
+                <td>Nặng</td>
+                <td>Trung bình</td>
+                <td>Trục, pin, khớp then chốt</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>2. Gia Công & Lắp Ráp</h3>
+        <p>Quy trình chế tạo đề xuất:</p>
+        <ol>
+          <li><strong>In 3D các bộ phận phức tạp:</strong> Sử dụng PETG với 40-60% infill</li>
+          <li><strong>Gia công CNC các bộ phận chịu lực:</strong> Nhôm 6061, độ dày 3-6mm</li>
+          <li><strong>Lắp ráp thử:</strong> Kiểm tra độ trơn tru của chuyển động</li>
+          <li><strong>Hiệu chỉnh:</strong> Điều chỉnh các khe hở, độ căng</li>
+          <li><strong>Gắn actuator:</strong> Servo với servo horn phù hợp</li>
+        </ol>
+      </section>
+
+      <!-- Thử nghiệm và tối ưu -->
+      <section class="article-section">
+        <h2>Thử Nghiệm & Tối Ưu Hóa</h2>
+        
+        <h3>1. Kiểm Tra Hiệu Suất</h3>
+        <p>Sau khi lắp ráp, tiến hành các bài kiểm tra:</p>
+        <ul>
+          <li><strong>Độ bám:</strong> Test với game elements ở các góc độ khác nhau</li>
+          <li><strong>Độ tin cậy:</strong> Thực hiện 100+ chu kỳ gắp/thả liên tục</li>
+          <li><strong>Thời gian phản hồi:</strong> Đo thời gian từ lệnh đến khi hoàn thành</li>
+          <li><strong>Tiêu thụ năng lượng:</strong> Đo dòng điện của actuator</li>
+        </ul>
+
+        <h3>2. Tối Ưu Hóa Dựa Trên Kết Quả</h3>
+        <p>Dựa trên kết quả thử nghiệm, có thể tối ưu hóa:</p>
+        
+        <div class="design-diagram">
+          <h4>Khu Vực Cần Cải Thiện</h4>
+          <ul>
+            <li><strong>Tăng độ bám:</strong> Thêm lớp cao su hoặc texture bề mặt</li>
+            <li><strong>Giảm trọng lượng:</strong> Khoét lỗ, tối ưu hóa thiết kế</li>
+            <li><strong>Tăng độ cứng:</strong> Thêm gân tăng cường hoặc thay vật liệu</li>
+            <li><strong>Cải thiện độ tin cậy:</strong> Thêm limit switch, cảm biến vị trí</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Kết luận -->
+      <section class="article-section">
+        <h2>Kết Luận</h2>
+        <p>Thiết kế một cơ cấu gắp hiệu quả cho robot FTC đòi hỏi sự kết hợp giữa phân tích kỹ thuật, thiết kế thông minh và thử nghiệm nghiêm ngặt. Bằng cách tuân theo quy trình bài bản từ phân tích yêu cầu đến tối ưu hóa, đội FTC có thể phát triển các gripper đáp ứng được yêu cầu khắt khe của giải đấu.</p>
+        <p>Nhớ rằng thiết kế không bao giờ hoàn hảo ngay từ đầu - hãy sẵn sàng cho nhiều vòng lặp thiết kế-thử nghiệm-cải tiến!</p>
+        
+        <div class="tip-box">
+          <h4>🚀 Bước Tiếp Theo</h4>
+          <p>Sau khi hoàn thiện gripper, hãy tích hợp nó vào hệ thống điều khiển robot và phát triển các thuật toán autonomous để tận dụng tối đa khả năng của cơ cấu gắp.</p>
+        </div>
+      </section>
+
+      <!-- Tác giả -->
+      <div class="author-box">
+        <div class="author-avatar">LD</div>
+        <div class="author-info">
+          <h4>Lê Đức</h4>
+          <p>Trưởng ban Cơ Khí FTC 31113, chuyên gia thiết kế CAD và chế tạo robot. Có kinh nghiệm 3 năm trong FTC với nhiều giải thưởng thiết kế cơ khí. Đam mê chia sẻ kiến thức và mentor cho các thế hệ học sinh tiếp theo.</p>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="navigation-links">
+        <a href="#" class="nav-link prev">
+          <div class="arrow">←</div>
+          <div class="nav-text">
+            <div class="nav-direction">Bài trước</div>
+            <div class="nav-title">Tối Ưu Hóa Hệ Thống Nâng Hạ</div>
+          </div>
+        </a>
+        
+        <a href="#" class="nav-link next">
+          <div class="nav-text">
+            <div class="nav-direction">Bài tiếp theo</div>
+            <div class="nav-title">PID Control Cho Robot Di Chuyển</div>
+          </div>
+          <div class="arrow">→</div>
+        </a>
+      </div>
+
+      <!-- Back to category -->
+      <div class="back-to-category">
+        <a href="mechanical.html">
+          <span>←</span> Xem thêm bài viết về Cơ Khí & Thiết Kế
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <hr class="divider-blue">
+  <footer class="footer" id="contact">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="img/Logo Cắt nền.png" alt="FTC 31113 Logo">
+        <p>FTC 31113<br>High School for Gifted Students</p>
+      </div>
+      <table class="footer-table">
+        <tr>
+          <th>Contact</th>
+          <th>Sponsors</th>
+          <th>Resources</th>
+        </tr>
+        <tr>
+          <td>
+            <span class="footer-email">robotics.hsgs@gmail.com</span><br>
+            <a href="https://www.facebook.com/HSGSRoboLads?locale=vi_VN" target="_blank" rel="noopener noreferrer">Facebook</a><br>
+            <a href="https://www.instagram.com/robolads_31113/?igsh=MWFiaTcycXVpcnNkYQ%3D%3D#" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </td>
+          <td>
+            <a href="#">Samsung</a><br>
+            <a href="#">Vingroup</a><br>
+            <a href="#">Future Sponsors</a>
+          </td>
+          <td>
+            <a href="resources.html" class="active">Learning</a><br>
+            <a href="#">Projects</a><br>
+            <a href="#">Gallery</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="footer-bottom">
+      © 2025 FTC 31113. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

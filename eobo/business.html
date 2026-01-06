@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Business - FTC31113 Robolads</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="img/Logo Cắt nền.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <style>
+    /* Business-specific styles - MÀU HỒNG */
+    .business-header {
+      background: linear-gradient(135deg, rgba(255, 150, 200, 0.2), rgba(255, 180, 220, 0.1));
+      padding: 100px 20px;
+      padding-bottom: 40px;
+      text-align: center;
+      border-bottom: 3px solid #ff66aa;
+    }
+    
+    .business-header h1 {
+      color: #ff66aa;
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      text-shadow: 0 0 15px rgba(255, 100, 180, 0.3);
+    }
+    
+    .business-content {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+      margin-bottom: 80px;
+    }
+    
+    .article-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 150, 200, 0.3);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    
+    .article-card:hover {
+      transform: translateY(-10px);
+      border-color: #ff66aa;
+      box-shadow: 0 15px 35px rgba(255, 100, 180, 0.2);
+    }
+    
+    .article-card a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      height: 100%;
+    }
+    
+    /* XÓA PHẦN ARTICLE-IMAGE */
+    .article-image {
+      display: none;
+    }
+    
+    .article-content {
+      padding: 25px;
+    }
+    
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+    
+    .article-tag {
+      background: rgba(255, 150, 200, 0.2);
+      color: #ff99cc;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      border: 1px solid rgba(255, 150, 200, 0.4);
+    }
+    
+    .article-title {
+      color: white;
+      font-size: 1.4rem;
+      margin: 0 0 15px 0;
+      line-height: 1.4;
+    }
+    
+    .article-excerpt {
+      color: #ccf5ff;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    
+    .article-meta {
+      display: flex;
+      justify-content: space-between;
+      color: #99e6ff;
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 15px;
+    }
+    
+    .topic-section {
+      margin-bottom: 60px;
+    }
+    
+    .back-to-resources {
+      text-align: center;
+      margin: 40px 0;
+    }
+    
+    .back-to-resources a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #ff66aa;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 12px 25px;
+      background: rgba(255, 150, 200, 0.1);
+      border-radius: 25px;
+      border: 1px solid rgba(255, 150, 200, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .back-to-resources a:hover {
+      background: rgba(255, 150, 200, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 100, 180, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <img src="img/Logo Cắt nền.png" alt="Robotics Team Logo">
+    </a>
+    <nav class="menu" style="font-family: 'Bungee', cursive;">
+      <a href="index.html#about" class="menu-link">About</a>
+      <a href="ftc.html" class="menu-link">FTC Team</a>
+      <a href="resources.html" class="menu-link active">Resources</a>
+      <a href="index.html#events" class="menu-link">Events</a>
+    </nav>
+  </header>
+
+  <section class="business-header">
+    <h1>📊 BUSINESS</h1>
+  </section>
+
+  <div class="business-content">
+    <!-- Bài viết về Business -->
+    <div class="topic-section">
+      
+      <div class="articles-grid">
+        <article class="article-card">
+          <a href="b1.html">
+            <div class="article-content">
+              <div class="article-tags">
+                <span class="article-tag">Marketing</span>
+                <span class="article-tag">Social Media</span>
+              </div>
+              <h3 class="article-title">TẠO DỰNG KÊNH MẠNG XÃ HỘI</h3>
+              <p class="article-excerpt">Mạng xã hội không chỉ để lướt cho vui đây là bản hướng dẫn giúp đội robotics của bạn xây dựng nội dung STEM truyền cảm hứng, hiểu thuật toán và biến từng bài đăng thành một tiếng nói tạo ra thay đổi. </p>
+              <div class="article-meta">
+                <span>06/01/2025</span>
+                <span>Đối tượng: </span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+      
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-resources">
+      <a href="resources.html">
+        <span>←</span> Quay lại Trang Tài Liệu Chính
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <hr class="divider-blue">
+  <footer class="footer" id="contact">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="img/Logo Cắt nền.png" alt="FTC 31113 Logo">
+        <p>FTC 31113<br>High School for Gifted Students</p>
+      </div>
+      <table class="footer-table">
+        <tr>
+          <th>Contact</th>
+          <th>Sponsors</th>
+          <th>Resources</th>
+        </tr>
+        <tr>
+          <td>
+            <span class="footer-email">robotics.hsgs@gmail.com</span><br>
+            <a href="https://www.facebook.com/HSGSRoboLads?locale=vi_VN" target="_blank" rel="noopener noreferrer">Facebook</a><br>
+            <a href="https://www.instagram.com/robolads_31113/?igsh=MWFiaTcycXVpcnNkYQ%3D%3D#" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </td>
+          <td>
+            <a href="#">Samsung</a><br>
+            <a href="#">Vingroup</a><br>
+            <a href="#">Future Sponsors</a>
+          </td>
+          <td>
+            <a href="resources.html" class="active">Learning</a><br>
+            <a href="#">Projects</a><br>
+            <a href="#">Gallery</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="footer-bottom">
+      © 2025 FTC 31113. All rights reserved.
+    </div>
+  </footer>
+   
+  <script src="script.js"></script>
+</body>
+</html>

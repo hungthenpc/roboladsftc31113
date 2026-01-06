@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>FTC31113 Robolads - Các Thành Phần LEGO MINDSTORMS EV3 Chính</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="article-mechanical.css" />
+  <link rel="icon" type="image/png" href="img/Logo Cắt nền.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <style>
+    /* ===== CSS CHỈNH ẢNH - TỈ LỆ RỘNG HƠN ===== */
+    
+    /* Tất cả ảnh trong bài viết */
+    .article-content img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+    }
+    
+    /* Container cho ảnh so sánh (2 ảnh cạnh nhau) - TỈ LỆ RỘNG HƠN */
+    .image-comparison {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin: 40px 0;
+        justify-content: center;
+    }
+    
+    /* Mỗi item ảnh trong phần so sánh - RỘNG HƠN */
+    .image-item {
+        flex: 1;
+        min-width: 350px;
+        max-width: 550px;
+        text-align: center;
+        padding: 20px;
+        border: 2px solid rgba(204, 153, 0, 0.4);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.04);
+    }
+    
+    /* Ảnh bên trong image-item - TỈ LỆ RỘNG HƠN */
+    .image-item img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        object-position: center;
+        border: 2px solid rgba(204, 153, 0, 0.3);
+        border-radius: 8px;
+    }
+    
+    /* Chú thích ảnh */
+    .image-caption {
+        color: #ccf5ff;
+        font-size: 1rem;
+        font-style: italic;
+        margin-top: 15px;
+        padding-top: 12px;
+        border-top: 2px solid rgba(255, 255, 255, 0.15);
+    }
+    
+    /* Container cho ảnh đơn - RỘNG HƠN */
+    .single-image {
+        width: 100%;
+        max-width: 800px;
+        margin: 25px auto;
+        padding: 20px;
+        border: 3px solid rgba(204, 153, 0, 0.4);
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.03);
+        text-align: center;
+    }
+    
+    /* Ảnh bên trong single-image - TỈ LỆ RỘNG HƠN */
+    .single-image img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        object-position: center;
+        border: 2px solid rgba(204, 153, 0, 0.3);
+        border-radius: 10px;
+    }
+    
+    /* Ảnh nhỏ trong bảng */
+    .table-image {
+        width: 100%;
+        max-width: 150px;
+        height: 120px;
+        object-fit: cover;
+        object-position: center;
+        border: 1px solid rgba(204, 153, 0, 0.3);
+        border-radius: 6px;
+        margin: 0 auto;
+    }
+    
+    /* Responsive cho mobile */
+    @media (max-width: 768px) {
+        .image-item img {
+            height: 200px;
+        }
+        
+        .single-image img {
+            height: 250px;
+        }
+        
+        .table-image {
+            max-width: 120px;
+            height: 100px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .image-item {
+            min-width: 100%;
+        }
+        
+        .image-item img {
+            height: 180px;
+        }
+        
+        .single-image img {
+            height: 200px;
+        }
+        
+        .image-caption {
+            font-size: 0.9rem;
+        }
+        
+        .table-image {
+            max-width: 100px;
+            height: 80px;
+        }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <img src="img/Logo Cắt nền.png" alt="Robotics Team Logo">
+    </a>
+    <nav class="menu">
+      <a href="index.html#about" class="menu-link">About</a>
+      <a href="ftc.html" class="menu-link">FTC Team</a>
+      <a href="resources.html" class="menu-link active">Resources</a>
+      <a href="index.html#events" class="menu-link">Events</a>
+    </nav>
+  </header>
+
+  <!-- Article Header -->
+  <section class="article-header">
+    <h1>CÁC THÀNH PHẦN LEGO MINDSTORMS EV3 CHÍNH DÙNG CHO ROBOT</h1>
+    <div class="article-meta-top">
+      <span>07/01/2025</span>
+      <span>Cơ khí</span>
+      <span>Độ khó: Cơ bản</span>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <div class="article-content">
+    <!-- Tags -->
+    <div class="article-tags">
+      <span class="article-tag">LEGO</span>
+      <span class="article-tag">EV3</span>
+      <span class="article-tag">Mindstorms</span>
+      <span class="article-tag">Robot</span>
+    </div>
+
+    <!-- Part 1: Brick -->
+    <div class="article-section">
+      <h2>1. Brick (Bộ điều khiển trung tâm – "não" của robot)</h2>
+      
+      <p>Brick là trung tâm điều khiển của robot.</p>
+      
+      <div class="highlight-box">
+        <h4>Chức năng:</h4>
+        <ul>
+          <li>Chạy chương trình điều khiển robot</li>
+          <li>Nhận chương trình từ máy tính tải vào Brick</li>
+          <li>Gửi lệnh điều khiển đến motor</li>
+          <li>Nhận dữ liệu từ sensor (cảm biến) để xử lý</li>
+          <li>Phát âm thanh và hiển thị hình ảnh</li>
+          <li>Phải kết nối dây với motor và sensor thì robot mới hoạt động</li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>Cổng kết nối:</h4>
+        <ul>
+          <li><strong>Alpha Ports (A, B, C, D – phía trước)</strong><br>→ Dùng để cắm motor<br>→ Đây là cổng xuất lệnh</li>
+          <li><strong>Numeric Ports (1, 2, 3, 4 – phía sau)</strong><br>→ Dùng để cắm sensor<br>→ Đây là cổng nhận dữ liệu</li>
+          <li><strong>PC Port</strong><br>→ Kết nối Brick với máy tính để lập trình</li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>Lưu ý quan trọng cho học sinh:</h4>
+        <ul>
+          <li>Cắm sai cổng → chương trình không chạy hoặc chạy sai</li>
+          <li>Motor bắt buộc cắm cổng chữ</li>
+          <li>Sensor bắt buộc cắm cổng số</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Part 2: Large Motor -->
+    <div class="article-section">
+      <h2>2. Large Motor (Động cơ lớn)</h2>
+      
+      <ul>
+        <li>Động cơ khỏe, lực mạnh</li>
+        <li>Tốc độ chậm hơn nhưng chịu tải tốt</li>
+        <li>Dùng để:
+          <ul>
+            <li>Chạy bánh xe</li>
+            <li>Di chuyển robot</li>
+          </ul>
+        </li>
+      </ul>
+      
+      <div class="highlight-box">
+        <h4>Khuyến nghị khi dạy học:</h4>
+        <p>Luôn dùng Large Motor cho di chuyển</p>
+      </div>
+    </div>
+
+    <!-- Part 3: Medium Motor -->
+    <div class="article-section">
+      <h2>3. Medium Motor (Động cơ vừa)</h2>
+      
+      <ul>
+        <li>Nhẹ, tốc độ nhanh</li>
+        <li>Lực yếu hơn</li>
+        <li>Dùng để:
+          <ul>
+            <li>Cánh tay robot</li>
+            <li>Gấp đồ</li>
+            <li>Nâng – xoay chi tiết</li>
+          </ul>
+        </li>
+      </ul>
+      
+      <div class="highlight-box">
+        <h4>Không dùng Medium Motor để chạy robot → robot yếu, rung, lệch hướng</h4>
+      </div>
+    </div>
+
+    <!-- Part 4: Color Sensor -->
+    <div class="article-section">
+      <h2>4. Color Sensor (Cảm biến màu)</h2>
+      
+      <ul>
+        <li>Nhận biết màu sắc và độ phản xạ ánh sáng</li>
+        <li>Gửi dữ liệu về Brick để robot quyết định hành động</li>
+        <li>Hoạt động bằng cách:
+          <ul>
+            <li>Phát ánh sáng</li>
+            <li>Đọc ánh sáng phản xạ lại</li>
+          </ul>
+        </li>
+      </ul>
+      
+      <div class="highlight-box">
+        <h4>Lưu ý khi dạy trẻ:</h4>
+        <ul>
+          <li>Mắt người thấy màu không giống sensor thấy</li>
+          <li>Cần:
+            <ul>
+              <li>Hiệu chỉnh</li>
+              <li>Test trên nền thật (trắng – đen – màu)</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>Dùng cho:</h4>
+        <ul>
+          <li>Robot dò line</li>
+          <li>Phân loại vật theo màu</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Part 5: Ultrasonic Sensor -->
+    <div class="article-section">
+      <h2>5. Ultrasonic Sensor (Cảm biến siêu âm)</h2>
+      
+      <ul>
+        <li>Đo khoảng cách tới vật cản</li>
+        <li>Hoạt động như:
+          <ul>
+            <li>Doi</li>
+            <li>Tàu ngầm (phát sóng – nhận sóng phản hồi)</li>
+          </ul>
+        </li>
+      </ul>
+      
+      <div class="highlight-box">
+        <h4>Dùng cho:</h4>
+        <ul>
+          <li>Tránh vật cản</li>
+          <li>Dừng robot khi đến gần tường</li>
+          <li>Robot tự động</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Part 6: Các thành phần khác -->
+    <div class="article-section">
+      <h2>IX. CÁC THÀNH PHẦN KHÁC CỦA ROBOT LEGO MINDSTORMS EV3</h2>
+      
+      <p>Ngoài Brick, Motor và các Sensor chính đã học, bộ LEGO Mindstorms EV3 còn bao gồm nhiều <strong>linh kiện cơ khí và phụ kiện điện tử đóng vai trò cực kỳ quan trọng trong việc thiết kế – vận hành – ổn định robot.</strong></p>
+      
+      <h3>1. Dây cáp kết nối (EV3 Cables)</h3>
+      
+      <div class="highlight-box">
+        <h4>Chức năng:</h4>
+        <ul>
+          <li>Kết nối Brick ⇔ Motor</li>
+          <li>Kết nối Brick ⇔ Sensor</li>
+          <li>Truyền:
+            <ul>
+              <li>Lệnh điều khiển</li>
+              <li>Dữ liệu cảm biến</li>
+              <li>Nguồn điện</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>Đặc điểm:</h4>
+        <ul>
+          <li>Có nhiều độ dài khác nhau</li>
+          <li>Đầu cắm chống cắm ngược</li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>Lưu ý khi dạy học sinh:</h4>
+        <ul>
+          <li>Đi dây gọn</li>
+          <li>Cố định dây vào khung robot</li>
+        </ul>
+      </div>
+      
+      <h3>2. Pin và nguồn điện cho Brick</h3>
+      
+      <div class="highlight-box">
+        <h4>Các loại nguồn:</h4>
+        <ul>
+          <li>Pin AA (6 viên)</li>
+          <li>Pin sạc LEGO EV3 Rechargeable Battery</li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>Vai trò:</h4>
+        <ul>
+          <li>Cung cấp năng lượng cho:
+            <ul>
+              <li>Brick</li>
+              <li>Motor</li>
+              <li>Sensor</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>Lưu ý khi giảng dạy:</h4>
+        <ul>
+          <li>Pin yếu → robot:
+            <ul>
+              <li>Chạy chậm</li>
+              <li>Rẽ sai</li>
+              <li>Sensor đọc không chính xác</li>
+            </ul>
+          </li>
+          <li>Khi robot chạy lỗi:<br>☞ Kiểm tra pin trước khi sửa code</li>
+        </ul>
+      </div>
+      
+      <h3>3. Bánh xe (Wheels)</h3>
+      
+      <div class="highlight-box">
+        <h4>Chức năng:</h4>
+        <ul>
+          <li>Giúp robot di chuyển</li>
+          <li>Truyền lực từ motor xuống mặt đất</li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>Các loại bánh:</h4>
+        <ul>
+          <li>Bánh lớn → đi ổn định, chậm</li>
+          <li>Bánh nhỏ → nhanh nhưng khó kiểm soát</li>
+          <li>Bánh cao su → bám sàn tốt</li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>Khi hướng dẫn học sinh:</h4>
+        <ul>
+          <li>Hai bánh phải:
+            <ul>
+              <li>Cùng kích thước</li>
+              <li>Gắn đều</li>
+            </ul>
+          </li>
+          <li>Lệch bánh = robot đi cong</li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>Nguyên tắc vàng:</h4>
+        <p>"Hai bánh không đều → code chuẩn cũng đi sai"</p>
+      </div>
+      
+      <h3>4. Bánh xe tự do (Caster Wheel / Ball Caster)</h3>
+      
+      <div class="highlight-box">
+        <h4>Chức năng:</h4>
+        <ul>
+          <li>Giữ thăng bằng cho robot</li>
+          <li>Không cần motor</li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>Vị trí:</h4>
+        <ul>
+          <li>Thường đặt:
+            <ul>
+              <li>Phía trước</li>
+              <li>Hoặc phía sau robot</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>Lưu ý:</h4>
+        <ul>
+          <li>Không đặt quá cao → robot chòng chành</li>
+          <li>Không để cọ sàn → cản lực</li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>Rất phù hợp cho robot:</h4>
+        <ul>
+          <li>2 motor – 2 bánh chính</li>
+        </ul>
+      </div>
+      
+      <h3>5. Trục (Axles)</h3>
+      
+      <div class="highlight-box">
+        <h4>Chức năng:</h4>
+        <ul>
+          <li>Truyền chuyển động</li>
+          <li>Kết nối:
+            <ul>
+              <li>Motor ↔ Bánh xe</li>
+              <li>Bánh răng ↔ Bánh răng</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>Lưu ý dạy học:</h4>
+        <ul>
+          <li>Trục quá dài → cong</li>
+          <li>Trục không cố định → tuột bánh</li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>☞ Dạy học sinh:</h4>
+        <ul>
+          <li>Luôn dùng bushing để khóa trục</li>
+        </ul>
+      </div>
+      
+      <h3>6. Bánh răng (Gears)</h3>
+      
+      <div class="highlight-box">
+        <h4>Chức năng:</h4>
+        <ul>
+          <li>Thay đổi:
+            <ul>
+              <li>Tốc độ</li>
+              <li>Lực (mô-men xoắn)</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>Nguyên lý cơ bản cho học sinh:</h4>
+        <ul>
+          <li>Bánh lớn → chậm, khỏe</li>
+          <li>Bánh nhỏ → nhanh, yếu</li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>Ứng dụng:</h4>
+        <ul>
+          <li>Tay gấp robot</li>
+          <li>Nâng vật</li>
+          <li>Cơ cấu nâng – hạ</li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>☞ Không cần dạy quá sâu toán, chỉ cần cho học sinh:</h4>
+        <ul>
+          <li>Lắp</li>
+          <li>So sánh</li>
+          <li>Thử nghiệm</li>
+        </ul>
+      </div>
+      
+      <h3>7. Khung và dầm LEGO (Beams & Frames)</h3>
+      
+      <div class="highlight-box">
+        <h4>Vai trò:</h4>
+        <ul>
+          <li>Tạo khung robot</li>
+          <li>Giữ các bộ phận cố định</li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>Nguyên tắc thiết kế:</h4>
+        <ul>
+          <li>Khung càng:
+            <ul>
+              <li>Gọn</li>
+              <li>Chắc</li>
+            </ul>
+          </li>
+          <li>Tránh:
+            <ul>
+              <li>Lỏng</li>
+              <li>Rung</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>☞ Khi dạy:</h4>
+        <ul>
+          <li>Cho học sinh lắc robot</li>
+          <li>Nếu rung → thiết kế chưa ổn</li>
+        </ul>
+      </div>
+      
+      <h3>8. Chốt kết nối (Pins)</h3>
+      
+      <div class="highlight-box">
+        <h4>Các loại:</h4>
+        <ul>
+          <li>Chốt ma sát (màu xanh, đen)</li>
+          <li>Chốt trơn (màu xám)</li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>Lưu ý sư phạm:</h4>
+        <ul>
+          <li>Chốt ma sát → cổ định</li>
+          <li>Chốt trơn → cho phép xoay</li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>☞ Dạy trẻ phân biệt:</h4>
+        <ul>
+          <li>"Chỗ nào cần xoay?"</li>
+          <li>"Chỗ nào cần đứng yên?"</li>
+        </ul>
+      </div>
+      
+      <h3>9. Bàn xoay & khớp xoay (Turntables & Joints)</h3>
+      
+      <div class="highlight-box">
+        <h4>Chức năng:</h4>
+        <ul>
+          <li>Tạo chuyển động quay</li>
+          <li>Dùng cho:
+            <ul>
+              <li>Tay robot</li>
+              <li>Trụ xoay</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>Lưu ý:</h4>
+        <ul>
+          <li>Không chịu tải nặng</li>
+          <li>Phải kết hợp motor hợp lý</li>
+        </ul>
+      </div>
+      
+      <h3>10. Phụ kiện trang trí & mở rộng</h3>
+      
+      <div class="highlight-box">
+        <h4>Bao gồm:</h4>
+        <ul>
+          <li>Tấm nhựa</li>
+          <li>Đầu nối đặc biệt</li>
+          <li>Thanh nối cong</li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>Vai trò:</h4>
+        <ul>
+          <li>Hoàn thiện thiết kế</li>
+          <li>Tạo hình robot sinh động</li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>Khi dạy học sinh nhỏ:</h4>
+        <ul>
+          <li>Trang trí giúp:
+            <ul>
+              <li>Tăng hứng thú</li>
+              <li>Khơi gợi sáng tạo</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Part 7: Các thiết bị khác -->
+    <div class="article-section">
+      <h2>II. CÁC THIẾT BỊ KHÁC (KHÔNG DÙNG TRONG ROBOT MẪU)</h2>
+      
+      <h3>Touch Sensor</h3>
+      
+      <div class="highlight-box">
+        <ul>
+          <li>Nhận biết:
+            <ul>
+              <li>Đang nhấn</li>
+              <li>Không nhấn</li>
+              <li>Nhấn rồi thả</li>
+            </ul>
+          </li>
+          <li>Thường dùng khi robot dụng vật</li>
+        </ul>
+      </div>
+      
+      <h3>IR Sensor & IR Beacon</h3>
+      
+      <div class="highlight-box">
+        <ul>
+          <li>Đo khoảng cách như siêu âm</li>
+          <li>Nhận tín hiệu từ điều khiển cầm tay</li>
+          <li>Có thể điều khiển robot từ xa</li>
+        </ul>
+      </div>
+      
+      <h3>Gyro Sensor</h3>
+      
+      <div class="highlight-box">
+        <ul>
+          <li>Đo:
+            <ul>
+              <li>Góc xoay</li>
+              <li>Độ nghiêng</li>
+            </ul>
+          </li>
+          <li>Rất quan trọng cho:
+            <ul>
+              <li>Đi thẳng</li>
+              <li>Quay chính xác</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Part 8: Tổng quan Brick -->
+    <div class="article-section">
+      <h2>III. TỔNG QUAN BRICK – CÁCH SỬ DỤNG</h2>
+      
+      <div class="highlight-box">
+        <h4>Các nút trên Brick:</h4>
+        <ul>
+          <li><strong>Back</strong>: quay lại, dừng chương trình</li>
+          <li><strong>Center</strong>: bật Brick, chọn</li>
+          <li><strong>Up / Down / Left / Right</strong>: di chuyển menu</li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>Bật / Tắt Brick:</h4>
+        <ul>
+          <li><strong>Bật</strong>: giữ nút Center → đèn đỏ → xanh</li>
+          <li><strong>Tắt</strong>:
+            <ol>
+              <li>Giữ Back</li>
+              <li>Chọn dấu ✓</li>
+              <li>Nhấn Center</li>
+            </ol>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Part 9: Quy trình lập trình -->
+    <div class="article-section">
+      <h2>IV. QUY TRÌNH LẬP TRÌNH CƠ BẢN (RẤT QUAN TRỌNG KHI DẠY TRẺ)</h2>
+      
+      <div class="highlight-box">
+        <h4>Mô hình 5 bước:</h4>
+        <ol>
+          <li><strong>Tạo chương trình</strong></li>
+          <li><strong>Chạy thứ</strong></li>
+          <li>? "Sao nó không chạy đúng?"</li>
+          <li>Chỉnh sửa</li>
+          <li>Lặp lại</li>
+        </ol>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>☞ Đây là tư duy lập trình cốt lõi, nên dạy các em:</h4>
+        <ul>
+          <li>Sai là bình thường</li>
+          <li>Lập trình = thử nghiệm + sửa lỗi</li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>Ví dụ tư duy trước khi lập trình:</h4>
+        <ul>
+          <li>Robot đi theo line</li>
+          <li>Gặp vật cản → dừng</li>
+          <li>Gắp vật</li>
+          <li>Lùi lại</li>
+          <li>Phát âm thanh chiến thắng</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Part 10: Giao diện phần mềm -->
+    <div class="article-section">
+      <h2>V. GIAO DIỆN PHẦN MỀM EV3</h2>
+      
+      <div class="highlight-box">
+        <h4>Các khu vực chính:</h4>
+        <ol>
+          <li><strong>Canvas</strong>
+            <ul>
+              <li>Kéo thả block</li>
+              <li>Nơi xây dựng chương trình</li>
+            </ul>
+          </li>
+          <li><strong>Palette</strong>
+            <ul>
+              <li>Các block lệnh:
+                <ul>
+                  <li>Xanh lá: Hành động (motor, âm thanh)</li>
+                  <li>Cam: Điều khiển luông (loop, wait)</li>
+                  <li>Vàng: Sensor</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><strong>Hardware Page</strong>
+            <ul>
+              <li>Kiểm tra motor – sensor</li>
+              <li>Tải chương trình vào Brick</li>
+            </ul>
+          </li>
+          <li><strong>Menu</strong>
+            <ul>
+              <li>Trợ giúp (F1 rất hữu ích)</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Part 11: Kết nối robot -->
+    <div class="article-section">
+      <h2>VI. KẾT NỐI ROBOT VỚI MÁY TÍNH</h2>
+      
+      <div class="highlight-box">
+        <ul>
+          <li>Dùng cấp USB:
+            <ul>
+              <li>Đầu nhỏ → Brick</li>
+              <li>Đầu to → máy tính</li>
+            </ul>
+          </li>
+          <li>Brick phải bật nguồn</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Part 12: Tải chương trình -->
+    <div class="article-section">
+      <h2>VII. TẢI CHƯƠNG TRÌNH VÀO BRICK</h2>
+      
+      <div class="highlight-box">
+        <h4>Các nút quan trọng:</h4>
+        <ul>
+          <li><strong>Download</strong>: tái chương trình</li>
+          <li><strong>Download & Run</strong>: tái + chạy ngay</li>
+          <li><strong>Run Selected</strong>: chạy một phần chương trình (rất hay khi test)</li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>☞ Khi dạy học:</h4>
+        <ul>
+          <li>Cho các em test từng đoạn</li>
+          <li>Không cần chạy cả chương trình ngay</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Part 13: Bổ sung hướng dẫn cơ khí -->
+    <div class="article-section">
+      <h2>VIII. BỔ SUNG HƯỚNG DẪN CƠ KHÍ – THIẾT KẾ ROBOT (PHẦN RẤT QUAN TRỌNG)</h2>
+      
+      <h3>1. Nguyên tắc thiết kế cho học sinh</h3>
+      
+      <div class="highlight-box">
+        <ul>
+          <li>Robot đơn giản trước</li>
+          <li>Ít bánh – ít motor → dễ điều khiển</li>
+          <li>Brick đặt:
+            <ul>
+              <li>Thấp</li>
+              <li>Gần trung tâm</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      
+      <h3>2. Thiết kế bánh xe</h3>
+      
+      <div class="highlight-box">
+        <ul>
+          <li>2 bánh + 1 bánh tự do (caster) là tối ưu</li>
+          <li>Hai motor điều khiển riêng 2 bánh</li>
+        </ul>
+      </div>
+      
+      <h3>3. Gắn sensor</h3>
+      
+      <div class="highlight-box">
+        <ul>
+          <li>Color sensor:
+            <ul>
+              <li>Cách mặt đất ~1 cm</li>
+              <li>Không chạm đất</li>
+            </ul>
+          </li>
+          <li>Ultrasonic:
+            <ul>
+              <li>Không bị chấn phía trước</li>
+              <li>Đặt thẳng</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      
+      <h3>4. Dạy học sinh tư duy:</h3>
+      
+      <div class="highlight-box">
+        <h4>"Cơ khí sai → lập trình giỏi cũng không cứu được"</h4>
+        
+        <h4> Luôn:</h4>
+        <ul>
+          <li>Test cơ khí trước</li>
+          <li>Đầy tay robot xem có kẹt không</li>
+        </ul>
+      </div>
+      
+    </div>
+
+    <!-- Back Button -->
+    <div class="back-button">
+      <a href="mechanical.html">
+        <span>←</span> Quay lại Trang Lập Trình
+      </a>
+    </div>
+  </div>
+  <!-- Footer -->
+  <hr class="divider-blue">
+  <footer class="footer" id="contact">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="img/Logo Cắt nền.png" alt="FTC 31113 Logo">
+        <p>FTC 31113<br>High School for Gifted Students</p>
+      </div>
+      <table class="footer-table">
+        <tr>
+          <th>Contact</th>
+          <th>Resources</th>
+          <th>Resources</th>
+        </tr>
+        <tr>
+          <td>
+            <span class="footer-email">robotics.hsgs@gmail.com</span><br>
+            <a href="https://www.facebook.com/HSGSRoboLads?locale=vi_VN" target="_blank" rel="noopener noreferrer">Facebook</a><br>
+            <a href="https://www.instagram.com/robolads_31113/?igsh=MWFiaTcycXVpcnNkYQ%3D%3D#" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </td>
+          <td>
+            <a href="mechanical.html">Cơ Khí</a><br>
+            <a href="programming.html">Lập Trình</a><br>
+            <a href="electronics.html">Điện Tử</a>
+          </td>
+          <td>
+            <a href="3dprinting.html">In 3D</a><br>
+            <a href="cad.html">CAD</a><br>
+            <a href="business.html">Business</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="footer-bottom">
+      © 2025 FTC 31113. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
