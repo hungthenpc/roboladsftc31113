@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>FTC31113 Robolads</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="article-mechanical.css" />
+  <link rel="icon" type="image/png" href="img/Logo Cắt nền.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <style>
+    /* ===== CSS CHỈNH ẢNH - TỈ LỆ RỘNG HƠN ===== */
+    
+    /* Tất cả ảnh trong bài viết */
+    .article-content img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+    }
+    
+    /* Container cho ảnh so sánh (2 ảnh cạnh nhau) - TỈ LỆ RỘNG HƠN */
+    .image-comparison {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin: 40px 0;
+        justify-content: center;
+    }
+    
+    /* Mỗi item ảnh trong phần so sánh - RỘNG HƠN */
+    .image-item {
+        flex: 1;
+        min-width: 350px;
+        max-width: 550px;
+        text-align: center;
+        padding: 20px;
+        border: 2px solid rgba(204, 153, 0, 0.4);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.04);
+    }
+    
+    /* Ảnh bên trong image-item - TỈ LỆ RỘNG HƠN */
+    .image-item img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        object-position: center;
+        border: 2px solid rgba(204, 153, 0, 0.3);
+        border-radius: 8px;
+    }
+    .article-link {
+    color: #cc9900;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(204, 153, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.article-link:hover {
+    color: #ffcc00;
+    border-bottom: 1px solid #ffcc00;
+}
+    /* Chú thích ảnh */
+    .image-caption {
+        color: #ccf5ff;
+        font-size: 1rem;
+        font-style: italic;
+        margin-top: 15px;
+        padding-top: 12px;
+        border-top: 2px solid rgba(255, 255, 255, 0.15);
+    }
+    
+    /* Container cho ảnh đơn - RỘNG HƠN */
+    .single-image {
+        width: 100%;
+        max-width: 800px;
+        margin: 25px auto;
+        padding: 20px;
+        border: 3px solid rgba(204, 153, 0, 0.4);
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.03);
+        text-align: center;
+    }
+    
+    /* Ảnh bên trong single-image - TỈ LỆ RỘNG HƠN */
+    .single-image img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        object-position: center;
+        border: 2px solid rgba(204, 153, 0, 0.3);
+        border-radius: 10px;
+    }
+    
+    /* Responsive cho mobile */
+    @media (max-width: 768px) {
+        .image-item img {
+            height: 220px;
+        }
+        
+        .single-image img {
+            height: 250px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .image-item {
+            min-width: 100%;
+        }
+        
+        .image-item img {
+            height: 180px;
+        }
+        
+        .single-image img {
+            height: 200px;
+        }
+        
+        .image-caption {
+            font-size: 0.9rem;
+        }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <img src="img/Logo Cắt nền.png" alt="Robotics Team Logo">
+    </a>
+    <nav class="menu">
+      <a href="index.html#about" class="menu-link">About</a>
+      <a href="ftc.html" class="menu-link">FTC Team</a>
+      <a href="resources.html" class="menu-link active">Resources</a>
+      <a href="index.html#events" class="menu-link">Events</a>
+    </nav>
+  </header>
+
+  <!-- Article Header -->
+  <section class="article-header">
+    <h1>DUNG SAI (TOLERANCING)</h1>
+    <div class="article-meta-top">
+      <span>07/01/2025</span>
+      <span>Cơ Khí</span>
+      <span>Độ khó: Nâng cao</span>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <div class="article-content">
+    <!-- Tags -->
+    <div class="article-tags">
+      <span class="article-tag">Dung Sai</span>
+      <span class="article-tag">Gia Công</span>
+      <span class="article-tag">Thiết Kế</span>
+      <span class="article-tag">Lắp Ghép</span>
+    </div>
+
+    <!-- Introduction -->
+    <div class="article-section">
+      <h2>Dung Sai (Tolerancing)</h2>
+      
+      <div class="quote-box">
+        "Việc xác định dung sai hợp lý là yếu tố then chốt để đảm bảo các chi tiết cơ khí có thể lắp ghép chính xác và làm việc đúng chức năng trong thực tế."
+      </div>
+      
+      <p>Xét một ví dụ đơn giản và gần gũi: thiết kế một hộp quà và nắp hộp.</p>
+      <p>Nếu chiều rộng ngoài của hộp được thiết kế là 100 mm, và chiều rộng trong của nắp hộp cũng được thiết kế đúng 100 mm, thì khi gia công thực tế, nắp hộp rất dễ không lắp vừa, hoặc bị kẹt khi lắp ráp.</p>
+    </div>
+
+    <!-- Part 1: Sai số gia công -->
+    <div class="article-section">
+      <h2>1. SAI SỐ GIA CÔNG</h2>
+      
+      <p>Nguyên nhân là do trong quá trình chế tạo luôn tồn tại sai số gia công:</p>
+      
+      <h3>Với máy cắt tia nước (waterjet)</h3>
+      <div class="highlight-box">
+        <h4>Đường cắt thường có độ côn</h4>
+        <p>Đường cắt thường có độ côn, dẫn đến kích thước lỗ hoặc biên dạng thực tế nhỏ hơn kích thước thiết kế.</p>
+      </div>
+      
+      
+      
+      <h3>Với máy cắt laser</h3>
+      <div class="highlight-box">
+        <h4>Máy thường cắt theo đúng đường vẽ</h4>
+        <p>Máy thường cắt theo đúng đường vẽ, khiến kích thước có xu hướng lớn hơn kích thước danh nghĩa.</p>
+      </div>
+      
+      
+      
+      <h3>Các phương pháp gia công CNC truyền thống</h3>
+      <div class="highlight-box">
+        <h4>Phay hoặc tiện</h4>
+        <p>Các phương pháp gia công CNC truyền thống như phay hoặc tiện cho phép kiểm soát dung sai tốt hơn, tùy thuộc vào độ chính xác của máy, dao cắt và chế độ gia công.</p>
+      </div>
+      
+      
+      
+      <p>Do đó, nếu không xét đến dung sai ngay từ khâu thiết kế, các chi tiết tưởng như phù hợp trên bản vẽ có thể không thể lắp ráp hoặc hoạt động không ổn định trong thực tế.</p>
+    </div>
+
+    <!-- Part 2: Lưu ý về dung sai -->
+    <div class="article-section">
+      <h2>2. LƯU Ý VỀ DUNG SAI TRONG GIA CÔNG VÀ LẮP GHÉP</h2>
+      
+      <div class="process-item">
+        <h4>Đối với lỗ dùng cho bu lông hoặc đinh tán</h4>
+        <p>Lỗ thường được khoan sơ bộ rồi khoan mở rộng bằng mũi khoan có kích thước phù hợp để đảm bảo khả năng lắp ráp.</p>
+      </div>
+      <br>
+      <div class="process-item">
+        <h4>Đối với lỗ lắp ổ bi hoặc chốt định vị</h4>
+        <p>Cần sử dụng dao doa (reamer) nhằm đạt được kích thước chính xác và độ nhẵn bề mặt cao.</p>
+      </div>
+      <br>
+      <div class="process-item">
+        <h4>Với các đặc trưng hình học không tiêu chuẩn</h4>
+        <p>Với các đặc trưng hình học không tiêu chuẩn như rãnh (slot) và ngàm (tab), dung sai nên được đưa trực tiếp vào thiết kế.</p>
+        <p>Ví dụ:<br>
+        +Tăng chiều rộng rãnh thêm 0,1 mm<br>
+        +Và/hoặc giảm kích thước ngàm đi 0,1 mm</p>
+      </div>
+      <br>
+      <div class="process-item">
+        <h4>Đo đạc chiều dày vật liệu</h4>
+        <p>Việc đo đạc chính xác chiều dày thực tế của vật liệu trước khi thiết kế là rất quan trọng.</p>
+        <p>Ví dụ: tấm polycarbonate có chiều dày danh nghĩa 3,2 mm thường có chiều dày thực tế khoảng 3,0 mm.</p>
+        <p>Nếu thiết kế một chi tiết dày 3,2 mm lắp vào rãnh rộng 3,2 mm, mối lắp có thể trở nên lỏng, làm giảm độ cứng vững của kết cấu.</p>
+      </div>
+    </div>
+
+    <!-- Part 3: Dao doa -->
+    <div class="article-section">
+      <h2>3. DAO DOA/MŨI DOA (REAMER)</h2>
+      
+      <div class="image-comparison">
+        <div class="image-item">
+          <img src="img/m21.jpg" alt="Dao doa cơ khí">
+          <div class="image-caption">Dao doa</div>
+        </div>
+      </div>
+      
+      <p>Được sử dụng sau nguyên công khoan nhằm:</p>
+      <div class="process-item">
+        <h4>1. Đạt kích thước lỗ chính xác</h4>
+        <p>Đạt kích thước lỗ chính xác theo yêu cầu dung sai.</p>
+      </div>
+      <br>
+      <div class="process-item">
+        <h4>2. Cải thiện chất lượng bề mặt</h4>
+        <p>Cải thiện độ nhẵn và độ tròn của bề mặt lỗ.</p>
+      </div>
+      <br>
+      <p>Đây là dụng cụ không thể thiếu trong các mối lắp yêu cầu độ chính xác cao như lắp ổ bi hoặc chốt.</p>
+    </div>
+
+    <!-- Part 4: Sổ tay dung sai -->
+    <div class="article-section">
+      <h2>4. SỔ TAY DUNG SAI LẮP GHÉP</h2>
+      
+      <div class="highlight-box">
+        <h4>Tài liệu tham khảo kỹ thuật</h4>
+        <p>Sổ tay dung sai lắp ghép là tài liệu tham khảo kỹ thuật, được sử dụng để:</p>
+        <ul>
+          <li>Tra cứu các kiểu lắp (lắp lỏng, lắp trung gian, lắp chặt)</li>
+          <li>Xác định kích thước và dung sai phù hợp với yêu cầu chức năng</li>
+          <li>Hỗ trợ người thiết kế đưa ra quyết định dung sai hợp lý trong thực tế sản xuất</li>
+        </ul>
+        <p>Để tìm hiểu chi tiết hơn bạn có thể tham khảo tại đây: 
+      <a href="https://vuminh.com.vn/uploaded/Tai-lieu/Tai-lieu-tham-khao/1-So-tay-dung-sai-lap-ghep-Ninh-Duc-Ton.pdf?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" 
+         class="article-link">
+        Sổ tay dung sai lắp ghép
+      </a>
+    </p>
+      </div>
+    </div>
+
+    <!-- Part 5: Thuật ngữ cơ bản -->
+    <div class="article-section">
+      <h2>5. CÁC THUẬT NGỮ VÀ KHÁI NIỆM CƠ BẢN VỀ DUNG SAI</h2>
+      
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Thuật ngữ</th>
+            <th>Định nghĩa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Kích thước cơ bản (Basic size)</strong></td>
+            <td>Kích thước lý thuyết được sử dụng làm cơ sở để xác định dung sai.</td>
+          </tr>
+          <tr>
+            <td><strong>Giới hạn kích thước (Limits)</strong></td>
+            <td>Kích thước lớn nhất và nhỏ nhất cho phép của một chi tiết.</td>
+          </tr>
+          <tr>
+            <td><strong>Dung sai (Tolerance)</strong></td>
+            <td>Khoảng chênh lệch cho phép giữa giới hạn trên và giới hạn dưới của kích thước.</td>
+          </tr>
+          <tr>
+            <td><strong>MMC – Maximum Material Condition</strong></td>
+            <td>Trạng thái mà chi tiết chứa lượng vật liệu lớn nhất trong phạm vi dung sai cho phép (ví dụ: trục có đường kính lớn nhất, lỗ có đường kính nhỏ nhất).</td>
+          </tr>
+          <tr>
+            <td><strong>LMC – Minimum Material Condition</strong></td>
+            <td>Trạng thái mà chi tiết chứa lượng vật liệu nhỏ nhất trong phạm vi dung sai cho phép (ví dụ: trục có đường kính nhỏ nhất, lỗ có đường kính lớn nhất).</td>
+          </tr>
+          <tr>
+            <td><strong>Dung sai lắp ghép</strong></td>
+            <td>Sự sai khác kích thước giữa các chi tiết ghép nối tại trạng thái vật liệu thực tế.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Part 6: Quan hệ dung sai và chi phí -->
+    <div class="article-section">
+      <h2>6. QUAN HỆ GIỮA DUNG SAI VÀ CHI PHÍ SẢN XUẤT</h2>
+      
+      <p>Việc lựa chọn dung sai cần được cân nhắc dựa trên yêu cầu chức năng và khả năng sản xuất:</p>
+      
+      <div class="highlight-box">
+        <h4>Dung sai chặt</h4>
+        <p>Dung sai chặt đòi hỏi thiết bị chính xác, quy trình kiểm soát nghiêm ngặt và phương pháp kiểm tra tinh vi, dẫn đến chi phí sản xuất tăng cao.</p>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>Dung sai rộng</h4>
+        <p>Dung sai rộng giúp giảm chi phí gia công, nhưng có thể ảnh hưởng đến độ chính xác và hiệu suất làm việc của sản phẩm.</p>
+      </div>
+      
+      <p>Đồ thị quan hệ giữa chi phí sản xuất và dung sai cho thấy khi dung sai càng chặt, chi phí tăng theo xu hướng phi tuyến.</p>
+      <p>Lưu ý rằng các kích thước mặc định trong mô hình CAD thường có dung sai chặt hơn mức cần thiết. Việc áp dụng các dung sai này mà không có cơ sở kỹ thuật rõ ràng có thể làm tăng chi phí sản xuất một cách không cần thiết.</p>
+      <p>Do đó, một nhà thiết kế giỏi cần biết cân bằng giữa yêu cầu kỹ thuật và chi phí, lựa chọn dung sai vừa đủ để đảm bảo chức năng và tính kinh tế của sản phẩm.</p>
+      
+      <div class="single-image">
+        <img src="img/m22.jpg" alt="Đồ thị quan hệ dung sai và chi phí">
+        <div class="image-caption">Đồ thị quan hệ giữa dung sai và chi phí sản xuất (Cost–Tolerance)</div>
+      </div>
+      
+      <p>Đồ thị phía trên minh họa mối quan hệ điển hình giữa dung sai gia công và chi phí sản xuất.</p>
+      <p><strong>Trục hoành:</strong> Dung sai (mm)<br>
+      <strong>Trục tung:</strong> Chi phí sản xuất (tương đối)</p>
+      <p>Khi dung sai giảm (yêu cầu chính xác cao hơn), chi phí sản xuất tăng nhanh theo xu hướng phi tuyến do:</p>
+      <ul>
+        <li>Yêu cầu máy móc và dụng cụ chính xác hơn</li>
+        <li>Tăng thời gian gia công</li>
+        <li>Tăng chi phí kiểm tra và kiểm soát chất lượng</li>
+      </ul>
+      <p>Ngược lại, khi dung sai rộng hơn, chi phí gia công giảm đáng kể, nhưng có thể ảnh hưởng đến chức năng và độ ổn định của sản phẩm.</p>
+    </div>
+
+    <!-- Back Button -->
+    <div class="back-button">
+      <a href="mechanical.html">
+        <span>←</span> Quay lại Trang Cơ Khí
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <hr class="divider-blue">
+  <footer class="footer" id="contact">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="img/Logo Cắt nền.png" alt="FTC 31113 Logo">
+        <p>FTC 31113<br>High School for Gifted Students</p>
+      </div>
+      <table class="footer-table">
+        <tr>
+          <th>Contact</th>
+          <th>Resources</th>
+          <th>Resources</th>
+        </tr>
+        <tr>
+          <td>
+            <span class="footer-email">robotics.hsgs@gmail.com</span><br>
+            <a href="https://www.facebook.com/HSGSRoboLads?locale=vi_VN" target="_blank" rel="noopener noreferrer">Facebook</a><br>
+            <a href="https://www.instagram.com/robolads_31113/?igsh=MWFiaTcycXVpcnNkYQ%3D%3D#" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </td>
+          <td>
+            <a href="mechanical.html">Cơ Khí</a><br>
+            <a href="programming.html">Lập Trình</a><br>
+            <a href="electronics.html">Điện Tử</a>
+          </td>
+          <td>
+            <a href="3dprinting.html">In 3D</a><br>
+            <a href="cad.html">CAD</a><br>
+            <a href="business.html">Business</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="footer-bottom">
+      © 2025 FTC 31113. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
