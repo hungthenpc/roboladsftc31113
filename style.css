@@ -2949,21 +2949,373 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(135deg, rgba(255, 100, 180, 0.2), rgba(255, 150, 220, 0.1)) !important;
   border-left: 5px solid #ff66aa !important; /* Hồng */
 }
+/* ========== COMMENT SYSTEM THEMES ========== */
 
-/* XÓA MÀU CŨ */
-/* XÓA CÁC DÒNG NÀY:
-.mechanical .department-header {
-  background: linear-gradient(135deg, rgba(255, 100, 100, 0.1), rgba(255, 150, 150, 0.05));
-  border-left: 5px solid #ff6666;
+/* COMMON STYLES FOR ALL THEMES */
+.comment-form {
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 30px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
-.programming .department-header {
-  background: linear-gradient(135deg, rgba(100, 200, 255, 0.1), rgba(150, 220, 255, 0.05));
-  border-left: 5px solid #66ccff;
+.form-group {
+  margin-bottom: 15px;
 }
 
-.business .department-header {
-  background: linear-gradient(135deg, rgba(100, 255, 150, 0.1), rgba(150, 255, 180, 0.05));
-  border-left: 5px solid #66ff99;
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
 }
-*/
+
+.form-group textarea {
+  min-height: 120px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.submit-btn {
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+}
+
+.comments-list {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.comment-item {
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  transition: all 0.3s ease;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.comment-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.comment-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.comment-author {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 2px;
+}
+
+.comment-time {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.comment-content {
+  line-height: 1.6;
+  font-size: 1rem;
+  padding-left: 55px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+.comment-count {
+  font-weight: bold;
+}
+
+/* ========== BUSINESS THEME (PINK) ========== */
+.comment-theme-business .comment-form {
+  background: rgba(255, 150, 200, 0.05);
+  border: 1px solid rgba(255, 150, 200, 0.2);
+}
+
+.comment-theme-business .form-group input,
+.comment-theme-business .form-group textarea {
+  background: rgba(255, 150, 200, 0.1);
+  border: 1px solid rgba(255, 150, 200, 0.3);
+}
+
+.comment-theme-business .form-group input:focus,
+.comment-theme-business .form-group textarea:focus {
+  outline: none;
+  border-color: #ff66aa;
+  box-shadow: 0 0 0 2px rgba(255, 102, 170, 0.2);
+}
+
+.comment-theme-business .submit-btn {
+  background: linear-gradient(135deg, #ff66aa, #ff99cc);
+}
+
+.comment-theme-business .submit-btn:hover {
+  box-shadow: 0 5px 15px rgba(255, 102, 170, 0.3);
+}
+
+.comment-theme-business .comment-item {
+  background: rgba(255, 150, 200, 0.03);
+  border-left: 3px solid rgba(255, 150, 200, 0.3);
+}
+
+.comment-theme-business .comment-item:hover {
+  background: rgba(255, 150, 200, 0.05);
+}
+
+.comment-theme-business .comment-avatar {
+  background: linear-gradient(135deg, #ff66aa, #ff99cc);
+}
+
+.comment-theme-business .comment-author {
+  color: #ff99cc;
+}
+
+.comment-theme-business .comment-time {
+  color: #99e6ff;
+}
+
+.comment-theme-business .comment-content {
+  color: #ccf5ff;
+}
+
+.comment-theme-business .comment-count {
+  color: #ff66aa;
+}
+
+/* ========== MECHANICAL THEME (ORANGE) ========== */
+.comment-theme-mechanical .comment-form {
+  background: rgba(255, 140, 0, 0.05);
+  border: 1px solid rgba(255, 140, 0, 0.2);
+}
+
+.comment-theme-mechanical .form-group input,
+.comment-theme-mechanical .form-group textarea {
+  background: rgba(255, 140, 0, 0.1);
+  border: 1px solid rgba(255, 140, 0, 0.3);
+}
+
+.comment-theme-mechanical .form-group input:focus,
+.comment-theme-mechanical .form-group textarea:focus {
+  outline: none;
+  border-color: #ff8c00;
+  box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.2);
+}
+
+.comment-theme-mechanical .submit-btn {
+  background: linear-gradient(135deg, #ff8c00, #ffb347);
+}
+
+.comment-theme-mechanical .submit-btn:hover {
+  box-shadow: 0 5px 15px rgba(255, 140, 0, 0.3);
+}
+
+.comment-theme-mechanical .comment-item {
+  background: rgba(255, 140, 0, 0.03);
+  border-left: 3px solid rgba(255, 140, 0, 0.3);
+}
+
+.comment-theme-mechanical .comment-item:hover {
+  background: rgba(255, 140, 0, 0.05);
+}
+
+.comment-theme-mechanical .comment-avatar {
+  background: linear-gradient(135deg, #ff8c00, #ffb347);
+}
+
+.comment-theme-mechanical .comment-author {
+  color: #ffb347;
+}
+
+.comment-theme-mechanical .comment-time {
+  color: #ffd699;
+}
+
+.comment-theme-mechanical .comment-content {
+  color: #fff5eb;
+}
+
+.comment-theme-mechanical .comment-count {
+  color: #ff8c00;
+}
+
+/* ========== PROGRAMMING THEME (BLUE) ========== */
+.comment-theme-programming .comment-form {
+  background: rgba(51, 153, 255, 0.05);
+  border: 1px solid rgba(51, 153, 255, 0.2);
+}
+
+.comment-theme-programming .form-group input,
+.comment-theme-programming .form-group textarea {
+  background: rgba(51, 153, 255, 0.1);
+  border: 1px solid rgba(51, 153, 255, 0.3);
+}
+
+.comment-theme-programming .form-group input:focus,
+.comment-theme-programming .form-group textarea:focus {
+  outline: none;
+  border-color: #3399ff;
+  box-shadow: 0 0 0 2px rgba(51, 153, 255, 0.2);
+}
+
+.comment-theme-programming .submit-btn {
+  background: linear-gradient(135deg, #3399ff, #66b3ff);
+}
+
+.comment-theme-programming .submit-btn:hover {
+  box-shadow: 0 5px 15px rgba(51, 153, 255, 0.3);
+}
+
+.comment-theme-programming .comment-item {
+  background: rgba(51, 153, 255, 0.03);
+  border-left: 3px solid rgba(51, 153, 255, 0.3);
+}
+
+.comment-theme-programming .comment-item:hover {
+  background: rgba(51, 153, 255, 0.05);
+}
+
+.comment-theme-programming .comment-avatar {
+  background: linear-gradient(135deg, #3399ff, #66b3ff);
+}
+
+.comment-theme-programming .comment-author {
+  color: #66b3ff;
+}
+
+.comment-theme-programming .comment-time {
+  color: #99ccff;
+}
+
+.comment-theme-programming .comment-content {
+  color: #e6f2ff;
+}
+
+.comment-theme-programming .comment-count {
+  color: #3399ff;
+}
+
+/* ========== ELECTRONICS THEME (GREEN) ========== */
+.comment-theme-electronics .comment-form {
+  background: rgba(76, 175, 80, 0.05);
+  border: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+.comment-theme-electronics .form-group input,
+.comment-theme-electronics .form-group textarea {
+  background: rgba(76, 175, 80, 0.1);
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.comment-theme-electronics .form-group input:focus,
+.comment-theme-electronics .form-group textarea:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.comment-theme-electronics .submit-btn {
+  background: linear-gradient(135deg, #4CAF50, #66BB6A);
+}
+
+.comment-theme-electronics .submit-btn:hover {
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+.comment-theme-electronics .comment-item {
+  background: rgba(76, 175, 80, 0.03);
+  border-left: 3px solid rgba(76, 175, 80, 0.3);
+}
+
+.comment-theme-electronics .comment-item:hover {
+  background: rgba(76, 175, 80, 0.05);
+}
+
+.comment-theme-electronics .comment-avatar {
+  background: linear-gradient(135deg, #4CAF50, #66BB6A);
+}
+
+.comment-theme-electronics .comment-author {
+  color: #66BB6A;
+}
+
+.comment-theme-electronics .comment-time {
+  color: #A5D6A7;
+}
+
+.comment-theme-electronics .comment-content {
+  color: #E8F5E9;
+}
+
+.comment-theme-electronics .comment-count {
+  color: #4CAF50;
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+  .comment-form {
+    padding: 20px;
+  }
+  
+  .comment-content {
+    padding-left: 0;
+  }
+  
+  .submit-btn {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .comment-form {
+    padding: 15px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 10px 12px;
+  }
+  
+  .comment-content {
+    font-size: 0.9rem;
+  }
+}

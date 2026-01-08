@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <title>FTC31113 Robolads - Rãnh và Lẫy: Kỹ Thuật Ghép Chi Tiết Vuông Góc</title>
+  <title>FTC31113 Robolads</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="article-mechanical.css" />
   <link rel="icon" type="image/png" href="img/Logo Cắt nền.png">
@@ -201,6 +201,32 @@
 
     <!-- Part 3: Ứng dụng thực tế -->
    
+
+    <div class="article-section comment-section comment-theme-mechanical">
+  <h2>BÌNH LUẬN</h2>
+  
+  <!-- Comment Form -->
+  <div class="comment-form">
+    <h3>Thêm bình luận</h3>
+    <form id="commentForm" novalidate>
+      <div class="form-group">
+        <input type="text" id="commentName" placeholder="Tên của bạn" required>
+      </div>
+      <div class="form-group">
+        <textarea id="commentText" placeholder="Nội dung bình luận..." rows="4" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Gửi bình luận</button>
+    </form>
+  </div>
+  
+  <!-- Comments List -->
+  <div class="comments-list" id="commentsList">
+    <h3>
+      Bình luận (<span class="comment-count">0</span>)
+    </h3>
+    <!-- Comments will be loaded here -->
+  </div>
+</div>
 
     <!-- Back Button -->
     <div class="back-button">

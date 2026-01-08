@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>FTC31113 Robolads</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="article-programming.css" />
+  <link rel="icon" type="image/png" href="img/Logo Cắt nền.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <style>
+    /* ===== CSS CHỈNH ẢNH - TỈ LỆ RỘNG HƠN ===== */
+    
+    /* Tất cả ảnh trong bài viết */
+    .article-content img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+    }
+    
+    /* Container cho ảnh so sánh (2 ảnh cạnh nhau) - TỈ LỆ RỘNG HƠN */
+    .image-comparison {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin: 40px 0;
+        justify-content: center;
+    }
+    
+    /* Mỗi item ảnh trong phần so sánh - RỘNG HƠN */
+    .image-item {
+        flex: 1;
+        min-width: 350px;
+        max-width: 550px;
+        text-align: center;
+        padding: 20px;
+        border: 2px solid rgba(100, 150, 255, 0.4);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.04);
+    }
+    
+    /* Ảnh bên trong image-item - TỈ LỆ RỘNG HƠN */
+    .image-item img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        object-position: center;
+        border: 2px solid rgba(100, 150, 255, 0.3);
+        border-radius: 8px;
+    }
+    
+    /* Chú thích ảnh */
+    .image-caption {
+        color: #ccf5ff;
+        font-size: 1rem;
+        font-style: italic;
+        margin-top: 15px;
+        padding-top: 12px;
+        border-top: 2px solid rgba(255, 255, 255, 0.15);
+    }
+    
+    /* Container cho ảnh đơn - RỘNG HƠN */
+    .single-image {
+        width: 100%;
+        max-width: 800px;
+        margin: 25px auto;
+        padding: 20px;
+        border: 3px solid rgba(100, 150, 255, 0.4);
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.03);
+        text-align: center;
+    }
+    
+    /* Ảnh bên trong single-image - TỈ LỆ RỘNG HƠN */
+    .single-image img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        object-position: center;
+        border: 2px solid rgba(100, 150, 255, 0.3);
+        border-radius: 10px;
+    }
+    
+    /* Ảnh nhỏ trong bảng */
+    .table-image {
+        width: 100%;
+        max-width: 150px;
+        height: 120px;
+        object-fit: cover;
+        object-position: center;
+        border: 1px solid rgba(100, 150, 255, 0.3);
+        border-radius: 6px;
+        margin: 0 auto;
+    }
+    
+    /* Code blocks */
+    .code-block {
+        background: rgba(30, 30, 45, 0.9);
+        border-left: 4px solid #6699ff;
+        padding: 20px;
+        margin: 25px 0;
+        border-radius: 8px;
+        font-family: 'Courier New', monospace;
+        color: #ccf5ff;
+        overflow-x: auto;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .code-block pre {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    .code-comment {
+        color: #66cc99;
+        font-style: italic;
+    }
+    
+    .code-function {
+        color: #6699ff;
+        font-weight: bold;
+    }
+    
+    .code-value {
+        color: #ffcc66;
+    }
+    
+    .code-string {
+        color: #ff9999;
+    }
+    
+    /* Highlight box */
+    .highlight-box {
+        background: rgba(100, 150, 255, 0.1);
+        border-left: 5px solid #6699ff;
+        padding: 20px;
+        margin: 25px 0;
+        border-radius: 8px;
+    }
+    
+    .highlight-box h4 {
+        color: #6699ff;
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+    
+    /* Video section */
+    .video-section {
+        margin: 40px 0;
+    }
+    
+    .video-section h3 {
+        color: #ff6666;
+        margin-bottom: 25px;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    
+    /* Video container */
+    .video-container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin: 30px 0;
+    }
+    
+    .video-item {
+        background: rgba(30, 30, 45, 0.8);
+        border-radius: 12px;
+        padding: 25px;
+        border: 2px solid rgba(255, 102, 102, 0.3);
+    }
+    
+    .video-item h4 {
+        color: #6699ff;
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 1.3rem;
+        padding-bottom: 10px;
+        border-bottom: 2px solid rgba(255, 102, 102, 0.2);
+    }
+    
+    /* Video wrapper */
+    .video-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #000;
+    }
+    
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    
+    .video-description {
+        color: #ccf5ff;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-top: 15px;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
+    }
+    
+    /* Warning box */
+    .warning-box {
+        background: rgba(255, 100, 100, 0.1);
+        border-left: 5px solid #ff6666;
+        padding: 25px;
+        margin: 30px 0;
+        border-radius: 10px;
+    }
+    
+    .warning-box h4 {
+        color: #ff6666;
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+    }
+    
+    .warning-list {
+        list-style-type: none;
+        padding-left: 0;
+        color: #ffcccc;
+    }
+    
+    .warning-list li {
+        margin-bottom: 12px;
+        padding-left: 25px;
+        position: relative;
+    }
+    
+    .warning-list li:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    
+    /* Responsive cho mobile */
+    @media (max-width: 768px) {
+        .image-item img {
+            height: 200px;
+        }
+        
+        .single-image img {
+            height: 250px;
+        }
+        
+        .table-image {
+            max-width: 120px;
+            height: 100px;
+        }
+        
+        .video-item {
+            padding: 20px;
+        }
+        
+        .video-item h4 {
+            font-size: 1.2rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .image-item {
+            min-width: 100%;
+        }
+        
+        .image-item img {
+            height: 180px;
+        }
+        
+        .single-image img {
+            height: 200px;
+        }
+        
+        .image-caption {
+            font-size: 0.9rem;
+        }
+        
+        .table-image {
+            max-width: 100px;
+            height: 80px;
+        }
+        
+        .video-item {
+            padding: 15px;
+        }
+        
+        .video-item h4 {
+            font-size: 1.1rem;
+        }
+        
+        .video-description {
+            font-size: 0.9rem;
+            padding: 12px;
+        }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <img src="img/Logo Cắt nền.png" alt="Robotics Team Logo">
+    </a>
+    <nav class="menu">
+      <a href="index.html#about" class="menu-link">About</a>
+      <a href="ftc.html" class="menu-link">FTC Team</a>
+      <a href="resources.html" class="menu-link active">Resources</a>
+      <a href="index.html#events" class="menu-link">Events</a>
+    </nav>
+  </header>
+
+  <!-- Article Header -->
+  <section class="article-header">
+    <h1>ARDUINO TUTORIAL #2</h1>
+    <div class="article-meta-top">
+      <span>08/01/2025</span>
+      <span>Lập Trình & Điện Tử</span>
+      <span>Độ khó: Cơ bản</span>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <div class="article-content">
+    <!-- Tags -->
+    <div class="article-tags">
+      <span class="article-tag">Arduino</span>
+      <span class="article-tag">LED</span>
+      <span class="article-tag">Tutorial</span>
+    </div>
+
+    <!-- Introduction -->
+    <div class="article-section">
+      <h2>MỘT SỐ VIDEO HƯỚNG DẪN THÊM VỀ ARDUINO</h2>
+      <p>Dưới đây là các video hướng dẫn về các chủ đề điện tử cơ bản, giúp bạn hiểu rõ hơn về nguyên lý hoạt động của các linh kiện trong mạch Arduino.</p>
+    </div>
+
+    <!-- Video Section -->
+    <div class="video-section">
+      <h3>VIDEO HƯỚNG DẪN</h3>
+      
+      <div class="video-container">
+        <!-- Video 1: Semiconductor -->
+        <div class="video-item">
+          <h4>1. Semiconductor - Chất Bán Dẫn</h4>
+          <div class="video-wrapper">
+            <!-- Thay thế URL YouTube tại đây -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/gUmDVe6C-BU?si=HzcJIuNmRdyIVH71" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-description">
+            Video này giải thích về chất bán dẫn - vật liệu có độ dẫn điện nằm giữa chất dẫn điện và chất cách điện, là thành phần cơ bản của các linh kiện điện tử.
+          </div>
+        </div>
+        
+        <!-- Video 2: Diode & LEDs -->
+        <div class="video-item">
+          <h4>2. Diode & LEDs - Điốt và Đèn LED</h4>
+          <div class="video-wrapper">
+            <!-- Thay thế URL YouTube tại đây -->
+            <iframe src="https://www.youtube.com/embed/Iwv5momDiKQ" 
+                    title="Video về Diode & LEDs" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+          </div>
+          <div class="video-description">
+            Video này hướng dẫn về diode và LED - cách chúng hoạt động, phân biệt cực anode/cathode, và cách sử dụng đúng cách trong mạch điện.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Part 2: Important Notes -->
+    <div class="article-section">
+      <h2>LƯU Ý KHI SỬ DỤNG LED</h2>
+      
+      <div class="warning-box">
+        <h4>QUAN TRỌNG:</h4>
+        <ul class="warning-list">
+          <li>Anode (đầu dài hơn của LED) luôn cắm vào + .</li>
+          <li>Cathode (đầu ngắn hơn của LED) luôn cắm vào - .</li>
+          <li>Lắp đèn LED luôn phải có điện trở đi kèm.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Comment Section -->
+    <div class="article-section comment-section comment-theme-programming">
+      <h2>BÌNH LUẬN</h2>
+      
+      <!-- Comment Form -->
+      <div class="comment-form">
+        <h3>Thêm bình luận</h3>
+        <form id="commentForm" novalidate>
+          <div class="form-group">
+            <input type="text" id="commentName" placeholder="Tên của bạn" required>
+          </div>
+          <div class="form-group">
+            <textarea id="commentText" placeholder="Nội dung bình luận..." rows="4" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Gửi bình luận</button>
+        </form>
+      </div>
+      
+      <!-- Comments List -->
+      <div class="comments-list" id="commentsList">
+        <h3>
+          Bình luận (<span class="comment-count">0</span>)
+        </h3>
+        <!-- Comments will be loaded here -->
+      </div>
+    </div>
+
+    <!-- Back Button -->
+    <div class="back-button">
+      <a href="programming.html">
+        <span>←</span> Quay lại Trang Lập Trình
+      </a>
+    </div>
+  </div>
+  <!-- Footer -->
+  <hr class="divider-blue">
+  <footer class="footer" id="contact">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="img/Logo Cắt nền.png" alt="FTC 31113 Logo">
+        <p>FTC 31113<br>High School for Gifted Students</p>
+      </div>
+      <table class="footer-table">
+        <tr>
+          <th>Contact</th>
+          <th>Resources</th>
+          <th>Resources</th>
+        </tr>
+        <tr>
+          <td>
+            <span class="footer-email">robotics.hsgs@gmail.com</span><br>
+            <a href="https://www.facebook.com/HSGSRoboLads?locale=vi_VN" target="_blank" rel="noopener noreferrer">Facebook</a><br>
+            <a href="https://www.instagram.com/robolads_31113/?igsh=MWFiaTcycXVpcnNkYQ%3D%3D#" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </td>
+          <td>
+            <a href="mechanical.html">Cơ Khí</a><br>
+            <a href="programming.html">Lập Trình</a><br>
+            <a href="electronics.html">Điện Tử</a>
+          </td>
+          <td>
+            <a href="3dprinting.html">In 3D</a><br>
+            <a href="cad.html">CAD</a><br>
+            <a href="business.html">Business</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="footer-bottom">
+      © 2025 FTC 31113. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

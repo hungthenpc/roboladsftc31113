@@ -389,7 +389,7 @@
 }
 
 .note-box:before {
-    content: "📝 Lưu ý:";
+    content: "Lưu ý:";
     color: #66b3ff;
     font-weight: bold;
     display: block;
@@ -405,7 +405,7 @@
 }
 
 .warning-box:before {
-    content: "⚠️ Cảnh báo:";
+    content: "Cảnh báo:";
     color: #ff9966;
     font-weight: bold;
     display: block;

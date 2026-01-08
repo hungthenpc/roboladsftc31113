@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>FTC31113 Robolads</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="article-mechanical.css" />
+  <link rel="icon" type="image/png" href="img/Logo Cắt nền.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <style>
+    /* ===== SO SÁNH CAD ===== */
+    
+    .cad-comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .cad-comparison-table thead {
+      background: linear-gradient(135deg, rgba(255, 140, 0, 0.3), rgba(255, 179, 71, 0.2));
+    }
+    
+    .cad-comparison-table th {
+      padding: 15px;
+      text-align: left;
+      color: #ffb347;
+      font-weight: 600;
+      border-bottom: 2px solid rgba(255, 140, 0, 0.3);
+    }
+    
+    .cad-comparison-table td {
+      padding: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      color: #ccf5ff;
+      vertical-align: top;
+    }
+    
+    .cad-comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .cad-comparison-table tr:hover {
+      background: rgba(255, 140, 0, 0.05);
+    }
+    
+    .platform-name {
+      font-weight: 600;
+      color: #ffb347;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .pros-cons-list {
+      margin: 0;
+      padding-left: 20px;
+      color: #ccf5ff;
+    }
+    
+    .pros-cons-list li {
+      margin-bottom: 5px;
+      line-height: 1.5;
+    }
+    
+    .target-audience {
+      background: rgba(255, 140, 0, 0.1);
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin: 5px 0;
+      border-left: 3px solid #ff8c00;
+    }
+    
+    .cad-link {
+      display: inline-block;
+      padding: 8px 15px;
+      background: linear-gradient(135deg, #ff8c00, #ffb347);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: all 0.3s;
+      margin-top: 10px;
+    }
+    
+    .cad-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 140, 0, 0.3);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .cad-comparison-table {
+        display: block;
+        overflow-x: auto;
+      }
+      
+      .platform-name {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <img src="img/Logo Cắt nền.png" alt="Robotics Team Logo">
+    </a>
+    <nav class="menu">
+      <a href="index.html#about" class="menu-link">About</a>
+      <a href="ftc.html" class="menu-link">FTC Team</a>
+      <a href="resources.html" class="menu-link active">Resources</a>
+      <a href="index.html#events" class="menu-link">Events</a>
+    </nav>
+  </header>
+
+  <!-- Article Header -->
+  <section class="article-header">
+    <h1>CÁC NỀN TẢNG CAD PHỔ BIẾN</h1>
+    <div class="article-meta-top">
+      <span>08/01/2025</span>
+      <span>CAD & Thiết Kế</span>
+      <span>Độ khó: Cơ bản đến Nâng cao</span>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <div class="article-content">
+    <!-- Tags -->
+    <div class="article-tags">
+      <span class="article-tag">CAD</span>
+      <span class="article-tag">Thiết Kế 3D</span>
+      <span class="article-tag">Tinkercad</span>
+      <span class="article-tag">Fusion 360</span>
+      <span class="article-tag">Onshape</span>
+    </div>
+
+    <!-- Introduction -->
+    
+    <!-- Part 1: Comparison Table -->
+    <div class="article-section">
+      <h2>BẢNG SO SÁNH CHI TIẾT</h2>
+      
+      <p>Dưới đây là bảng so sánh chi tiết các nền tảng CAD phổ biến nhất cho robotics, từ dễ đến khó, từ miễn phí đến trả phí:</p>
+      
+      <table class="cad-comparison-table">
+        <thead>
+          <tr>
+            <th>Nền tảng</th>
+            <th>ƯU ĐIỂM</th>
+            <th>NHƯỢC ĐIỂM</th>
+            <th>ĐỐI TƯỢNG</th>
+            <th>LINK</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Tinkercad -->
+          <tr>
+            <td>
+              <div class="platform-name">Tinkercad</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Giao diện kéo-thả, không cần Sketch</li>
+                <li>Online 100% → không cần cài đặt</li>
+                <li>Tạo sản phẩm nhanh → tạo động lực học ban đầu</li>
+                <li>Máy yếu vẫn chạy tốt</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Không tham số hóa → đổi kích thước thủ công</li>
+                <li>Không có Assembly thật</li>
+                <li>Không dùng cho thiết kế kỹ thuật chính xác</li>
+              </ul>
+            </td>
+            <td>
+              <div class="target-audience">Người chưa từng dùng CAD</div>
+              <div class="target-audience">Học sinh tiểu học – THCS</div>
+              <div class="target-audience">Làm mô hình đơn giản</div>
+            </td>
+            <td>
+              <a href="https://www.tinkercad.com/" target="_blank" class="cad-link" rel="noopener noreferrer">
+                Truy cập →
+              </a>
+            </td>
+          </tr>
+          
+          <!-- Onshape -->
+          <tr>
+            <td>
+              <div class="platform-name">Onshape</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>CAD tham số chuẩn → đổi 1 kích thước, toàn bộ cập nhật</li>
+                <li>Online + cloud → không mất file</li>
+                <li>Version history → sửa sai quay lại được</li>
+                <li>Assembly + Mate → mô phỏng chuyển động</li>
+                <li>Nhiều người cùng làm 1 file</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Bắt buộc có Internet khỏe</li>
+                <li>Người mới cần học tư duy Sketch</li>
+              </ul>
+            </td>
+            <td>
+              <div class="target-audience">Học sinh THPT</div>
+              <div class="target-audience">STEM & Robotics</div>
+              <div class="target-audience">Cơ khí học thuật</div>
+            </td>
+            <td>
+              <a href="https://www.onshape.com/" target="_blank" class="cad-link" rel="noopener noreferrer">
+                Truy cập →
+              </a>
+            </td>
+          </tr>
+          
+          <!-- Fusion 360 -->
+          <tr>
+            <td>
+              <div class="platform-name">Fusion 360</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Tất cả trong một: CAD + CAM + Simulation</li>
+                <li>Hỗ trợ CNC, in 3D, phân tích lực</li>
+                <li>Chuẩn dùng ngoài doanh nghiệp nhỏ</li>
+                <li>Mạnh mẽ, tính năng đầy đủ</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Phải cài phần mềm → máy yếu dễ lag</li>
+                <li>Giao diện phức tạp → học lâu</li>
+                <li>Bản free bị giới hạn tính năng</li>
+              </ul>
+            </td>
+            <td>
+              <div class="target-audience">Sinh viên cơ khí</div>
+              <div class="target-audience">Người làm sản phẩm thật</div>
+              <div class="target-audience">Maker, startup</div>
+            </td>
+            <td>
+              <a href="https://www.autodesk.com/products/fusion-360" target="_blank" class="cad-link" rel="noopener noreferrer">
+                Truy cập →
+              </a>
+            </td>
+          </tr>
+          
+          <!-- FreeCAD -->
+          <tr>
+            <td>
+              <div class="platform-name">FreeCAD</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Miễn phí hoàn toàn, mã nguồn mở</li>
+                <li>Thiết kế tham số đầy đủ</li>
+                <li>Không phụ thuộc hãng</li>
+                <li>Không giới hạn tính năng</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Giao diện khó dùng, thiếu trực quan</li>
+                <li>Dễ lỗi khi mô hình phức tạp</li>
+                <li>Ít tài liệu hướng dẫn cho người mới</li>
+              </ul>
+            </td>
+            <td>
+              <div class="target-audience">Người thích open-source</div>
+              <div class="target-audience">Tự học CAD nâng cao</div>
+              <div class="target-audience">Không muốn phụ thuộc bản quyền</div>
+            </td>
+            <td>
+              <a href="https://www.freecad.org/" target="_blank" class="cad-link" rel="noopener noreferrer">
+                Truy cập →
+              </a>
+            </td>
+          </tr>
+          
+          <!-- SolidWorks -->
+          <tr>
+            <td>
+              <div class="platform-name">SolidWorks</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Chuẩn CAD công nghiệp → dùng trong nhà máy thật</li>
+                <li>Assembly rất mạnh → mô hình phức tạp vẫn ổn định</li>
+                <li>Simulation, drawing chuyên nghiệp</li>
+                <li>Độ chính xác cực cao</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Rất đắt tiền</li>
+                <li>Phải cài → yêu cầu máy mạnh</li>
+                <li>Không phù hợp người mới</li>
+              </ul>
+            </td>
+            <td>
+              <div class="target-audience">Kỹ sư chuyên nghiệp</div>
+              <div class="target-audience">Doanh nghiệp sản xuất</div>
+              <div class="target-audience">Đại học kỹ thuật</div>
+            </td>
+            <td>
+              <a href="https://www.solidworks.com/" target="_blank" class="cad-link" rel="noopener noreferrer">
+                Truy cập →
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+   
+    <!-- Comment Section -->
+    <div class="article-section comment-section comment-theme-mechanical">
+      <h2>BÌNH LUẬN</h2>
+      
+      <div class="comment-form">
+        <h3>Thêm bình luận</h3>
+        <form id="commentForm" novalidate>
+          <div class="form-group">
+            <input type="text" id="commentName" placeholder="Tên của bạn" required>
+          </div>
+          <div class="form-group">
+            <textarea id="commentText" placeholder="Nội dung bình luận..." rows="4" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Gửi bình luận</button>
+        </form>
+      </div>
+      
+      <div class="comments-list" id="commentsList">
+        <h3>
+          Bình luận (<span class="comment-count">0</span>)
+        </h3>
+      </div>
+    </div>
+
+    <!-- Back Button -->
+    <div class="back-button">
+      <a href="mechanical.html">
+        <span>←</span> Quay lại Trang Cơ Khí
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <hr class="divider-blue">
+  <footer class="footer" id="contact">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="img/Logo Cắt nền.png" alt="FTC 31113 Logo">
+        <p>FTC 31113<br>High School for Gifted Students</p>
+      </div>
+      <table class="footer-table">
+        <tr>
+          <th>Contact</th>
+          <th>Resources</th>
+          <th>Resources</th>
+        </tr>
+        <tr>
+          <td>
+            <span class="footer-email">robotics.hsgs@gmail.com</span><br>
+            <a href="https://www.facebook.com/HSGSRoboLads?locale=vi_VN" target="_blank" rel="noopener noreferrer">Facebook</a><br>
+            <a href="https://www.instagram.com/robolads_31113/?igsh=MWFiaTcycXVpcnNkYQ%3D%3D#" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </td>
+          <td>
+            <a href="mechanical.html">Cơ Khí</a><br>
+            <a href="programming.html">Lập Trình</a><br>
+            <a href="electronics.html">Điện Tử</a>
+          </td>
+          <td>
+            <a href="3dprinting.html">In 3D</a><br>
+            <a href="cad.html">CAD</a><br>
+            <a href="business.html">Business</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="footer-bottom">
+      © 2025 FTC 31113. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

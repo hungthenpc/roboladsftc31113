@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin - Quản lý Comments FTC</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+      color: #333;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      overflow: hidden;
+    }
+    
+    header {
+      background: linear-gradient(135deg, #4CAF50, #2196F3);
+      color: white;
+      padding: 25px;
+      text-align: center;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    
+    .subtitle {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+    
+    .controls {
+      padding: 20px;
+      background: #f8f9fa;
+      border-bottom: 1px solid #dee2e6;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      align-items: center;
+    }
+    
+    .page-filter {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    
+    select, input {
+      padding: 10px 15px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+    
+    select:focus, input:focus {
+      outline: none;
+      border-color: #4CAF50;
+    }
+    
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .btn-primary {
+      background: #4CAF50;
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background: #45a049;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+    }
+    
+    .btn-danger {
+      background: #ff4444;
+      color: white;
+    }
+    
+    .btn-danger:hover {
+      background: #cc0000;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 68, 68, 0.3);
+    }
+    
+    .stats {
+      display: flex;
+      gap: 20px;
+      margin-left: auto;
+    }
+    
+    .stat-box {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      min-width: 120px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    
+    .stat-number {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #4CAF50;
+    }
+    
+    .stat-label {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 5px;
+    }
+    
+    .comments-container {
+      padding: 20px;
+      max-height: 600px;
+      overflow-y: auto;
+    }
+    
+    .page-section {
+      margin-bottom: 30px;
+      background: #f8f9fa;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    
+    .page-header {
+      background: #e9ecef;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #dee2e6;
+    }
+    
+    .page-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #495057;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .page-count {
+      background: #4CAF50;
+      color: white;
+      padding: 3px 8px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+    }
+    
+    .comments-list {
+      padding: 15px;
+    }
+    
+    .comment-item {
+      background: white;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border-left: 4px solid #4CAF50;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+    
+    .comment-item:hover {
+      transform: translateX(5px);
+    }
+    
+    .comment-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .comment-author {
+      font-weight: bold;
+      color: #333;
+      font-size: 1.1rem;
+    }
+    
+    .comment-time {
+      color: #666;
+      font-size: 0.85rem;
+    }
+    
+    .comment-content {
+      color: #555;
+      line-height: 1.5;
+      margin-bottom: 10px;
+      white-space: pre-wrap;
+    }
+    
+    .comment-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: #888;
+    }
+    
+    .comment-actions {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .btn-small {
+      padding: 5px 10px;
+      font-size: 0.85rem;
+      border-radius: 5px;
+    }
+    
+    .btn-delete {
+      background: #ff4444;
+      color: white;
+    }
+    
+    .btn-view {
+      background: #2196F3;
+      color: white;
+    }
+    
+    .empty-state {
+      text-align: center;
+      padding: 40px;
+      color: #666;
+    }
+    
+    .empty-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      opacity: 0.5;
+    }
+    
+    .theme-badge {
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    
+    .theme-business { background: linear-gradient(135deg, #ff66aa, #ff99cc); color: white; }
+    .theme-mechanical { background: linear-gradient(135deg, #ff8c00, #ffb347); color: white; }
+    .theme-programming { background: linear-gradient(135deg, #3399ff, #66b3ff); color: white; }
+    .theme-electronics { background: linear-gradient(135deg, #4CAF50, #66BB6A); color: white; }
+    
+    @media (max-width: 768px) {
+      .controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .page-filter {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .stats {
+        margin-left: 0;
+        justify-content: center;
+      }
+      
+      .stat-box {
+        flex: 1;
+        min-width: auto;
+      }
+    }
+    
+    .toast {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 15px 25px;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      animation: slideIn 0.3s ease;
+      z-index: 1000;
+    }
+    
+    .toast-success {
+      background: linear-gradient(135deg, #4CAF50, #45a049);
+    }
+    
+    .toast-error {
+      background: linear-gradient(135deg, #ff4444, #cc0000);
+    }
+    
+    @keyframes slideIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🏆 Admin FTC Comments</h1>
+      <div class="subtitle">Quản lý bình luận trên tất cả bài viết</div>
+    </header>
+    
+    <div class="controls">
+      <div class="page-filter">
+        <select id="pageFilter" onchange="loadComments()">
+          <option value="all">Tất cả bài viết</option>
+          <option value="b1">Business - b1.html</option>
+          <option value="b">Business (tất cả)</option>
+          <option value="m1">Mechanical - m1.html</option>
+          <option value="m2">Mechanical - m2.html</option>
+          <option value="m">Mechanical (tất cả)</option>
+          <option value="p1">Programming - p1.html</option>
+          <option value="p">Programming (tất cả)</option>
+        </select>
+        
+        <input type="text" id="searchInput" placeholder="Tìm theo tên hoặc nội dung..." onkeyup="filterComments()">
+      </div>
+      
+      <button class="btn btn-primary" onclick="loadComments()">
+        🔄 Tải lại
+      </button>
+      
+      <button class="btn btn-danger" onclick="deleteAll()">
+        🗑️ XÓA TẤT CẢ
+      </button>
+      
+      <div class="stats">
+        <div class="stat-box">
+          <div class="stat-number" id="totalComments">0</div>
+          <div class="stat-label">Tổng bình luận</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number" id="totalPages">0</div>
+          <div class="stat-label">Số trang có cmt</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="comments-container" id="commentsContainer">
+      <!-- Comments sẽ hiển thị ở đây -->
+      <div class="empty-state">
+        <div class="empty-icon">💬</div>
+        <h3>Chưa có bình luận nào</h3>
+        <p>Nhấn nút "Tải lại" để xem các bình luận</p>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+  let allComments = {};
+  
+  function loadComments() {
+    try {
+      // Lấy từ localStorage của website FTC
+      const savedComments = localStorage.getItem('ftc_comments');
+      allComments = savedComments ? JSON.parse(savedComments) : {};
+      
+      const pageFilter = document.getElementById('pageFilter').value;
+      const searchText = document.getElementById('searchInput').value.toLowerCase();
+      
+      let totalComments = 0;
+      let totalPages = Object.keys(allComments).length;
+      
+      let html = '';
+      
+      Object.keys(allComments).forEach(pageId => {
+        let pageComments = allComments[pageId];
+        
+        // Lọc theo trang
+        if (pageFilter !== 'all' && pageFilter !== 'allPages') {
+          if (pageFilter.length === 1) {
+            // Lọc theo nhóm (b, m, p)
+            if (!pageId.startsWith(pageFilter)) return;
+          } else {
+            // Lọc theo trang cụ thể
+            if (pageId !== pageFilter) return;
+          }
+        }
+        
+        // Lọc theo search text
+        if (searchText) {
+          pageComments = pageComments.filter(comment => 
+            comment.name.toLowerCase().includes(searchText) || 
+            comment.text.toLowerCase().includes(searchText)
+          );
+        }
+        
+        if (pageComments.length === 0) return;
+        
+        totalComments += pageComments.length;
+        
+        // Xác định theme
+        let themeClass = 'theme-business';
+        if (pageId.startsWith('m')) themeClass = 'theme-mechanical';
+        else if (pageId.startsWith('p')) themeClass = 'theme-programming';
+        else if (pageId.startsWith('e')) themeClass = 'theme-electronics';
+        
+        html += `
+          <div class="page-section">
+            <div class="page-header">
+              <div class="page-title">
+                📄 Trang: ${getPageName(pageId)}
+                <span class="theme-badge ${themeClass}">${getPageType(pageId)}</span>
+              </div>
+              <div>
+                <span class="page-count">${pageComments.length} bình luận</span>
+                <button class="btn btn-danger btn-small" onclick="deletePageComments('${pageId}')">
+                  Xóa trang này
+                </button>
+              </div>
+            </div>
+            <div class="comments-list">
+        `;
+        
+        // Sắp xếp theo thời gian mới nhất trước
+        pageComments.sort((a, b) => b.timestamp - a.timestamp);
+        
+        pageComments.forEach(comment => {
+          const timeAgo = getTimeAgo(comment.timestamp);
+          const dateStr = new Date(comment.timestamp).toLocaleString('vi-VN');
+          
+          html += `
+            <div class="comment-item">
+              <div class="comment-header">
+                <div class="comment-author">👤 ${comment.name}</div>
+                <div class="comment-time">${dateStr} (${timeAgo})</div>
+              </div>
+              <div class="comment-content">${escapeHtml(comment.text)}</div>
+              <div class="comment-meta">
+                <div>ID: ${comment.id.substring(0, 8)}...</div>
+                <div class="comment-actions">
+                  <button class="btn btn-small btn-view" onclick="viewOnPage('${pageId}')">
+                    Xem bài
+                  </button>
+                  <button class="btn btn-small btn-delete" onclick="deleteComment('${pageId}', '${comment.id}')">
+                    Xóa
+                  </button>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+        
+        html += `</div></div>`;
+      });
+      
+      // Cập nhật thống kê
+      document.getElementById('totalComments').textContent = totalComments;
+      document.getElementById('totalPages').textContent = totalPages;
+      
+      // Hiển thị kết quả
+      const container = document.getElementById('commentsContainer');
+      if (totalComments === 0) {
+        container.innerHTML = `
+          <div class="empty-state">
+            <div class="empty-icon">🔍</div>
+            <h3>Không tìm thấy bình luận</h3>
+            <p>Thử tìm kiếm với từ khóa khác hoặc chọn trang khác</p>
+          </div>
+        `;
+      } else {
+        container.innerHTML = html;
+      }
+      
+      showToast(`Đã tải ${totalComments} bình luận từ ${totalPages} trang`, 'success');
+      
+    } catch (error) {
+      console.error('Lỗi khi tải comments:', error);
+      showToast('❌ Lỗi khi tải comments!', 'error');
+    }
+  }
+  
+  function filterComments() {
+    loadComments();
+  }
+  
+  function getPageName(pageId) {
+    const pages = {
+      'index': 'Trang chủ',
+      'b1': 'Tạo dựng kênh MXH',
+      'm1': 'In 3D vs CNC',
+      'm2': 'Bài cơ khí 2',
+      'p1': 'Bài lập trình 1'
+    };
+    return pages[pageId] || `Trang ${pageId}`;
+  }
+  
+  function getPageType(pageId) {
+    if (pageId.startsWith('b')) return 'BUSINESS';
+    if (pageId.startsWith('m')) return 'MECHANICAL';
+    if (pageId.startsWith('p')) return 'PROGRAMMING';
+    if (pageId.startsWith('e')) return 'ELECTRONICS';
+    return 'GENERAL';
+  }
+  
+  function getTimeAgo(timestamp) {
+    const now = Date.now();
+    const diff = now - timestamp;
+    
+    const minutes = Math.floor(diff / (1000 * 60));
+    if (minutes < 1) return 'Vừa xong';
+    if (minutes < 60) return `${minutes} phút trước`;
+    
+    const hours = Math.floor(minutes / 60);
+    if (hours < 24) return `${hours} giờ trước`;
+    
+    const days = Math.floor(hours / 24);
+    if (days < 7) return `${days} ngày trước`;
+    
+    const weeks = Math.floor(days / 7);
+    if (weeks < 4) return `${weeks} tuần trước`;
+    
+    const months = Math.floor(days / 30);
+    if (months < 12) return `${months} tháng trước`;
+    
+    return `${Math.floor(days / 365)} năm trước`;
+  }
+  
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML.replace(/\n/g, '<br>');
+  }
+  
+  function deleteComment(pageId, commentId) {
+    if (!confirm(`Xóa bình luận này?\n\nTrang: ${pageId}`)) return;
+    
+    try {
+      if (allComments[pageId]) {
+        allComments[pageId] = allComments[pageId].filter(c => c.id !== commentId);
+        
+        // Xóa trang nếu không còn comment
+        if (allComments[pageId].length === 0) {
+          delete allComments[pageId];
+        }
+        
+        saveComments();
+        loadComments();
+        showToast('✅ Đã xóa bình luận!', 'success');
+      }
+    } catch (error) {
+      console.error('Lỗi khi xóa comment:', error);
+      showToast('❌ Lỗi khi xóa comment!', 'error');
+    }
+  }
+  
+  function deletePageComments(pageId) {
+    if (!confirm(`Xóa TẤT CẢ bình luận trên trang ${pageId}?\n\nCảnh báo: Hành động này không thể hoàn tác!`)) return;
+    
+    try {
+      if (allComments[pageId]) {
+        delete allComments[pageId];
+        saveComments();
+        loadComments();
+        showToast(`✅ Đã xóa tất cả bình luận trang ${pageId}!`, 'success');
+      }
+    } catch (error) {
+      console.error('Lỗi khi xóa trang:', error);
+      showToast('❌ Lỗi khi xóa trang!', 'error');
+    }
+  }
+  
+  function deleteAll() {
+    if (!confirm('XÓA TẤT CẢ BÌNH LUẬN TRÊN TOÀN BỘ WEBSITE?\n\n⚠️ CẢNH BÁO: Hành động này sẽ xóa vĩnh viễn tất cả bình luận và không thể hoàn tác!')) return;
+    
+    try {
+      localStorage.removeItem('ftc_comments');
+      allComments = {};
+      loadComments();
+      showToast('🗑️ Đã xóa tất cả bình luận!', 'success');
+    } catch (error) {
+      console.error('Lỗi khi xóa tất cả:', error);
+      showToast('❌ Lỗi khi xóa tất cả comments!', 'error');
+    }
+  }
+  
+  function viewOnPage(pageId) {
+    let pageFile = pageId + '.html';
+    if (pageId === 'index') pageFile = 'index.html';
+    
+    if (confirm(`Mở trang ${pageFile} trong tab mới?`)) {
+      window.open(pageFile, '_blank');
+    }
+  }
+  
+  function saveComments() {
+    localStorage.setItem('ftc_comments', JSON.stringify(allComments));
+  }
+  
+  function showToast(message, type = 'success') {
+    // Xóa toast cũ
+    const oldToast = document.querySelector('.toast');
+    if (oldToast) oldToast.remove();
+    
+    // Tạo toast mới
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    
+    // Tự động xóa sau 3 giây
+    setTimeout(() => {
+      toast.style.animation = 'slideIn 0.3s ease reverse';
+      setTimeout(() => {
+        if (toast.parentNode) {
+          toast.parentNode.removeChild(toast);
+        }
+      }, 300);
+    }, 3000);
+  }
+  
+  // Tự động tải khi mở trang
+  window.onload = loadComments;
+  </script>
+</body>
+</html>

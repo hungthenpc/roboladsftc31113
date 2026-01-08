@@ -1,4 +1,4 @@
-// SCRIPT.JS - CẬP NHẬT LẠI
+// SCRIPT.JS - HỆ THỐNG COMMENT ĐA TRANG
 
 document.addEventListener('DOMContentLoaded', function() {
   // 1. Ẩn splash screen
@@ -20,25 +20,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const heroTitle = document.querySelector('.hero-content h1');
   const heroSubtitle = document.querySelector('.hero-content p');
   
-  function playSoundForHalfSecond() {
-    // Phát âm thanh
-    glitchSound.currentTime = 0;
-    glitchSound.play().catch(e => {
-      // Bỏ qua lỗi autoplay
-    });
-    
-    // Dừng sau 0.5 giây
-    setTimeout(() => {
-      glitchSound.pause();
-      glitchSound.currentTime = 0; // Reset về đầu
-    }, 300);
-  }
-
   function triggerGlitch(element) {
     // Phát âm thanh
     glitchSound.currentTime = 0;
     glitchSound.play().catch(e => {
-      // Bỏ qua lỗi, user sẽ tự click
+      // Bỏ qua lỗi autoplay
     });
     
     // Hiệu ứng glitch
@@ -60,18 +46,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // 4. KÍCH HOẠT KHI USER CLICK (vẫn cần)
+  // 4. KÍCH HOẠT KHI USER CLICK
   document.addEventListener('click', function() {
-    // Chỉ cần click 1 lần là unlock audio
     console.log("✅ Âm thanh đã sẵn sàng");
   });
 
   // ========== XỬ LÝ ACTIVE MENU ==========
   
-  // Lấy trang hiện tại
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   
-  // Chỉ xử lý active menu nếu là trang chủ
   if (currentPage === 'index.html' || currentPage === '') {
     // Xử lý scroll cho trang chủ
     const sections = {
@@ -91,14 +74,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const sectionTop = rect.top;
         const sectionHeight = rect.height;
         
-        // Nếu section đang ở trong viewport
         if (sectionTop <= window.innerHeight * 0.3 && 
             sectionTop + sectionHeight >= window.innerHeight * 0.3) {
           currentActive = sectionId;
         }
       });
       
-      // Cập nhật active class
       menuLinks.forEach(link => {
         const section = link.getAttribute('data-section');
         link.classList.remove('active');
@@ -109,19 +90,15 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
     
-    // Gọi khi scroll
     window.addEventListener('scroll', updateActiveMenuOnScroll);
-    // Gọi khi load trang
     setTimeout(updateActiveMenuOnScroll, 100);
     
   } else {
-    // Các trang khác - KHÔNG xử lý scroll, chỉ set active dựa trên trang hiện tại
+    // Các trang khác
     const menuLinks = document.querySelectorAll('.menu-link');
     
-    // Xóa tất cả active class trước
     menuLinks.forEach(link => link.classList.remove('active'));
     
-    // Thêm active class dựa trên trang hiện tại
     if (currentPage === 'ftc.html') {
       const ftcLink = document.querySelector('.menu-link[href="ftc.html"]');
       if (ftcLink) ftcLink.classList.add('active');
@@ -129,8 +106,23 @@ document.addEventListener('DOMContentLoaded', function() {
     } else if (currentPage === 'resources.html' || 
                currentPage === 'mechanical.html' || 
                currentPage === 'programming.html' || 
-               currentPage === 'article-example.html') {
-      // Các trang resources
+               currentPage === 'business.html' || 
+               currentPage === 'article-example.html' ||
+               currentPage === 'm1.html' ||
+               currentPage === 'b1.html' ||
+               currentPage === 'b2.html' ||
+               currentPage === 'b3.html' ||
+               currentPage === 'b4.html' ||
+               currentPage === 'm2.html' ||
+               currentPage === 'm3.html' ||
+               currentPage === 'm4.html' ||
+               currentPage === 'm5.html' ||
+               currentPage === 'm6.html' ||
+               currentPage === 'm7.html' ||
+               currentPage === 'p2.html' ||
+               currentPage === 'p3.html' ||
+               currentPage === 'p4.html' ||
+               currentPage === 'p1.html') {
       const resourcesLink = document.querySelector('.menu-link[href="resources.html"]');
       if (resourcesLink) resourcesLink.classList.add('active');
     }
@@ -148,32 +140,24 @@ document.addEventListener('DOMContentLoaded', function() {
     let isAnimating = false;
     
     function showSlide(index) {
-      // Nếu đang trong animation, không làm gì
       if (isAnimating) return;
       isAnimating = true;
       
       const direction = index > currentSlide ? 'next' : 'prev';
       const oldSlide = currentSlide;
       
-      // Cập nhật current slide
       currentSlide = (index + slides.length) % slides.length;
       
-      // Xóa tất cả class trước
       slides.forEach(slide => {
         slide.classList.remove('active', 'prev', 'next');
       });
       
-      // Đặt slide cũ ở vị trí đi ra
       slides[oldSlide].classList.add(direction === 'next' ? 'prev' : 'next');
-      
-      // Đặt slide mới ở vị trí đi vào
       slides[currentSlide].classList.add('active', direction === 'next' ? 'next' : 'prev');
       
-      // Update indicators
       indicators.forEach(indicator => indicator.classList.remove('active'));
       indicators[currentSlide].classList.add('active');
       
-      // Reset animation state sau khi transition kết thúc
       setTimeout(() => {
         slides[oldSlide].classList.remove('prev', 'next');
         slides[currentSlide].classList.remove('prev', 'next');
@@ -189,14 +173,8 @@ document.addEventListener('DOMContentLoaded', function() {
       showSlide(currentSlide - 1);
     }
     
-    // Event listeners
-    if (prevBtn) {
-      prevBtn.addEventListener('click', prevSlide);
-    }
-    
-    if (nextBtn) {
-      nextBtn.addEventListener('click', nextSlide);
-    }
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
     
     if (indicators.length > 0) {
       indicators.forEach((indicator, index) => {
@@ -208,13 +186,11 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
     
-    // Auto slide mỗi 5 giây
     let slideInterval;
     if (slides.length > 1) {
       slideInterval = setInterval(nextSlide, 5000);
     }
     
-    // Dừng khi hover
     const container = document.querySelector('.slides-container');
     if (container) {
       container.addEventListener('mouseenter', () => {
@@ -228,13 +204,12 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
     
-    // Keyboard navigation
     document.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowLeft') prevSlide();
       if (e.key === 'ArrowRight') nextSlide();
     });
     
-    // SWIPE SUPPORT CHO MOBILE
+    // SWIPE SUPPORT
     function initSwipe() {
       const container = document.querySelector('.slides-container');
       if (!container) return;
@@ -243,7 +218,6 @@ document.addEventListener('DOMContentLoaded', function() {
       let endX = 0;
       const minSwipeDistance = 50;
       
-      // Touch events
       container.addEventListener('touchstart', (e) => {
         startX = e.touches[0].clientX;
       });
@@ -254,9 +228,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (Math.abs(distance) > minSwipeDistance) {
           if (distance > 0) {
-            nextSlide(); // Swipe trái -> next
+            nextSlide();
           } else {
-            prevSlide(); // Swipe phải -> prev
+            prevSlide();
           }
         }
       });
@@ -271,10 +245,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const container = document.getElementById('snow-container');
     if (!container) return;
     
-    // Số lượng bông tuyết
     const snowflakeCount = 80;
     
-    // Tạo bông tuyết
     for (let i = 0; i < snowflakeCount; i++) {
       createSnowflake(container);
     }
@@ -283,24 +255,17 @@ document.addEventListener('DOMContentLoaded', function() {
       const snowflake = document.createElement('div');
       snowflake.className = 'snowflake';
       
-      // Kích thước ngẫu nhiên
-      const size = Math.random() * 5 + 2; // 2px - 7px
+      const size = Math.random() * 5 + 2;
       snowflake.style.width = `${size}px`;
       snowflake.style.height = `${size}px`;
-      
-      // Vị trí bắt đầu ngẫu nhiên
       snowflake.style.left = `${Math.random() * 100}vw`;
       snowflake.style.top = `-10px`;
       
-      // Tốc độ rơi
-      const fallSpeed = Math.random() * 3 + 1; // 1 - 4 giây
-      const swaySpeed = Math.random() * 5 + 2; // 2 - 7 giây
-      const swayDistance = Math.random() * 50 + 20; // 20px - 70px
+      const fallSpeed = Math.random() * 3 + 1;
+      const swayDistance = Math.random() * 50 + 20;
       
-      // Thêm vào container
       parent.appendChild(snowflake);
       
-      // Animation rơi
       const animation = snowflake.animate([
         { 
           transform: 'translate(0, 0) rotate(0deg)',
@@ -315,7 +280,6 @@ document.addEventListener('DOMContentLoaded', function() {
         easing: 'linear'
       });
       
-      // Khi animation kết thúc, reset và chạy lại
       animation.onfinish = () => {
         snowflake.style.left = `${Math.random() * 100}vw`;
         snowflake.style.top = `-10px`;
@@ -324,10 +288,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   
-  // Gọi hàm khi trang load xong
   setTimeout(createSnowEffect, 1000);
   
-  // Tắt/bật tuyết khi cần
   window.toggleSnow = function() {
     const container = document.getElementById('snow-container');
     if (container) {
@@ -344,7 +306,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Add animation classes
           const stats = document.querySelectorAll('.stat-item');
           const cards = document.querySelectorAll('.department-card');
           
@@ -376,14 +337,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const memberCards = document.querySelectorAll('.member-card');
     
     memberCards.forEach(card => {
-      // Add click to show details on mobile
       card.addEventListener('click', function(e) {
         if (window.innerWidth <= 768) {
           const hoverCard = this.querySelector('.member-hover-card');
           if (hoverCard) {
             const isVisible = hoverCard.style.opacity === '1';
             
-            // Close all other hover cards
             document.querySelectorAll('.member-hover-card').forEach(hc => {
               hc.style.opacity = '0';
               hc.style.visibility = 'hidden';
@@ -398,7 +357,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
       
-      // Handle hover delay for better UX
       let hoverTimeout;
       card.addEventListener('mouseenter', function() {
         if (window.innerWidth > 768) {
@@ -424,7 +382,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
     
-    // Close hover cards when clicking outside
     document.addEventListener('click', function(e) {
       if (!e.target.closest('.member-card') && window.innerWidth <= 768) {
         document.querySelectorAll('.member-hover-card').forEach(hc => {
@@ -436,56 +393,465 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   initTeamMembers();
-});
-// XỬ LÝ ACTIVE MENU - CẬP NHẬT LẠI
-document.addEventListener('DOMContentLoaded', function() {
-  // ... (giữ các phần khác của script.js) ...
   
-  // ========== XỬ LÝ ACTIVE MENU ==========
+  // ========== KHỞI TẠO HỆ THỐNG COMMENT ==========
   
-  // Lấy trang hiện tại
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  
-  // Lấy tất cả menu links
-  const menuLinks = document.querySelectorAll('.menu-link');
-  
-  // Xóa tất cả active class trước
-  menuLinks.forEach(link => link.classList.remove('active'));
-  
-  // Thêm active class dựa trên trang hiện tại
-  if (currentPage === 'index.html' || currentPage === '') {
-    // Trang chủ - sẽ xử lý bằng scroll (giữ code cũ)
-    // ... (giữ phần xử lý scroll) ...
-    
-  } else if (currentPage === 'ftc.html') {
-    const ftcLink = document.querySelector('.menu-link[href="ftc.html"]');
-    if (ftcLink) ftcLink.classList.add('active');
-    
-  } else if (currentPage === 'resources.html' || 
-             currentPage === 'mechanical.html' || 
-             currentPage === 'programming.html' || 
-             currentPage === 'business.html' || 
-             currentPage === 'article-example.html' ||
-             currentPage === 'm1.html'||
-             currentPage === 'b1.html'
-             ||
-             currentPage === 'm2.html'
-             ||
-             currentPage === 'm3.html'
-             ||
-             currentPage === 'm4.html'
-             ||
-             currentPage === 'm5.html'
-             ||
-             currentPage === 'm6.html'
-             ||
-             currentPage === 'p1.html'
-            ) { // THÊM m1.html vào đây
-    // Các trang resources
-    const resourcesLink = document.querySelector('.menu-link[href="resources.html"]');
-    if (resourcesLink) resourcesLink.classList.add('active');
-  }
-  
-  // ... (giữ các phần còn lại của script.js) ...
+  initCommentSystem();
 });
 
+// ========== HỆ THỐNG COMMENT ĐA TRANG ==========
+
+function initCommentSystem() {
+  const commentForm = document.getElementById('commentForm');
+  const commentsList = document.getElementById('commentsList');
+  
+  if (!commentForm || !commentsList) return;
+  
+  // Lấy ID trang hiện tại
+  function getPageId() {
+    const path = window.location.pathname;
+    const pageName = path.split('/').pop().replace('.html', '') || 'index';
+    return pageName; // Trả về tên trang: b1, m1, p1, etc.
+  }
+  
+  const pageId = getPageId();
+  console.log('📝 Comment System - Trang:', pageId);
+  
+  // Hàm tính thời gian
+  function getTimeAgo(timestamp) {
+    const now = Date.now();
+    const diff = now - timestamp;
+    
+    const minutes = Math.floor(diff / (1000 * 60));
+    if (minutes < 1) return 'Vừa xong';
+    if (minutes < 60) return `${minutes} phút trước`;
+    
+    const hours = Math.floor(minutes / 60);
+    if (hours < 24) return `${hours} giờ trước`;
+    
+    const days = Math.floor(hours / 24);
+    if (days < 7) return `${days} ngày trước`;
+    
+    const weeks = Math.floor(days / 7);
+    if (weeks < 4) return `${weeks} tuần trước`;
+    
+    const months = Math.floor(days / 30);
+    if (months < 12) return `${months} tháng trước`;
+    
+    return `${Math.floor(days / 365)} năm trước`;
+  }
+  
+  // Tạo avatar
+  function createAvatar(name) {
+    if (!name) return '??';
+    const words = name.split(' ');
+    if (words.length >= 2) {
+      return (words[0][0] + words[1][0]).toUpperCase();
+    }
+    return name.substring(0, 2).toUpperCase();
+  }
+  
+  // Màu avatar theo loại bài
+  function getAvatarColor(pageType) {
+    const colors = {
+      b: 'linear-gradient(135deg, #ff66aa, #ff99cc)',      // Business - Hồng
+      m: 'linear-gradient(135deg, #FF6B35, #FF8E53)',      // Mechanical - Cam
+      p: 'linear-gradient(135deg, #4CAF50, #2196F3)',      // Programming - Xanh
+      default: 'linear-gradient(135deg, #9C27B0, #673AB7)' // Mặc định - Tím
+    };
+    
+    const firstChar = pageType.charAt(0).toLowerCase();
+    return colors[firstChar] || colors.default;
+  }
+  
+  // Tạo element comment
+  function createCommentElement(comment) {
+    const commentDiv = document.createElement('div');
+    commentDiv.className = 'comment-item';
+    commentDiv.dataset.id = comment.id;
+    
+    const avatarColor = getAvatarColor(comment.pageId);
+    
+    commentDiv.innerHTML = `
+  <div class="comment-header">
+    <div class="comment-avatar" style="background: ${avatarColor}">
+      ${createAvatar(comment.name)}
+    </div>
+    <div class="comment-info">
+      <span class="comment-author">${comment.name}</span>
+      <span class="comment-time">${getTimeAgo(comment.timestamp)}</span>
+    </div>
+  </div>
+  <div class="comment-content">${comment.text}</div>
+`;
+    
+    return commentDiv;
+  }
+  
+  // Tên loại bài
+  function getPageTypeName(pageId) {
+    const types = {
+      'b': 'Business',
+      'm': 'Mechanical', 
+      'p': 'Programming',
+      'b1': 'Business',
+      'm1': 'Mechanical',
+      'm2': 'Mechanical',
+      'm3': 'Mechanical',
+      'm4': 'Mechanical',
+      'm5': 'Mechanical',
+      'm6': 'Mechanical',
+      'p1': 'Programming'
+    };
+    
+    return types[pageId] || 'Bài viết';
+  }
+  
+  // Lấy comments từ localStorage
+  function getPageComments() {
+    try {
+      const allComments = JSON.parse(localStorage.getItem('ftc_comments')) || {};
+      return allComments[pageId] || [];
+    } catch (error) {
+      console.error('Lỗi khi đọc comments:', error);
+      return [];
+    }
+  }
+  
+  // Lưu comments
+  function savePageComments(comments) {
+    try {
+      const allComments = JSON.parse(localStorage.getItem('ftc_comments')) || {};
+      allComments[pageId] = comments;
+      localStorage.setItem('ftc_comments', JSON.stringify(allComments));
+      return true;
+    } catch (error) {
+      console.error('Lỗi khi lưu comments:', error);
+      return false;
+    }
+  }
+  
+  // Hiển thị comments
+  function displayComments() {
+    const comments = getPageComments();
+    const commentCount = document.querySelector('.comment-count');
+    
+    // Xóa comments cũ
+    const existingComments = commentsList.querySelectorAll('.comment-item');
+    existingComments.forEach(comment => comment.remove());
+    
+    // Sắp xếp mới nhất trước
+    const sortedComments = [...comments].sort((a, b) => b.timestamp - a.timestamp);
+    
+    // Hiển thị comments
+    if (sortedComments.length > 0) {
+      sortedComments.forEach(comment => {
+        const commentElement = createCommentElement(comment);
+        commentsList.appendChild(commentElement);
+      });
+    }
+    
+    // Cập nhật số lượng
+    if (commentCount) {
+      commentCount.textContent = sortedComments.length;
+    }
+  }
+  
+  // Hiển thị thông báo
+  function showToast(message, type = 'success') {
+    const oldToast = document.querySelector('.toast-notification');
+    if (oldToast) oldToast.remove();
+    
+    const toast = document.createElement('div');
+    toast.className = `toast-notification toast-${type}`;
+    toast.textContent = message;
+    
+    // Style cho toast
+    Object.assign(toast.style, {
+      position: 'fixed',
+      top: '20px',
+      right: '20px',
+      padding: '12px 20px',
+      borderRadius: '8px',
+      background: type === 'success' ? '#4CAF50' : '#f44336',
+      color: 'white',
+      boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+      zIndex: '10000',
+      animation: 'slideIn 0.3s ease',
+      maxWidth: '300px',
+      wordWrap: 'break-word'
+    });
+    
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+      toast.style.animation = 'slideOut 0.3s ease';
+      setTimeout(() => {
+        if (toast.parentNode) {
+          toast.parentNode.removeChild(toast);
+        }
+      }, 300);
+    }, 3000);
+  }
+  
+  // Thêm styles CSS
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes slideIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    
+    @keyframes slideOut {
+      from { transform: translateX(0); opacity: 1; }
+      to { transform: translateX(100%); opacity: 0; }
+    }
+    
+    .comment-item {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 150, 200, 0.1);
+      animation: fadeIn 0.3s ease;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .comment-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .comment-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+    
+    .comment-info {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    
+    .comment-author {
+      font-weight: 600;
+      color: #ff99cc;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .comment-time {
+      color: #99e6ff;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+    
+    .comment-page {
+      font-size: 0.75rem;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2px 8px;
+      border-radius: 10px;
+      color: #ffccdd !important;
+    }
+    
+    .comment-content {
+      color: #ccf5ff;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 15px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 150, 200, 0.3);
+      border-radius: 8px;
+      color: white;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #ff66aa;
+    }
+    
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+    
+    .submit-btn {
+      background: linear-gradient(135deg, #ff66aa, #ff99cc);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 102, 170, 0.3);
+    }
+  `;
+  
+  document.head.appendChild(style);
+  
+  // Xử lý submit form
+  commentForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const nameInput = document.getElementById('commentName');
+    const textInput = document.getElementById('commentText');
+    
+    if (!nameInput || !textInput) {
+      console.error('Không tìm thấy input fields!');
+      return;
+    }
+    
+    const name = nameInput.value.trim();
+    const text = textInput.value.trim();
+    
+    // Validation
+    if (!name) {
+      showToast('Vui lòng nhập tên của bạn!', 'error');
+      nameInput.focus();
+      return;
+    }
+    
+    if (!text) {
+      showToast('Vui lòng nhập nội dung bình luận!', 'error');
+      textInput.focus();
+      return;
+    }
+    
+    if (name.length > 50) {
+      showToast('Tên không được quá 50 ký tự!', 'error');
+      nameInput.focus();
+      return;
+    }
+    
+    if (text.length > 500) {
+      showToast('Nội dung không được quá 500 ký tự!', 'error');
+      textInput.focus();
+      return;
+    }
+    
+    // Tạo comment mới
+    const newComment = {
+      id: 'comment_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+      name: name,
+      text: text,
+      timestamp: Date.now(),
+      pageId: pageId,
+      pageTitle: document.title
+    };
+    
+    // Lấy comments hiện tại
+    let comments = getPageComments();
+    
+    // Thêm vào đầu mảng
+    comments.unshift(newComment);
+    
+    // Lưu vào localStorage
+    const saved = savePageComments(comments);
+    
+    if (saved) {
+      // Hiển thị ngay lập tức
+      displayComments();
+      
+      // Reset form
+      this.reset();
+      
+      // Hiển thị thông báo thành công
+      showToast(' Đã đăng bình luận thành công!');
+      
+      // Auto-focus lại ô tên
+      setTimeout(() => {
+        nameInput.focus();
+      }, 100);
+    } else {
+      showToast(' Có lỗi xảy ra khi gửi bình luận!', 'error');
+    }
+  });
+  
+  // Hiển thị comments khi load trang
+  displayComments();
+  
+  // Nút xóa tất cả comments (chỉ trong dev)
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    const clearBtn = document.createElement('button');
+    clearBtn.textContent = 'Xóa tất cả bình luận (DEV)';
+    clearBtn.style.cssText = `
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background: #ff4444;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      font-size: 12px;
+      cursor: pointer;
+      z-index: 9999;
+      opacity: 0.5;
+    `;
+    
+    clearBtn.addEventListener('click', function() {
+      if (confirm('Xóa tất cả bình luận trên trang này?')) {
+        localStorage.removeItem('ftc_comments');
+        displayComments();
+        showToast('Đã xóa tất cả bình luận!', 'success');
+      }
+    });
+    
+    document.body.appendChild(clearBtn);
+  }
+}
+function getCommentTheme() {
+  const currentPage = window.location.pathname.split('/').pop();
+  if (currentPage.includes('b') || currentPage === 'business.html') {
+    return 'business';
+  } else if (currentPage.includes('m') || currentPage.includes('mechanical')) {
+    return 'mechanical';
+  } else if (currentPage.includes('p') || currentPage.includes('programming')) {
+    return 'programming';
+  } else if (currentPage.includes('e') || currentPage.includes('electronics')) {
+    return 'electronics';
+  }
+  return 'business'; // default
+}
+
+// Trong hàm initCommentSystem, thêm:
+const theme = getCommentTheme();
+const commentSection = document.querySelector('.comment-section');
+if (commentSection) {
+  commentSection.classList.add(`comment-theme-${theme}`);
+}
