@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
   <style>
-    /* ===== CSS CHỈNH ẢNH - TỈ LỆ RỘNG HƠN ===== */
     
-    /* Tất cả ảnh trong bài viết */
+    
+    
     .article-content img {
         max-width: 100%;
         height: auto;
@@ -20,7 +20,7 @@
         border-radius: 8px;
     }
     
-    /* Container cho ảnh so sánh (2 ảnh cạnh nhau) - TỈ LỆ RỘNG HƠN */
+    
     .image-comparison {
         display: flex;
         flex-wrap: wrap;
@@ -29,7 +29,7 @@
         justify-content: center;
     }
     
-    /* Mỗi item ảnh trong phần so sánh - RỘNG HƠN */
+    
     .image-item {
         flex: 1;
         min-width: 350px;
@@ -41,7 +41,7 @@
         background: rgba(255, 255, 255, 0.04);
     }
     
-    /* Ảnh bên trong image-item - TỈ LỆ RỘNG HƠN */
+    
     .image-item img {
         width: 100%;
         height: 250px;
@@ -51,7 +51,7 @@
         border-radius: 8px;
     }
     
-    /* Chú thích ảnh */
+    
     .image-caption {
         color: #ccf5ff;
         font-size: 1rem;
@@ -61,7 +61,7 @@
         border-top: 2px solid rgba(255, 255, 255, 0.15);
     }
     
-    /* Container cho ảnh đơn - RỘNG HƠN */
+    
     .single-image {
         width: 100%;
         max-width: 800px;
@@ -73,7 +73,7 @@
         text-align: center;
     }
     
-    /* Ảnh bên trong single-image - TỈ LỆ RỘNG HƠN */
+    
     .single-image img {
         width: 100%;
         height: 400px;
@@ -83,7 +83,7 @@
         border-radius: 10px;
     }
     
-    /* Ảnh nhỏ trong bảng */
+    
     .table-image {
         width: 100%;
         max-width: 150px;
@@ -95,7 +95,7 @@
         margin: 0 auto;
     }
     
-    /* Responsive cho mobile */
+    
     @media (max-width: 768px) {
         .image-item img {
             height: 200px;
@@ -136,7 +136,7 @@
   </style>
 </head>
 <body>
-  <!-- Navigation -->
+  
   <header class="navbar">
     <a href="index.html" class="logo">
       <img src="img/Logo Cắt nền.png" alt="Robotics Team Logo">
@@ -149,7 +149,7 @@
     </nav>
   </header>
 
-  <!-- Article Header -->
+  
   <section class="article-header">
     <h1>BU LÔNG, ỐC VÍT & CÁC CHI TIẾT LIÊN KẾT</h1>
     <div class="article-meta-top">
@@ -159,9 +159,9 @@
     </div>
   </section>
 
-  <!-- Article Content -->
+  
   <div class="article-content">
-    <!-- Tags -->
+    
     <div class="article-tags">
       <span class="article-tag">Bu Lông</span>
       <span class="article-tag">Ốc Vít</span>
@@ -169,14 +169,14 @@
       <span class="article-tag">Cơ Khí</span>
     </div>
 
-    <!-- Introduction -->
+    
     <div class="article-section">
       <h2>1. Bu lông, ốc vít (fasteners)</h2>
       
       <p>Bu lông, ốc vít: là cách gắn kết các bộ phận phổ biến nhất. Ở FTC Việt Nam loại 4mm(M4) là phổ biến nhất.</p>
     </div>
 
-    <!-- Part 1: Các loại bu lông -->
+    
     <div class="article-section">
       <h2>2. CÁC LOẠI BU LÔNG (BOLTS)</h2>
       
@@ -235,7 +235,7 @@
       </table>
     </div>
 
-    <!-- Part 2: Đai ốc -->
+    
     <div class="article-section">
       <h2>3. ĐAI ỐC (NUTS)</h2>
       
@@ -289,7 +289,7 @@
       </table>
     </div>
 
-    <!-- Part 3: Cố định bu lông -->
+    
     <div class="article-section">
       <h2>4. CỐ ĐỊNH BU LÔNG (BOLT RETENTION)</h2>
       
@@ -377,7 +377,7 @@
       </div>
     </div>
 
-    <!-- Part 4: Hàn -->
+    
     <div class="article-section">
       <h2>5. HÀN (WELDING)</h2>
       
@@ -404,7 +404,7 @@
       <p>Nếu đội của bạn muốn chế tạo robot với khung hàn, thì nên tìm một người có tay nghề cao hoặc một nhà tài trợ giỏi về hàn hồ quang bằng điện cực không nóng chảy. Hàn là một lĩnh vực rất phức tạp, và có những người phải đi học chuyên ngành chỉ để được đào tạo về hàn.</p>
     </div>
 
-    <!-- Part 5: Các chi tiết liên kết khác -->
+    
     <div class="article-section">
       <h2>6. CÁC LOẠI CHI TIẾT LIÊN KẾT KHÁC (MISCELLANEOUS FASTENERS)</h2>
       
@@ -473,7 +473,7 @@
 <div class="article-section comment-section comment-theme-mechanical">
   <h2>BÌNH LUẬN</h2>
   
-  <!-- Comment Form -->
+  
   <div class="comment-form">
     <h3>Thêm bình luận</h3>
     <form id="commentForm" novalidate>
@@ -487,24 +487,24 @@
     </form>
   </div>
   
-  <!-- Comments List -->
+  
   <div class="comments-list" id="commentsList">
     <h3>
       Bình luận (<span class="comment-count">0</span>)
     </h3>
-    <!-- Comments will be loaded here -->
+    
   </div>
 </div>
 
 
-    <!-- Back Button -->
+    
     <div class="back-button">
       <a href="mechanical.html">
         <span>←</span> Quay lại Trang Cơ Khí
       </a>
     </div>
   </div>
-  <!-- Footer -->
+  
   <hr class="divider-blue">
   <footer class="footer" id="contact">
     <div class="footer-container">

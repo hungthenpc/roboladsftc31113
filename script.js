@@ -1,7 +1,7 @@
-// SCRIPT.JS - HỆ THỐNG COMMENT ĐA TRANG
+
 
 document.addEventListener('DOMContentLoaded', function() {
-  // 1. Ẩn splash screen
+
   setTimeout(function() {
     const splash = document.querySelector('.splash-screen');
     if (splash) {
@@ -12,22 +12,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }, 2000);
   
-  // 2. TẠO ÂM THANH
+
   const glitchSound = new Audio('audio/Am_thanh_tieng_Dien_giat_dong_Dien-www_tiengdong_com.mp3');
   glitchSound.volume = 0.3;
   
-  // 3. GẮN SỰ KIỆN HOVER CHO CHỮ
+
   const heroTitle = document.querySelector('.hero-content h1');
   const heroSubtitle = document.querySelector('.hero-content p');
   
   function triggerGlitch(element) {
-    // Phát âm thanh
+
     glitchSound.currentTime = 0;
     glitchSound.play().catch(e => {
-      // Bỏ qua lỗi autoplay
+
     });
     
-    // Hiệu ứng glitch
+
     element.style.animation = 'simpleGlitch 0.3s';
     setTimeout(() => {
       element.style.animation = '';
@@ -46,17 +46,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // 4. KÍCH HOẠT KHI USER CLICK
+
   document.addEventListener('click', function() {
     console.log("✅ Âm thanh đã sẵn sàng");
   });
 
-  // ========== XỬ LÝ ACTIVE MENU ==========
+
   
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   
   if (currentPage === 'index.html' || currentPage === '') {
-    // Xử lý scroll cho trang chủ
+
     const sections = {
       about: document.getElementById('about'),
       events: document.getElementById('events')
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(updateActiveMenuOnScroll, 100);
     
   } else {
-    // Các trang khác
+
     const menuLinks = document.querySelectorAll('.menu-link');
     
     menuLinks.forEach(link => link.classList.remove('active'));
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   
-  // ========== SLIDER ==========
+
   
   const slides = document.querySelectorAll('.event-slide');
   const indicators = document.querySelectorAll('.indicator');
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (e.key === 'ArrowRight') nextSlide();
     });
     
-    // SWIPE SUPPORT
+
     function initSwipe() {
       const container = document.querySelector('.slides-container');
       if (!container) return;
@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSwipe();
   }
   
-  // ========== HIỆU ỨNG TUYẾT RƠI ==========
+
   
   function createSnowEffect() {
     const container = document.getElementById('snow-container');
@@ -297,7 +297,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
   
-  // ========== TEAM ANIMATIONS ==========
+
   
   function initTeamAnimations() {
     const teamSection = document.querySelector('.team-section');
@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   initTeamAnimations();
   
-  // ========== TEAM MEMBERS HOVER ==========
+
   
   function initTeamMembers() {
     const memberCards = document.querySelectorAll('.member-card');
@@ -394,12 +394,12 @@ document.addEventListener('DOMContentLoaded', function() {
   
   initTeamMembers();
   
-  // ========== KHỞI TẠO HỆ THỐNG COMMENT ==========
+
   
   initCommentSystem();
 });
 
-// ========== HỆ THỐNG COMMENT ĐA TRANG ==========
+
 
 function initCommentSystem() {
   const commentForm = document.getElementById('commentForm');
@@ -407,7 +407,7 @@ function initCommentSystem() {
   
   if (!commentForm || !commentsList) return;
   
-  // Lấy ID trang hiện tại
+
   function getPageId() {
     const path = window.location.pathname;
     const pageName = path.split('/').pop().replace('.html', '') || 'index';
@@ -417,7 +417,7 @@ function initCommentSystem() {
   const pageId = getPageId();
   console.log('📝 Comment System - Trang:', pageId);
   
-  // Hàm tính thời gian
+
   function getTimeAgo(timestamp) {
     const now = Date.now();
     const diff = now - timestamp;
@@ -441,7 +441,7 @@ function initCommentSystem() {
     return `${Math.floor(days / 365)} năm trước`;
   }
   
-  // Tạo avatar
+
   function createAvatar(name) {
     if (!name) return '??';
     const words = name.split(' ');
@@ -451,7 +451,7 @@ function initCommentSystem() {
     return name.substring(0, 2).toUpperCase();
   }
   
-  // Màu avatar theo loại bài
+
   function getAvatarColor(pageType) {
     const colors = {
       b: 'linear-gradient(135deg, #ff66aa, #ff99cc)',      // Business - Hồng
@@ -464,7 +464,7 @@ function initCommentSystem() {
     return colors[firstChar] || colors.default;
   }
   
-  // Tạo element comment
+
   function createCommentElement(comment) {
     const commentDiv = document.createElement('div');
     commentDiv.className = 'comment-item';
@@ -488,7 +488,7 @@ function initCommentSystem() {
     return commentDiv;
   }
   
-  // Tên loại bài
+
   function getPageTypeName(pageId) {
     const types = {
       'b': 'Business',
@@ -507,7 +507,7 @@ function initCommentSystem() {
     return types[pageId] || 'Bài viết';
   }
   
-  // Lấy comments từ localStorage
+
   function getPageComments() {
     try {
       const allComments = JSON.parse(localStorage.getItem('ftc_comments')) || {};
@@ -518,7 +518,7 @@ function initCommentSystem() {
     }
   }
   
-  // Lưu comments
+
   function savePageComments(comments) {
     try {
       const allComments = JSON.parse(localStorage.getItem('ftc_comments')) || {};
@@ -531,19 +531,19 @@ function initCommentSystem() {
     }
   }
   
-  // Hiển thị comments
+
   function displayComments() {
     const comments = getPageComments();
     const commentCount = document.querySelector('.comment-count');
     
-    // Xóa comments cũ
+
     const existingComments = commentsList.querySelectorAll('.comment-item');
     existingComments.forEach(comment => comment.remove());
     
-    // Sắp xếp mới nhất trước
+
     const sortedComments = [...comments].sort((a, b) => b.timestamp - a.timestamp);
     
-    // Hiển thị comments
+
     if (sortedComments.length > 0) {
       sortedComments.forEach(comment => {
         const commentElement = createCommentElement(comment);
@@ -551,13 +551,13 @@ function initCommentSystem() {
       });
     }
     
-    // Cập nhật số lượng
+
     if (commentCount) {
       commentCount.textContent = sortedComments.length;
     }
   }
   
-  // Hiển thị thông báo
+
   function showToast(message, type = 'success') {
     const oldToast = document.querySelector('.toast-notification');
     if (oldToast) oldToast.remove();
@@ -566,7 +566,7 @@ function initCommentSystem() {
     toast.className = `toast-notification toast-${type}`;
     toast.textContent = message;
     
-    // Style cho toast
+
     Object.assign(toast.style, {
       position: 'fixed',
       top: '20px',
@@ -594,7 +594,7 @@ function initCommentSystem() {
     }, 3000);
   }
   
-  // Thêm styles CSS
+
   const style = document.createElement('style');
   style.textContent = `
     @keyframes slideIn {
@@ -724,7 +724,7 @@ function initCommentSystem() {
   
   document.head.appendChild(style);
   
-  // Xử lý submit form
+
   commentForm.addEventListener('submit', function(e) {
     e.preventDefault();
     
@@ -739,7 +739,7 @@ function initCommentSystem() {
     const name = nameInput.value.trim();
     const text = textInput.value.trim();
     
-    // Validation
+
     if (!name) {
       showToast('Vui lòng nhập tên của bạn!', 'error');
       nameInput.focus();
@@ -764,7 +764,7 @@ function initCommentSystem() {
       return;
     }
     
-    // Tạo comment mới
+
     const newComment = {
       id: 'comment_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
       name: name,
@@ -774,26 +774,26 @@ function initCommentSystem() {
       pageTitle: document.title
     };
     
-    // Lấy comments hiện tại
+
     let comments = getPageComments();
     
-    // Thêm vào đầu mảng
+
     comments.unshift(newComment);
     
-    // Lưu vào localStorage
+
     const saved = savePageComments(comments);
     
     if (saved) {
-      // Hiển thị ngay lập tức
+
       displayComments();
       
-      // Reset form
+
       this.reset();
       
-      // Hiển thị thông báo thành công
+
       showToast(' Đã đăng bình luận thành công!');
       
-      // Auto-focus lại ô tên
+
       setTimeout(() => {
         nameInput.focus();
       }, 100);
@@ -802,10 +802,10 @@ function initCommentSystem() {
     }
   });
   
-  // Hiển thị comments khi load trang
+
   displayComments();
   
-  // Nút xóa tất cả comments (chỉ trong dev)
+
   if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
     const clearBtn = document.createElement('button');
     clearBtn.textContent = 'Xóa tất cả bình luận (DEV)';
@@ -849,7 +849,7 @@ function getCommentTheme() {
   return 'business'; // default
 }
 
-// Trong hàm initCommentSystem, thêm:
+
 const theme = getCommentTheme();
 const commentSection = document.querySelector('.comment-section');
 if (commentSection) {

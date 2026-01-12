@@ -1,5 +1,5 @@
-/* article-mechanical.css */
-/* Article specific styles - MÀU VÀNG CƠ KHÍ */
+
+
 .article-header {
     background: linear-gradient(135deg, rgba(204, 153, 0, 0.2), rgba(204, 173, 51, 0.1));
     padding: 120px 20px 60px;
@@ -184,7 +184,7 @@
     font-size: 0.9rem;
 }
 
-/* Image comparison styles */
+
 .image-comparison {
     display: flex;
     flex-wrap: wrap;
@@ -219,7 +219,7 @@
     font-style: italic;
 }
 
-/* Table styles */
+
 .comparison-table {
     width: 100%;
     border-collapse: collapse;
@@ -257,7 +257,7 @@
     vertical-align: middle;
 }
 
-/* Process list */
+
 .process-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

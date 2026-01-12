@@ -8,7 +8,7 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-/* 2. CHỈ CÁC THẺ H DÙNG BUNGEE */
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Bungee', cursive !important;
     font-weight: 400;
@@ -71,7 +71,7 @@ footer {
   font-size: 0.9rem;
 }
 .navbar {
-  position: fixed;        /* đi theo khi kéo */
+  position: fixed;        
   top: 0;
   left: 0;
   width: 100%;
@@ -81,20 +81,20 @@ footer {
   display: flex;
   align-items: center;
 
-  background: rgba(2, 6, 23, 0.6); /* màu tối, trong suốt */
-  backdrop-filter: blur(10px);    /* hiệu ứng mờ kính */
+  background: rgba(2, 6, 23, 0.6); 
+  backdrop-filter: blur(10px);    
   -webkit-backdrop-filter: blur(10px);
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* LOGO */
+
 .logo img {
   height: 60px;
   width: auto;
 }
 
-/* MENU */
+
 .menu {
   position: absolute;
   left: 50%;
@@ -103,18 +103,18 @@ footer {
   width: 500px;              
   display: flex;
   align-items: center;
-  justify-content: space-between; /* 👈 CHIA ĐỀU KHOẢNG CÁCH */
+  justify-content: space-between; 
 }
 
 .menu a {
-  /* Xóa flex: 1 đi */
+  
   text-align: center;
   padding-bottom: 18px;
   line-height: 56px;
   font-size: 18px;
   color: #e5e7eb;
   text-decoration: none;
-  flex-shrink: 0; /* Không bị co lại */
+  flex-shrink: 0; 
 }
 
 .menu a:hover {
@@ -124,8 +124,8 @@ footer {
   opacity: 0.8;
 }
 .hero {
-  width: 100vw;          /* FULL chiều ngang */
-  height: 100vh;         /* FULL chiều cao màn hình */
+  width: 100vw;          
+  height: 100vh;         
   margin: 0;
   padding: 0;
 
@@ -169,7 +169,7 @@ footer {
   align-items: flex-start;
 }
 
-/* LOGO */
+
 .footer-logo img {
   width: 120px;
   margin-bottom: 16px;
@@ -180,54 +180,54 @@ footer {
   color: #9ca3af;
 }
 
-/* TABLE */
+
 .footer-table {
   border-collapse: collapse;
-  flex: 1; /* Chiếm không gian còn lại */
-  table-layout: fixed; /* Để các cột đều nhau */
+  flex: 1; 
+  table-layout: fixed; 
   width: 100%;
 }
 
-/* CĂN GIỮA TIÊU ĐỀ CỘT */
+
 .footer-table th {
-  text-align: center; /* 👈 CĂN GIỮA */
+  text-align: center; 
   padding-bottom: 16px;
   font-size: 16px;
-  color: #ffffff; /* Màu trắng cho tiêu đề */
+  color: #ffffff; 
   font-weight: bold;
 }
 
-/* CÁC CỘT CÓ ĐỘ RỘNG BẰNG NHAU */
+
 .footer-table th,
 .footer-table td {
   width: 33.33%;
   vertical-align: top;
 }
 
-/* CĂN GIỮA HOẶC TRÁI CHO NỘI DUNG LINK */
+
 .footer-table td {
-  text-align: center; /* 👈 CĂN GIỮA NỘI DUNG */
-  padding: 0 20px 12px 20px; /* Padding đều các bên */
+  text-align: center; 
+  padding: 0 20px 12px 20px; 
   font-size: 14px;
 }
 
-/* STYLE CHO LINK - MÀU BÌNH THƯỜNG */
+
 .footer-table a {
-  color: #e5e7eb; /* 👈 MÀU TRẮNG/XÁM NHẠT BÌNH THƯỜNG */
+  color: #e5e7eb; 
   text-decoration: none;
   display: inline-block;
-  margin-bottom: 10px; /* Khoảng cách giữa các link */
+  margin-bottom: 10px; 
   transition: color 0.3s ease;
-  font-weight: normal; /* Không in đậm */
+  font-weight: normal; 
 }
 
-/* MÀU KHI HOVER - KHÔNG QUÁ NỔI BẬT */
+
 .footer-table a:hover {
-  color: #d1d5db; /* 👈 MÀU XÁM SÁNG HƠN MỘT CHÚT */
-  text-decoration: underline; /* Hoặc có thể bỏ nếu không muốn */
+  color: #d1d5db; 
+  text-decoration: underline; 
 }
 
-/* BOTTOM */
+
 .footer-bottom {
   text-align: center;
   margin-top: 40px;
@@ -235,12 +235,12 @@ footer {
   color: #6b7280;
 }
 .footer-email {
-  color: #99e6ff; /* Màu giống link */
+  color: #99e6ff; 
   display: inline-block;
   margin-bottom: 8px;
-  cursor: default; /* Con trỏ bình thường, không phải pointer */
+  cursor: default; 
 }
-/* SPLASH SCREEN STYLES */
+
 .splash-screen {
   position: fixed;
   top: 0;
@@ -252,7 +252,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* Trên tất cả */
+  z-index: 9999; 
   opacity: 1;
   visibility: visible;
   transition: opacity 0.5s ease, visibility 0.5s ease;
@@ -286,11 +286,11 @@ footer {
   to { transform: scale(1.05); opacity: 1; }
 }
 
-/* Thêm vào body để tránh scroll khi đang hiển thị splash */
+
 body.splash-active {
   overflow: hidden;
 }
-/* ===== GLITCH EFFECT CHO HERO ===== */
+
 .hero-content h1 {
   font-size: 3rem;
   color: #e5e7eb;
@@ -309,7 +309,7 @@ body.splash-active {
   display: inline-block;
 }
 
-/* Hiệu ứng glitch đơn giản khi hover */
+
 .hero-content h1:hover,
 .hero-content p:hover {
   animation: simpleGlitch 0.3s;
@@ -334,36 +334,36 @@ body.splash-active {
   }
 }
 
-/* Hoặc hiệu ứng rung đơn giản hơn */
+
 @keyframes shakeGlitch {
   0%, 100% { transform: translateX(0); }
   20%, 60% { transform: translateX(-3px); }
   40%, 80% { transform: translateX(3px); }
 }
 
-/* Thêm class này nếu muốn dùng hiệu ứng rung */
+
 .hero-content h1:hover.shake,
 .hero-content p:hover.shake {
   animation: shakeGlitch 0.3s;
 }
-/* CORNER ELEMENT - TO và ẩn ban đầu */
+
 .corner-element {
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 100px;    /* TO hơn (100px) */
-  height: 100px;   /* TO hơn (100px) */
+  width: 100px;    
+  height: 100px;   
   z-index: 10000;
   
-  /* Ẩn ban đầu */
+  
   opacity: 0;
   visibility: hidden;
   
-  /* Hiện ra sau khi splash screen ẩn */
+  
   transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-/* Class này sẽ được thêm bằng JS sau khi splash ẩn */
+
 .corner-element.visible {
   opacity: 1;
   visibility: visible;
@@ -376,12 +376,12 @@ body.splash-active {
   opacity: 0.8;
   filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.4));
   
-  /* Hiệu ứng hover */
+  
   transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
 
-/* Thậm chí TO hơn nữa */
+
 .corner-element.large {
   width: 120px;
   height: 120px;
@@ -392,10 +392,10 @@ body.splash-active {
   height: 150px;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .corner-element {
-    width: 80px;    /* Vẫn to trên mobile */
+    width: 80px;    
     height: 80px;
   }
   
@@ -409,7 +409,7 @@ body.splash-active {
     height: 120px;
   }
 }
-/* ELECTRIC BLUE */
+
 :root {
   --electric: #0066ff;
   --neon-blue: #00ccff;
@@ -486,33 +486,33 @@ body {
 html, body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Ẩn scroll ngang */
+    overflow-x: hidden; 
 }
 
-/* 2. Đảm bảo footer không vượt quá màn hình */
+
 footer {
     width: 100%;
-    box-sizing: border-box; /* Bao gồm padding trong width */
+    box-sizing: border-box; 
     padding: 20px;
-    word-wrap: break-word; /* Ngắt chữ nếu dài */
+    word-wrap: break-word; 
 }
 
-/* 3. Kiểm tra các phần tử con */
+
 footer a, footer p, footer div {
     max-width: 100%;
     overflow-wrap: break-word;
 }
-/* Events Slider với nền xanh */
+
 .events-slider {
   padding: 5%;
   max-width: 1200px;
   margin: 15%;
   margin-top: 0px;
   margin-bottom: 0px;
-  background: #02263f; /* Nền xanh nhạt */
+  background: #02263f; 
 }
 
-/* Header với "Our Events" canh trái */
+
 .slider-header {
   margin-bottom: 30px;
   padding: 0 20px;
@@ -520,13 +520,13 @@ footer a, footer p, footer div {
 
 .section-title {
   font-size: 2.5rem;
-  color: #0d47a1; /* Màu xanh đậm */
+  color: #0d47a1; 
   font-weight: 700;
   margin: 0;
   text-align: left;
 }
 
-/* Slides container với nền xanh */
+
 .slides-container {
   background: white;
   border-radius: 10px;
@@ -537,7 +537,7 @@ footer a, footer p, footer div {
   border: 1px solid #bbdefb;
 }
 
-/* Nút chuyển slide TRONG container */
+
 .nav-btn {
   position: absolute;
   top: 50%;
@@ -573,7 +573,7 @@ footer a, footer p, footer div {
   right: 15px;
 }
 
-/* Mỗi slide */
+
 .event-slide {
   position: absolute;
   top: 0;
@@ -591,7 +591,7 @@ footer a, footer p, footer div {
   z-index: 2;
 }
 
-/* Grid 2x2 đơn giản */
+
 .grid-2x2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -602,13 +602,13 @@ footer a, footer p, footer div {
   border-collapse: collapse;
 }
 
-/* Các ô cell */
+
 .cell {
   overflow: hidden;
   position: relative;
 }
 
-/* Ô chứa ảnh */
+
 .img-cell {
   background: #f5f5f5;
 }
@@ -620,7 +620,7 @@ footer a, footer p, footer div {
   display: block;
 }
 
-/* Ô chứa text */
+
 .text-cell {
   padding: 25px;
   display: flex;
@@ -632,7 +632,7 @@ footer a, footer p, footer div {
   width: 100%;
 }
 
-/* Tiêu đề */
+
 .event-title {
   font-size: 2rem;
   margin: 0 0 8px 0;
@@ -647,7 +647,7 @@ footer a, footer p, footer div {
   font-weight: 500;
 }
 
-/* Mô tả */
+
 .event-description {
   font-size: 1.05rem;
   line-height: 1.6;
@@ -672,7 +672,7 @@ footer a, footer p, footer div {
   display: inline-block;
 }
 
-/* Chia đường kẻ giữa các ô */
+
 .top-left {
   border-right: 1px solid #e0e0e0;
   border-bottom: 1px solid #e0e0e0;
@@ -686,7 +686,7 @@ footer a, footer p, footer div {
   border-right: 1px solid #e0e0e0;
 }
 
-/* Indicators */
+
 .slide-indicators {
   display: flex;
   justify-content: center;
@@ -714,7 +714,7 @@ footer a, footer p, footer div {
   background: rgba(13, 71, 161, 0.5);
 }
 
-/* Responsive */
+
 @media (max-width: 992px) {
   .slides-container {
     height: 500px;
@@ -763,7 +763,7 @@ footer a, footer p, footer div {
     right: 10px;
   }
   
-  /* Ẩn border trên mobile */
+  
   .top-left, .top-right, .bottom-left {
     border: none;
     border-bottom: 1px solid #e0e0e0;
@@ -799,14 +799,14 @@ footer a, footer p, footer div {
     font-size: 1rem;
   }
 }
-/* ====== XÓA TẤT CẢ ĐƯỜNG LINE GIỮA CÁC Ô ====== */
 
-/* XÓA LINE TRÊN TẤT CẢ CÁC Ô */
+
+
 .grid-2x2 .cell {
   border: none !important;
 }
 
-/* Đặc biệt xóa ở các ô cụ thể */
+
 .grid-2x2 .top-left,
 .grid-2x2 .top-right,
 .grid-2x2 .bottom-left,
@@ -818,18 +818,18 @@ footer a, footer p, footer div {
   border-top: none !important;
 }
 
-/* Xóa border của cả grid container */
+
 .grid-2x2 {
   border: none !important;
   outline: none !important;
 }
 
-/* Nếu có border từ parent */
+
 .slides-container,
 .event-slide {
   border: none !important;
 }
-/* === THÊM CUỐI FILE STYLE.CSS === */
+
 .top-right-corner {
   position: fixed;
   top: 0;
@@ -845,7 +845,7 @@ footer a, footer p, footer div {
   object-fit: contain;
 }
 
-/* Mobile */
+
 @media (max-width: 768px) {
   .top-right-corner { width: 50px; height: 50px; }
 }
@@ -853,7 +853,7 @@ footer a, footer p, footer div {
 @media (max-width: 480px) {
   .top-right-corner { width: 40px; height: 40px; }
 }
-/* ====== TUYẾT RƠI NÂNG CAO ====== */
+
 
 #snow-container {
   position: fixed;
@@ -866,7 +866,7 @@ footer a, footer p, footer div {
   overflow: hidden;
 }
 
-/* 3 lớp tuyết với tốc độ khác nhau */
+
 .snowflake {
   position: absolute;
   background: white;
@@ -877,36 +877,36 @@ footer a, footer p, footer div {
     0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-/* Lớp 1: Tuyết lớn, chậm */
+
 .snowflake.layer-1 {
   opacity: 0.9;
   filter: blur(0px);
 }
 
-/* Lớp 2: Tuyết vừa, tốc độ trung bình */
+
 .snowflake.layer-2 {
   opacity: 0.7;
   filter: blur(0.5px);
 }
 
-/* Lớp 3: Tuyết nhỏ, nhanh */
+
 .snowflake.layer-3 {
   opacity: 0.5;
   filter: blur(1px);
 }
 h1, h2, h3, h4, h5, h6 {
         font-family: 'Bungee', cursive !important;
-        font-weight: 400; /* Bungee chỉ có 1 weight */
+        font-weight: 400; 
     }
     
-    /* TẤT CẢ THẺ P DÙNG OPEN SANS */
+    
     p {
         font-family: 'Open Sans', sans-serif !important;
-        font-weight: 400; /* Regular mặc định */
-        line-height: 1.6; /* Dễ đọc hơn */
+        font-weight: 400; 
+        line-height: 1.6; 
     }
     
-    /* THÊM CÁC CLASS TIỆN ÍCH NẾU CẦN */
+    
     .bungee-text {
         font-family: 'Bungee', cursive !important;
     }
@@ -916,9 +916,9 @@ h1, h2, h3, h4, h5, h6 {
     }
     html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Để không bị navbar che mất phần đầu */
+  scroll-padding-top: 80px; 
 }
-/* === PHẦN GIỚI THIỆU CLB === */
+
 .about-club {
   background: linear-gradient(135deg, #001a33 0%, #003366 100%);
   padding: 80px 20px;
@@ -941,7 +941,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
 }
 
-/* Tiêu đề section */
+
 .about-header {
   text-align: center;
   margin-bottom: 60px;
@@ -963,7 +963,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.6;
 }
 
-/* Layout chính */
+
 .about-content {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -978,7 +978,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Card chung */
+
 .about-card {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
@@ -995,7 +995,7 @@ h1, h2, h3, h4, h5, h6 {
   border-color: rgba(0, 204, 255, 0.4);
 }
 
-/* Card thông tin bên trái */
+
 .info-card {
   text-align: center;
 }
@@ -1032,7 +1032,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 
-/* Card mô tả bên phải */
+
 .description-card h3 {
   color: #00ffff;
   margin-top: 0;
@@ -1063,7 +1063,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.6;
 }
 
-/* Grid hoạt động */
+
 .activity-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1118,7 +1118,7 @@ h1, h2, h3, h4, h5, h6 {
   border-left: 4px solid #00ffff;
 }
 
-/* Thành tích */
+
 .achievements-section {
   margin-top: 60px;
 }
@@ -1185,8 +1185,8 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.9rem;
   line-height: 1.5;
 }
-/* Thêm vào cuối file CSS */
-/* Dải phân cách giữa About và Events */
+
+
 .about-club::after {
   content: '';
   position: absolute;
@@ -1204,7 +1204,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
-/* Hoặc dải phân cách tách biệt */
+
 .divider-blue {
   width: 100%;
   height: 4px;
@@ -1218,7 +1218,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   border: none;
 }
-/* === TEAM SECTION === */
+
 .team-section {
   background: linear-gradient(135deg, #0f1a30 0%, #1a2b4d 100%);
   padding: 100px 20px;
@@ -1242,7 +1242,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
 }
 
-/* Header */
+
 .team-header {
   text-align: center;
   margin-bottom: 60px;
@@ -1259,7 +1259,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.3rem;
 }
 
-/* Stats */
+
 .team-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1309,7 +1309,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 
-/* Department Cards */
+
 .department-section {
   margin-bottom: 80px;
 }
@@ -1337,7 +1337,7 @@ h1, h2, h3, h4, h5, h6 {
   border-color: rgba(0, 204, 255, 0.4);
 }
 
-/* Card header */
+
 .department-header {
   padding: 25px 30px;
   display: flex;
@@ -1377,7 +1377,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 
-/* Card content */
+
 .department-content {
   padding: 30px;
 }
@@ -1446,7 +1446,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.6;
 }
 
-/* Member list */
+
 .member-list {
   display: flex;
   flex-wrap: wrap;
@@ -1508,7 +1508,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 15px;
 }
 
-/* Workflow */
+
 .workflow-section {
   margin-bottom: 60px;
 }
@@ -1604,7 +1604,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.6;
 }
 
-/* Team message */
+
 .team-message {
   background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(0, 204, 255, 0.05));
   border-radius: 20px;
@@ -1641,7 +1641,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-/* Animation for workflow steps */
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -1663,7 +1663,7 @@ h1, h2, h3, h4, h5, h6 {
 .workflow-step:nth-child(4) { animation-delay: 0.4s; }
 .workflow-step:nth-child(5) { animation-delay: 0.5s; }
 
-/* Responsive */
+
 @media (max-width: 992px) {
   .team-section {
     padding: 80px 15px;
@@ -1699,14 +1699,14 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.5rem;
   }
 }
-/* === FIX WORKFLOW LINE & MEMBER GRID === */
 
-/* Sửa workflow line không đè lên content */
+
+
 .workflow-steps {
   position: relative;
   max-width: 800px;
   margin: 0 auto;
-  padding-left: 40px; /* Thêm padding để line không đè */
+  padding-left: 40px; 
 }
 
 .workflow-steps::before {
@@ -1723,7 +1723,7 @@ h1, h2, h3, h4, h5, h6 {
 .workflow-step {
   position: relative;
   z-index: 2;
-  background: rgba(13, 26, 51, 0.7); /* Thêm nền cho step */
+  background: rgba(13, 26, 51, 0.7); 
   border-radius: 15px;
 }
 
@@ -1755,7 +1755,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 2;
 }
 
-/* === MEMBER GRID STYLES === */
+
 .member-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -1787,7 +1787,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 100;
 }
 
-/* Avatar trong grid */
+
 .member-card .member-avatar {
   width: 60px;
   height: 60px;
@@ -1802,7 +1802,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 15px;
 }
 
-/* Basic info */
+
 .member-basic {
   width: 100%;
 }
@@ -1820,7 +1820,7 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0.9;
 }
 
-/* Hover card - hiển thị chi tiết */
+
 .member-hover-card {
   position: absolute;
   bottom: calc(100% + 15px);
@@ -1884,7 +1884,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
 }
 
-/* More card */
+
 .more-card {
   background: rgba(255, 255, 255, 0.02);
   border-style: dashed;
@@ -1911,7 +1911,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.9rem;
 }
 
-/* === MENTOR SECTION === */
+
 .mentor-section {
   margin-top: 80px;
   padding: 40px;
@@ -2028,7 +2028,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* Responsive */
+
 @media (max-width: 992px) {
   .member-grid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -2090,33 +2090,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* 3. GIỮ MENU LÀ BUNGEE (như yêu cầu của bạn) */
+
 .menu a {
     font-family: 'Bungee', cursive !important;
 }
-/* ACTIVE = HOVER (bao gồm dòng xanh) */
+
 .menu a.active {
   color: #00ffff !important;
-  position: relative; /* Quan trọng cho ::after */
+  position: relative; 
 }
 
-/* Dòng xanh ở dưới - Y HỆT hover */
+
 .menu a.active::after {
   content: '' !important;
   position: absolute !important;
   bottom: 0 !important;
   left: 0 !important;
-  width: 100% !important; /* FULL WIDTH */
+  width: 100% !important; 
   height: 2px !important;
   background: linear-gradient(90deg, #0066ff, #00ffff) !important;
   transition: width 0.3s ease !important;
 }
 
-/* Đảm bảo active:hover vẫn giữ dòng xanh */
+
 .menu a.active:hover::after {
-  width: 100% !important; /* Vẫn 100% */
+  width: 100% !important; 
 }
-/* Thêm vào style.css */
+
 .menu a.active {
   color: #00ffff !important;
 }
@@ -2124,9 +2124,9 @@ h1, h2, h3, h4, h5, h6 {
 .menu a.active::after {
   width: 100% !important;
 }
-/* === SLIDER VỚI HIỆU ỨNG SLIDE LIỀN MẠCH === */
 
-/* Reset transition cho slides */
+
+
 .event-slide {
   position: absolute;
   top: 0;
@@ -2138,74 +2138,74 @@ h1, h2, h3, h4, h5, h6 {
   will-change: transform, opacity;
 }
 
-/* Slide active - ở vị trí trung tâm */
+
 .event-slide.active {
   opacity: 1;
   transform: translateX(0);
   z-index: 2;
 }
 
-/* Slide đi ra bên trái */
+
 .event-slide.prev {
   transform: translateX(-100%);
   opacity: 0;
   z-index: 1;
 }
 
-/* Slide đi ra bên phải */
+
 .event-slide.next {
   transform: translateX(100%);
   opacity: 0;
   z-index: 1;
 }
 
-/* Ẩn tất cả slides mặc định */
+
 .event-slide:not(.active):not(.prev):not(.next) {
   opacity: 0;
   transform: translateX(100%);
   pointer-events: none;
 }
 
-/* Hiệu ứng mượt cho nút navigation */
+
 .nav-btn {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
-/* Hiệu ứng cho indicators */
+
 .indicator {
   transition: all 0.3s ease !important;
 }
 
-/* Thêm perspective cho container */
+
 .slides-container {
   perspective: 1000px;
   overflow: hidden;
 }
-/* ====== FIX KHOẢNG TRẮNG KHI CHUYỂN SLIDE ====== */
 
-/* Đảm bảo slides-container luôn có nền xanh */
+
+
 .slides-container {
-  background: #104266 !important; /* Màu nền xanh đậm */
+  background: #104266 !important; 
   overflow: hidden;
 }
 
-/* Đảm bảo mỗi slide có nền trắng đầy đủ */
+
 .event-slide {
   background: white;
   border-radius: 10px;
 }
 
-/* Grid 2x2 cũng cần nền trắng */
+
 .grid-2x2 {
   background: white;
 }
 
-/* Tất cả các cell đều có nền tương ứng */
+
 .cell {
-  background: inherit; /* Kế thừa nền từ parent */
+  background: inherit; 
 }
 
-/* Đảm bảo không có khoảng trắng khi chuyển slide */
+
 .event-slide.active,
 .event-slide.prev,
 .event-slide.next {
@@ -2213,9 +2213,9 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 10px 30px rgba(13, 71, 161, 0.1);
 }
 
-/* Fix animation để không lộ nền xanh */
+
 .event-slide {
-  transform: translateX(100%); /* Mặc định ẩn bên phải */
+  transform: translateX(100%); 
 }
 
 .event-slide.active {
@@ -2226,7 +2226,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateX(-100%);
 }
 
-/* Hiệu ứng smooth hơn */
+
 .slides-container {
   perspective: 1200px;
 }
@@ -2237,7 +2237,7 @@ h1, h2, h3, h4, h5, h6 {
   backface-visibility: hidden;
 }
 
-/* Đảm bảo không có flicker */
+
 .slides-container::before {
   content: '';
   position: absolute;
@@ -2251,7 +2251,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
-/* Robot Container */
+
 #mini-robot-container {
   position: fixed;
   top: 0;
@@ -2263,7 +2263,7 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
-/* Robot chính */
+
 #mini-robot {
   position: absolute;
   top: 50%;
@@ -2275,7 +2275,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 9996;
 }
 
-/* Thân robot */
+
 .robot-body {
   position: absolute;
   width: 60px;
@@ -2288,7 +2288,7 @@ h1, h2, h3, h4, h5, h6 {
     inset 0 -10px 20px rgba(255, 255, 255, 0.2);
 }
 
-/* Mắt robot */
+
 .robot-eye {
   position: absolute;
   top: 20px;
@@ -2312,7 +2312,7 @@ h1, h2, h3, h4, h5, h6 {
   96%, 99% { height: 2px; }
 }
 
-/* Bánh xe */
+
 .robot-wheel {
   position: absolute;
   bottom: 0;
@@ -2337,7 +2337,7 @@ h1, h2, h3, h4, h5, h6 {
   100% { transform: rotate(360deg); }
 }
 
-/* Anten */
+
 .robot-antenna {
   position: absolute;
   top: -15px;
@@ -2367,7 +2367,7 @@ h1, h2, h3, h4, h5, h6 {
   50% { opacity: 1; transform: translateX(-50%) scale(1.2); }
 }
 
-/* Đường đi (tùy chọn) */
+
 .robot-trail {
   position: absolute;
   width: 4px;
@@ -2378,9 +2378,9 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 9994;
 }
 
-/* ====== RESOURCES PAGE STYLES ====== */
 
-/* Resources Hero */
+
+
 .resources-hero {
   width: 100vw;
   height: 70vh;
@@ -2413,7 +2413,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.6;
 }
 
-/* Resources Main */
+
 .resources-main {
   background: linear-gradient(135deg, #001a33 0%, #003366 100%);
   padding: 80px 20px;
@@ -2443,7 +2443,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.6;
 }
 
-/* Featured Articles */
+
 .featured-section {
   margin-bottom: 80px;
 }
@@ -2547,7 +2547,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 5px;
 }
 
-/* Categories Grid */
+
 .categories-section {
   margin-bottom: 80px;
 }
@@ -2632,7 +2632,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 15px;
 }
 
-/* Learning Paths */
+
 .learning-paths-section {
   margin-bottom: 80px;
 }
@@ -2735,7 +2735,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 8px;
 }
 
-/* External Resources */
+
 .external-resources-section {
   margin-bottom: 60px;
 }
@@ -2790,7 +2790,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.4;
 }
 
-/* Responsive */
+
 @media (max-width: 992px) {
   .resources-hero-content h1 {
     font-size: 3rem;
@@ -2862,7 +2862,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 10px;
   }
 }
-/* Active menu item với underline */
+
 .menu a.active {
   color: #00ffff !important;
   position: relative;
@@ -2879,7 +2879,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: width 0.3s ease !important;
 }
 
-/* Đảm bảo hover không ghi đè active */
+
 .menu a.active:hover {
   color: #00ffff !important;
 }
@@ -2887,7 +2887,7 @@ h1, h2, h3, h4, h5, h6 {
 .menu a.active:hover::after {
   width: 100% !important;
 }
-/* CẬP NHẬT MÀU CATEGORY CARDS */
+
 .mechanical-card {
   border: 1px solid rgba(204, 153, 0, 0.3) !important;
   background: rgba(204, 153, 0, 0.05) !important;
@@ -2903,7 +2903,7 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(255, 100, 180, 0.05) !important;
 }
 
-/* ĐẢM BẢO HOVER HIỂN THỊ ĐÚNG */
+
 .mechanical-card:hover {
   transform: translateY(-10px) !important;
   border-color: #cc9900 !important;
@@ -2924,9 +2924,9 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(255, 100, 180, 0.15) !important;
   box-shadow: 0 15px 35px rgba(255, 100, 180, 0.25) !important;
 }
-/* === SỬA MÀU DEPARTMENT HEADER TRONG STYLE.CSS === */
 
-/* Card header */
+
+
 .department-header {
   padding: 25px 30px;
   display: flex;
@@ -2935,24 +2935,24 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* CẬP NHẬT MÀU MỚI CHO DEPARTMENT HEADER */
+
 .mechanical .department-header {
   background: linear-gradient(135deg, rgba(204, 153, 0, 0.2), rgba(204, 173, 51, 0.1)) !important;
-  border-left: 5px solid #cc9900 !important; /* Vàng đậm */
+  border-left: 5px solid #cc9900 !important; 
 }
 
 .programming .department-header {
   background: linear-gradient(135deg, rgba(100, 150, 255, 0.2), rgba(150, 200, 255, 0.1)) !important;
-  border-left: 5px solid #6699ff !important; /* Xanh dương */
+  border-left: 5px solid #6699ff !important; 
 }
 
 .business .department-header {
   background: linear-gradient(135deg, rgba(255, 100, 180, 0.2), rgba(255, 150, 220, 0.1)) !important;
-  border-left: 5px solid #ff66aa !important; /* Hồng */
+  border-left: 5px solid #ff66aa !important; 
 }
-/* ========== COMMENT SYSTEM THEMES ========== */
 
-/* COMMON STYLES FOR ALL THEMES */
+
+
 .comment-form {
   border-radius: 10px;
   padding: 25px;
@@ -3067,7 +3067,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
-/* ========== BUSINESS THEME (PINK) ========== */
+
 .comment-theme-business .comment-form {
   background: rgba(255, 150, 200, 0.05);
   border: 1px solid rgba(255, 150, 200, 0.2);
@@ -3123,7 +3123,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #ff66aa;
 }
 
-/* ========== MECHANICAL THEME (ORANGE) ========== */
+
 .comment-theme-mechanical .comment-form {
   background: rgba(255, 140, 0, 0.05);
   border: 1px solid rgba(255, 140, 0, 0.2);
@@ -3179,7 +3179,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #ff8c00;
 }
 
-/* ========== PROGRAMMING THEME (BLUE) ========== */
+
 .comment-theme-programming .comment-form {
   background: rgba(51, 153, 255, 0.05);
   border: 1px solid rgba(51, 153, 255, 0.2);
@@ -3235,7 +3235,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #3399ff;
 }
 
-/* ========== ELECTRONICS THEME (GREEN) ========== */
+
 .comment-theme-electronics .comment-form {
   background: rgba(76, 175, 80, 0.05);
   border: 1px solid rgba(76, 175, 80, 0.2);
@@ -3291,7 +3291,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #4CAF50;
 }
 
-/* Responsive fixes */
+
 @media (max-width: 768px) {
   .comment-form {
     padding: 20px;
