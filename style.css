@@ -1998,7 +1998,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .mentor-details strong {
   color: #66d9ff;
-  min-width: 120px;
+  min-width: 70px;
   display: inline-block;
 }
 
@@ -2026,6 +2026,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.85rem;
   border: 1px solid rgba(0, 204, 255, 0.3);
 }
+
 
 /* Responsive */
 @media (max-width: 992px) {
