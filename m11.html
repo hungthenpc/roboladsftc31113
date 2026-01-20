@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>FTC31113 Robolads </title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="article-mechanical.css" />
+  <link rel="icon" type="image/png" href="img/Logo Cắt nền.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <style>
+    
+    .article-content img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+    }
+    
+    .image-comparison {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin: 40px 0;
+        justify-content: center;
+    }
+    
+    .image-item {
+        flex: 1;
+        min-width: 350px;
+        max-width: 550px;
+        text-align: center;
+        padding: 20px;
+        border: 2px solid rgba(204, 153, 0, 0.4);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.04);
+    }
+    
+    .image-item img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        object-position: center;
+        border: 2px solid rgba(204, 153, 0, 0.3);
+        border-radius: 8px;
+    }
+    
+    .article-link {
+        color: #cc9900;
+        text-decoration: none;
+        font-weight: 600;
+        border-bottom: 1px solid rgba(204, 153, 0, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    .article-link:hover {
+        color: #ffcc00;
+        border-bottom: 1px solid #ffcc00;
+    }
+    
+    .image-caption {
+        color: #ccf5ff;
+        font-size: 1rem;
+        font-style: italic;
+        margin-top: 15px;
+        padding-top: 12px;
+        border-top: 2px solid rgba(255, 255, 255, 0.15);
+    }
+    
+    .single-image {
+        width: 100%;
+        max-width: 800px;
+        margin: 25px auto;
+        padding: 20px;
+        border: 3px solid rgba(204, 153, 0, 0.4);
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.03);
+        text-align: center;
+    }
+    
+    .single-image img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        object-position: center;
+        border: 2px solid rgba(204, 153, 0, 0.3);
+        border-radius: 10px;
+    }
+    
+   
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .comparison-table thead {
+      background: linear-gradient(135deg, rgba(204, 153, 0, 0.3), rgba(255, 204, 0, 0.2));
+    }
+    
+    .comparison-table th {
+      padding: 15px;
+      text-align: left;
+      color: #cc9900;
+      font-weight: 600;
+      border-bottom: 2px solid rgba(204, 153, 0, 0.3);
+    }
+    
+    .comparison-table td {
+      padding: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      color: #ccf5ff;
+      vertical-align: top;
+    }
+    
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .comparison-table tr:hover {
+      background: rgba(204, 153, 0, 0.05);
+    }
+    
+    .component-name {
+      font-weight: 600;
+      color: #cc9900;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .pros-cons-list {
+      margin: 0;
+      padding-left: 20px;
+      color: #ccf5ff;
+    }
+    
+    .pros-cons-list li {
+      margin-bottom: 5px;
+      line-height: 1.5;
+    }
+    
+    .application-box {
+      background: rgba(204, 153, 0, 0.1);
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin: 5px 0;
+      border-left: 3px solid #cc9900;
+    }
+    
+   
+    .info-box {
+      background: rgba(204, 153, 0, 0.1);
+      padding: 25px;
+      border-radius: 10px;
+      margin: 30px 0;
+      border-left: 4px solid #cc9900;
+    }
+    
+    .info-box h3 {
+      color: #cc9900;
+      margin-top: 0;
+    }
+    
+    .tip-box {
+      background: rgba(255, 215, 0, 0.1);
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border: 1px solid rgba(255, 215, 0, 0.3);
+    }
+    
+    .tip-box h4 {
+      color: #ffd700;
+      margin-top: 0;
+    }
+    
+    .warning-box {
+      background: rgba(255, 50, 50, 0.1);
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border: 1px solid rgba(255, 50, 50, 0.3);
+    }
+    
+    .warning-box h4 {
+      color: #ff5555;
+      margin-top: 0;
+    }
+    
+    .back-button {
+      text-align: center;
+      margin: 60px 0 30px;
+    }
+    
+    .back-button a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #cc9900;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 12px 30px;
+      background: rgba(204, 153, 0, 0.1);
+      border-radius: 25px;
+      border: 1px solid rgba(204, 153, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .back-button a:hover {
+      background: rgba(204, 153, 0, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(204, 153, 0, 0.2);
+    }
+    
+   
+    .formula-box {
+      background: rgba(0, 100, 200, 0.1);
+      padding: 25px;
+      border-radius: 10px;
+      margin: 30px 0;
+      border-left: 4px solid #0064c8;
+      text-align: center;
+    }
+    
+    .formula-box h3 {
+      color: #66b3ff;
+      margin-top: 0;
+    }
+    
+    .formula {
+      font-family: 'Courier New', monospace;
+      font-size: 1.2rem;
+      color: #ccf5ff;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+    
+    .definition-box {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .definition-box h4 {
+      color: #cc9900;
+      margin-top: 0;
+    }
+    
+   
+    .feature-box {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+      border: 2px solid rgba(204, 153, 0, 0.2);
+    }
+    
+    .feature-box h4 {
+      color: #cc9900;
+      margin-top: 0;
+    }
+    
+    @media (max-width: 768px) {
+        .image-item img {
+            height: 220px;
+        }
+        
+        .single-image img {
+            height: 250px;
+        }
+        
+        .comparison-table {
+            display: block;
+            overflow-x: auto;
+        }
+        
+        .component-name {
+            font-size: 1rem;
+        }
+        
+        .formula {
+            font-size: 1rem;
+            overflow-x: auto;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .image-item {
+            min-width: 100%;
+        }
+        
+        .image-item img {
+            height: 180px;
+        }
+        
+        .single-image img {
+            height: 200px;
+        }
+        
+        .image-caption {
+            font-size: 0.9rem;
+        }
+    }
+  </style>
+</head>
+<body>
+  
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <img src="img/Logo Cắt nền.png" alt="Robotics Team Logo">
+    </a>
+    <nav class="menu">
+      <a href="index.html#about" class="menu-link">About</a>
+      <a href="ftc.html" class="menu-link">FTC Team</a>
+      <a href="resources.html" class="menu-link active">Resources</a>
+      <a href="index.html#events" class="menu-link">Events</a>
+    </nav>
+  </header>
+
+  
+  <section class="article-header">
+    <h1>TRỤC VÍT ME (LEAD SCREW) TRONG ROBOTICS FTC</h1>
+    <div class="article-meta-top">
+      <span>15/04/2025</span>
+      <span>Truyền Động Tuyến Tính</span>
+      <span>Độ khó: Trung bình đến Nâng cao</span>
+    </div>
+  </section>
+
+  
+  <div class="article-content">
+    
+    <div class="article-tags">
+      <span class="article-tag">Trục Vít Me</span>
+      <span class="article-tag">Truyền Động Tuyến Tính</span>
+    </div>
+
+    
+    <div class="article-section">
+      <h2>GIỚI THIỆU TRỤC VÍT ME</h2>
+      
+      <p>Trục vít me (Lead Screw) là cơ cấu gồm một thanh ren được quay tròn để đẩy một đai ốc di chuyển tịnh tiến. Hầu hết các trục vít sử dụng loại ren ACME (loại ren có hình dạng đặc biệt, vuông hoặc hình thang, giúp chịu tải tốt hơn ren ốc thông thường).</p>
+      
+      <div class="warning-box">
+        <h4>Lưu ý quan trọng:</h4>
+        <p>Về mặt kỹ thuật, bạn vẫn có thể dùng một chiếc bu-lông tiêu chuẩn để làm trục vít, nhưng hiệu suất sẽ rất thấp (bị kẹt hoặc mất năng lượng do ma sát). Trục vít ACME được thiết kế đặc biệt cho ứng dụng truyền động tuyến tính.</p>
+      </div>
+      
+      <div class="image-comparison">
+        <div class="image-item">
+          <img src="img/m11.1.png" alt="Trục vít me ACME">
+          <div class="image-caption">Trục vít me ACME với đai ốc đồng</div>
+        </div>
+        <div class="image-item">
+          <img src="img/m11.2.png" alt="Hệ thống trục vít me trong robot">
+          <div class="image-caption">Hệ thống trục vít me trong robot FTC</div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="article-section">
+      <h2>ĐẶC ĐIỂM THIẾT KẾ TRỤC VÍT ME</h2>
+      
+      <div class="feature-box">
+        <h4>1. Tỷ số truyền cực lớn</h4>
+        <p>Những trục vít có mật độ ren dày (nhiều vòng ren trên mỗi inch) sẽ mặc định tạo ra một hệ thống giảm tốc rất lớn. Điều này giúp bạn có lực đẩy cực mạnh nhưng tốc độ di chuyển lại chậm.</p>
+      </div>
+      
+      <div class="feature-box">
+        <h4>2. Ren nhiều đầu mối (Multi-start Threads)</h4>
+        <p>Đây là loại trục vít có nhiều đường ren độc lập chạy song song trên cùng một thân trục.</p>
+        <div class="tip-box">
+          <h4>Lợi ích của ren nhiều đầu mối:</h4>
+          <ul class="pros-cons-list">
+            <li>Giúp đai ốc di chuyển quãng đường dài hơn trong khi trục quay chậm hơn</li>
+            <li>Kiểm soát cơ cấu tốt hơn và giảm thiểu hiện tượng vung trục</li>
+            <li>Giảm rung lắc mạnh khi trục quay quá nhanh</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="feature-box">
+        <h4>3. Hệ thống hỗ trợ</h4>
+        <p>Trục vít thường phải kết hợp với vòng bi tuyến tính hoặc thanh trượt để giữ cho cơ cấu di chuyển thẳng hàng và ổn định.</p>
+      </div>
+    </div>
+
+    
+    <div class="article-section">
+      <h2>THÔNG SỐ KỸ THUẬT VÀ ĐỊNH DANH</h2>
+      
+      <div class="info-box">
+        <h3>Định danh trục vít me</h3>
+        <p>Trục vít được phân loại dựa trên đường kính và bước ren (pitch) - khoảng cách từ đỉnh một ren đến đỉnh ren tiếp theo, đo dọc theo trục.</p>
+      </div>
+      
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Kích thước phổ biến</th>
+            <th>Thông số</th>
+            <th>Đặc điểm</th>
+            <th>Ứng dụng trong FTC</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>
+              <div class="component-name">1/4-16</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Đường kính: 1/4 inch (6.35mm)</li>
+                <li>Bước ren: 16 TPI (Threads Per Inch)</li>
+                <li>Khoảng cách mỗi vòng: 1.5875mm</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Phổ biến, dễ tìm</li>
+                <li>Giá thành hợp lý</li>
+                <li>Đủ bền cho hầu hết ứng dụng FTC</li>
+              </ul>
+            </td>
+            <td>
+              <div class="application-box">Cơ cấu nâng hạ</div>
+              <div class="application-box">Hệ thống kẹp</div>
+              <div class="application-box">Điều chỉnh góc bắn</div>
+            </td>
+          </tr>
+          
+          
+          <tr>
+            <td>
+              <div class="component-name">8mm</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Đường kính: 8mm</li>
+                <li>Bước ren: 2mm hoặc 4mm</li>
+                <li>Tiêu chuẩn metric</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Chính xác cao hơn</li>
+                <li>Phù hợp thiết kế metric</li>
+                <li>Độ bền tốt</li>
+              </ul>
+            </td>
+            <td>
+              <div class="application-box">Cơ cấu chính xác cao</div>
+              <div class="application-box">Robot competition cao cấp</div>
+              <div class="application-box">Hệ thống định vị</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <div class="tip-box">
+        <h4>Vật liệu đai ốc:</h4>
+        <p>Đai ốc thường được làm bằng đồng thau hoặc nhựa kỹ thuật. Vì cơ chế này hoạt động dựa trên ma sát trượt giữa trục và đai ốc, nên vật liệu làm đai ốc sẽ quyết định hiệu suất vận hành của hệ thống.</p>
+        <ul class="pros-cons-list">
+          <li><strong>Đồng thau:</strong> Độ bền cao, chịu tải tốt, cần bôi trơn</li>
+          <li><strong>Nhựa kỹ thuật (Delrin, Nylon):</strong> Vận hành êm, tự bôi trơn, chịu mài mòn tốt</li>
+        </ul>
+      </div>
+    </div>
+
+    
+    <div class="article-section">
+      <h2>TỐC ĐỘ TỚI HẠN (CRITICAL SPEED)</h2>
+      
+      <div class="definition-box">
+        <h4>Định nghĩa:</h4>
+        <p><strong>Tốc độ tới hạn</strong> là tốc độ mà tại đó một hệ thống cơ học (như trục quay) bắt đầu cộng hưởng mạnh mẽ, gây rung động lớn.</p>
+      </div>
+      
+      <p>Trục vít có một mức tốc độ tới hạn (critical speed). Nếu bạn quay nhanh hơn mức này, trục sẽ đạt đến tần số dao động riêng và bắt đầu rung lắc dữ dội (giống như sợi dây nhảy bị vung mạnh).</p>
+      
+      <div class="formula-box">
+        <h3>Công thức tính Tốc độ tới hạn</h3>
+        <div class="single-image">
+         <img src="img/m11.3.png" alt="Công thức tính tốc độ tới hạn của trục vít me" style="width: 100%; max-width: 600px; height: auto; display: block; margin: 0 auto;">
+          <div class="image-caption">Công thức tính tốc độ tới hạn N_c = (C × π × d²) / (4 × L²) × √(E / ρ)</div>
+        </div>
+        <p><strong>Trong đó:</strong></p>
+        <ul class="pros-cons-list">
+          <li><strong>N_c:</strong> Tốc độ tới hạn (RPM)</li>
+          <li><strong>L:</strong> Khoảng cách giữa hai gối đỡ trục</li>
+          <li><strong>d:</strong> Đường kính chân ren (phần lõi nhỏ nhất của trục vít)</li>
+          <li><strong>C:</strong> Hằng số phụ thuộc vào kiểu gối đỡ ở hai đầu</li>
+          <li><strong>E:</strong> Mô đun đàn hồi của vật liệu</li>
+          <li><strong>ρ:</strong> Khối lượng riêng của vật liệu</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>Các yếu tố ảnh hưởng đến tốc độ tới hạn:</h3>
+        <ul class="pros-cons-list">
+          <li><strong>Đường kính trục:</strong> Đường kính càng lớn, tốc độ tới hạn càng cao</li>
+          <li><strong>Chiều dài trục:</strong> Chiều dài càng ngắn, tốc độ tới hạn càng cao</li>
+          <li><strong>Cách cố định hai đầu trục:</strong> Gối đỡ càng cứng vững, tốc độ tới hạn càng cao</li>
+          <li><strong>Vật liệu trục:</strong> Vật liệu có mô đun đàn hồi cao cho tốc độ tới hạn cao hơn</li>
+        </ul>
+      </div>
+    </div>
+
+    
+    <div class="article-section">
+      <h2>ỨNG DỤNG THỰC TẾ TRONG ROBOT FTC</h2>
+      
+      <div class="single-image">
+        <img src="img/m11.4.png" alt="Vít me điều chỉnh lực bắn trong robot">
+        <div class="image-caption">Vít me điều chỉnh lực bắn trong robot FTC (minh họa)</div>
+      </div>
+      
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Ứng dụng</th>
+            <th>Cách thức hoạt động</th>
+            <th>Ưu điểm khi dùng trục vít me</th>
+            <th>Lưu ý thiết kế</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>
+              <div class="component-name">Điều chỉnh góc bắn</div>
+            </td>
+            <td>
+              Trục vít quay đẩy đai ốc di chuyển, thay đổi góc của khẩu pháo
+            </td>
+            <td>
+              <div class="application-box">Độ chính xác cao</div>
+              <div class="application-box">Giữ vị trí mà không cần phanh</div>
+              <div class="application-box">Lực giữ tốt</div>
+            </td>
+            <td>
+              <div class="application-box">Cần hệ thống dẫn hướng</div>
+              <div class="application-box">Chọn bước ren phù hợp</div>
+              <div class="application-box">Tính toán tải trọng</div>
+            </td>
+          </tr>
+          
+          <tr>
+            <td>
+              <div class="component-name">Cơ cấu nâng hạ</div>
+            </td>
+            <td>
+              Trục vít nâng toàn bộ cụm cơ cấu lên/xuống
+            </td>
+            <td>
+              <div class="application-box">Tỷ số truyền lớn</div>
+              <div class="application-box">Chịu tải trọng nặng</div>
+              <div class="application-box">Tự khóa khi dừng</div>
+            </td>
+            <td>
+              <div class="application-box">Kiểm tra tốc độ tới hạn</div>
+              <div class="application-box">Thiết kế chống xoắn</div>
+              <div class="application-box">Bôi trơn đầy đủ</div>
+            </td>
+          </tr>
+          
+          <tr>
+            <td>
+              <div class="component-name">Hệ thống kẹp</div>
+            </td>
+            <td>
+              Trục vít điều khiển khoảng cách giữa hai hàm kẹp
+            </td>
+            <td>
+              <div class="application-box">Lực kẹp mạnh</div>
+              <div class="application-box">Điều chỉnh chính xác</div>
+              <div class="application-box">Giữ lực mà không tốn điện</div>
+            </td>
+            <td>
+              <div class="application-box">Tính toán lực kẹp cần thiết</div>
+              <div class="application-box">Chọn vật liệu đai ốc phù hợp</div>
+              <div class="application-box">Thiết kế bù khe hở</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    
+    <div class="article-section">
+      <h2>ƯU ĐIỂM VÀ NHƯỢC ĐIỂM</h2>
+      
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>ƯU ĐIỂM</th>
+            <th>NHƯỢC ĐIỂM</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>
+              <div class="application-box">
+                <h4>Khả năng giảm tốc tự động:</h4>
+                <p>Thiết kế nhiều ren trên mỗi inch giúp tạo ra tỷ số truyền lớn, tăng lực đẩy đáng kể cho hệ thống.</p>
+              </div>
+              
+              <div class="application-box">
+                <h4>Tính linh hoạt về tốc độ:</h4>
+                <p>Với loại ren nhiều đầu mối, có thể đạt hành trình tịnh tiến lớn ở tốc độ quay thấp, giúp kiểm soát tốt hơn.</p>
+              </div>
+              
+              <div class="application-box">
+                <h4>Hạn chế vung trục:</h4>
+                <p>Việc sử dụng ren nhiều đầu mối giúp giảm tốc độ quay của trục, từ đó giảm thiểu hiện tượng rung lắc ở tốc độ cao.</p>
+              </div>
+              
+              <div class="application-box">
+                <h4>Cấu tạo đơn giản & đa dạng vật liệu:</h4>
+                <p>Có thể sử dụng đai ốc bằng đồng hoặc nhựa kỹ thuật tùy thuộc vào tải trọng và yêu cầu bôi trơn.</p>
+              </div>
+              
+              <div class="application-box">
+                <h4>Kích thước tiêu chuẩn dễ thay thế:</h4>
+                <p>Các kích thước như 1/4-16 và 8mm rất phổ biến, dễ dàng tìm kiếm phụ tùng thay thế trong robotics.</p>
+              </div>
+            </td>
+            
+            <td>
+              <div class="application-box">
+                <h4>Hiệu suất thấp:</h4>
+                <p>Hoạt động dựa trên ma sát trượt nên hiệu suất chuyển đổi từ momen xoắn sang lực đẩy thấp hơn so với vít me bi (dùng ma sát lăn).</p>
+              </div>
+              
+              <div class="application-box">
+                <h4>Ma sát và nhiệt độ cao:</h4>
+                <p>Hệ số ma sát điển hình khoảng 0.15 (cao gấp 30 lần so với vít me bi là 0.005), dẫn đến sinh nhiệt lớn khi vận hành.</p>
+              </div>
+              
+              <div class="application-box">
+                <h4>Tiếng ồn khi vận hành:</h4>
+                <p>Thường phát ra tiếng rít hoặc tiếng ồn khó chịu do sự tiếp xúc vật liệu, sự căn chỉnh không thẳng hàng hoặc rung động hệ thống.</p>
+              </div>
+              
+              <div class="application-box">
+                <h4>Giới hạn độ chính xác:</h4>
+                <p>Việc chế tạo đạt độ chính xác cực cao (như 1 μm/300mm) là không thực tế về chi phí và thời gian so với vít me bi được mài.</p>
+              </div>
+              
+              <div class="application-box">
+                <h4>Độ nhạy với tải trọng hướng tâm:</h4>
+                <p>Rất dễ hư hỏng nếu chịu tải trọng hướng tâm (lực tác động vuông góc (ngang) với trục quay). Khuyến cáo phải giảm tải này xuống dưới 5% tải trọng dọc trục.</p>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    
+    <div class="article-section">
+      <h2>MẸO THIẾT KẾ VÀ LỰA CHỌN</h2>
+      
+      <div class="step-box">
+       
+        <strong>Xác định yêu cầu:</strong>
+        <p>Tốc độ di chuyển, lực đẩy cần thiết, hành trình, độ chính xác, tải trọng hướng tâm.</p>
+      </div>
+      
+      <div class="step-box">
+       
+        <strong>Chọn bước ren:</strong>
+        <p>Bước ren nhỏ → lực lớn, tốc độ chậm. Bước ren lớn → tốc độ nhanh, lực nhỏ.</p>
+      </div>
+      
+      <div class="step-box">
+       
+        <strong>Chọn vật liệu đai ốc:</strong>
+        <p>Đồng thau cho tải nặng, nhựa kỹ thuật cho vận hành êm và không cần bôi trơn.</p>
+      </div>
+      
+      <div class="step-box">
+      
+        <strong>Thiết kế hệ thống dẫn hướng:</strong>
+        <p>Luôn sử dụng thanh trượt hoặc vòng bi tuyến tính để chịu tải hướng tâm.</p>
+      </div>
+      
+      <div class="step-box">
+       
+        <strong>Tính toán tốc độ tới hạn:</strong>
+        <p>Đảm bảo tốc độ vận hành thấp hơn 80% tốc độ tới hạn để tránh rung động.</p>
+      </div>
+      
+      <div class="step-box">
+       
+        <strong>Bôi trơn:</strong>
+        <p>Sử dụng mỡ bôi trơn chuyên dụng cho trục vít me, đặc biệt với đai ốc đồng thau.</p>
+      </div>
+      
+      <div class="warning-box">
+        <h4>CẢNH BÁO AN TOÀN:</h4>
+        <p><strong>Tránh quá tải:</strong> Trục vít me có thể bị biến dạng vĩnh viễn nếu quá tải.</p>
+        <p><strong>Bảo vệ khỏi bụi bẩn:</strong> Bụi và mảnh vụn có thể làm kẹt hệ thống.</p>
+        <p><strong>Kiểm tra nhiệt độ:</strong> Theo dõi nhiệt độ khi vận hành liên tục ở tốc độ cao.</p>
+        <p><strong>Sử dụng phanh hoặc tự khóa:</strong> Đảm bảo hệ thống không di chuyển khi mất điện.</p>
+      </div>
+    </div>
+
+    
+    <div class="back-button">
+      <a href="mechanical.html">
+        <span>←</span> Quay lại Trang Cơ Khí
+      </a>
+    </div>
+  </div>
+
+  
+  <hr class="divider-blue">
+  <footer class="footer" id="contact">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="img/Logo Cắt nền.png" alt="FTC 31113 Logo">
+        <p>FTC 31113<br>High School for Gifted Students</p>
+      </div>
+      <table class="footer-table">
+        <tr>
+          <th>Contact</th>
+          <th>Resources</th>
+          <th>Resources</th>
+        </tr>
+        <tr>
+          <td>
+            <span class="footer-email">robotics.hsgs@gmail.com</span><br>
+            <a href="https://www.facebook.com/HSGSRoboLads?locale=vi_VN" target="_blank" rel="noopener noreferrer">Facebook</a><br>
+            <a href="https://www.instagram.com/robolads_31113/?igsh=MWFiaTcycXVpcnNkYQ%3D%3D#" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </td>
+          <td>
+            <a href="mechanical.html#mechanical-section">Cơ Khí</a><br>
+            <a href="programming.html#programming-section">Lập Trình</a><br>
+            <a href="programming.html#electronics-section">Điện Tử</a>
+          </td>
+          <td>
+            <a href="mechanical.html#3dprinting-section">In 3D</a><br>
+            <a href="mechanical.html#cad-section">CAD</a><br>
+            <a href="business.html">Business</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="footer-bottom">
+      © 2025 FTC 31113. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

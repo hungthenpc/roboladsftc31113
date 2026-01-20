@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>FTC31113 Robolads</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="article-programming.css" />
+    <link rel="icon" type="image/png" href="img/Logo Cắt nền.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <style>
+         .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .single-image {
+            overflow: hidden !important;
+            width: 100%;
+            max-width: 900px;
+            margin: 25px auto;
+            padding: 0;
+            border: 3px solid rgba(100, 150, 255, 0.4);
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            text-align: center;
+        }
+
+        .single-image img {
+            width: 100%;
+            display: block;
+            border-radius: 0;
+        }
+
+        .single-image p {
+            padding: 15px;
+            margin: 0 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="img/Logo Cắt nền.png" alt="Robotics Team Logo">
+        </a>
+        <nav class="menu">
+            <a href="index.html#about" class="menu-link">About</a>
+            <a href="ftc.html" class="menu-link">FTC Team</a>
+            <a href="resources.html" class="menu-link active">Resources</a>
+            <a href="index.html#events" class="menu-link">Events</a>
+        </nav>
+    </header>
+
+    <section class="article-header">
+        <h1>ARDUINO TUTORIAL #8: PULSE WIDTH MODULATION (PWM)</h1>
+        <div class="article-meta-top">
+            <span>19/01/2026</span>
+            <span>Lập Trình</span>
+            <span>Độ khó: Trung bình</span>
+        </div>
+    </section>
+
+    <div class="article-content">
+        <div class="article-tags">
+            <span class="article-tag">Arduino</span>
+            <span class="article-tag">PWM</span>
+            <span class="article-tag">Theory</span>
+            <span class="article-tag">Electronics</span>
+        </div>
+
+        <div class="article-section">
+            <h2>KHÁI QUÁT SƠ ĐỒ PWM</h2>
+            <p>PWM (Pulse Width Modulation) là phương pháp điều chỉnh độ rộng xung để giả lập điện áp analog. Dưới đây
+                là các thông số cơ bản:</p>
+            <div class="single-image">
+                <img src="img/p8.1.png" alt="PWM Diagram: Period, Frequency, Amplitude">
+                <p style="color: #ccf5ff; margin-top: 10px;"><i>Sơ đồ mô tả chu kỳ (Period), tần số (Frequency) và biên
+                        độ (Amplitude) của xung PWM.</i></p>
+            </div>
+        </div>
+
+        <div class="article-section">
+            <hr style="border: none; border-top: 1px solid rgba(100, 150, 255, 0.3); margin: 40px 0;">
+            <h2>THỰC HÀNH VÀ CÔNG THỨC</h2>
+            <p>Để tính toán điện áp đầu ra trung bình (Vout), chúng ta căn cứ vào Duty Cycle (Chu kỳ nhiệm vụ):</p>
+            <div class="single-image">
+                <img src="img/p8.2.png" alt="PWM Practice: Duty Cycle and Vout">
+                <p style="color: #ccf5ff; margin-top: 10px;"><i>Ví dụ: Với Duty Cycle 67% và Vmax 5V, điện áp đầu ra xấp
+                        xỉ 3.35V.</i></p>
+            </div>
+            <div class="highlight-box"
+                style="background: rgba(100, 150, 255, 0.1); border-left: 5px solid #6699ff; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <p><strong>Công thức tính:</strong> <code>Vout = Vmax * Duty Cycle</code></p>
+                <p><strong>Ví dụ:</strong> 5V * 0.67 = 3.35V</p>
+            </div>
+        </div>
+
+       
+        <div class="back-button">
+            <a href="programming.html">
+                <span>←</span> Quay lại Trang Lập Trình
+            </a>
+        </div>
+    </div>
+
+    <hr class="divider-blue">
+ <footer class="footer" id="contact">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="img/Logo Cắt nền.png" alt="FTC 31113 Logo">
+        <p>FTC 31113<br>High School for Gifted Students</p>
+      </div>
+      <table class="footer-table">
+        <tr>
+          <th>Contact</th>
+          <th>Resources</th>
+          <th>Resources</th>
+        </tr>
+        <tr>
+          <td>
+            <span class="footer-email">robotics.hsgs@gmail.com</span><br>
+            <a href="https://www.facebook.com/HSGSRoboLads?locale=vi_VN" target="_blank" rel="noopener noreferrer">Facebook</a><br>
+            <a href="https://www.instagram.com/robolads_31113/?igsh=MWFiaTcycXVpcnNkYQ%3D%3D#" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </td>
+          <td>
+            <a href="mechanical.html#mechanical-section">Cơ Khí</a><br>
+            <a href="programming.html#programming-section">Lập Trình</a><br>
+            <a href="programming.html#electronics-section">Điện Tử</a>
+          </td>
+          <td>
+            <a href="mechanical.html#3dprinting-section">In 3D</a><br>
+            <a href="mechanical.html#cad-section">CAD</a><br>
+            <a href="business.html">Business</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="footer-bottom">
+      © 2025 FTC 31113. All rights reserved.
+    </div>
+  </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

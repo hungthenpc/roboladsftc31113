@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>FTC31113 Robolads</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="article-programming.css" />
+    <link rel="icon" type="image/png" href="img/Logo Cắt nền.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <style>
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .single-image {
+            overflow: hidden !important;
+            width: 100%;
+            max-width: 800px;
+            margin: 25px auto;
+            padding: 20px;
+            border: 3px solid rgba(100, 150, 255, 0.4);
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            text-align: center;
+        }
+
+        .highlight-box {
+            background: rgba(100, 150, 255, 0.1);
+            border-left: 5px solid #6699ff;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="img/Logo Cắt nền.png" alt="Robotics Team Logo">
+        </a>
+        <nav class="menu">
+            <a href="index.html#about" class="menu-link">About</a>
+            <a href="ftc.html" class="menu-link">FTC Team</a>
+            <a href="resources.html" class="menu-link active">Resources</a>
+            <a href="index.html#events" class="menu-link">Events</a>
+        </nav>
+    </header>
+
+    <section class="article-header">
+        <h1>ARDUINO TUTORIAL #9: ĐO HIỆU ĐIỆN THẾ VỚI ĐỒNG HỒ VẠN NĂNG</h1>
+        <div class="article-meta-top">
+            <span>19/01/2026</span>
+            <span>Lập Trình</span>
+            <span>Độ khó: Cơ bản</span>
+        </div>
+    </section>
+
+    <div class="article-content">
+        <div class="article-tags">
+            <span class="article-tag">Arduino</span>
+            <span class="article-tag">Multimeter</span>
+            <span class="article-tag">Voltage</span>
+            <span class="article-tag">Practice</span>
+        </div>
+
+        <div class="article-section">
+            <h2>GIỚI THIỆU BÀI THỰC HÀNH</h2>
+            <p>Trong bài học này, chúng ta sẽ thực hành cách sử dụng đồng hồ vạn năng (multimeter) để đo hiệu điện thế
+                (voltage) giữa hai điểm trong một mạch điện đơn giản gồm 2 điện trở R1 và R2 mắc nối tiếp.</p>
+        </div>
+
+        <div class="article-section">
+            <h2>SƠ ĐỒ MẠCH ĐIỆN</h2>
+            <p>Mạch điện bao gồm nguồn 5V từ Arduino, kết nối với hai điện trở R1 và R2. Chúng ta sẽ đo hiệu điện thế
+                trên từng điện trở.</p>
+<div class="single-image">
+                <img src="img/p9.1.png" alt="PWM Diagram: Period, Frequency, Amplitude">
+                <p style="color: #ccf5ff; margin-top: 10px;"></p>
+            </div>
+        </div>
+
+        <div class="article-section">
+            <h2>CÁC BƯỚC THỰC HIỆN</h2>
+            <div class="highlight-box">
+                <ol>
+                    <li><strong>Chuẩn bị đồng hồ:</strong> Chuyển thang đo của đồng hồ vạn năng sang chế độ đo điện áp
+                        DC (V-).</li>
+                    <li><strong>Kết nối que đo:</strong> Đặt que đỏ vào điểm có tiềm thế cao hơn và que đen vào điểm có
+                        tiềm thế thấp hơn.</li>
+                    <li><strong>Đo R1:</strong> Đặt hai đầu que đo song song với hai chân của điện trở R1.</li>
+                    <li><strong>Đo R2:</strong> Tương tự, đặt hai đầu que đo song song với hai chân của điện trở R2.
+                    </li>
+                    <li><strong>Kiểm tra:</strong> Tổng hiệu điện thế trên R1 và R2 sẽ bằng hiệu điện thế nguồn (xấp xỉ
+                        5V).</li>
+                </ol>
+            </div>
+        </div>
+
+        
+
+        <div class="back-button">
+            <a href="programming.html">
+                <span>←</span> Quay lại Trang Lập Trình
+            </a>
+        </div>
+    </div>
+
+    <hr class="divider-blue">
+ <footer class="footer" id="contact">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="img/Logo Cắt nền.png" alt="FTC 31113 Logo">
+        <p>FTC 31113<br>High School for Gifted Students</p>
+      </div>
+      <table class="footer-table">
+        <tr>
+          <th>Contact</th>
+          <th>Resources</th>
+          <th>Resources</th>
+        </tr>
+        <tr>
+          <td>
+            <span class="footer-email">robotics.hsgs@gmail.com</span><br>
+            <a href="https://www.facebook.com/HSGSRoboLads?locale=vi_VN" target="_blank" rel="noopener noreferrer">Facebook</a><br>
+            <a href="https://www.instagram.com/robolads_31113/?igsh=MWFiaTcycXVpcnNkYQ%3D%3D#" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </td>
+          <td>
+            <a href="mechanical.html#mechanical-section">Cơ Khí</a><br>
+            <a href="programming.html#programming-section">Lập Trình</a><br>
+            <a href="programming.html#electronics-section">Điện Tử</a>
+          </td>
+          <td>
+            <a href="mechanical.html#3dprinting-section">In 3D</a><br>
+            <a href="mechanical.html#cad-section">CAD</a><br>
+            <a href="business.html">Business</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="footer-bottom">
+      © 2025 FTC 31113. All rights reserved.
+    </div>
+  </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

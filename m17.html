@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <title>FTC31113 Robolads</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="article-mechanical.css" />
+    <link rel="icon" type="image/png" href="img/Logo Cắt nền.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <style>
+       
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+        
+        .image-comparison {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+            justify-content: center;
+        }
+      
+        .image-item {
+            flex: 1;
+            min-width: 350px;
+            max-width: 550px;
+            text-align: center;
+            padding: 20px;
+            border: 2px solid rgba(204, 153, 0, 0.4);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.04);
+        }
+        
+        .image-item img {
+            width: 100%;
+            height: 280px;
+            object-fit: contain; height: auto;
+            object-position: center;
+            border: 2px solid rgba(204, 153, 0, 0.3);
+            border-radius: 8px;
+        }
+        .article-link {
+            color: #cc9900;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(204, 153, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        .article-link:hover {
+            color: #ffcc00;
+            border-bottom: 1px solid #ffcc00;
+        }
+       
+        .image-caption {
+            color: #ccf5ff;
+            font-size: 1rem;
+            font-style: italic;
+            margin-top: 15px;
+            padding-top: 12px;
+            border-top: 2px solid rgba(255, 255, 255, 0.15);
+        }
+        
+        .single-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 25px auto;
+            padding: 20px;
+            border: 3px solid rgba(204, 153, 0, 0.4);
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            text-align: center;
+        }
+       
+        .single-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: contain; height: auto;
+            object-position: center;
+            border: 2px solid rgba(204, 153, 0, 0.3);
+            border-radius: 10px;
+        }
+     
+        @media (max-width: 768px) {
+            .image-item img {
+                height: 220px;
+            }
+            .single-image img {
+                height: 250px;
+            }
+        }
+        @media (max-width: 480px) {
+            .image-item {
+                min-width: 100%;
+            }
+            .image-item img {
+                height: 180px;
+            }
+            .single-image img {
+                height: 200px;
+            }
+            .image-caption {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="img/Logo Cắt nền.png" alt="Robotics Team Logo">
+        </a>
+        <nav class="menu">
+            <a href="index.html#about" class="menu-link">About</a>
+            <a href="ftc.html" class="menu-link">FTC Team</a>
+            <a href="resources.html" class="menu-link active">Resources</a>
+            <a href="index.html#events" class="menu-link">Events</a>
+        </nav>
+    </header>
+    
+    <section class="article-header">
+        <h1>HỆ THỐNG TRUYỀN ĐỘNG DÂY ĐAI (BELT DRIVE SYSTEMS)</h1>
+        <div class="article-meta-top">
+            <span>18/01/2026</span>
+            <span>Cơ Khí</span>
+            <span>Độ khó: Nâng cao</span>
+        </div>
+    </section>
+    
+    <div class="article-content">
+        
+        <div class="article-tags">
+            <span class="article-tag">Belt</span>
+            <span class="article-tag">GT2</span>
+            <span class="article-tag">HTD</span>
+            <span class="article-tag">FTC</span>
+            <span class="article-tag">Cơ Khí</span>
+        </div>
+        
+        <div class="article-section">
+            <h2>Dây đai Curoa (Belts)</h2>
+            <p>Dây đai thường được dùng để truyền tải mức momen xoắn nhẹ. Chúng vẫn có thể dùng trong các ứng dụng tải
+                cao như hệ thống truyền động gầm, tuy nhiên các loại dây đai có khả năng chịu tải tương đương với xích
+                thường có bề rộng lớn hơn xích rất nhiều.</p>
+            <p>Tương tự như xích, có nhiều loại dây đai khác nhau; những loại phổ biến trong FTC là 3mm GT2, 2mm GT2,
+                5mm HTD và 3mm HTD.</p>
+        </div>
+        
+        <div class="article-section">
+            <h2>1. CÁC LOẠI DÂY ĐAI PHỔ BIẾN TRONG FTC</h2>
+            
+            <div class="highlight-box">
+                <h3>3mm GT2</h3>
+                <p><strong>Mô tả:</strong> Có bước răng 3mm. Sử dụng biên dạng răng cong kiểu PowerGrip.</p>
+                <p><strong>Đặc điểm:</strong> Đây là loại "phải có" cho hầu hết robot FTC. Nó cân bằng hoàn hảo giữa
+                    kích thước nhỏ gọn và khả năng chịu tải.</p>
+                <p><strong>Ưu điểm:</strong> Độ rơ (backlash) cực thấp, rất khó bị nhảy răng khi được căng đúng cách.
+                </p>
+            </div>
+            <br>
+            
+            <div class="highlight-box">
+                <h3>2mm GT2</h3>
+                <p><strong>Mô tả:</strong> Bước răng chỉ 2mm, răng và đai rất mỏng mảnh.</p>
+                <p><strong>Đặc điểm:</strong> Dùng cho các cơ cấu siêu nhẹ, nơi mà không gian là ưu tiên hàng đầu.</p>
+                <p><strong>Ưu điểm:</strong> Trọng lượng cực nhẹ, vận hành mượt mà ở tốc độ cao.</p>
+                <p><strong>Nhược điểm:</strong> Rất dễ bị nhảy răng nếu gặp tải nặng.</p>
+            </div>
+            <br>
+            
+            <div class="highlight-box">
+                <h3>S3M / 3mm HTD</h3>
+                <p><strong>Mô tả:</strong> Bước răng 3mm nhưng biên dạng răng tròn kiểu cũ (HTD - High Torque Drive).
+                </p>
+                <p><strong>Đặc điểm:</strong> Thường xuất hiện trên các linh kiện công nghiệp (như hãng Misumi) hoặc các
+                    đội tự gia công puli riêng.</p>
+                <p><strong>Ưu điểm:</strong> Rất bền bỉ trong các ứng dụng truyền động thô.</p>
+                <p><strong>Nhược điểm:</strong> Độ rơ (backlash) lớn hơn một chút so với GT2, nên không được ưu tiên cho
+                    các cánh tay máy cần độ chính xác tuyệt đối.</p>
+            </div>
+            <br>
+            
+            <div class="highlight-box">
+                <h3>5mm HTD</h3>
+                <p><strong>Mô tả:</strong> Có bước răng 5mm, biên dạng răng tròn sâu đặc trưng của hệ HTD.</p>
+                <p><strong>Đặc điểm:</strong> Là "lực sĩ" trong các dòng đai robot. Thường dùng cho hệ thống truyền động
+                    bánh xe (Drivetrain) hoặc các cơ cấu nâng hạ chịu tải cực nặng.</p>
+                <p><strong>Ưu điểm:</strong> Khả năng chịu momen xoắn cực lớn. Gần như không thể bị nhảy răng nhờ răng
+                    đai sâu và to. Cực kỳ bền bỉ dưới cường độ cao.</p>
+                <p><strong>Nhược điểm:</strong> Kích thước puli và đai rất lớn, chiếm nhiều không gian. Độ rơ (backlash)
+                    đáng kể, không phù hợp cho các cơ cấu cần độ chính xác vị trí tuyệt đối.</p>
+            </div>
+            <div class="single-image">
+                <img src="img/m17.1.png" alt="Các loại dây đai">
+                <div class="image-caption">Hình ảnh chỉ mang tính chất minh hoạ*</div>
+            </div>
+        </div>
+        
+        <div class="article-section">
+            <h2>2. THIẾT KẾ RÒNG RỌC VÀ DÂY ĐAI</h2>
+            <p>Tương tự như xích, dây đai cần có khoảng cách tâm chính xác để được căng đúng truyền động hiệu quả, tránh
+                bị trượt và hao hụt năng lượng. Tuy nhiên, dây đai có chiều dài cố định theo tiêu chuẩn.</p>
+            <p>Để tính toán khoảng cách tâm cho một chiều dài đai cụ thể, hoặc xác định chiều dài đai cho một khoảng
+                cách định sẵn, bạn có thể tham khảo công cụ sau:</p>
+            <p><a href="https://everycalc.thadhughes.xyz/beltsize" target="_blank" class="article-link">Belt Size
+                    Calculator (everycalc)</a></p>
+            <div class="process-item">
+                <h4>Tính toán thủ công qua chiều dài vòng chia (Pitch Length)</h4>
+                <p>Một cách khác để thiết kế đai răng là sử dụng chiều dài vòng chia. Để tính chiều dài vòng chia của
+                    dây đai, bạn chỉ cần nhân số răng với bước răng:</p>
+                <p style="text-align: center; font-weight: bold; padding: 10px;">Chiều dài Pitch = Pitch × Số răng</p>
+                <p>Dây đai bạn sử dụng phải trùng khớp với puli có đường kính vòng chia đã biết:</p>
+                <p style="text-align: center; font-weight: bold; padding: 10px;">Đường kính Pitch = (Pitch × Số răng) /
+                    𝜋</p>
+            </div>
+            <p>Thông thường bạn có thể tra cứu đường kính vòng chia của ròng rọc trên website nhà cung cấp.</p>
+            <p>Với đường chạy đai đơn giản giữa hai puli, bạn có thể vẽ đường chạy bằng cách vẽ cả hai puli tại đường
+                kính vòng chia của chúng và nối bằng các đường tiếp tuyến. Sau đó, bạn có thể định kích thước chiều dài
+                đường chạy bằng với chiều dài vòng chia của đai.</p>
+            <div class="highlight-box">
+                <h4>Lưu ý quan trọng</h4>
+                <p>Cũng cần lưu ý rằng sau một thời gian dài sử dụng, đai curoa sẽ có thể bị giãn ra và không còn căng
+                    như trước, gây ảnh hưởng đến hiệu suất cơ cấu.</p>
+            </div>
+        </div>
+       
+        
+        <div class="back-button">
+            <a href="mechanical.html">
+                <span>←</span> Quay lại Trang Cơ Khí
+            </a>
+        </div>
+    </div>
+    
+    <hr class="divider-blue">
+    <footer class="footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="img/Logo Cắt nền.png" alt="FTC 31113 Logo">
+                <p>FTC 31113<br>High School for Gifted Students</p>
+            </div>
+            <table class="footer-table">
+                <tr>
+                    <th>Contact</th>
+                    <th>Resources</th>
+                    <th>Resources</th>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="footer-email">robotics.hsgs@gmail.com</span><br>
+                        <a href="https://www.facebook.com/HSGSRoboLads?locale=vi_VN" target="_blank"
+                            rel="noopener noreferrer">Facebook</a><br>
+                        <a href="https://www.instagram.com/robolads_31113/?igsh=MWFiaTcycXVpcnNkYQ%3D%3D#"
+                            target="_blank" rel="noopener noreferrer">Instagram</a>
+                    </td>
+                    <td>
+                        <a href="mechanical.html#mechanical-section">Cơ Khí</a><br>
+                        <a href="programming.html#programming-section">Lập Trình</a><br>
+                        <a href="programming.html#electronics-section">Điện Tử</a>
+                    </td>
+                    <td>
+                        <a href="mechanical.html#3dprinting-section">In 3D</a><br>
+                        <a href="mechanical.html#cad-section">CAD</a><br>
+                        <a href="business.html">Business</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="footer-bottom">
+            © 2025 FTC 31113. All rights reserved.
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

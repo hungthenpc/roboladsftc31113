@@ -1,5 +1,5 @@
-
-
+/* article-programming.css */
+/* Article specific styles - MÀU XANH LẬP TRÌNH */
 .article-header {
     background: linear-gradient(135deg, rgba(100, 150, 255, 0.2), rgba(150, 200, 255, 0.1));
     padding: 120px 20px 60px;
@@ -212,7 +212,7 @@
     font-size: 0.9rem;
 }
 
-
+/* Code blocks */
 .code-block {
     background: rgba(20, 30, 50, 0.9);
     border-left: 4px solid #6699ff;
@@ -259,7 +259,7 @@
     color: #66ccff;
 }
 
-
+/* Image comparison styles */
 .image-comparison {
     display: flex;
     flex-wrap: wrap;
@@ -294,7 +294,7 @@
     font-style: italic;
 }
 
-
+/* Table styles */
 .comparison-table {
     width: 100%;
     border-collapse: collapse;
@@ -329,7 +329,7 @@
     background: rgba(100, 150, 255, 0.05);
 }
 
-
+/* Process list */
 .process-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -363,7 +363,7 @@
     line-height: 1.5;
 }
 
-
+/* List styles */
 .article-content ul,
 .article-content ol {
     margin: 20px 0;
@@ -379,7 +379,7 @@
     color: #99ccff;
 }
 
-
+/* Note and warning boxes */
 .note-box {
     background: rgba(100, 200, 255, 0.1);
     border-left: 4px solid #66b3ff;
@@ -412,7 +412,7 @@
     margin-bottom: 10px;
 }
 
-
+/* Responsive */
 @media (max-width: 768px) {
     .article-header {
         padding: 100px 20px 40px;

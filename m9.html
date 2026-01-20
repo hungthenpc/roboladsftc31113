@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>FTC31113 Robolads</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="article-mechanical.css" />
+  <link rel="icon" type="image/png" href="img/Logo Cắt nền.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <style>
+   
+    .article-content img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+    }
+    
+    .image-comparison {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin: 40px 0;
+        justify-content: center;
+    }
+    
+    .image-item {
+        flex: 1;
+        min-width: 350px;
+        max-width: 550px;
+        text-align: center;
+        padding: 20px;
+        border: 2px solid rgba(204, 153, 0, 0.4);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.04);
+    }
+    
+    .image-item img {
+        width: 100%;
+        height: 280px;
+        object-fit: contain; height: auto;
+        object-position: center;
+        border: 2px solid rgba(204, 153, 0, 0.3);
+        border-radius: 8px;
+    }
+    
+    .article-link {
+        color: #cc9900;
+        text-decoration: none;
+        font-weight: 600;
+        border-bottom: 1px solid rgba(204, 153, 0, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    .article-link:hover {
+        color: #cc9900;
+        border-bottom: 1px solid #ffcc00;
+    }
+    
+    .image-caption {
+        color: #ccf5ff;
+        font-size: 1rem;
+        font-style: italic;
+        margin-top: 15px;
+        padding-top: 12px;
+        border-top: 2px solid rgba(255, 255, 255, 0.15);
+    }
+    
+    .single-image {
+        width: 100%;
+        max-width: 800px;
+        margin: 25px auto;
+        padding: 20px;
+        border: 3px solid rgba(204, 153, 0, 0.4);
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.03);
+        text-align: center;
+    }
+    
+    .single-image img {
+        width: 100%;
+        height: 500px;
+        object-fit: contain; height: auto;
+        object-position: center;
+        border: 2px solid rgba(204, 153, 0, 0.3);
+        border-radius: 10px;
+    }
+    
+    
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .comparison-table thead {
+      background: linear-gradient(135deg, rgba(204, 153, 0, 0.3), rgba(255, 204, 0, 0.2));
+    }
+    
+    .comparison-table th {
+      padding: 15px;
+      text-align: left;
+      color: #cc9900;
+      font-weight: 600;
+      border-bottom: 2px solid rgba(204, 153, 0, 0.3);
+    }
+    
+    .comparison-table td {
+      padding: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      color: #ccf5ff;
+      vertical-align: top;
+    }
+    
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .comparison-table tr:hover {
+      background: rgba(204, 153, 0, 0.05);
+    }
+    
+    .method-name {
+      font-weight: 600;
+      color: #cc9900;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .pros-cons-list {
+      margin: 0;
+      padding-left: 20px;
+      color: #ccf5ff;
+    }
+    
+    .pros-cons-list li {
+      margin-bottom: 5px;
+      line-height: 1.5;
+    }
+    
+    .application-box {
+      background: rgba(204, 153, 0, 0.1);
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin: 5px 0;
+      border-left: 3px solid #cc9900;
+    }
+    
+    .example-section {
+      background: rgba(0, 100, 200, 0.1);
+      padding: 25px;
+      border-radius: 10px;
+      margin: 30px 0;
+      border-left: 4px solid #0064c8;
+    }
+    
+    .example-section h3 {
+      color: #cc9900;
+      margin-top: 0;
+    }
+    
+    .tip-box {
+      background: rgba(255, 215, 0, 0.1);
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border: 1px solid rgba(255, 215, 0, 0.3);
+    }
+    
+    .tip-box h4 {
+      color: #ffd700;
+      margin-top: 0;
+    }
+    
+    .warning-box {
+      background: rgba(255, 50, 50, 0.1);
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border: 1px solid rgba(255, 50, 50, 0.3);
+    }
+    
+    .warning-box h4 {
+      color: #ff5555;
+      margin-top: 0;
+    }
+    
+    @media (max-width: 768px) {
+        .image-item img {
+            height: 220px;
+        }
+        
+        .single-image img {
+            height: 250px;
+        }
+        
+        .comparison-table {
+            display: block;
+            overflow-x: auto;
+        }
+        
+        .method-name {
+            font-size: 1rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .image-item {
+            min-width: 100%;
+        }
+        
+        .image-item img {
+            height: 180px;
+        }
+        
+        .single-image img {
+            height: 200px;
+        }
+        
+        .image-caption {
+            font-size: 0.9rem;
+        }
+    }
+  </style>
+</head>
+<body>
+  
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <img src="img/Logo Cắt nền.png" alt="Robotics Team Logo">
+    </a>
+    <nav class="menu">
+      <a href="index.html#about" class="menu-link">About</a>
+      <a href="ftc.html" class="menu-link">FTC Team</a>
+      <a href="resources.html" class="menu-link active">Resources</a>
+      <a href="index.html#events" class="menu-link">Events</a>
+    </nav>
+  </header>
+
+  
+  <section class="article-header">
+    <h1>KỸ THUẬT HÀN TRONG ROBOTICS FTC</h1>
+    <div class="article-meta-top">
+      <span>20/01/2026</span>
+      <span>Gia Công & Chế Tạo</span>
+      <span>Độ khó: Nâng cao</span>
+    </div>
+  </section>
+
+  
+  <div class="article-content">
+    
+    <div class="article-tags">
+      <span class="article-tag">Hàn</span>
+      <span class="article-tag">Chế Tạo</span>
+      <span class="article-tag">Khung Robot</span>
+      <span class="article-tag">FTC</span>
+      <span class="article-tag">Nhôm</span>
+    </div>
+
+    
+    <div class="article-section">
+      <h2>TỔNG QUAN VỀ HÀN TRONG ROBOTICS</h2>
+      
+      <p>Hàn là phương pháp liên kết vĩnh viễn giữa các chi tiết kim loại, tạo nên khung xương chắc chắn cho robot FTC. Đây là liên kết nhẹ và có độ cứng cao, thường chỉ được sử dụng cho khung truyền động và kết cấu chính của robot do tính chất vĩnh viễn.</p>
+      
+      <div class="tip-box">
+        <h4>Vị trí hàn trong robot FTC:</h4>
+        <p>• Khung chassis chính<br>
+           • Hộp giảm tốc và motor mounts<br>
+           • Các thanh giằng chịu lực<br>
+           • Khung shooter và intake khi cần độ cứng cao</p>
+      </div>
+    </div>
+
+    
+    <div class="article-section">
+      <h2>ƯU ĐIỂM VÀ THÁCH THỨC CỦA HÀN</h2>
+      
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Khía cạnh</th>
+            <th>ƯU ĐIỂM</th>
+            <th>THÁCH THỨC</th>
+            <th>GIẢI PHÁP FTC</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>
+              <div class="method-name">Độ cứng & Trọng lượng</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Liên kết vĩnh viễn, độ cứng cao</li>
+                <li>Trọng lượng nhẹ hơn 20-40% so với bolting</li>
+                <li>Kết cấu gọn gàng, không có đầu bulong thừa</li>
+                <li>Độ ổn định cấu trúc tuyệt đối</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Khó tháo rời để sửa chữa</li>
+                <li>Đòi hỏi thiết kế chính xác ngay từ đầu</li>
+                <li>Khó thay đổi thiết kế sau khi hàn</li>
+                <li>Chỉ dùng được cho khung chính</li>
+              </ul>
+            </td>
+            <td>
+              <div class="application-box">Chỉ hàn khung chính, không hàn chi tiết di động</div>
+              <div class="application-box">Sử dụng đồ gá để đảm bảo độ chính xác</div>
+              <div class="application-box">Thiết kế modular: kết hợp hàn + bolting</div>
+            </td>
+          </tr>
+          
+          
+          <tr>
+            <td>
+              <div class="method-name">Biến dạng & Cong vênh</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Nhiệt tập trung cao giúp hàn nhanh</li>
+                <li>Mối hàn chắc, liên tục</li>
+                <li>Kết cấu đồng nhất</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Rất dễ gây cong vênh, đặc biệt với vật liệu mỏng</li>
+                <li>Nhiệt độ cao làm thay đổi tính chất vật liệu</li>
+                <li>Khó kiểm soát với nhôm mỏng (1-2mm)</li>
+                <li>Stress nhiệt gây nứt vi mô</li>
+              </ul>
+            </td>
+            <td>
+              <div class="application-box">Thiết kế dự phòng cho biến dạng 0.5-1mm</div>
+              <div class="application-box">Khoan lỗ thoát khí cho ống hộp kín</div>
+              <div class="application-box">Hàn từng đoạn ngắn, làm nguội tự nhiên</div>
+              <div class="application-box">Sử dụng vật liệu dày hơn ở vị trí hàn</div>
+            </td>
+          </tr>
+          
+          
+          <tr>
+            <td>
+              <div class="method-name">Kỹ thuật & Tay nghề</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Tạo khung chuyên nghiệp, chắc chắn</li>
+                <li>Kinh nghiệm có thể áp dụng cho nhiều dự án</li>
+                <li>Đội hình ảnh chuyên nghiệp hơn</li>
+                <li>Khả năng tùy biến thiết kế cao</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Đòi hỏi tay nghề rất cao</li>
+                <li>Dễ cháy thủng vật liệu mỏng</li>
+                <li>Chất lượng phụ thuộc 90% vào người hàn</li>
+                <li>Cần thiết bị chuyên dụng đắt tiền</li>
+              </ul>
+            </td>
+            <td>
+              <div class="application-box">Tìm nhà tài trợ hoặc cố vấn có kinh nghiệm</div>
+              <div class="application-box">Luyện tập 20-30 giờ trên phế liệu trước</div>
+              <div class="application-box">Hợp tác với xưởng cơ khí địa phương</div>
+              <div class="application-box">Thuê dịch vụ hàn chuyên nghiệp</div>
+            </td>
+          </tr>
+          
+          
+          <tr>
+            <td>
+              <div class="method-name">Sửa chữa & Bảo trì</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Mối hàn tốt ít khi bị hỏng</li>
+                <li>Không cần bảo trì thường xuyên</li>
+                <li>Không bị lỏng ốc trong thi đấu</li>
+                <li>Tuổi thọ cao hơn bolting</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Khó sửa chữa khi bị nứt trong thi đấu</li>
+                <li>Cần thiết bị chuyên dụng để sửa</li>
+                <li>Mối hàn mới có thể yếu hơn nguyên bản</li>
+                <li>Mất nhiều thời gian sửa chữa</li>
+              </ul>
+            </td>
+            <td>
+              <div class="application-box">Chuẩn bị bộ vá khẩn cấp: nhôm tấm, kéo cắt, đinh tán</div>
+              <div class="application-box">Gia cường tạm thời bằng tấm kim loại vá</div>
+              <div class="application-box">Thiết kế điểm yếu dễ sửa chữa</div>
+              <div class="application-box">Mang theo máy khoan và tap ren dự phòng</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    
+    <div class="article-section">
+      <h2>PHƯƠNG PHÁP HÀN PHỔ BIẾN CHO NHÔM FTC</h2>
+      
+      <div class="example-section">
+        <h3>So sánh hai phương pháp hàn nhôm cho robotics</h3>
+        
+        <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Thông số</th>
+            <th>HÀN MIG (Bán tự động)</th>
+            <th>HÀN TIG (Điện cực không nóng chảy)</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>
+              <div class="method-name">Nguyên lý hoạt động</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Sử dụng dây hàn được cấp tự động</li>
+                <li>Dây hàn vừa là vật liệu bổ sung vừa tạo mối hàn</li>
+                <li>Hồ quang phân bố trên diện tích rộng</li>
+                <li>Thích hợp cho sản xuất hàng loạt</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Điện cực tungsten không nóng chảy</li>
+                <li>Vật liệu bổ sung được đưa bằng tay</li>
+                <li>Hồ quang tập trung hẹp, nhiệt độ cao</li>
+                <li>Kiểm soát nhiệt độ chính xác</li>
+              </ul>
+            </td>
+          </tr>
+          
+          
+          <tr>
+            <td>
+              <div class="method-name">Ưu điểm chính</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Dễ học, dễ thực hiện hơn</li>
+                <li>Tốc độ hàn nhanh (2-3x so với TIG)</li>
+                <li>Chi phí thiết bị thấp hơn 50-70%</li>
+                <li>Phù hợp với thép độ dày trung bình</li>
+                <li>Ít đòi hỏi tay nghề cao</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Chất lượng mối hàn cao nhất</li>
+                <li>Ít khuyết tật và lỗ khí</li>
+                <li>Kiểm soát nhiệt tốt, ít cong vênh</li>
+                <li>Lý tưởng cho nhôm mỏng (1-3mm)</li>
+                <li>Mối hàn đẹp, không cần gia công lại</li>
+              </ul>
+            </td>
+          </tr>
+          
+          
+          <tr>
+            <td>
+              <div class="method-name">Nhược điểm</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Tạo khuyết tật nhỏ và lỗ khí li ti</li>
+                <li>Chất lượng mối hàn thấp hơn 30-40%</li>
+                <li>Khó với nhôm mỏng (< 2mm)</li>
+                <li>Dễ gây chảy kim loại quá mức</li>
+                <li>Khó kiểm soát với vật liệu mỏng</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Khó học, đòi hỏi tay nghề cao</li>
+                <li>Tốc độ hàn chậm, tỉ mỉ</li>
+                <li>Chi phí thiết bị cao</li>
+                <li>Đòi hỏi không gian làm việc sạch</li>
+                <li>Cần bàn tay ổn định và kiên nhẫn</li>
+              </ul>
+            </td>
+          </tr>
+          
+          
+          <tr>
+            <td>
+              <div class="method-name">Ứng dụng trong FTC</div>
+            </td>
+            <td>
+              <div class="application-box">Hàn khung thép dày (> 2mm)</div>
+              <div class="application-box">Dự án có ngân sách thấp</div>
+              <div class="application-box">Khi cần hàn nhanh nhiều mối</div>
+              <div class="application-box">Đội mới học hàn</div>
+            </td>
+            <td>
+              <div class="application-box">Hàn khung nhôm mỏng (1-3mm)</div>
+              <div class="application-box">Khi cần chất lượng cao nhất</div>
+              <div class="application-box">Hàn chi tiết phức tạp, góc hẹp</div>
+              <div class="application-box">Đội có cố vấn/người hàn chuyên nghiệp</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      
+      <div class="warning-box">
+        <h4> LƯU Ý KỸ THUẬT QUAN TRỌNG:</h4>
+        <p><strong>Máy hàn chỉ có dòng điện một chiều (DC) KHÔNG THỂ hàn nhôm!</strong> Nhôm yêu cầu máy hàn có dòng điện xoay chiều (AC) để phá vỡ lớp oxit Al₂O₃ cứng trên bề mặt. Lớp oxit này có nhiệt độ nóng chảy 2,072°C, cao hơn nhiều so với nhôm nguyên chất (660°C).</p>
+      </div>
+      
+      <div class="tip-box">
+        <h4> KINH NGHIỆM THỰC TẾ TỪ CÁC ĐỘI FTC:</h4>
+        <p><strong>Tìm đối tác chuyên nghiệp:</strong> 85% đội FTC có khung hàn nhờ nhà tài trợ hoặc xưởng cơ khí địa phương. Đừng ngại liên hệ các công ty sản xuất - nhiều nơi sẵn sàng hỗ trợ đội robotics.</p>
+        <p><strong>Đồ gá là bắt buộc:</strong> Khi thiết kế các cụm chi tiết để hàn, nên chế tạo đồ gá nhằm giữ các chi tiết đúng vị trí trong quá trình hàn. Một đồ gá tốt giảm 70% thời gian hàn và đảm bảo độ chính xác ±0.5mm.</p>
+        <p><strong>Kiểm soát nhiệt độ:</strong> Với nhôm 1.5mm, hàn từng đoạn 1-2cm, chờ nguội 5-10 giây. Dùng nhiệt kế hồng ngoại để theo dõi nhiệt độ không vượt quá 150°C.</p>
+        <p><strong>Bộ sửa chữa pit-stop:</strong> Chuẩn bị sẵn "emergency repair kit": nhôm tấm 1mm, kéo cắt kim loại, đinh tán pop rivet, máy khoan cầm tay, và keo epoxy kim loại để gia cường tạm thời khi mối hàn bị nứt.</p>
+      </div>
+    </div>
+
+    
+    <div class="article-section">
+      <h2>QUY TRÌNH HÀN KHUNG ROBOT FTC</h2>
+      
+      <div class="example-section">
+        <h3>7 bước thực hiện hàn khung robot chuyên nghiệp</h3>
+        
+        <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Bước</th>
+            <th>Công việc chi tiết</th>
+            <th>Thời gian</th>
+            <th>Lưu ý quan trọng</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>
+              <div class="method-name">1. Thiết kế CAD</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Thiết kế toàn bộ khung trên CAD</li>
+                <li>Tối ưu hóa trọng lượng và độ cứng</li>
+                <li>Thiết kế đồ gá hàn tích hợp</li>
+                <li>Xác định trình tự hàn để giảm cong vênh</li>
+              </ul>
+            </td>
+            <td>
+              10-20 giờ
+            </td>
+            <td>
+              <div class="application-box">Thêm allowance 0.5mm cho biến dạng hàn</div>
+              <div class="application-box">Thiết kế lỗ thoát khí cho ống hộp kín</div>
+            </td>
+          </tr>
+          
+          
+          <tr>
+            <td>
+              <div class="method-name">2. Chuẩn bị vật liệu</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Cắt nhôm 6061-T6 hoặc 7075 theo bản vẽ</li>
+                <li>Gia công lỗ, rãnh trước khi hàn</li>
+                <li>Làm sạch bề mặt bằng acetone hoặc brush stainless</li>
+                <li>Chế tạo đồ gá từ MDF hoặc nhôm</li>
+              </ul>
+            </td>
+            <td>
+              4-8 giờ
+            </td>
+            <td>
+              <div class="application-box">Nhôm 6061-T6: dễ hàn, giá tốt, phổ biến</div>
+              <div class="application-box">Làm sạch KHÔNG dùng giấy nhám thô (>120 grit)</div>
+            </td>
+          </tr>
+          
+          
+          <tr>
+            <td>
+              <div class="method-name">3. Lắp ráp trên đồ gá</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Lắp tất cả chi tiết lên đồ gá</li>
+                <li>Căn chỉnh bằng thước đo laser hoặc caliper</li>
+                <li>Tack weld (hàn điểm) tại 4-6 vị trí mỗi mối</li>
+                <li>Kiểm tra kích thước sau mỗi tack weld</li>
+              </ul>
+            </td>
+            <td>
+              2-4 giờ
+            </td>
+            <td>
+              <div class="application-box">Tack weld ngắn 3-5mm mỗi điểm</div>
+              <div class="application-box">Kiểm tra vuông góc bằng thước 1-2-3 hoặc góc vuông</div>
+            </td>
+          </tr>
+          
+          
+          <tr>
+            <td>
+              <div class="method-name">4. Hàn chính thức</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Hàn theo trình tự đối xứng để cân bằng nhiệt</li>
+                <li>Hàn từng đoạn 1-2cm, chờ nguội 5-10 giây</li>
+                <li>Dùng khí Argon độ tinh khiết 99.996% cho TIG</li>
+                <li>Kiểm soát nhiệt độ bề mặt ≤ 150°C</li>
+              </ul>
+            </td>
+            <td>
+              3-6 giờ
+            </td>
+            <td>
+              <div class="application-box">Luôn bắt đầu hàn từ tâm ra ngoài</div>
+              <div class="application-box">Nhiệt độ bề mặt không quá 150°C (dùng nhiệt kế IR)</div>
+              <div class="application-box">Đeo kính bảo hộ số 10-13 và mặt nạ hàn auto-darkening</div>
+            </td>
+          </tr>
+          
+          
+          <tr>
+            <td>
+              <div class="method-name">5. Kiểm tra chất lượng</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Kiểm tra cong vênh bằng mặt phẳng chuẩn hoặc granite table</li>
+                <li>Dùng dye penetrant test ($20/bộ) phát hiện vết nứt</li>
+                <li>Đo kích thước tổng thể bằng caliper và thước lá</li>
+                <li>Kiểm tra độ kín của mối hàn bằng compressed air test</li>
+              </ul>
+            </td>
+            <td>
+              1-2 giờ
+            </td>
+            <td>
+              <div class="application-box">Cho phép sai số ±1mm cho khung robot FTC</div>
+              <div class="application-box">Dye penetrant test phát hiện vết nứt > 0.01mm</div>
+              <div class="application-box">Chụp ảnh và tài liệu hóa toàn bộ quá trình kiểm tra</div>
+            </td>
+          </tr>
+          
+          
+          <tr>
+            <td>
+              <div class="method-name">6. Gia công hoàn thiện</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Mài phẳng các mối hàn thừa bằng flap disc hoặc file</li>
+                <li>Khoan và tap lỗ lắp ráp chi tiết phụ</li>
+                <li>Làm sạch bằng bead blast hoặc sanding 220 grit</li>
+                <li>Sơn hoặc anodizing (tùy chọn, $50-100)</li>
+              </ul>
+            </td>
+            <td>
+              2-4 giờ
+            </td>
+            <td>
+              <div class="application-box">Không mài quá sâu vào vật liệu chính (max 0.5mm)</div>
+              <div class="application-box">Anodizing type II: tăng độ cứng bề mặt, chống ăn mòn</div>
+              <div class="application-box">Sơn powder coat: độ bền cao, nhiều màu sắc</div>
+            </td>
+          </tr>
+          
+          
+          <tr>
+            <td>
+              <div class="method-name">7. Lắp ráp & Test</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Lắp drivetrain, motor mounts và các cụm cơ khí</li>
+                <li>Cân chỉnh và test độ đồng phẳng của wheels</li>
+                <li>Test tải trọng tĩnh 2x trọng lượng robot (ví dụ: 20kg trên khung 10kg)</li>
+                <li>Test rung động và độ ổn định ở tốc độ cao</li>
+              </ul>
+            </td>
+            <td>
+              4-8 giờ
+            </td>
+            <td>
+              <div class="application-box">Test tải tĩnh: đặt weight lên khung, đo độ võng bằng dial indicator</div>
+              <div class="application-box">Độ võng cho phép: ≤ 1mm trên chiều dài 500mm</div>
+              <div class="application-box">Test rung: run motor max RPM, kiểm tra bằng accelerometer</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <div class="tip-box">
+        <h4> THỐNG KÊ TỪ CÁC ĐỘI FTC HÀNG ĐẦU:</h4>
+        <p><strong>Chi phí trung bình:</strong> $200-500 cho khung hàn nhôm hoàn chỉnh (vật liệu + dịch vụ)</p>
+        <p><strong>Thời gian thực hiện:</strong> 15-30 giờ từ thiết kế CAD đến robot hoàn thiện</p>
+        <p><strong>Trọng lượng tiết kiệm:</strong> 20-40% so với khung bolting cùng độ cứng</p>
+        <p><strong>Tỷ lệ đội tự hàn:</strong> 15% (có cố vấn), 85% thuê dịch vụ chuyên nghiệp</p>
+        <p><strong>Vật liệu phổ biến:</strong> Nhôm 6061-T6 (75%), Nhôm 7075 (20%), Thép 4130 (5%)</p>
+        <p><strong>Phương pháp phổ biến:</strong> TIG welding (90%), MIG welding (8%), Other (2%)</p>
+      </div>
+      </div>
+    </div>
+
+    
+   
+
+    
+    <div class="back-button">
+      <a href="mechanical.html">
+        <span>←</span> Quay lại Trang Cơ Khí
+      </a>
+    </div>
+  </div>
+
+  
+  <hr class="divider-blue">
+  <footer class="footer" id="contact">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="img/Logo Cắt nền.png" alt="FTC 31113 Logo">
+        <p>FTC 31113<br>High School for Gifted Students</p>
+      </div>
+      <table class="footer-table">
+        <tr>
+          <th>Contact</th>
+          <th>Resources</th>
+          <th>Resources</th>
+        </tr>
+        <tr>
+          <td>
+            <span class="footer-email">robotics.hsgs@gmail.com</span><br>
+            <a href="https://www.facebook.com/HSGSRoboLads?locale=vi_VN" target="_blank" rel="noopener noreferrer">Facebook</a><br>
+            <a href="https://www.instagram.com/robolads_31113/?igsh=MWFiaTcycXVpcnNkYQ%3D%3D#" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </td>
+          <td>
+            <a href="mechanical.html#mechanical-section">Cơ Khí</a><br>
+            <a href="programming.html#programming-section">Lập Trình</a><br>
+            <a href="programming.html#electronics-section">Điện Tử</a>
+          </td>
+          <td>
+            <a href="mechanical.html#3dprinting-section">In 3D</a><br>
+            <a href="mechanical.html#cad-section">CAD</a><br>
+            <a href="business.html">Business</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="footer-bottom">
+      © 2026 FTC 31113. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

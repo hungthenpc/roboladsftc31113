@@ -1,140 +1,383 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8" />
-  <title>FTC31113 Robolads</title>
+  <title>FTC31113 Robolads </title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="article-mechanical.css" />
   <link rel="icon" type="image/png" href="img/Logo Cắt nền.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+    rel="stylesheet">
   <style>
-    
-    
-    
+   
     .article-content img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 8px;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
     }
-    
-    
+
     .image-comparison {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-        margin: 40px 0;
-        justify-content: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin: 40px 0;
+      justify-content: center;
     }
-    
-    
+
     .image-item {
-        flex: 1;
-        min-width: 350px;
-        max-width: 550px;
-        text-align: center;
-        padding: 20px;
-        border: 2px solid rgba(204, 153, 0, 0.4);
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.04);
+      overflow: hidden !important;
+      flex: 1;
+      min-width: 350px;
+      max-width: 550px;
+      text-align: center;
+      padding: 20px;
+      border: 2px solid rgba(204, 153, 0, 0.4);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.04);
     }
-    
-    
+
     .image-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    .article-link {
+      color: #cc9900;
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(204, 153, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .article-link:hover {
+      color: #ffcc00;
+      border-bottom: 1px solid #ffcc00;
+    }
+
+    .image-caption {
+      color: #ccf5ff;
+      font-size: 1rem;
+      font-style: italic;
+      margin-top: 15px;
+      padding-top: 12px;
+      border-top: 2px solid rgba(255, 255, 255, 0.15);
+      min-height: 3.5rem;
+    
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .single-image {
+      overflow: hidden !important;
+      width: 100%;
+      max-width: 800px;
+      margin: 25px auto;
+      padding: 20px;
+      border: 3px solid rgba(204, 153, 0, 0.4);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.03);
+      text-align: center;
+    }
+
+    .single-image img {
+      width: 100%;
+      height: 500px;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 10px;
+      box-sizing: border-box;
+    }
+
+   
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .comparison-table thead {
+      background: linear-gradient(135deg, rgba(204, 153, 0, 0.3), rgba(255, 204, 0, 0.2));
+    }
+
+    .comparison-table th {
+      padding: 15px;
+      text-align: left;
+      color: #cc9900;
+      font-weight: 600;
+      border-bottom: 2px solid rgba(204, 153, 0, 0.3);
+    }
+
+    .comparison-table td {
+      padding: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      color: #ccf5ff;
+      vertical-align: top;
+    }
+
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .comparison-table tr:hover {
+      background: rgba(204, 153, 0, 0.05);
+    }
+
+    .component-name {
+      font-weight: 600;
+      color: #cc9900;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pros-cons-list {
+      margin: 0;
+      padding-left: 20px;
+      color: #ccf5ff;
+    }
+
+    .pros-cons-list li {
+      margin-bottom: 5px;
+      line-height: 1.5;
+    }
+
+    .application-box {
+      background: rgba(204, 153, 0, 0.1);
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin: 5px 0;
+      border-left: 3px solid #cc9900;
+    }
+
+  
+    .image-container {
+      width: 100%;
+      max-width: 600px;
+      margin: 30px auto;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      border: 2px solid rgba(204, 153, 0, 0.2);
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .gallery-caption {
+      padding: 10px;
+      background: rgba(204, 153, 0, 0.1);
+      color: #cc9900;
+      text-align: center;
+      font-size: 0.9rem;
+      min-height: 3rem;
+    
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .gallery-item {
+      overflow: hidden !important;
+      border-radius: 8px;
+
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      border: 2px solid rgba(204, 153, 0, 0.2);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: contain;
+    }
+
+  
+    .info-box {
+      background: rgba(204, 153, 0, 0.1);
+      padding: 25px;
+      border-radius: 10px;
+      margin: 30px 0;
+      border-left: 4px solid #cc9900;
+    }
+
+    .info-box h3 {
+      color: #cc9900;
+      margin-top: 0;
+    }
+
+    .tip-box {
+      background: rgba(255, 215, 0, 0.1);
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border: 1px solid rgba(255, 215, 0, 0.3);
+    }
+
+    .tip-box h4 {
+      color: #ffd700;
+      margin-top: 0;
+    }
+
+    .warning-box {
+      background: rgba(255, 50, 50, 0.1);
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border: 1px solid rgba(255, 50, 50, 0.3);
+    }
+
+    .warning-box h4 {
+      color: #ff5555;
+      margin-top: 0;
+    }
+
+    .back-button {
+      text-align: center;
+      margin: 60px 0 30px;
+    }
+
+    .back-button a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #cc9900;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 12px 30px;
+      background: rgba(204, 153, 0, 0.1);
+      border-radius: 25px;
+      border: 1px solid rgba(204, 153, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .back-button a:hover {
+      background: rgba(204, 153, 0, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(204, 153, 0, 0.2);
+    }
+
+
+    .step-box {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+      border-left: 3px solid #cc9900;
+    }
+
+    .step-number {
+      display: inline-block;
+      background: #cc9900;
+      color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 30px;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .image-item img {
         width: 100%;
         height: 250px;
-        object-fit: cover;
+        object-fit: contain;
         object-position: center;
-        border: 2px solid rgba(204, 153, 0, 0.3);
         border-radius: 8px;
+        box-sizing: border-box;
+      }
+
+      .single-image img {
+        width: 100%;
+        height: 500px;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 10px;
+        box-sizing: border-box;
+      }
+
+      .comparison-table {
+        display: block;
+        overflow-x: auto;
+      }
+
+      .component-name {
+        font-size: 1rem;
+      }
+
+      .image-gallery {
+        grid-template-columns: 1fr;
+      }
     }
-    
-    
-    .image-caption {
+
+    @media (max-width: 480px) {
+      .image-item {
+        overflow: hidden !important;
+        min-width: 100%;
+      }
+
+      .image-item img {
+        width: 100%;
+        height: 250px;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 8px;
+        box-sizing: border-box;
+      }
+
+      .single-image img {
+        width: 100%;
+        height: 500px;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 10px;
+        box-sizing: border-box;
+      }
+
+      .image-caption {
         color: #ccf5ff;
         font-size: 1rem;
         font-style: italic;
         margin-top: 15px;
         padding-top: 12px;
         border-top: 2px solid rgba(255, 255, 255, 0.15);
-    }
-    
-    
-    .single-image {
-        width: 100%;
-        max-width: 800px;
-        margin: 25px auto;
-        padding: 20px;
-        border: 3px solid rgba(204, 153, 0, 0.4);
-        border-radius: 15px;
-        background: rgba(255, 255, 255, 0.03);
-        text-align: center;
-    }
-    
-    
-    .single-image img {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
-        object-position: center;
-        border: 2px solid rgba(204, 153, 0, 0.3);
-        border-radius: 10px;
-    }
-    
-    
-    .table-image {
-        width: 100%;
-        max-width: 150px;
-        height: 120px;
-        object-fit: cover;
-        object-position: center;
-        border: 1px solid rgba(204, 153, 0, 0.3);
-        border-radius: 6px;
-        margin: 0 auto;
-    }
-    
-    
-    @media (max-width: 768px) {
-        .image-item img {
-            height: 200px;
-        }
-        
-        .single-image img {
-            height: 250px;
-        }
-        
-        .table-image {
-            max-width: 120px;
-            height: 100px;
-        }
-    }
-    
-    @media (max-width: 480px) {
-        .image-item {
-            min-width: 100%;
-        }
-        
-        .image-item img {
-            height: 180px;
-        }
-        
-        .single-image img {
-            height: 200px;
-        }
-        
-        .image-caption {
-            font-size: 0.9rem;
-        }
-        
-        .table-image {
-            max-width: 100px;
-            height: 80px;
-        }
+        min-height: 3.5rem;
+       
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
   </style>
 </head>
+
 <body>
   
   <header class="navbar">
@@ -151,11 +394,11 @@
 
   
   <section class="article-header">
-    <h1>RÃNH VÀ LẪY: KỸ THUẬT GHÉP CHI TIẾT VUÔNG GÓC</h1>
+    <h1>XÍCH VÀ BÁNH RĂNG TRONG ROBOTICS</h1>
     <div class="article-meta-top">
-      <span>07/01/2025</span>
-      <span>Cơ Khí</span>
-      <span>Độ khó: Trung cấp</span>
+      <span>25/03/2025</span>
+      <span>Truyền Động & Hộp Số</span>
+      <span>Độ khó: Trung bình đến Nâng cao</span>
     </div>
   </section>
 
@@ -163,71 +406,477 @@
   <div class="article-content">
     
     <div class="article-tags">
-      <span class="article-tag">Rãnh</span>
-      <span class="article-tag">Lẫy</span>
-      <span class="article-tag">Ghép Vuông Góc</span>
-      <span class="article-tag">Cơ Khí</span>
+      <span class="article-tag">Xích</span>
+      <span class="article-tag">Bánh Răng</span>
+      <span class="article-tag">Truyền Động</span>
+      <span class="article-tag">Hộp Số</span>
+      <span class="article-tag">FTC</span>
     </div>
 
     
     <div class="article-section">
-      <h2>1. Rãnh và Lẫy</h2>
-      
-      <p>Rãnh và lẫy là một cách để ghép các chi tiết vuông góc với nhau. Các lẫy trên một chi tiết sẽ được chèn vào các rãnh đã cắt trên các chi tiết khác. Cách ghép này giúp căn chỉnh dễ dàng và truyền lực giữa các chi tiết. Để siết cố định các chi tiết với nhau, ta có thể dùng đai ốc cố định như nút T. Ý tưởng là khoét một rãnh để đặt đai ốc vào một chi tiết, trong khi khoan lỗ bu-lông trên chi tiết khác vuông góc với rãnh đó, nhờ vậy hai chi tiết vuông góc có thể được ghép chặt mà không cần mất công gõ/đập vào ở đầu vật liệu.</p>
-      <p>Các rãnh và lẫy cần có dung sai để chúng lắp vừa khít với nhau. Tốt nhất là nên cắt thử một chi tiết mẫu để xác định kích thước vừa khít nhất. Trong nhiều trường hợp khi cắt bằng tia nước, làm lẫy nhỏ hơn khoảng 0.005mm hoặc làm rãnh lớn hơn khoảng 0.005mm theo cả hai chiều sẽ giúp các chi tiết lắp vào nhau vừa vặn hơn.</p>
-      
-      <div class="single-image">
-        <img src="img/m51.jpg" alt="Ví dụ khung robot dùng rãnh và lẫy">
-        <div class="image-caption">Ví dụ: một khung robot được dựng bằng rãnh và lẫy để tạo thành một ống hộp từ các tấm phẳng.</div>
+      <h2>TỔNG QUAN VỀ TRUYỀN ĐỘNG XÍCH</h2>
+
+      <p>Xích là phương pháp truyền động cơ khí hiệu quả, cho phép truyền lực và mô-men xoắn giữa các trục cách xa nhau.
+        Trong robotics FTC, xích thường được sử dụng cho hệ truyền động (drivetrain) và các cơ cấu nâng hạ.</p>
+
+      <div class="info-box">
+        <h3>Ưu điểm của hệ truyền động xích:</h3>
+        <ul class="pros-cons-list">
+          <li>Hiệu suất truyền động cao (95-98%)</li>
+          <li>Có thể truyền lực qua khoảng cách lớn</li>
+          <li>Khả năng chịu tải tốt, độ bền cao</li>
+          <li>Tỷ số truyền ổn định, không trượt</li>
+          <li>Dễ dàng bảo trì và thay thế</li>
+        </ul>
       </div>
     </div>
 
     
     <div class="article-section">
-      <h2>2. BẢN VẼ MINH HỌA</h2>
-      
-      <p>Bản vẽ minh họa dưới đây cho thấy các kích thước bạn có thể dùng cho chỗ đặt đai ốc 8-32 cố định. Phần dưới (ghi kích thước 0.177) là đường kính lỗ lọt cho vít 8-32. Phần trên (ghi kích thước 0.354) là kích thước đo hai mặt đối diện của đai ốc 8-32, cộng thêm dung sai 0.01mm để đảm bảo đai ốc sẽ lắp vừa. Hãy dùng thước kẹp để đo đai ốc bạn có sẵn để chắc chắn rằng kích thước sẽ khớp.</p>
-      
-      <div class="single-image">
-        <img src="img/m52.jpg" alt="Bản vẽ kích thước rãnh và lẫy">
-        <div class="image-caption">Bản vẽ kích thước cho rãnh đặt đai ốc 8-32 cố định</div>
+      <h2>CÁC LOẠI XÍCH PHỔ BIẾN TRONG ROBOTICS</h2>
+
+      <div class="image-gallery">
+        <div class="gallery-item">
+          <img src="img/m5.1.png" alt="Xích con lăn #25">
+          <div class="gallery-caption">Xích con lăn #25 (phổ biến nhất)</div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/m5.2.png" alt="Xích đơn">
+          <div class="gallery-caption">Xích đơn (Single Strand)</div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/m5.1.png" alt="Xích kép">
+          <div class="gallery-caption">Xích kép (Double Strand)</div>
+        </div>
       </div>
-      
-      <div class="highlight-box">
-        <h4>Lưu ý quan trọng:</h4>
-        <p>Bản vẽ dưới đây được thiết kế cho vật được cắt bằng tia nước. Nếu bạn gia công bằng máy phay thì cần thêm phần tinh giảm (ví dụ làm tròn hoặc tỉa bớt) ở các góc trong 90° để có thể gia công được.</p>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Loại xích</th>
+            <th>ĐẶC ĐIỂM</th>
+            <th>BƯỚC XÍCH (Pitch)</th>
+            <th>ỨNG DỤNG</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td>
+              <div class="component-name">Xích #25</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Loại phổ biến</li>
+                <li>Bước xích: 6.35mm (1/4 inch)</li>
+                <li>Độ bền tốt, giá thành hợp lý</li>
+                <li>Dễ tìm mua và thay thế</li>
+              </ul>
+            </td>
+            <td>
+              6.35mm
+            </td>
+            <td>
+              <div class="application-box">Hệ truyền động chính</div>
+              <div class="application-box">Truyền động bánh xe</div>
+              <div class="application-box">Cơ cấu nâng hạ</div>
+            </td>
+          </tr>
+
+
+          <tr>
+            <td>
+              <div class="component-name">Xích #35</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Lớn hơn, chịu tải tốt hơn #25</li>
+                <li>Bước xích: 9.525mm (3/8 inch)</li>
+                <li>Phù hợp cho robot nặng</li>
+                <li>Cần đĩa xích lớn hơn</li>
+              </ul>
+            </td>
+            <td>
+              9.525mm
+            </td>
+            <td>
+              <div class="application-box">Robot hạng nặng</div>
+              <div class="application-box">Truyền động mô-men lớn</div>
+              <div class="application-box">Cơ cấu cần lực cao</div>
+            </td>
+          </tr>
+
+
+          <tr>
+            <td>
+              <div class="component-name">Xích đơn</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Một dãy mắt xích</li>
+                <li>Trọng lượng nhẹ</li>
+                <li>Phù hợp cho tải trọng vừa</li>
+                <li>Chi phí thấp</li>
+              </ul>
+            </td>
+            <td>
+              6.35mm - 12.7mm
+            </td>
+            <td>
+              <div class="application-box">Robot cỡ nhỏ/trung</div>
+              <div class="application-box">Truyền động phụ</div>
+              <div class="application-box">Ứng dụng không yêu cầu lực lớn</div>
+            </td>
+          </tr>
+
+
+          <tr>
+            <td>
+              <div class="component-name">Xích kép</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Hai dãy mắt xích song song</li>
+                <li>Chịu tải gấp đôi xích đơn</li>
+                <li>Độ ổn định cao hơn</li>
+                <li>Chi phí cao hơn</li>
+              </ul>
+            </td>
+            <td>
+              6.35mm - 12.7mm
+            </td>
+            <td>
+              <div class="application-box">Robot cỡ lớn</div>
+              <div class="application-box">Truyền động chính cần độ bền cao</div>
+              <div class="application-box">Ứng dụng công nghiệp nặng</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    
+    <div class="article-section">
+      <h2>ĐĨA XÍCH (SPROCKETS)</h2>
+
+      <div class="info-box">
+        <h3>Thông số kỹ thuật đĩa xích:</h3>
+        <ul class="pros-cons-list">
+          <li><strong>Số răng:</strong> Xác định tỷ số truyền</li>
+          <li><strong>Bước xích (Pitch):</strong> Phải khớp với xích (#25, #35, v.v.)</li>
+          <li><strong>Đường kính lỗ:</strong> Phù hợp với trục motor hoặc trục truyền động</li>
+          <li><strong>Vật liệu:</strong> Thường là thép, nhôm, hoặc nylon</li>
+          <li><strong>Độ dày:</strong> Phù hợp với loại xích (đơn/kép)</li>
+        </ul>
+      </div>
+
+      <div class="tip-box">
+        <h4>Công thức tính tỷ số truyền:</h4>
+        <p><strong>Tỷ số truyền = Số răng đĩa chủ động / Số răng đĩa bị động</strong></p>
+        <p>Ví dụ: Đĩa chủ động 12 răng, đĩa bị động 60 răng → Tỷ số truyền = 12/60 = 1:5</p>
+        <p>Điều này có nghĩa motor quay 5 vòng thì bánh xe quay 1 vòng (giảm tốc).</p>
+      </div>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Số răng đĩa xích</th>
+            <th>Đường kính (xích #25)</th>
+            <th>Tỷ số truyền phổ biến</th>
+            <th>Ứng dụng</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td>
+              <div class="component-name">8-12 răng</div>
+            </td>
+            <td>
+              20-30mm
+            </td>
+            <td>
+              1:3 đến 1:8
+            </td>
+            <td>
+              <div class="application-box">Đĩa chủ động (motor side)</div>
+              <div class="application-box">Giảm tốc cao</div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="component-name">12-20 răng</div>
+            </td>
+            <td>
+              30-50mm
+            </td>
+            <td>
+              1:2 đến 1:5
+            </td>
+            <td>
+              <div class="application-box">Truyền động trung gian</div>
+              <div class="application-box">Giảm tốc vừa</div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="component-name">20-40 răng</div>
+            </td>
+            <td>
+              50-100mm
+            </td>
+            <td>
+              1:1 đến 1:3
+            </td>
+            <td>
+              <div class="application-box">Đĩa bị động (wheel side)</div>
+              <div class="application-box">Tăng tốc nhẹ</div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="component-name">40-60+ răng</div>
+            </td>
+            <td>
+              100-150mm+
+            </td>
+            <td>
+              1:1.5 đến 1:2.5
+            </td>
+            <td>
+              <div class="application-box">Giảm tốc cực cao</div>
+              <div class="application-box">Ứng dụng đặc biệt</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    
+    <div class="article-section">
+      <h2>KỸ THUẬT LẮP ĐẶT VÀ CĂN CHỈNH XÍCH</h2>
+
+      <div class="step-box">
+        <span class="step-number">1</span>
+        <strong>Chọn xích và đĩa xích phù hợp:</strong>
+        <p>Xác định loại xích (#25, #35), số răng đĩa xích, và tỷ số truyền mong muốn.</p>
+      </div>
+
+      <div class="step-box">
+        <span class="step-number">2</span>
+        <strong>Tính toán chiều dài xích:</strong>
+        <p>Công thức: L = 2C + (T1 + T2)/2 + ((T2 - T1)²)/(4π²C)</p>
+        <p>Trong đó: C = khoảng cách tâm, T1/T2 = số răng đĩa xích</p>
+      </div>
+
+      <div class="step-box">
+        <span class="step-number">3</span>
+        <strong>Lắp đĩa xích vào trục:</strong>
+        <p>Sử dụng khóa then (key), set-screw, hoặc press-fit để cố định đĩa xích.</p>
+      </div>
+
+      <div class="step-box">
+        <span class="step-number">4</span>
+        <strong>Lắp xích và căn chỉnh:</strong>
+        <ul class="pros-cons-list">
+          <li>Đảm bảo các đĩa xích thẳng hàng và song song</li>
+          <li>Xích không được quá căng hoặc quá chùng</li>
+          <li>Kiểm tra độ căng xích bằng cách ấn xuống giữa 2 đĩa xích (độ võng ≈ 5-10mm)</li>
+        </ul>
+      </div>
+
+      <div class="step-box">
+        <span class="step-number">5</span>
+        <strong>Kiểm tra và bôi trơn:</strong>
+        <p>Chạy thử không tải, kiểm tra độ ồn và nhiệt. Bôi trơn xích bằng dầu chuyên dụng.</p>
+      </div>
+
+      <div class="warning-box">
+        <h4>CÁC LỖI THƯỜNG GẶP:</h4>
+        <p><strong>Xích quá căng:</strong> Gây hao mòn nhanh, tăng ma sát, quá tải motor.</p>
+        <p><strong>Xích quá chùng:</strong> Gây trượt xích, nhảy răng, hiệu suất thấp.</p>
+        <p><strong>Đĩa xích không thẳng hàng:</strong> Xích bị mòn lệch, có thể tuột xích.</p>
+        <p><strong>Thiếu bôi trơn:</strong> Gây tiếng ồn, ma sát cao, hao mòn nhanh.</p>
       </div>
     </div>
 
     
-   
+    <div class="article-section">
+      <h2>BẢO TRÌ VÀ SỬA CHỮA HỆ THỐNG XÍCH</h2>
 
-    <div class="article-section comment-section comment-theme-mechanical">
-  <h2>BÌNH LUẬN</h2>
-  
-  
-  <div class="comment-form">
-    <h3>Thêm bình luận</h3>
-    <form id="commentForm" novalidate>
-      <div class="form-group">
-        <input type="text" id="commentName" placeholder="Tên của bạn" required>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Vấn đề</th>
+            <th>Nguyên nhân</th>
+            <th>Cách khắc phục</th>
+            <th>Phòng ngừa</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td>
+              <div class="component-name">Xích bị tuột</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Xích quá chùng</li>
+                <li>Đĩa xích mòn</li>
+                <li>Không thẳng hàng</li>
+                <li>Lực căng không đủ</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Điều chỉnh độ căng xích</li>
+                <li>Căn chỉnh lại đĩa xích</li>
+                <li>Thay xích/đĩa xích mòn</li>
+                <li>Thêm bộ căng xích (tensioner)</li>
+              </ul>
+            </td>
+            <td>
+              <div class="application-box">Kiểm tra độ căng định kỳ</div>
+              <div class="application-box">Sử dụng bộ căng xích</div>
+              <div class="application-box">Căn chỉnh chính xác khi lắp</div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="component-name">Xích kêu to</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Thiếu bôi trơn</li>
+                <li>Xích quá căng</li>
+                <li>Bụi bẩn, cát trong xích</li>
+                <li>Đĩa xích bị mòn</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Vệ sinh và bôi trơn xích</li>
+                <li>Điều chỉnh độ căng</li>
+                <li>Làm sạch hệ thống</li>
+                <li>Thay thế phụ tùng mòn</li>
+              </ul>
+            </td>
+            <td>
+              <div class="application-box">Bôi trơn định kỳ</div>
+              <div class="application-box">Vệ sinh sau mỗi trận đấu</div>
+              <div class="application-box">Kiểm tra độ mòn đĩa xích</div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="component-name">Xích bị đứt</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Quá tải đột ngột</li>
+                <li>Xích chất lượng kém</li>
+                <li>Mắt xích bị mòn</li>
+                <li>Lắp đặt sai kỹ thuật</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Thay xích mới</li>
+                <li>Kiểm tra tải trọng thiết kế</li>
+                <li>Sử dụng xích chất lượng cao</li>
+                <li>Lắp đặt đúng kỹ thuật</li>
+              </ul>
+            </td>
+            <td>
+              <div class="application-box">Chọn xích đúng tải trọng</div>
+              <div class="application-box">Mua xích từ nhà cung cấp uy tín</div>
+              <div class="application-box">Kiểm tra định kỳ</div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="component-name">Mòn đĩa xích</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Tuổi thọ sử dụng</li>
+                <li>Bôi trơn không đủ</li>
+                <li>Tải trọng quá lớn</li>
+                <li>Vật liệu kém chất lượng</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Thay đĩa xích mới</li>
+                <li>Cải thiện chế độ bôi trơn</li>
+                <li>Điều chỉnh tải trọng</li>
+                <li>Sử dụng đĩa xích chất lượng cao</li>
+              </ul>
+            </td>
+            <td>
+              <div class="application-box">Sử dụng đĩa xích thép nhiệt luyện</div>
+              <div class="application-box">Bôi trơn đầy đủ</div>
+              <div class="application-box">Tránh quá tải</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="tip-box">
+        <h4>BỘ SỬA CHỮA XÍCH DỰ PHÒNG CHO THI ĐẤU:</h4>
+        <p><strong>Vật tư cần chuẩn bị:</strong></p>
+        <ul class="pros-cons-list">
+          <li>Xích dự phòng (cùng loại đang sử dụng)</li>
+          <li>Đĩa xích dự phòng (các kích thước phổ biến)</li>
+          <li>Kìm cắt xích và dụng cụ tháo lắp mắt xích</li>
+          <li>Dầu bôi trơn xích</li>
+          <li>Set-screw, then, và các phụ kiện lắp đặt</li>
+          <li>Bộ căng xích điều chỉnh (tensioner)</li>
+          <li>Dụng cụ căn chỉnh (thước lá, thước đo góc)</li>
+        </ul>
       </div>
-      <div class="form-group">
-        <textarea id="commentText" placeholder="Nội dung bình luận..." rows="4" required></textarea>
-      </div>
-      <button type="submit" class="submit-btn">Gửi bình luận</button>
-    </form>
-  </div>
-  
-  
-  <div class="comments-list" id="commentsList">
-    <h3>
-      Bình luận (<span class="comment-count">0</span>)
-    </h3>
+    </div>
+
     
-  </div>
-</div>
+    <div class="article-section">
+      <h2>KẾT HỢP XÍCH VỚI HỆ THỐNG BÁNH RĂNG</h2>
 
+      <div class="info-box">
+        <h3>Ưu điểm của hệ thống kết hợp:</h3>
+        <ul class="pros-cons-list">
+          <li><strong>Linh hoạt trong thiết kế:</strong> Kết hợp tỷ số truyền từ cả xích và bánh răng</li>
+          <li><strong>Tối ưu không gian:</strong> Xích truyền động qua khoảng cách xa, bánh răng cho tỷ số chính xác
+          </li>
+          <li><strong>Phân phối tải trọng:</strong> Giảm tải cho từng thành phần</li>
+          <li><strong>Dễ dàng bảo trì:</strong> Có thể thay thế từng phần riêng biệt</li>
+        </ul>
+      </div>
+
+      <div class="single-image">
+        <img src="img/m5.4.png" alt="Hệ thống truyền động kết hợp xích và bánh răng">
+        <div class="image-caption">Hệ thống truyền động FTC kết hợp xích và bánh răng</div>
+      </div>
+
+      <div class="tip-box">
+        <h4>THIẾT KẾ HỆ TRUYỀN ĐỘNG CHO ROBOT FTC:</h4>
+        <p><strong>Xác định yêu cầu:</strong> Tốc độ tối đa, gia tốc, khả năng leo dốc, trọng lượng robot.</p>
+        <p><strong>Chọn motor:</strong> REV HD Hex Motor, NeveRest, GoBILDA Yellow Jacket, v.v.</p>
+        <p><strong>Tính toán tỷ số truyền:</strong> Sử dụng công thức và phần mềm hỗ trợ (FTC Calculator).</p>
+        <p><strong>Lựa chọn phương án:</strong> Xích thuần túy, bánh răng thuần túy, hoặc kết hợp cả hai.</p>
+        <p><strong>Thiết kế CAD:</strong> Mô phỏng và kiểm tra độ bền, không gian lắp đặt.</p>
+        <p><strong>Chế tạo và thử nghiệm:</strong> Prototype, test tải, tối ưu hóa.</p>
+      </div>
+    </div>
+
+    
+    
     
     <div class="back-button">
       <a href="mechanical.html">
@@ -235,6 +884,7 @@
       </a>
     </div>
   </div>
+
   
   <hr class="divider-blue">
   <footer class="footer" id="contact">
@@ -252,8 +902,10 @@
         <tr>
           <td>
             <span class="footer-email">robotics.hsgs@gmail.com</span><br>
-            <a href="https://www.facebook.com/HSGSRoboLads?locale=vi_VN" target="_blank" rel="noopener noreferrer">Facebook</a><br>
-            <a href="https://www.instagram.com/robolads_31113/?igsh=MWFiaTcycXVpcnNkYQ%3D%3D#" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.facebook.com/HSGSRoboLads?locale=vi_VN" target="_blank"
+              rel="noopener noreferrer">Facebook</a><br>
+            <a href="https://www.instagram.com/robolads_31113/?igsh=MWFiaTcycXVpcnNkYQ%3D%3D#" target="_blank"
+              rel="noopener noreferrer">Instagram</a>
           </td>
           <td>
             <a href="mechanical.html#mechanical-section">Cơ Khí</a><br>
@@ -275,4 +927,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>

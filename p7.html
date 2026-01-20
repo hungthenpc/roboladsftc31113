@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>FTC31113 Robolads</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="article-programming.css" />
+    <link rel="icon" type="image/png" href="img/Logo Cắt nền.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+   <style>
+    .article-content img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+    }
+    
+    .image-item { overflow: hidden !important; 
+        flex: 1;
+        min-width: 350px;
+        max-width: 550px;
+        text-align: center;
+        padding: 20px;
+        border: 2px solid rgba(100, 150, 255, 0.4);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.04);
+    }
+    
+    .single-image { overflow: hidden !important; 
+        width: 100%;
+        max-width: 800px;
+        margin: 25px auto;
+        padding: 20px;
+        border: 3px solid rgba(100, 150, 255, 0.4);
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.03);
+        text-align: center;
+    }
+    
+    .code-block {
+        background: rgba(30, 30, 45, 0.9);
+        border-left: 4px solid #6699ff;
+        padding: 20px;
+        margin: 25px 0;
+        border-radius: 8px;
+        font-family: 'Courier New', monospace;
+        color: #ccf5ff;
+        overflow-x: auto;
+    }
+    
+    .highlight-box {
+        background: rgba(100, 150, 255, 0.1);
+        border-left: 5px solid #6699ff;
+        padding: 20px;
+        margin: 25px 0;
+        border-radius: 8px;
+    }
+
+    .binary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .binary-table th, .binary-table td {
+        padding: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="img/Logo Cắt nền.png" alt="Robotics Team Logo">
+        </a>
+        <nav class="menu">
+            <a href="index.html#about" class="menu-link">About</a>
+            <a href="ftc.html" class="menu-link">FTC Team</a>
+            <a href="resources.html" class="menu-link active">Resources</a>
+            <a href="index.html#events" class="menu-link">Events</a>
+        </nav>
+    </header>
+
+    <section class="article-header">
+        <h1>ARDUINO TUTORIAL #7: ANALOGWRITE & PWM</h1>
+        <div class="article-meta-top">
+            <span>19/01/2026</span>
+            <span>Lập Trình</span>
+            <span>Độ khó: Cơ bản</span>
+        </div>
+    </section>
+
+    <div class="article-content">
+        <div class="article-tags">
+            <span class="article-tag">Arduino</span>
+            <span class="article-tag">PWM</span>
+            <span class="article-tag">analogWrite</span>
+            <span class="article-tag">LED</span>
+        </div>
+
+        <div class="article-section">
+            <h2>1. LỆNH ANALOGWRITE(PIN, VALUE)</h2>
+            <div class="highlight-box">
+                <p><strong>Tác dụng:</strong> Điều chỉnh độ sáng của đèn LED.</p>
+                <p><strong>Giá trị value:</strong> Đi từ <strong>0 &rarr; 255</strong> (tăng dần độ sáng đèn LED).</p>
+            </div>
+            <div class="single-image">
+                <img src="img/p7.1.png" alt="Bài tập thực hành">
+            </div>
+        </div>
+
+        <div class="article-section">
+            <hr style="border: none; border-top: 1px solid rgba(100, 150, 255, 0.3); margin: 40px 0;">
+            <h2>NHẬN BIẾT</h2>
+            <div class="single-image">
+                <img src="img/p7.2.png" alt="Bài tập thực hành">
+            </div>
+            <ul>
+                <li><code>analogWrite(pin, value);</code> có thể dùng cho các pin có dấu <strong>~</strong> trên
+                    Arduino.</li>
+                <li>Căn cứ vào <strong>PWM (Pulse Width Modulation)</strong> để đo đầu ra của hiệu điện thế.</li>
+            </ul>
+        </div>
+
+        <div class="back-button">
+            <a href="programming.html">
+                <span>←</span> Quay lại Trang Lập Trình
+            </a>
+        </div>
+    </div>
+
+    <hr class="divider-blue">
+    <footer class="footer" id="contact">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="img/Logo Cắt nền.png" alt="FTC 31113 Logo">
+        <p>FTC 31113<br>High School for Gifted Students</p>
+      </div>
+      <table class="footer-table">
+        <tr>
+          <th>Contact</th>
+          <th>Resources</th>
+          <th>Resources</th>
+        </tr>
+        <tr>
+          <td>
+            <span class="footer-email">robotics.hsgs@gmail.com</span><br>
+            <a href="https://www.facebook.com/HSGSRoboLads?locale=vi_VN" target="_blank" rel="noopener noreferrer">Facebook</a><br>
+            <a href="https://www.instagram.com/robolads_31113/?igsh=MWFiaTcycXVpcnNkYQ%3D%3D#" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </td>
+          <td>
+            <a href="mechanical.html#mechanical-section">Cơ Khí</a><br>
+            <a href="programming.html#programming-section">Lập Trình</a><br>
+            <a href="programming.html#electronics-section">Điện Tử</a>
+          </td>
+          <td>
+            <a href="mechanical.html#3dprinting-section">In 3D</a><br>
+            <a href="mechanical.html#cad-section">CAD</a><br>
+            <a href="business.html">Business</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="footer-bottom">
+      © 2025 FTC 31113. All rights reserved.
+    </div>
+  </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

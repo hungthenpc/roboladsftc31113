@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <title>FTC31113 Robolads</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="article-mechanical.css" />
+    <link rel="icon" type="image/png" href="img/Logo Cắt nền.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <style>
+        
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+         .image-comparison {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+            justify-content: center;
+        }
+         .image-item {
+            flex: 1;
+            min-width: 350px;
+            max-width: 550px;
+            text-align: center;
+            padding: 20px;
+            border: 2px solid rgba(204, 153, 0, 0.4);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.04);
+        }
+        .image-item img {
+            width: 100%;
+            height: 280px;
+            object-fit: contain; height: auto;
+            object-position: center;
+            border: 2px solid rgba(204, 153, 0, 0.3);
+            border-radius: 8px;
+        }
+        .article-link {
+            color: #cc9900;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(204, 153, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        .article-link:hover {
+            color: #ffcc00;
+            border-bottom: 1px solid #ffcc00;
+        }
+       .image-caption {
+            color: #ccf5ff;
+            font-size: 1rem;
+            font-style: italic;
+            margin-top: 15px;
+            padding-top: 12px;
+            border-top: 2px solid rgba(255, 255, 255, 0.15);
+        }
+        .single-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 25px auto;
+            padding: 20px;
+            border: 3px solid rgba(204, 153, 0, 0.4);
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            text-align: center;
+        }
+         .single-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: contain; height: auto;
+            object-position: center;
+            border: 2px solid rgba(204, 153, 0, 0.3);
+            border-radius: 10px;
+        }
+        @media (max-width: 768px) {
+            .image-item img {
+                height: 220px;
+            }
+            .single-image img {
+                height: 250px;
+            }
+        }
+        @media (max-width: 480px) {
+            .image-item {
+                min-width: 100%;
+            }
+            .image-item img {
+                height: 180px;
+            }
+            .single-image img {
+                height: 200px;
+            }
+            .image-caption {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="img/Logo Cắt nền.png" alt="Robotics Team Logo">
+        </a>
+        <nav class="menu">
+            <a href="index.html#about" class="menu-link">About</a>
+            <a href="ftc.html" class="menu-link">FTC Team</a>
+            <a href="resources.html" class="menu-link active">Resources</a>
+            <a href="index.html#events" class="menu-link">Events</a>
+        </nav>
+    </header>
+    
+    <section class="article-header">
+        <h1>CƠ CHẾ BẮN (SHOOTING MECHANISMS)</h1>
+        <div class="article-meta-top">
+            <span>18/01/2026</span>
+            <span>Cơ Khí</span>
+            <span>Độ khó: Nâng cao</span>
+        </div>
+    </section>
+    
+    <div class="article-content">
+        
+        <div class="article-tags">
+            <span class="article-tag">Shooter</span>
+            <span class="article-tag">Flywheel</span>
+            <span class="article-tag">Catapult</span>
+            <span class="article-tag">FTC</span>
+            <span class="article-tag">Cơ Khí</span>
+        </div>
+        
+        <div class="article-section">
+            <h2>Bộ bắn bánh đà (Flywheel)</h2>
+            <p>Bộ bắn bánh đà gồm một hoặc nhiều bánh đà quay với tốc độ lên tới vài nghìn RPM. Vật ghi điểm khi chạm
+                vào bánh đà sẽ được gia tốc cho đến khi rời khỏi bộ bắn.</p>
+        </div>
+        
+        <div class="article-section">
+            <h2>1. TỐI ƯU HÓA FLYWHEEL</h2>
+            <p>Khi vật thể đi qua bộ bắn bánh đà, bánh đà sẽ bị giảm tốc. Nếu bánh đà giảm tốc quá nhiều, các phát bắn
+                tiếp theo có thể kém chính xác nếu không có đủ thời gian hồi lại.</p>
+            <div class="highlight-box">
+                <h4>Chiến thuật tăng Momen quán tính</h4>
+                <p>Để bắn liên tục ổn định, cách thông thường là tăng momen quán tính:</p>
+                <p>Về bản chất, động cơ sẽ truyền đến bánh đà một giá trị momen lực xác định, với momen lực bằng gia tốc
+                    góc nhân momen quán tính. Nên khi momen quán tính tăng thì gia tốc góc giảm, hay nói cách khác, sự
+                    thay đổi tốc độ của bánh ít đi.</p>
+            </div>
+            <p>Mặt khác, momen quán tính tỉ lệ với khối lượng và bán kính quay.</p>
+            <p>Từ đây, các đội thường sẽ gắn thêm các tấm kim loại với khối lượng tập trung ở rìa, một số đội còn có thể
+                cho nặng thêm 300g-500g. Các bạn nên thử nghiệm bắn với các mức độ khối lượng khác nhau để xem sự thay
+                đổi nào là ổn định nhất.</p>
+            <div class="image-comparison">
+                <div class="image-item">
+                    <img src="img/m18.1.png"
+                        alt="Đĩa tăng khối lượng của goBILDA">
+                    <div class="image-caption">Đĩa tăng khối lượng của goBILDA</div>
+                </div>
+                <div class="image-item">
+                    <img src="img/m18.2.png" alt="Hình ảnh từ đội 24310">
+                    <div class="image-caption">Hình ảnh từ đội 24310</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="article-section">
+            <h2>2. PHÂN LOẠI FLYWHEEL</h2>
+            
+            <div class="process-item">
+                <h3>Bộ bắn bánh đà đơn (Hooded Flywheel)</h3>
+                <p>Gồm một bánh bắn và một máng (hood). Bóng bị nén giữa bánh và hood để được gia tốc. Tùy vật thể thi
+                    đấu, độ nén có thể đến từ bánh, bản thân vật thể, hoặc hood.</p>
+                <p>Bộ bắn bánh đà đơn thường khá gọn, có thể điều chỉnh cú bắn bằng cách thay đổi tốc độ bánh hoặc hình
+                    học của máng. Máng ôm bánh nhiều hơn sẽ tạo ra quỹ đạo bắn phẳng hơn nhưng cũng tạo thêm ma sát,
+                    khiến cú bắn yếu đi.</p>
+            </div>
+                           
+            <br>
+            
+            <div class="process-item">
+                <h3>Bộ bắn bánh đà kép (Dual Flywheel)</h3>
+                <p>Gồm hai bánh quay ngược chiều nhau, vật thể được đưa qua giữa. Giống như loại đơn, cần có độ nén để
+                    gia tốc vật thể.</p>
+                <p>Cần chú ý cách truyền động để 2 bánh đều có cùng tốc độ, giúp quỹ đạo bóng ổn định hơn.</p>
+                <p>Gồm 2 cách để là theo phương ngang hoặc theo phương dọc.</p>
+            </div>
+            <div class="image-comparison">
+                <div class="image-item">
+                    <img src="img/m18.4.png" alt="Hình ảnh từ đội tuyển Việt Nam">
+                    <div class="image-caption">Hình ảnh từ đội tuyển Việt Nam, FIRST Global Challenge 2025</div>
+                </div>
+                <div class="image-item">
+                    <img src="img/m18.5.png"
+                        alt="Hình ảnh từ How To Make Flywheel Shooters">
+                    <div class="image-caption">Hình ảnh từ How To Make Flywheel Shooters</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="article-section">
+            <h2>3. BỘ BẮN MÁY BẮN ĐÁ (CATAPULT SHOOTERS)</h2>
+            <p>Bộ bắn kiểu catapult rất phù hợp với các vật thể không đồng đều về độ nén, vì catapult không dựa vào nén
+                để gia tốc. Chúng cũng có thể bắn vật thể hình dạng không đều mà bánh đà không thể xử lý.</p>
+            <p>Có nhiều cơ cấu phóng khác nhau như khí nén, bánh răng trượt, cam rơi, hoặc liên kết choo-choo.</p>
+            <div class="single-image">
+                <img src="img/m18.6.png" alt="Hình ảnh từ đội 179, FRC">
+                <div class="image-caption">Hình ảnh từ đội 179, FRC</div>
+            </div>
+        </div>
+        
+        
+        <div class="back-button">
+            <a href="mechanical.html">
+                <span>←</span> Quay lại Trang Cơ Khí
+            </a>
+        </div>
+    </div>
+    
+    <hr class="divider-blue">
+    <footer class="footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="img/Logo Cắt nền.png" alt="FTC 31113 Logo">
+                <p>FTC 31113<br>High School for Gifted Students</p>
+            </div>
+            <table class="footer-table">
+                <tr>
+                    <th>Contact</th>
+                    <th>Resources</th>
+                    <th>Resources</th>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="footer-email">robotics.hsgs@gmail.com</span><br>
+                        <a href="https://www.facebook.com/HSGSRoboLads?locale=vi_VN" target="_blank"
+                            rel="noopener noreferrer">Facebook</a><br>
+                        <a href="https://www.instagram.com/robolads_31113/?igsh=MWFiaTcycXVpcnNkYQ%3D%3D#"
+                            target="_blank" rel="noopener noreferrer">Instagram</a>
+                    </td>
+                    <td>
+                        <a href="mechanical.html#mechanical-section">Cơ Khí</a><br>
+                        <a href="programming.html#programming-section">Lập Trình</a><br>
+                        <a href="programming.html#electronics-section">Điện Tử</a>
+                    </td>
+                    <td>
+                        <a href="mechanical.html#3dprinting-section">In 3D</a><br>
+                        <a href="mechanical.html#cad-section">CAD</a><br>
+                        <a href="business.html">Business</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="footer-bottom">
+            © 2025 FTC 31113. All rights reserved.
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

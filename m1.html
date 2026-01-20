@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
   <style>
+    /* ===== CSS CHỈNH ẢNH ===== */
     
-    
-    
+    /* Tất cả ảnh trong bài viết */
     .article-content img {
         max-width: 100%;
         height: auto;
@@ -20,7 +20,7 @@
         border-radius: 6px;
     }
     
-    
+    /* Container cho ảnh so sánh (2 ảnh cạnh nhau) */
     .image-comparison {
         display: flex;
         flex-wrap: wrap;
@@ -29,8 +29,8 @@
         justify-content: center;
     }
     
-    
-    .image-item {
+    /* Mỗi item ảnh trong phần so sánh */
+    .image-item { overflow: hidden !important; 
         flex: 1;
         min-width: 300px;
         max-width: 500px;
@@ -41,26 +41,31 @@
         background: rgba(255, 255, 255, 0.03);
     }
     
-    
+    /* Ảnh bên trong image-item */
     .image-item img {
         width: 100%;
         height: 250px;
-        object-fit: cover;
+        object-fit: contain;
         object-position: center;
-        border: 1px solid rgba(204, 153, 0, 0.2);
+        border-radius: 8px;
+        box-sizing: border-box;
     }
     
-    
+    /* Chú thích ảnh */
     .image-caption {
         color: #ccf5ff;
-        font-size: 0.95rem;
+        font-size: 1rem;
         font-style: italic;
-        margin-top: 10px;
-        padding-top: 10px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 15px;
+        padding-top: 12px;
+        border-top: 2px solid rgba(255, 255, 255, 0.15);
+        min-height: 3.5rem; /* Balance height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
-    
+    /* Container cho ảnh máy CNC */
     .machine-image {
         width: 100%;
         max-width: 700px;
@@ -72,16 +77,17 @@
         text-align: center;
     }
     
-    
+    /* Ảnh bên trong machine-image */
     .machine-image img {
         width: 100%;
-        height: 400px;
-        object-fit: cover;
+        height: 500px;
+        object-fit: contain;
         object-position: center;
-        border: 1px solid rgba(204, 153, 0, 0.2);
+        border-radius: 6px;
+        box-sizing: border-box;
     }
     
-    
+    /* Placeholder cho ảnh (khi chưa có ảnh thật) */
     .image-placeholder {
         width: 100%;
         height: 300px;
@@ -96,33 +102,53 @@
         margin-bottom: 10px;
     }
     
-    
+    /* Responsive cho mobile */
     @media (max-width: 768px) {
         .image-item img {
-            height: 200px;
-        }
+        width: 100%;
+        height: 250px;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 8px;
+        box-sizing: border-box;
+    }
         
         .machine-image img {
-            height: 200px;
-        }
+        width: 100%;
+        height: 500px;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 6px;
+        box-sizing: border-box;
+    }
         
         .image-placeholder {
-            height: 200px;
+            height: auto;
         }
     }
     
     @media (max-width: 480px) {
-        .image-item {
+        .image-item { overflow: hidden !important; 
             min-width: 100%;
         }
         
         .image-item img {
-            height: 150px;
-        }
+        width: 100%;
+        height: 250px;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 8px;
+        box-sizing: border-box;
+    }
         
         .machine-image img {
-            height: 150px;
-        }
+        width: 100%;
+        height: 500px;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 6px;
+        box-sizing: border-box;
+    }
         
         .image-placeholder {
             height: 150px;
@@ -188,11 +214,11 @@
       
       <div class="image-comparison">
         <div class="image-item">
-          <img src="img/m11.png" alt="Máy in 3D Bambu Lab A1" class="article-image">
+          <img src="img/m1.1.png" alt="Máy in 3D Bambu Lab A1" class="article-image">
           <div class="image-caption">Máy in FDM cao cấp, tốc độ in nhanh</div>
         </div>
         <div class="image-item">
-          <img src="img/m12.jpg" alt="Máy in 3D Creality Ender 3 Pro" class="article-image">
+          <img src="img/m1.2.jpg" alt="Máy in 3D Creality Ender 3 Pro" class="article-image">
           <div class="image-caption">Máy in FDM phổ biến, giá thành hợp lý</div>
         </div>
       </div>
@@ -228,7 +254,7 @@
         <p>Máy phay sử dụng mũi khoan và dao phay để tạo hình chi tiết nên các góc bên trong của chi tiết phải có bán kính (phải được fillet) chứ không thể là góc vuông 90 độ sắc cạnh.</p>
         
         <div class="machine-image">
-          <img src="img/m13.jpg" alt="Máy phay CNC 3 trục">
+          <img src="img/m1.3.jpg" alt="Máy phay CNC 3 trục">
           <div class="image-caption">Máy phay CNC 3 trục tiêu chuẩn</div>
         </div>
       </div>
@@ -239,7 +265,7 @@
         <p>Máy cắt Laser CNC sử dụng laser để cắt nhiều loại vật liệu khác nhau. Hầu hết các dòng máy cắt laser có thể cắt gỗ mỏng, bìa carton, tấm nhựa Delrin, mica, nhôm. Rất hữu ích cho việc tạo mẫu thử nghiệm nhanh nhưng cũng có thể được dùng để sản xuất các bộ phận cho robot thi đấu. Đặc biệt là các bộ phận dạng tấm (plates)</p>
         
         <div class="machine-image">
-          <img src="img/m14.jpg" alt="Máy cắt Laser CNC">
+          <img src="img/m1.4.jpg" alt="Máy cắt Laser CNC">
           <div class="image-caption">Máy cắt Laser CNC</div>
         </div>
       </div>
@@ -250,7 +276,7 @@
         <p>Máy cắt tia nước thường là máy 2 trục, tuy nhiên cũng có những dòng máy lên đến 5 trục. Một chiếc máy cắt tia nước về cơ bản có thể cắt được mọi loại vật liệu mà bạn có thể đặt vừa vào máy, thông thường với độ dày lên đến hàng chục cm.</p>
         
         <div class="machine-image">
-          <img src="img/m15.jpg" alt="Máy cắt tia nước">
+          <img src="img/m1.5.jpg" alt="Máy cắt tia nước">
           <div class="image-caption">Máy cắt tia nước</div>
         </div>
       </div>
@@ -261,7 +287,7 @@
         <p>Máy phay có nguyên lý hoạt động tương tự như máy phay CNC, nhưng có độ cứng vững và độ chính xác cao hơn nhiều. Chúng có thể gia công các chi tiết trong không gian 3 chiều và một số máy phay còn tích hợp nhiều trục hơn để gia công các chi tiết phức tạp.</p>
         
         <div class="machine-image">
-          <img src="img/m16.jpg" alt="Máy phay công nghiệp">
+          <img src="img/m1.6.jpg" alt="Máy phay công nghiệp">
           <div class="image-caption">Máy phay công nghiệp</div>
         </div>
       </div>
@@ -272,7 +298,7 @@
         <p>Khác với hầu hết các phương pháp gia công khác, máy tiện cắt gọt các chi tiết có hình dạng tròn, lục giác và đôi khi là hình chữ nhật bằng cách xoay tròn chi tiết và giữ cho dụng cụ cắt đứng yên.</p>
         
         <div class="machine-image">
-          <img src="img/m17.jpg" alt="Máy tiện CNC">
+          <img src="img/m1.7.jpg" alt="Máy tiện CNC">
           <div class="image-caption">Máy tiện CNC</div>
         </div>
       </div>
@@ -323,31 +349,7 @@
 
     
    
-    <div class="article-section comment-section comment-theme-mechanical">
-  <h2>BÌNH LUẬN</h2>
   
-  
-  <div class="comment-form">
-    <h3>Thêm bình luận</h3>
-    <form id="commentForm" novalidate>
-      <div class="form-group">
-        <input type="text" id="commentName" placeholder="Tên của bạn" required>
-      </div>
-      <div class="form-group">
-        <textarea id="commentText" placeholder="Nội dung bình luận..." rows="4" required></textarea>
-      </div>
-      <button type="submit" class="submit-btn">Gửi bình luận</button>
-    </form>
-  </div>
-  
-  
-  <div class="comments-list" id="commentsList">
-    <h3>
-      Bình luận (<span class="comment-count">0</span>)
-    </h3>
-    
-  </div>
-</div>
 
     
     <div class="back-button">
@@ -398,3 +400,16 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+

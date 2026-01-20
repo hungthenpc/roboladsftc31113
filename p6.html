@@ -10,13 +10,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
   <style>
-      .article-content img {
+    .article-content img {
         max-width: 100%;
         height: auto;
         display: block;
         border-radius: 8px;
     }
-     .single-image {
+    
+    .image-item { overflow: hidden !important; 
+        flex: 1;
+        min-width: 350px;
+        max-width: 550px;
+        text-align: center;
+        padding: 20px;
+        border: 2px solid rgba(100, 150, 255, 0.4);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.04);
+    }
+    
+    .single-image { overflow: hidden !important; 
         width: 100%;
         max-width: 800px;
         margin: 25px auto;
@@ -27,72 +39,40 @@
         text-align: center;
     }
     
-    .single-image img {
-        width: 100%;
-        height: 500px;
-        object-fit: cover;
-        object-position: center;
-        border: 2px solid rgba(100, 150, 255, 0.3);
-        border-radius: 10px;
-    }
-    
-   .comparison-table {
-        width: 100%;
-        max-width: 1000px;
-        margin: 40px auto;
-        border-collapse: collapse;
-        border-radius: 10px;
-        overflow: hidden;
-        background: rgba(30, 30, 45, 0.8);
-    }
-    
-    .comparison-table th {
-        background: rgba(100, 150, 255, 0.3);
-        color: #6699ff;
+    .code-block {
+        background: rgba(30, 30, 45, 0.9);
+        border-left: 4px solid #6699ff;
         padding: 20px;
-        text-align: center;
-        font-size: 1.1rem;
-        border: 1px solid rgba(100, 150, 255, 0.2);
-    }
-    
-    .comparison-table td {
-        padding: 25px;
-        text-align: center;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        vertical-align: top;
+        margin: 25px 0;
+        border-radius: 8px;
+        font-family: 'Courier New', monospace;
         color: #ccf5ff;
+        overflow-x: auto;
     }
     
-    .comparison-table tr:nth-child(even) {
-        background: rgba(255, 255, 255, 0.03);
-    }
-    
-    .credit-section {
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 10px;
+    .highlight-box {
+        background: rgba(100, 150, 255, 0.1);
+        border-left: 5px solid #6699ff;
         padding: 20px;
-        margin: 30px 0;
-        border-left: 4px solid #ffcc66;
-        font-style: italic;
-        color: #ffcc66;
+        margin: 25px 0;
+        border-radius: 8px;
     }
-    
-    @media (max-width: 768px) {
-        .comparison-table {
-            display: block;
-            overflow-x: auto;
-        }
-        
-        .comparison-table th,
-        .comparison-table td {
-            padding: 15px;
-            font-size: 0.9rem;
-        }
+
+    .binary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .binary-table th, .binary-table td {
+        padding: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
     }
   </style>
 </head>
 <body>
-  
   <header class="navbar">
     <a href="index.html" class="logo">
       <img src="img/Logo Cắt nền.png" alt="Robotics Team Logo">
@@ -105,62 +85,102 @@
     </nav>
   </header>
 
-  
   <section class="article-header">
-    <h1>ARDUINO TUTORIAL #3</h1>
+    <h1>THỰC HÀNH: 4 ĐÈN LED CHẠY TỪ 1 ĐẾN 15</h1>
     <div class="article-meta-top">
-      <span>09/01/2025</span>
-      <span>Lập Trình & Điện Tử</span>
-      <span>Độ khó: Cơ bản</span>
+      <span>19/01/2026</span>
+      <span>Lập Trình</span>
+      <span>Độ khó: Trung bình</span>
     </div>
   </section>
 
-  
   <div class="article-content">
-    
     <div class="article-tags">
       <span class="article-tag">Arduino</span>
-      <span class="article-tag">Breadboard</span>
-      <span class="article-tag">Mạch Điện</span>
-      <span class="article-tag">Tutorial</span>
+      <span class="article-tag">Binary</span>
+      <span class="article-tag">LED Project</span>
     </div>
 
-    
     <div class="article-section">
-      <h2>1. BREADBOARDS</h2>
-      <p>Các tính chất của breadboards:</p>
-      <ul>
-        <li>Các lỗ trên cùng một cột thì nối với nhau.</li>
-        <li>Các lỗ ở 4 hàng ngang ở trên cùng và dưới đây của bảng thì nối với nhau.</li>
-        <li>Các lỗ trên cùng một hàng hoặc trên cùng cột nhưng cách nhau bởi vạch kẻ giữa thì không kết nối với nhau.</li>
-      </ul>
+      <h2>GIỚI THIỆU BÀI TOÁN</h2>
+      <p>Trong bài thực hành này, chúng ta sẽ sử dụng 4 đèn LED để biểu diễn các số từ 1 đến 15 dưới dạng nhị phân (Binary). Đây là một cách tuyệt vời để hiểu cách máy tính xử lý dữ liệu và cách điều khiển nhiều đầu ra cùng lúc.</p>
     </div>
 
-    
     <div class="article-section">
-      <h2></h2>
-      
-     <div class="single-image">
-        <img src="img/p3.1.jpg" alt="Hình ảnh minh họa">
-        <div class="image-caption">Hình ảnh minh họa</div>
-      </div>
-      
-      <div class="credit-section">
-        Credit: ảnh trong Paul McWhorter's Arduino guide
+      <h2>SƠ ĐỒ ĐẤU NỐI</h2>
+      <div class="highlight-box">
+        <h4>Kết nối:</h4>
+        <ul>
+          <li>LED 1 (LSB): Digital Pin 2</li>
+          <li>LED 2: Digital Pin 3</li>
+          <li>LED 3: Digital Pin 4</li>
+          <li>LED 4 (MSB): Digital Pin 5</li>
+          <li>Tất cả chân ngắn của LED nối với GND (qua điện trở 220Ω).</li>
+        </ul>
       </div>
     </div>
 
-    
- 
+    <div class="article-section">
+      <h2>BẢNG MÃ NHỊ PHÂN (1-15)</h2>
+      <table class="binary-table">
+        <thead>
+          <tr>
+            <th>Số Thập Phân</th>
+            <th>LED 4 (8)</th>
+            <th>LED 3 (4)</th>
+            <th>LED 2 (2)</th>
+            <th>LED 1 (1)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>OFF</td><td>OFF</td><td>OFF</td><td>ON</td></tr>
+          <tr><td>2</td><td>OFF</td><td>OFF</td><td>ON</td><td>OFF</td></tr>
+          <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+          <tr><td>15</td><td>ON</td><td>ON</td><td>ON</td><td>ON</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="article-section">
+      <h2>MÃ NGUỒN (CODE)</h2>
+      <div class="code-block">
+        <pre>
+void setup() {
+  for (int i = 2; i <= 5; i++) {
+    pinMode(i, OUTPUT);
+  }
+}
+
+void loop() {
+  for (int count = 1; count <= 15; count++) {
+    displayBinary(count);
+    delay(1000);
+  }
+}
+
+void displayBinary(int num) {
+  for (int i = 0; i < 4; i++) {
+    // Kiểm tra từng bit của số
+    if (bitRead(num, i)) {
+      digitalWrite(i + 2, HIGH);
+    } else {
+      digitalWrite(i + 2, LOW);
+    }
+  }
+}
+        </pre>
+      </div>
+    </div>
 
     
+
     <div class="back-button">
       <a href="programming.html">
         <span>←</span> Quay lại Trang Lập Trình
       </a>
     </div>
   </div>
-  
+
   <hr class="divider-blue">
   <footer class="footer" id="contact">
     <div class="footer-container">

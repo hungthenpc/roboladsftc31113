@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>FTC31113 Robolads - Hướng Dẫn Onshape Từ A Đến Z</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="article-mechanical.css" />
+  <link rel="icon" type="image/png" href="img/Logo Cắt nền.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <style>
+    .onshape-comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .onshape-comparison-table thead {
+      background: linear-gradient(135deg, rgba(255, 140, 0, 0.3), rgba(255, 179, 71, 0.2));
+    }
+    
+    .onshape-comparison-table th {
+      padding: 15px;
+      text-align: left;
+      color: #ffb347;
+      font-weight: 600;
+      border-bottom: 2px solid rgba(255, 140, 0, 0.3);
+    }
+    
+    .onshape-comparison-table td {
+      padding: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      color: #ccf5ff;
+      vertical-align: top;
+    }
+    
+    .onshape-comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .onshape-comparison-table tr:hover {
+      background: rgba(255, 140, 0, 0.05);
+    }
+    
+    .step-name {
+      font-weight: 600;
+      color: #ffb347;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .pros-cons-list {
+      margin: 0;
+      padding-left: 20px;
+      color: #ccf5ff;
+    }
+    
+    .pros-cons-list li {
+      margin-bottom: 5px;
+      line-height: 1.5;
+    }
+    
+    .tip-box {
+      background: rgba(255, 140, 0, 0.1);
+      padding: 12px;
+      border-radius: 6px;
+      margin: 5px 0;
+      border-left: 3px solid #ff8c00;
+    }
+    
+    .warning-box {
+      background: rgba(255, 50, 50, 0.1);
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border: 1px solid rgba(255, 50, 50, 0.3);
+    }
+    
+    .warning-box h4 {
+      color: #ff5555;
+      margin-top: 0;
+    }
+    
+    .example-section {
+      background: rgba(0, 100, 200, 0.1);
+      padding: 25px;
+      border-radius: 10px;
+      margin: 30px 0;
+      border-left: 4px solid #ff8c00;
+    }
+    
+    .example-section h3 {
+      color: #66b3ff;
+      margin-top: 0;
+    }
+    
+    .tutorial-box {
+      background: rgba(50, 205, 50, 0.1);
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border: 1px solid rgba(50, 205, 50, 0.3);
+    }
+    
+    .tutorial-box h4 {
+      color: #32cd32;
+      margin-top: 0;
+    }
+    
+    .code-block {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 15px;
+      border-radius: 6px;
+      margin: 15px 0;
+      font-family: 'Courier New', monospace;
+      border-left: 4px solid #ff8c00;
+    }
+    
+   
+    .onshape-image-container {
+      width: 100%;
+      max-width: 800px;
+      margin: 20px auto;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      border: 2px solid rgba(255, 140, 0, 0.3);
+    }
+    
+    .onshape-image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .image-caption {
+      padding: 10px 15px;
+      background: rgba(255, 140, 0, 0.1);
+      color: #ffb347;
+      text-align: center;
+      font-style: italic;
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255, 140, 0, 0.2);
+    }
+    
+    
+    @media (max-width: 768px) {
+      .onshape-comparison-table {
+        display: block;
+        overflow-x: auto;
+      }
+      
+      .step-name {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <img src="img/Logo Cắt nền.png" alt="Robotics Team Logo">
+    </a>
+    <nav class="menu">
+      <a href="index.html#about" class="menu-link">About</a>
+      <a href="ftc.html" class="menu-link">FTC Team</a>
+      <a href="resources.html" class="menu-link active">Resources</a>
+      <a href="index.html#events" class="menu-link">Events</a>
+    </nav>
+  </header>
+
+  
+  <section class="article-header">
+    <h1>HƯỚNG DẪN ONSHAPE TỪ A ĐẾN Z CHO ROBOTICS</h1>
+    <div class="article-meta-top">
+      <span>25/01/2026</span>
+      <span>CAD & Hướng Dẫn</span>
+      <span>Độ khó: Cơ bản đến Trung cấp</span>
+    </div>
+  </section>
+
+  
+  <div class="article-content">
+    
+    <div class="article-tags">
+      <span class="article-tag">Onshape</span>
+      <span class="article-tag">CAD Tutorial</span>
+      <span class="article-tag">Thiết Kế 3D</span>
+    </div>
+
+    
+    <div class="article-section">
+      <h2>GIỚI THIỆU VỀ ONSHAPE</h2>
+      
+      <p>Hiện tại có rất nhiều phần mềm thiết kế cơ khí trên máy tính như Solidworks, Fusion360, Onshape,... Nhưng chúng ta sẽ tìm hiểu về cách dùng một phần mềm thiết kế thông dụng và dễ sử dụng nhất đối với học sinh: <strong>Onshape</strong>.</p>
+      
+      <div class="onshape-image-container">
+        <img src="img/m10.14.png" alt="Giao diện CAD và thiết kế 3D">
+        <div class="image-caption">Onshape là công cụ CAD dựa trên đám mây phổ biến</div>
+      </div>
+      
+      <div class="tutorial-box">
+        <h4>TẠI SAO CHỌN ONSHAPE CHO ROBOTICS?</h4>
+        <p><strong>Cloud-based:</strong> Không cần cài đặt, chỉ cần trình duyệt và Internet</p>
+        <p><strong>Miễn phí cho giáo dục:</strong> Tài khoản Education đầy đủ tính năng</p>
+        <p><strong>Collaboration:</strong> Nhiều người cùng làm việc trên 1 file</p>
+        <p><strong>Version control:</strong> Theo dõi và khôi phục các phiên bản</p>
+        <p><strong>Lý tưởng cho FTC:</strong> Thiết kế robot, assembly, và simulation</p>
+      </div>
+    </div>
+
+    
+    <div class="article-section">
+      <h2>8 BƯỚC THÀNH THẠO ONSHAPE</h2>
+      
+      <table class="onshape-comparison-table">
+        <thead>
+          <tr>
+            <th>Bước</th>
+            <th>NỘI DUNG CHI TIẾT</th>
+            <th>MỤC TIÊU</th>
+            <th>THỜI GIAN ƯỚC TÍNH</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>
+              <div class="step-name">Bước 1: Tạo tài khoản</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Truy cập Onshape Plans and Pricing</li>
+                <li>Chọn Onshape Education (miễn phí cho học sinh)</li>
+                <li>Đăng ký với email trường học</li>
+                <li>Xác minh tài khoản sinh viên</li>
+              </ul>
+              
+              <div class="onshape-image-container">
+                <img src="img/m10.1.png" alt="Tạo tài khoản và đăng ký">
+                <div class="image-caption">Đăng ký tài khoản Onshape Education</div>
+              </div>
+            </td>
+            <td>
+              <div class="tip-box">Có tài khoản Onshape Education</div>
+              <div class="tip-box">Hiểu các hạn chế phiên bản miễn phí</div>
+            </td>
+            <td>
+              10-15 phút
+            </td>
+          </tr>
+          
+          
+          <tr>
+            <td>
+              <div class="step-name">Bước 2: Tạo Document</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Nhấp "Create" → "Document"</li>
+                <li>Đặt tên có ý nghĩa cho thiết kế</li>
+                <li>Thêm label để phân loại</li>
+                <li>Hiểu cấu trúc: Part Studio, Assembly</li>
+              </ul>
+              
+              <div class="onshape-image-container">
+                <img src="img/m10.2.png" alt="Tạo Document mới">
+                <div class="image-caption">Giao diện tạo Document trong Onshape</div>
+              </div>
+            </td>
+            <td>
+              <div class="tip-box">Tạo document đầu tiên</div>
+              <div class="tip-box">Biết cách đặt tên và tổ chức</div>
+              <div class="tip-box">Hiểu các loại studio</div>
+            </td>
+            <td>
+              5-10 phút
+            </td>
+          </tr>
+          
+          
+          <tr>
+            <td>
+              <div class="step-name">Bước 3: Thiết lập biến (Variables)</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Sử dụng Variable Table</li>
+                <li>Tạo biến: Hole_Spacing, Handle_Diameter</li>
+                <li>Hiểu Variable Studio (chia sẻ biến giữa các studio)</li>
+                <li>Quy tắc đặt tên biến (không có khoảng trắng)</li>
+              </ul>
+              
+              <div class="onshape-image-container">
+                <img src="img/m10.3.png" alt="Thiết lập biến và parameters">
+                <div class="image-caption">Variable Table trong Onshape</div>
+              </div>
+            </td>
+            <td>
+              <div class="tip-box">Tạo ít nhất 3 biến</div>
+              <div class="tip-box">Hiểu lợi ích của tham số hóa</div>
+              <div class="tip-box">Biết dùng biến trong sketch</div>
+            </td>
+            <td>
+              15-20 phút
+            </td>
+          </tr>
+          
+          
+          <tr>
+            <td>
+              <div class="step-name">Bước 4: Sketch cơ bản</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Chọn mặt phẳng (Front, Top, Right)</li>
+                <li>Vẽ đường thẳng, chuyển thành Construction line</li>
+                <li>Dùng Offset để tạo đường song song</li>
+                <li>Vẽ circle với center point</li>
+                <li>Dimension với biến đã tạo</li>
+              </ul>
+              
+              <div class="onshape-image-container">
+                <img src="img/m10.4.png" alt="Công cụ Sketch trong CAD">
+                <div class="image-caption">Giao diện Sketch với các công cụ</div>
+              </div>
+            </td>
+            <td>
+              <div class="tip-box">Tạo sketch đầu tiên</div>
+              <div class="tip-box">Hiểu Construction vs Normal geometry</div>
+              <div class="tip-box">Áp dụng dimension với biến</div>
+            </td>
+            <td>
+              20-30 phút
+            </td>
+          </tr>
+          
+          
+          <tr>
+            <td>
+              <div class="step-name">Bước 5: Dựng hình 3D</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Extrude từ sketch (Shift + E)</li>
+                <li>Thêm draft angle cho độ nghiêng</li>
+                <li>Tạo Hole với kích thước từ biến</li>
+                <li>Sử dụng Revolve để tạo hình xoay</li>
+                <li>Merge các phần lại với nhau</li>
+              </ul>
+              
+              <div class="onshape-image-container">
+                <img src="img/m10.5.png" alt="Extrude và tạo hình 3D">
+                <div class="image-caption">Quá trình Extrude và Revolve</div>
+              </div>
+            </td>
+            <td>
+              <div class="tip-box">Tạo part 3D đầu tiên</div>
+              <div class="tip-box">Thành thạo Extrude và Revolve</div>
+              <div class="tip-box">Biết tạo hole và draft</div>
+            </td>
+            <td>
+              25-35 phút
+            </td>
+          </tr>
+          
+          
+          <tr>
+            <td>
+              <div class="step-name">Bước 6: Lofting</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Sử dụng công cụ Loft để nối các mặt</li>
+                <li>Điều chỉnh Start/End profile condition</li>
+                <li>Tinh chỉnh Start/End magnitude</li>
+                <li>Dùng Mirror để tạo đối xứng</li>
+                <li>Merge with all để gộp part</li>
+              </ul>
+              
+              <div class="onshape-image-container">
+                <img src="img/m10.6.png" alt="Công cụ Loft và chuyển tiếp bề mặt">
+                <div class="image-caption">Công cụ Loft và Mirror</div>
+              </div>
+            </td>
+            <td>
+              <div class="tip-box">Tạo hình chuyển tiếp mượt</div>
+              <div class="tip-box">Hiểu Normal to profile vs Tangent</div>
+              <div class="tip-box">Thành thạo Mirror cho đối xứng</div>
+            </td>
+            <td>
+              15-25 phút
+            </td>
+          </tr>
+          
+          
+          <tr>
+            <td>
+              <div class="step-name">Bước 7: Tạo Assembly</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Tạo Mate Connectors (Ctrl + M)</li>
+                <li>Chuyển sang tab Assembly</li>
+                <li>Insert multiple parts vào assembly</li>
+                <li>Tạo Revolute Mate cho chuyển động quay</li>
+                <li>Kiểm tra Degrees of Freedom</li>
+              </ul>
+              
+              <div class="onshape-image-container">
+                <img src="img/m10.7.png" alt="Lắp ráp Assembly trong CAD">
+                <div class="image-caption">Giao diện Assembly với Mate Connectors</div>
+              </div>
+            </td>
+            <td>
+              <div class="tip-box">Lắp ráp nhiều parts</div>
+              <div class="tip-box">Tạo chuyển động trong assembly</div>
+              <div class="tip-box">Hiểu DOF và kiểm tra lắp ghép</div>
+            </td>
+            <td>
+              20-30 phút
+            </td>
+          </tr>
+          
+          
+          <tr>
+            <td>
+              <div class="step-name">Bước 8: Xuất file & Ứng dụng</div>
+            </td>
+            <td>
+              <ul class="pros-cons-list">
+                <li>Export part sang STL/OBJ/3MF</li>
+                <li>Tạo Drawing cho gia công</li>
+                <li>Chọn template bản vẽ kỹ thuật</li>
+                <li>Xuất sang DXF/PDF/SVG cho laser cut</li>
+                <li>Chuẩn bị file cho in 3D hoặc gia công</li>
+              </ul>
+              
+              <div class="onshape-image-container">
+                <img src="img/m10.8.png" alt="Xuất file và định dạng 3D">
+                <div class="image-caption">Menu Export và các định dạng file</div>
+              </div>
+            </td>
+            <td>
+              <div class="tip-box">Xuất file cho in 3D</div>
+              <div class="tip-box">Tạo bản vẽ kỹ thuật</div>
+              <div class="tip-box">Chuẩn bị file cho sản xuất</div>
+            </td>
+            <td>
+              10-20 phút
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    
+    
+
+    
+    <div class="back-button">
+      <a href="mechanical.html">
+        <span>←</span> Quay lại Trang Cơ Khí
+      </a>
+    </div>
+  </div>
+
+  
+  <hr class="divider-blue">
+  <footer class="footer" id="contact">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="img/Logo Cắt nền.png" alt="FTC 31113 Logo">
+        <p>FTC 31113<br>High School for Gifted Students</p>
+      </div>
+      <table class="footer-table">
+        <tr>
+          <th>Contact</th>
+          <th>Resources</th>
+          <th>Resources</th>
+        </tr>
+        <tr>
+          <td>
+            <span class="footer-email">robotics.hsgs@gmail.com</span><br>
+            <a href="https://www.facebook.com/HSGSRoboLads?locale=vi_VN" target="_blank" rel="noopener noreferrer">Facebook</a><br>
+            <a href="https://www.instagram.com/robolads_31113/?igsh=MWFiaTcycXVpcnNkYQ%3D%3D#" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </td>
+          <td>
+            <a href="mechanical.html#mechanical-section">Cơ Khí</a><br>
+            <a href="programming.html#programming-section">Lập Trình</a><br>
+            <a href="programming.html#electronics-section">Điện Tử</a>
+          </td>
+          <td>
+            <a href="mechanical.html#3dprinting-section">In 3D</a><br>
+            <a href="mechanical.html#cad-section">CAD</a><br>
+            <a href="business.html">Business</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="footer-bottom">
+      © 2026 FTC 31113. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

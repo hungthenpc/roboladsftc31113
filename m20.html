@@ -1,0 +1,377 @@
+
+m20.html
+
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <title>FTC31113 Robolads</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="article-mechanical.css" />
+    <link rel="icon" type="image/png" href="img/Logo Cắt nền.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <style>
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+        .image-comparison {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+            justify-content: center;
+        }
+        .image-item {
+            flex: 1;
+            min-width: 350px;
+            max-width: 550px;
+            text-align: center;
+            padding: 20px;
+            border: 2px solid rgba(204, 153, 0, 0.4);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.04);
+        }
+        .image-item img {
+            width: 100%;
+            height: 280px;
+            object-fit: contain; height: auto;
+            object-position: center;
+            border: 2px solid rgba(204, 153, 0, 0.3);
+            border-radius: 8px;
+        }
+        .article-link {
+            color: #cc9900;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(204, 153, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        .article-link:hover {
+            color: #ffcc00;
+            border-bottom: 1px solid #ffcc00;
+        }
+        .image-caption {
+            color: #ccf5ff;
+            font-size: 1rem;
+            font-style: italic;
+            margin-top: 15px;
+            padding-top: 12px;
+            border-top: 2px solid rgba(255, 255, 255, 0.15);
+        }
+        .single-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 25px auto;
+            padding: 20px;
+            border: 3px solid rgba(204, 153, 0, 0.4);
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            text-align: center;
+        }
+        .single-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: contain; height: auto;
+            object-position: center;
+            border: 2px solid rgba(204, 153, 0, 0.3);
+            border-radius: 10px;
+        }
+        @media (max-width: 768px) {
+            .image-item img {
+                height: 220px;
+            }
+            .single-image img {
+                height: 250px;
+            }
+        }
+        @media (max-width: 480px) {
+            .image-item {
+                min-width: 100%;
+            }
+            .image-item img {
+                height: 180px;
+            }
+            .single-image img {
+                height: 200px;
+            }
+            .image-caption {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="img/Logo Cắt nền.png" alt="Robotics Team Logo">
+        </a>
+        <nav class="menu">
+            <a href="index.html#about" class="menu-link">About</a>
+            <a href="ftc.html" class="menu-link">FTC Team</a>
+            <a href="resources.html" class="menu-link active">Resources</a>
+            <a href="index.html#events" class="menu-link">Events</a>
+        </nav>
+    </header>
+    
+    <section class="article-header">
+        <h1>BÁNH RĂNG (GEARS)</h1>
+        <div class="article-meta-top">
+            <span>18/01/2026</span>
+            <span>Cơ Khí</span>
+            <span>Độ khó: Cơ bản</span>
+        </div>
+    </section>
+    
+    <div class="article-content">
+        
+        <div class="article-tags">
+            <span class="article-tag">Gears</span>
+            <span class="article-tag">Spur Gear</span>
+            <span class="article-tag">Bevel Gear</span>
+          <span class="article-tag">FTC</span>  
+            <span class="article-tag">Cơ Khí</span>
+        </div>
+        
+        <div class="article-section">
+            <h2>Giới thiệu</h2>
+            <p>Bánh răng là một trong những chi tiết cơ khí thông dụng và lâu đời nhất trong các ngành kỹ thuật nói
+                chung và Robotics nói riêng. Với đa dạng các biến thể, chúng được sử dụng rộng rãi nhờ khả năng
+                tăng/giảm tốc độ, momen lực, và khả năng thay đổi chiều quay linh hoạt.</p>
+            <p>Để hoạt động thì hai bánh răng cần ăn khớp các răng với nhau và chúng sẽ quay theo hai chiều ngược nhau.
+            </p>
+            <div class="quote-box">
+                "Về mặt hình học, việc thiết kế một chiếc bánh răng có thể tương đối phức tạp. Tuy nhiên, các phần mềm
+                CAD hiện nay đều có những tính năng giúp việc này tiện lợi hơn. Đối với phần mềm Onshape, các bạn có thể
+                tham khảo FeatureScript <a href='#' class='article-link'>Using the Spur Gears featurescript</a>."
+            </div>
+        </div>
+        
+        <div class="article-section">
+            <h2>1. MỘT SỐ THUẬT NGỮ VỀ BÁNH RĂNG</h2>
+            <div class="highlight-box">
+                <h3>Góc áp lực (Pressure Angle)</h3>
+                <p>Là góc giữa phương tác dụng của lực tiếp xúc răng và đường nối tâm của hai bánh răng.</p>
+                <p>Hai giá trị góc áp lực phổ biến là 14,5° và 20°.</p>
+                <p><strong>Lưu ý:</strong> Hai bánh răng ăn khớp với nhau bắt buộc phải có cùng góc áp lực.</p>
+            </div>
+            <br>
+            <div class="highlight-box">
+                <h3>Bước răng theo đường kính (Diametral Pitch – DP)</h3>
+                <p>Là tỷ số giữa số răng của bánh răng và đường kính vòng chia (pitch diameter), tính theo số răng trên
+                    mỗi inch đường kính vòng chia.</p>
+                <p>DP càng lớn thì răng càng nhỏ và mịn.</p>
+                <p><strong>Lưu ý:</strong> Hai bánh răng ăn khớp với nhau phải có cùng DP.</p>
+            </div>
+        </div>
+        
+        <div class="article-section">
+            <h2>2. CÁC LOẠI BÁNH RĂNG PHỔ BIẾN</h2>
+            
+            <div class="process-item">
+                <h3>Bánh răng trụ (Spur Gear)</h3>
+                <p>Là loại phổ biến và đơn giản nhất. Gồm các răng song song với trục quay.</p>
+                <p>Bánh răng trụ chỉ có thể sử dụng trên các trục song song với nhau.</p>
+                <p>Một bánh răng trụ nhỏ đóng vai trò bánh răng chủ động, thường được gắn ở đầu ra của động cơ, được gọi
+                    là bánh răng chủ động nhỏ (Pinion).</p>
+                <p>Một bánh răng lớn mà pinion ăn khớp với nó đôi khi được gọi là bánh răng lớn (Bull gear).</p>
+            </div>
+            <div class="single-image">
+                <img src="img/m20.1.png" alt="Bánh răng trụ (Spur Gear)">
+                <div class="image-caption">Bánh răng trụ (Spur Gear)</div>
+            </div>
+            <br>
+            
+            <div class="process-item">
+                <h3>Helical Gear</h3>
+                <p>Là một biến thể của Spur Gear với các răng bị nghiêng đi với một góc nhất định.</p>
+                <p>Helical Gear thường tốt hơn nếu cơ cấu có tốc độ cao và cần sự giảm tiếng ồn.</p>
+            </div>
+            <div class="single-image">
+                <img src="img/m20.2.png" alt="Helical Gear">
+                <div class="image-caption">Helical Gear</div>
+            </div>
+            <br>
+            
+            <div class="process-item">
+                <h3>Herringbone / Double Helical Gear</h3>
+                <p>Là một biến thể tạo từ 2 helical gear đối xứng ghép vào với nhau. Herringbone Gear cũng có được những
+                    ưu điểm của Helical Gear.</p>
+                <p>Đây là loại được khuyến khích sử dụng nếu in 3D bánh răng.</p>
+            </div>
+            <div class="single-image">
+                <img src="img/m20.3.png" alt="Herringbone Gear">
+                <div class="image-caption">Herringbone / Double Helical Gear</div>
+            </div>
+            <br>
+            
+            <div class="process-item">
+                <h3>Bánh răng phân đoạn (Sector Gear)</h3>
+                <p>Là bánh răng trụ răng thẳng nhưng không phải là hình tròn hoàn chỉnh, và được sử dụng cho các cơ cấu
+                    không cần quay đủ 360 độ.</p>
+            </div>
+            <div class="single-image">
+                <img src="img/m20.4.png" alt="Bánh răng phân đoạn">
+                <div class="image-caption">Bánh răng phân đoạn (Sector Gear)</div>
+            </div>
+            <br>
+            
+            <div class="process-item">
+                <h3>Bánh răng côn (Bevel Gears)</h3>
+                <p>Bánh răng côn là các bánh răng có dạng hình nón, trong đó phần lớn đỉnh nón đã bị cắt bỏ.</p>
+                <p>Bánh răng côn được sử dụng để truyền mô-men xoắn giữa các trục đặt lệch góc với nhau, với góc lệch từ
+                    1° đến 179°.</p>
+                <p>Khi hai bánh răng côn được lắp trên các trục vuông góc 90° với nhau, và mỗi bánh răng có cùng số
+                    răng, thì chúng được gọi là bánh răng miter (Miter gears).</p>
+            </div>
+            <div class="single-image">
+                <img src="img/m20.5.png" alt="Bánh răng côn">
+                <div class="image-caption">Bánh răng côn (Bevel Gears)</div>
+            </div>
+            <br>
+            
+            <div class="process-item">
+                <h3>Bánh răng trục vít (Worm Gears)</h3>
+                <p>Được sử dụng để tạo ra tỷ số truyền rất lớn trong không gian nhỏ gọn, đồng thời truyền mô-men xoắn
+                    giữa các trục đặt vuông góc (90°) với nhau.</p>
+                <p>Hệ bánh răng trục vít gồm hai bộ phận: trục vít (worm) và bánh vít (worm wheel).</p>
+                <p><strong>Ưu điểm lớn nhất:</strong> Rất khó bị dẫn động ngược (backdrive). Trục vít có thể dẫn động
+                    bánh vít, nhưng bánh vít cần một lực rất lớn mới có thể dẫn động ngược lại trục vít (Self-locking).
+                </p>
+            </div>
+            <div class="single-image">
+                <img src="img/m20.6.png" alt="Bánh răng trục vít">
+                <div class="image-caption">Bánh răng trục vít (Worm Gears)</div>
+            </div>
+            <br>
+            
+            <div class="process-item">
+                <h3>Thanh răng (Rack gear)</h3>
+                <p>Là một thanh thẳng có răng, cho phép tạo ra chuyển động tịnh tiến. Thanh răng được dẫn động bởi bánh
+                    răng chủ động nhỏ (pinion).</p>
+            </div>
+            <div class="single-image">
+                <img src="img/m20.7.png" alt="Thanh răng">
+                <div class="image-caption">Thanh răng (Rack gear)</div>
+            </div>
+            <br>
+            
+            <div class="process-item">
+                <h3>Bộ bánh răng hành tinh (Planetary Gear Sets)</h3>
+                <p>Được sử dụng để tạo ra tỷ số truyền rất lớn trong một không gian cực kỳ nhỏ gọn.</p>
+                <p>Chúng bao gồm:</p>
+                <ul>
+                    <li>Bánh răng mặt trời (sun gear) ở trung tâm cụm.</li>
+                    <li>Thường là 3 đến 4 bánh răng hành tinh (planet gears) ăn khớp với bánh răng mặt trời.</li>
+                    <li>Các bánh răng hành tinh này tiếp tục ăn khớp với bánh răng vành ngoài (ring gear).</li>
+                </ul>
+            </div>
+            <div class="single-image">
+                <img src="img/m20.8.png" alt="Bộ bánh răng hành tinh">
+                <div class="image-caption">Bộ bánh răng hành tinh (Planetary Gear Sets)</div>
+            </div>
+        </div>
+        
+        <div class="article-section">
+            <h2>3. THIẾT KẾ VỚI BÁNH RĂNG (DESIGNING FOR GEARS)</h2>
+            <h3>Khoảng cách tâm–tâm (Center-to-Center)</h3>
+            <p>Cũng như hầu hết các phương pháp truyền mô-men xoắn khác, bạn cần sử dụng khoảng cách tâm–tâm được tính
+                toán chính xác để truyền mô-men hiệu quả và tối ưu.</p>
+            <p>Bạn có thể sử dụng các công cụ tính toán thiết kế hoặc tự tính bằng tay bằng công thức:</p>
+            <div class="single-image">
+                <img src="img/m20.9.png"
+                    alt="Công thức tính khoảng cách tâm">
+                <div class="image-caption">Công thức tính khoảng cách tâm (Center-to-Center)</div>
+            </div>
+            <p>Trong đó:</p>
+            <ul>
+                <li><strong>C</strong> là khoảng cách tâm–tâm</li>
+                <li><strong>N₁ và N₂</strong> là số răng của từng bánh răng</li>
+                <li><strong>P</strong> là bước răng theo đường kính (Diametral Pitch)</li>
+            </ul>
+            <div class="highlight-box">
+                <h4>Lưu ý quan trọng</h4>
+                <p>Công thức này cho thấy rằng chỉ tổng số răng của hai bánh răng là yếu tố quyết định khoảng cách tâm –
+                    tâm.</p>
+                <p>Ví dụ: Cặp 50-50 răng và cặp 60-40 răng đều có cùng khoảng cách tâm nếu cùng DP.</p>
+                <p>Thông thường, một lượng dung sai nhỏ sẽ được thêm vào bằng cách tăng khoảng cách tâm–tâm lên khoảng
+                    <strong>0,003 inch (tương đương khoảng 0,08 mm)</strong>.</p>
+                <p>Mục đích: Giảm ma sát, tăng hiệu suất. Đổi lại là xuất hiện một lượng nhỏ độ rơ (backlash).</p>
+            </div>
+            <div class="single-image">
+                <img src="img/m20.10.png" alt="Lưu ý về dung sai">
+                <div class="image-caption">Minh họa về độ rơ và dung sai lắp ghép</div>
+            </div>
+            <h3>Đường kính vòng chia (Pitch Diameter)</h3>
+            <p>Một cách rất hữu ích khác để thiết kế với bánh răng là vẽ bánh răng trực tiếp trong bản phác thảo
+                (sketch).</p>
+            <p>Bạn có thể mô hình hóa chính xác khoảng cách giữa hai bánh răng bằng cách vẽ hai đường tròn tiếp xúc
+                (tiếp tuyến) với nhau. Các đường tròn này cũng phải là đường kính vòng chia (pitch diameter).</p>
+            <div class="single-image">
+                <img src="img/m20.11.png"
+                    alt="Công thức tính đường kính vòng chia">
+                <div class="image-caption">Công thức tính đường kính vòng chia (Pitch Diameter)</div>
+            </div>
+            <p>Bằng cách vẽ bánh răng theo đường kính vòng chia trong bản phác thảo, bạn sẽ có được cái nhìn tổng thể và
+                chính xác hơn về cơ cấu ngay từ giai đoạn thiết kế sơ bộ.</p>
+            <p>Ngoài ra, việc vẽ thêm đường kính ngoài (OD – Outer Diameter) của bánh răng cũng có thể rất hữu ích để
+                tính đến không gian lắp ráp và khả năng gia công thực tế của chi tiết.</p>
+        </div>
+        
+        
+        <div class="back-button">
+            <a href="mechanical.html">
+                <span>←</span> Quay lại Trang Cơ Khí
+            </a>
+        </div>
+    </div>
+    
+    <hr class="divider-blue">
+    <footer class="footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="img/Logo Cắt nền.png" alt="FTC 31113 Logo">
+                <p>FTC 31113<br>High School for Gifted Students</p>
+            </div>
+            <table class="footer-table">
+                <tr>
+                    <th>Contact</th>
+                    <th>Resources</th>
+                    <th>Resources</th>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="footer-email">robotics.hsgs@gmail.com</span><br>
+                        <a href="https://www.facebook.com/HSGSRoboLads?locale=vi_VN" target="_blank"
+                            rel="noopener noreferrer">Facebook</a><br>
+                        <a href="https://www.instagram.com/robolads_31113/?igsh=MWFiaTcycXVpcnNkYQ%3D%3D#"
+                            target="_blank" rel="noopener noreferrer">Instagram</a>
+                    </td>
+                    <td>
+                        <a href="mechanical.html#mechanical-section">Cơ Khí</a><br>
+                        <a href="programming.html#programming-section">Lập Trình</a><br>
+                        <a href="programming.html#electronics-section">Điện Tử</a>
+                    </td>
+                    <td>
+                        <a href="mechanical.html#3dprinting-section">In 3D</a><br>
+                        <a href="mechanical.html#cad-section">CAD</a><br>
+                        <a href="business.html">Business</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="footer-bottom">
+            © 2025 FTC 31113. All rights reserved.
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

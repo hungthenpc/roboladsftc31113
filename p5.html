@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>FTC31113 Robolads</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="article-programming.css" />
+  <link rel="icon" type="image/png" href="img/Logo Cắt nền.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <style>
+    .article-content img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+    }
+    
+    .image-comparison {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin: 40px 0;
+        justify-content: center;
+    }
+    
+    .image-item {
+        flex: 1;
+        min-width: 350px;
+        max-width: 550px;
+        text-align: center;
+        padding: 20px;
+        border: 2px solid rgba(100, 150, 255, 0.4);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.04);
+    }
+    
+    .image-item img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        object-position: center;
+        border: 2px solid rgba(100, 150, 255, 0.3);
+        border-radius: 8px;
+    }
+    
+    .image-caption {
+        color: #ccf5ff;
+        font-size: 1rem;
+        font-style: italic;
+        margin-top: 15px;
+        padding-top: 12px;
+        border-top: 2px solid rgba(255, 255, 255, 0.15);
+    }
+    
+    .single-image {
+        width: 100%;
+        max-width: 800px;
+        margin: 25px auto;
+        padding: 20px;
+        border: 3px solid rgba(100, 150, 255, 0.4);
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.03);
+        text-align: center;
+    }
+    
+    .single-image img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        object-position: center;
+        border: 2px solid rgba(100, 150, 255, 0.3);
+        border-radius: 10px;
+    }
+    
+    .table-image {
+        width: 100%;
+        max-width: 150px;
+        height: 120px;
+        object-fit: cover;
+        object-position: center;
+        border: 1px solid rgba(100, 150, 255, 0.3);
+        border-radius: 6px;
+        margin: 0 auto;
+    }
+    
+    .code-block {
+        background: rgba(30, 30, 45, 0.9);
+        border-left: 4px solid #6699ff;
+        padding: 20px;
+        margin: 25px 0;
+        border-radius: 8px;
+        font-family: 'Courier New', monospace;
+        color: #ccf5ff;
+        overflow-x: auto;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .code-block pre {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    .code-comment {
+        color: #66cc99;
+        font-style: italic;
+    }
+    
+    .code-function {
+        color: #6699ff;
+        font-weight: bold;
+    }
+    
+    .code-value {
+        color: #ffcc66;
+    }
+    
+    .code-string {
+        color: #ff9999;
+    }
+    
+    .code-keyword {
+        color: #ff6699;
+    }
+    
+    .code-binary {
+        color: #66ccff;
+        font-weight: bold;
+    }
+    
+    .highlight-box {
+        background: rgba(100, 150, 255, 0.1);
+        border-left: 5px solid #6699ff;
+        padding: 20px;
+        margin: 25px 0;
+        border-radius: 8px;
+    }
+    
+    .highlight-box h4 {
+        color: #6699ff;
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+    
+    .binary-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 25px 0;
+        background: rgba(30, 30, 45, 0.7);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    .binary-table th {
+        background: rgba(100, 150, 255, 0.3);
+        color: #ccf5ff;
+        padding: 15px;
+        text-align: center;
+        font-weight: bold;
+    }
+    
+    .binary-table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        color: #ccf5ff;
+        text-align: center;
+    }
+    
+    .binary-table tr:last-child td {
+        border-bottom: none;
+    }
+    
+    .binary-table tr:nth-child(even) {
+        background: rgba(255, 255, 255, 0.03);
+    }
+    
+    .binary-example {
+        background: rgba(50, 50, 70, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        margin: 25px 0;
+        border: 1px solid rgba(100, 150, 255, 0.2);
+    }
+    
+    .binary-example h4 {
+        color: #6699ff;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    
+    @media (max-width: 768px) {
+        .image-item img {
+            height: 200px;
+        }
+        
+        .single-image img {
+            height: 250px;
+        }
+        
+        .table-image {
+            max-width: 120px;
+            height: 100px;
+        }
+        
+        .binary-table {
+            font-size: 0.9rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .image-item {
+            min-width: 100%;
+        }
+        
+        .image-item img {
+            height: 180px;
+        }
+        
+        .single-image img {
+            height: 200px;
+        }
+        
+        .image-caption {
+            font-size: 0.9rem;
+        }
+        
+        .table-image {
+            max-width: 100px;
+            height: 80px;
+        }
+        
+        .binary-table {
+            font-size: 0.8rem;
+        }
+        
+        .binary-table th, .binary-table td {
+            padding: 8px 10px;
+        }
+    }
+  </style>
+</head>
+<body>
+  
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <img src="img/Logo Cắt nền.png" alt="Robotics Team Logo">
+    </a>
+    <nav class="menu">
+      <a href="index.html#about" class="menu-link">About</a>
+      <a href="ftc.html" class="menu-link">FTC Team</a>
+      <a href="resources.html" class="menu-link active">Resources</a>
+      <a href="index.html#events" class="menu-link">Events</a>
+    </nav>
+  </header>
+
+  
+  <section class="article-header">
+    <h1>ARDUINO TUTORIAL #5</h1>
+    <div class="article-meta-top">
+      <span>15/01/2025</span>
+      <span>Lập Trình</span>
+      <span>Độ khó: Trung bình</span>
+    </div>
+  </section>
+
+  
+  <div class="article-content">
+    
+    <div class="article-tags">
+      <span class="article-tag">Arduino</span>
+      <span class="article-tag">Lập Trình</span>
+      <span class="article-tag">Binary</span>
+      <span class="article-tag">Hệ đếm</span>
+    </div>
+
+    
+    <div class="article-section">
+      <h2>GIỚI THIỆU</h2>
+      <p>Trong lập trình vi điều khiển và đặc biệt là Arduino, việc hiểu về hệ nhị phân (binary number) là rất quan trọng. Hệ nhị phân là ngôn ngữ cơ bản của máy tính và vi điều khiển, nơi mọi thông tin đều được biểu diễn bằng hai trạng thái: 0 và 1.</p>
+      
+      <div class="highlight-box">
+        <h4>Tại sao cần học Binary?</h4>
+        <ul>
+          <li>Hiểu cách vi điều khiển xử lý thông tin</li>
+          <li>Làm việc với các thanh ghi (registers) và cờ (flags)</li>
+          <li>Tối ưu hóa bộ nhớ và tốc độ xử lý</li>
+          <li>Làm việc với các phép toán bitwise</li>
+          <li>Điều khiển nhiều chân GPIO cùng lúc</li>
+        </ul>
+      </div>
+    </div>
+
+    
+    <div class="article-section">
+      <h2>1. HỆ NHỊ PHÂN CƠ BẢN</h2>
+      
+      <div class="highlight-box">
+        <h4>Định nghĩa:</h4>
+        <p>Hệ nhị phân (binary) là hệ đếm cơ số 2, chỉ sử dụng hai ký tự là 0 và 1 để biểu diễn tất cả các giá trị số. Mỗi chữ số nhị phân được gọi là một "bit" (binary digit).</p>
+      </div>
+      
+      <div class="image-comparison">
+        <div class="image-item">
+          <img src="img/p5.3.png" alt="Hệ nhị phân cơ bản">
+          <div class="image-caption">Hình ảnh minh họa về hệ nhị phân</div>
+        </div>
+        <div class="image-item">
+          <img src="img/p5.4.png" alt="Binary với LED">
+          <div class="image-caption">LED biểu diễn trạng thái nhị phân</div>
+        </div>
+      </div>
+      
+      <h3>Chuyển đổi giữa hệ nhị phân và hệ thập phân</h3>
+      
+      <table class="binary-table">
+        <tr>
+          <th>Hệ nhị phân (Binary)</th>
+          <th>Hệ thập phân (Decimal)</th>
+          <th>Cách tính</th>
+        </tr>
+        <tr>
+          <td>0000</td>
+          <td>0</td>
+          <td>0×2³ + 0×2² + 0×2¹ + 0×2⁰</td>
+        </tr>
+        <tr>
+          <td>0001</td>
+          <td>1</td>
+          <td>0×2³ + 0×2² + 0×2¹ + 1×2⁰</td>
+        </tr>
+        <tr>
+          <td>0010</td>
+          <td>2</td>
+          <td>0×2³ + 0×2² + 1×2¹ + 0×2⁰</td>
+        </tr>
+        <tr>
+          <td>0011</td>
+          <td>3</td>
+          <td>0×2³ + 0×2² + 1×2¹ + 1×2⁰</td>
+        </tr>
+        <tr>
+          <td>0100</td>
+          <td>4</td>
+          <td>0×2³ + 1×2² + 0×2¹ + 0×2⁰</td>
+        </tr>
+        <tr>
+          <td>0101</td>
+          <td>5</td>
+          <td>0×2³ + 1×2² + 0×2¹ + 1×2⁰</td>
+        </tr>
+        <tr>
+          <td>0110</td>
+          <td>6</td>
+          <td>0×2³ + 1×2² + 1×2¹ + 0×2⁰</td>
+        </tr>
+        <tr>
+          <td>0111</td>
+          <td>7</td>
+          <td>0×2³ + 1×2² + 1×2¹ + 1×2⁰</td>
+        </tr>
+        <tr>
+          <td>1000</td>
+          <td>8</td>
+          <td>1×2³ + 0×2² + 0×2¹ + 0×2⁰</td>
+        </tr>
+      </table>
+      
+      <div class="binary-example">
+        <h4>Ví dụ chuyển đổi:</h4>
+        <p><strong>Binary: 1011</strong> → <strong>Decimal: 11</strong></p>
+        <p>Cách tính: 1×2³ + 0×2² + 1×2¹ + 1×2⁰ = 8 + 0 + 2 + 1 = 11</p>
+      </div>
+    </div>
+
+    
+    <div class="article-section">
+      <h2>2. BINARY TRONG ARDUINO</h2>
+      
+      <div class="highlight-box">
+        <h4>Biểu diễn số nhị phân trong code:</h4>
+        <p>Trong Arduino IDE, chúng ta có thể biểu diễn số nhị phân bằng cách thêm tiền tố <code>0b</code> (hoặc <code>B</code>) trước dãy bit.</p>
+      </div>
+      
+      <div class="code-block">
+        <pre><span class="code-comment">// Biểu diễn số nhị phân trong Arduino</span>
+<span class="code-keyword">byte</span> binaryNumber = <span class="code-binary">0b10101010</span>;  <span class="code-comment">// Số nhị phân 10101010 = 170 trong hệ thập phân</span>
+<span class="code-keyword">byte</span> anotherBinary = <span class="code-binary">B00001111</span>; <span class="code-comment">// Số nhị phân 00001111 = 15 trong hệ thập phân</span>
+
+<span class="code-comment">// In ra giá trị để kiểm tra</span>
+<span class="code-function">Serial</span>.begin(<span class="code-value">9600</span>);
+<span class="code-function">Serial</span>.print(<span class="code-string">"Binary 10101010 in decimal: "</span>);
+<span class="code-function">Serial</span>.println(binaryNumber, <span class="code-string">DEC</span>);  <span class="code-comment">// In ra: 170</span>
+
+<span class="code-function">Serial</span>.print(<span class="code-string">"Binary 00001111 in decimal: "</span>);
+<span class="code-function">Serial</span>.println(anotherBinary, <span class="code-string">DEC</span>); <span class="code-comment">// In ra: 15</span></pre>
+      </div>
+    </div>
+
+    
+    <div class="article-section">
+      <h2>3. ĐIỀU KHIỂN NHIỀU LED VỚI BINARY</h2>
+      
+      <p>Một ứng dụng thực tế của binary trong Arduino là điều khiển nhiều LED cùng lúc bằng một byte (8 bit). Mỗi bit đại diện cho trạng thái của một LED.</p>
+      
+      <div class="code-block">
+        <pre><span class="code-comment">// Định nghĩa các chân LED kết nối với Arduino</span>
+<span class="code-keyword">const</span> <span class="code-keyword">int</span> ledPins[] = {<span class="code-value">2</span>, <span class="code-value">3</span>, <span class="code-value">4</span>, <span class="code-value">5</span>, <span class="code-value">6</span>, <span class="code-value">7</span>, <span class="code-value">8</span>, <span class="code-value">9</span>};
+<span class="code-keyword">const</span> <span class="code-keyword">int</span> numLeds = <span class="code-value">8</span>;
+
+<span class="code-comment">// Hàm thiết lập ban đầu</span>
+<span class="code-keyword">void</span> <span class="code-function">setup</span>() {
+  <span class="code-comment">// Khởi tạo tất cả chân LED là OUTPUT</span>
+  <span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = <span class="code-value">0</span>; i < numLeds; i++) {
+    <span class="code-function">pinMode</span>(ledPins[i], <span class="code-string">OUTPUT</span>);
+  }
+  
+  <span class="code-function">Serial</span>.begin(<span class="code-value">9600</span>);
+}
+
+<span class="code-comment">// Hàm điều khiển LED bằng số nhị phân</span>
+<span class="code-keyword">void</span> <span class="code-function">setLedsFromBinary</span>(<span class="code-keyword">byte</span> pattern) {
+  <span class="code-comment">// Duyệt qua từng bit trong pattern</span>
+  <span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = <span class="code-value">0</span>; i < numLeds; i++) {
+    <span class="code-comment">// Kiểm tra bit thứ i có bằng 1 không</span>
+    <span class="code-keyword">if</span> (pattern & (<span class="code-value">1</span> << i)) {
+      <span class="code-function">digitalWrite</span>(ledPins[i], <span class="code-string">HIGH</span>);  <span class="code-comment">// Bật LED nếu bit = 1</span>
+    } <span class="code-keyword">else</span> {
+      <span class="code-function">digitalWrite</span>(ledPins[i], <span class="code-string">LOW</span>);   <span class="code-comment">// Tắt LED nếu bit = 0</span>
+    }
+  }
+}
+
+<span class="code-comment">// Hàm chính lặp lại</span>
+<span class="code-keyword">void</span> <span class="code-function">loop</span>() {
+  <span class="code-comment">// Ví dụ: Bật LED ở vị trí chẵn (bit 0, 2, 4, 6)</span>
+  <span class="code-function">setLedsFromBinary</span>(<span class="code-binary">0b01010101</span>);  <span class="code-comment">// 85 trong hệ thập phân</span>
+  <span class="code-function">delay</span>(<span class="code-value">1000</span>);
+  
+  <span class="code-comment">// Ví dụ: Bật LED ở vị trí lẻ (bit 1, 3, 5, 7)</span>
+  <span class="code-function">setLedsFromBinary</span>(<span class="code-binary">0b10101010</span>);  <span class="code-comment">// 170 trong hệ thập phân</span>
+  <span class="code-function">delay</span>(<span class="code-value">1000</span>);
+  
+  <span class="code-comment">// Tất cả LED sáng</span>
+  <span class="code-function">setLedsFromBinary</span>(<span class="code-binary">0b11111111</span>);  <span class="code-comment">// 255 trong hệ thập phân</span>
+  <span class="code-function">delay</span>(<span class="code-value">1000</span>);
+  
+  <span class="code-comment">// Tất cả LED tắt</span>
+  <span class="code-function">setLedsFromBinary</span>(<span class="code-binary">0b00000000</span>);  <span class="code-comment">// 0 trong hệ thập phân</span>
+  <span class="code-function">delay</span>(<span class="code-value">1000</span>);
+}</pre>
+      </div>
+      
+      <div class="single-image">
+        <img src="img/p5.2.png" alt="Mạch LED điều khiển bằng binary">
+        <div class="image-caption">Mạch Arduino điều khiển 8 LED bằng số nhị phân</div>
+      </div>
+    </div>
+
+    
+    <div class="article-section">
+      <h2>4. CÁC PHÉP TOÁN BITWISE TRONG ARDUINO</h2>
+      
+      <p>Arduino hỗ trợ các phép toán bitwise để thao tác trực tiếp với các bit của số nhị phân:</p>
+      
+      <table class="binary-table">
+        <tr>
+          <th>Toán tử</th>
+          <th>Tên</th>
+          <th>Ví dụ</th>
+          <th>Kết quả</th>
+          <th>Mô tả</th>
+        </tr>
+        <tr>
+          <td>&</td>
+          <td>AND</td>
+          <td>0b1100 & 0b1010</td>
+          <td>0b1000</td>
+          <td>Bit kết quả = 1 nếu cả hai bit cùng là 1</td>
+        </tr>
+        <tr>
+          <td>|</td>
+          <td>OR</td>
+          <td>0b1100 | 0b1010</td>
+          <td>0b1110</td>
+          <td>Bit kết quả = 1 nếu ít nhất một bit là 1</td>
+        </tr>
+        <tr>
+          <td>^</td>
+          <td>XOR</td>
+          <td>0b1100 ^ 0b1010</td>
+          <td>0b0110</td>
+          <td>Bit kết quả = 1 nếu hai bit khác nhau</td>
+        </tr>
+        <tr>
+          <td>~</td>
+          <td>NOT</td>
+          <td>~0b1100</td>
+          <td>0b0011</td>
+          <td>Đảo ngược tất cả các bit (0 thành 1, 1 thành 0)</td>
+        </tr>
+        <tr>
+          <td>&lt;&lt;</td>
+          <td>Left Shift</td>
+          <td>0b0001 &lt;&lt; 2</td>
+          <td>0b0100</td>
+          <td>Dịch trái các bit</td>
+        </tr>
+        <tr>
+          <td>&gt;&gt;</td>
+          <td>Right Shift</td>
+          <td>0b0100 &gt;&gt; 2</td>
+          <td>0b0001</td>
+          <td>Dịch phải các bit</td>
+        </tr>
+      </table>
+      
+      <div class="code-block">
+        <pre><span class="code-comment">// Ví dụ về các phép toán bitwise</span>
+<span class="code-keyword">byte</span> a = <span class="code-binary">0b11001100</span>;  <span class="code-comment">// 204</span>
+<span class="code-keyword">byte</span> b = <span class="code-binary">0b10101010</span>;  <span class="code-comment">// 170</span>
+
+<span class="code-comment">// Phép AND</span>
+<span class="code-keyword">byte</span> resultAnd = a & b;  <span class="code-comment">// 0b10001000 = 136</span>
+
+<span class="code-comment">// Phép OR</span>
+<span class="code-keyword">byte</span> resultOr = a | b;   <span class="code-comment">// 0b11101110 = 238</span>
+
+<span class="code-comment">// Phép XOR</span>
+<span class="code-keyword">byte</span> resultXor = a ^ b;  <span class="code-comment">// 0b01100110 = 102</span>
+
+<span class="code-comment">// Phép dịch trái</span>
+<span class="code-keyword">byte</span> resultLeftShift = a << <span class="code-value">2</span>;  <span class="code-comment">// 0b00110000 = 48 (tràn bit)</span>
+
+<span class="code-comment">// Phép dịch phải</span>
+<span class="code-keyword">byte</span> resultRightShift = a >> <span class="code-value">2</span>; <span class="code-comment">// 0b00110011 = 51</span></pre>
+      </div>
+    </div>
+
+    
+    <div class="article-section">
+      <h2>BÀI TẬP THỰC HÀNH</h2>
+      
+      <div class="highlight-box">
+        <h4>Yêu cầu:</h4>
+        <p>Sử dụng kiến thức về hệ nhị phân và phép toán bitwise, hãy viết chương trình Arduino thực hiện các tác vụ sau:</p>
+        <ol>
+          <li>Kết nối 4 LED với các chân 5, 6, 7, 8 của Arduino</li>
+          <li>Viết hàm hiển thị số đếm từ 0 đến 15 (0-1111 trong nhị phân) trên 4 LED này</li>
+          <li>Sử dụng phép toán bitwise để xác định trạng thái của từng LED</li>
+          <li>Mỗi số hiển thị trong 1 giây trước khi chuyển sang số tiếp theo</li>
+        </ol>
+      </div>
+      
+      <div class="highlight-box">
+        <h4>Gợi ý:</h4>
+        <ul>
+          <li>Sử dụng vòng lặp for từ 0 đến 15</li>
+          <li>Với mỗi số i, sử dụng phép toán AND với mask để kiểm tra từng bit</li>
+          <li>Ví dụ: để kiểm tra bit thứ 0, dùng (i & 0b0001)</li>
+          <li>Để kiểm tra bit thứ 1, dùng (i & 0b0010)</li>
+          <li>Tương tự cho các bit tiếp theo</li>
+        </ul>
+      </div>
+      
+      <div class="single-image">
+        <img src="img/p5.1.jpg" alt="Bài tập thực hành">
+        <div class="image-caption">Minh họa bài tập đếm nhị phân với LED</div>
+      </div>
+    </div>
+
+    
+    
+
+    
+    <div class="back-button">
+      <a href="programming.html">
+        <span>←</span> Quay lại Trang Lập Trình
+      </a>
+    </div>
+  </div>
+  
+  <hr class="divider-blue">
+  <footer class="footer" id="contact">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="img/Logo Cắt nền.png" alt="FTC 31113 Logo">
+        <p>FTC 31113<br>High School for Gifted Students</p>
+      </div>
+      <table class="footer-table">
+        <tr>
+          <th>Contact</th>
+          <th>Resources</th>
+          <th>Resources</th>
+        </tr>
+        <tr>
+          <td>
+            <span class="footer-email">robotics.hsgs@gmail.com</span><br>
+            <a href="https://www.facebook.com/HSGSRoboLads?locale=vi_VN" target="_blank" rel="noopener noreferrer">Facebook</a><br>
+            <a href="https://www.instagram.com/robolads_31113/?igsh=MWFiaTcycXVpcnNkYQ%3D%3D#" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </td>
+          <td>
+            <a href="mechanical.html#mechanical-section">Cơ Khí</a><br>
+            <a href="programming.html#programming-section">Lập Trình</a><br>
+            <a href="programming.html#electronics-section">Điện Tử</a>
+          </td>
+          <td>
+            <a href="mechanical.html#3dprinting-section">In 3D</a><br>
+            <a href="mechanical.html#cad-section">CAD</a><br>
+            <a href="business.html">Business</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="footer-bottom">
+      © 2025 FTC 31113. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

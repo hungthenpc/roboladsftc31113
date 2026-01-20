@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>FTC31113 Robolads - Linkage (Cơ Cấu Liên Kết) trong Robotics</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="article-mechanical.css" />
+  <link rel="icon" type="image/png" href="img/Logo Cắt nền.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+    rel="stylesheet">
+  <style>
+  
+    .linkage-item {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      padding: 25px;
+      margin: 30px 0;
+      border: 2px solid rgba(204, 153, 0, 0.3);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .linkage-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid rgba(204, 153, 0, 0.2);
+      padding-bottom: 15px;
+    }
+    
+    .linkage-number {
+      background: #cc9900;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    
+    .linkage-title {
+      color: #cc9900;
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 0;
+    }
+    
+    .linkage-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+    
+    .linkage-description {
+      color: #ccf5ff;
+      line-height: 1.6;
+    }
+    
+    .linkage-description p {
+      margin-bottom: 15px;
+    }
+    
+    .pros-cons-list {
+      margin: 0;
+      padding-left: 20px;
+      color: #ccf5ff;
+    }
+    
+    .pros-cons-list li {
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    
+    .linkage-image-container {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      border: 2px solid rgba(204, 153, 0, 0.2);
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.05);
+    }
+    
+    .linkage-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 20px;
+    }
+    
+    .image-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #cc9900;
+      font-size: 1rem;
+    }
+    
+    .image-placeholder i {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: rgba(204, 153, 0, 0.5);
+    }
+    
+    .application-box {
+      background: rgba(204, 153, 0, 0.1);
+      padding: 10px 15px;
+      border-radius: 6px;
+      margin-top: 15px;
+      border-left: 3px solid #cc9900;
+      color: #cc9900;
+      font-weight: 500;
+    }
+    
+    @media (max-width: 768px) {
+      .linkage-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .linkage-image-container {
+        height: 250px;
+      }
+      
+      .linkage-item {
+        padding: 20px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .linkage-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+      
+      .linkage-image-container {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <img src="img/Logo Cắt nền.png" alt="Robotics Team Logo">
+    </a>
+    <nav class="menu">
+      <a href="index.html#about" class="menu-link">About</a>
+      <a href="ftc.html" class="menu-link">FTC Team</a>
+      <a href="resources.html" class="menu-link active">Resources</a>
+      <a href="index.html#events" class="menu-link">Events</a>
+    </nav>
+  </header>
+
+  
+  <section class="article-header">
+    <h1>LINKAGE (CƠ CẤU LIÊN KẾT) TRONG ROBOTICS</h1>
+    <div class="article-meta-top">
+      <span>10/05/2025</span>
+      <span>Cơ Cấu Chuyển Động</span>
+      <span>Độ khó: Trung cấp</span>
+    </div>
+  </section>
+
+  
+  <div class="article-content">
+    
+    <div class="article-tags">
+      <span class="article-tag">Linkage</span>
+      <span class="article-tag">Cơ Cấu Liên Kết</span>
+      <span class="article-tag">Chuyển Động</span>
+    </div>
+
+    
+    <div class="article-section">
+      <h2>TỔNG QUAN VỀ LINKAGE</h2>
+
+      <p>Linkage là một loại cơ cấu gồm các cụm lắp ráp gồm các thanh cứng được nối với nhau bằng các khớp chốt. Phần lớn các cơ cấu liên kết gồm các thanh cứng nối bằng khớp chốt và nhận đầu vào từ động cơ hoặc xy-lanh khí nén để tạo ra chuyển động phức tạp.</p>
+      
+      <p>Các cơ cấu liên kết được chia thành nhiều loại sau:</p>
+    </div>
+
+    
+    <div class="linkage-item">
+      <div class="linkage-header">
+        <div class="linkage-number">1</div>
+        <h3 class="linkage-title">Linkage 4 thanh</h3>
+      </div>
+      
+      <div class="linkage-content">
+        <div class="linkage-description">
+          <p>Cơ cấu khép kín có chuyển động đơn giản nhất.</p>
+          <p>Thường dùng dạng song song, cần giữ đúng khoảng cách tâm giữa các khớp.</p>
+          <p>Có thể tạo nhiều kiểu chuyển động, nhưng trong thi đấu ít dùng.</p>
+          
+          <div class="application-box">
+            Ứng dụng: Thi đấu ít dùng
+          </div>
+        </div>
+        
+       <div class="linkage-image-container">
+  <img src="img/m15.1.png" alt="Linkage 4 thanh">
+</div>
+      </div>
+    </div>
+
+    
+    <div class="linkage-item">
+      <div class="linkage-header">
+        <div class="linkage-number">2</div>
+        <h3 class="linkage-title">Linkage 4 thanh đảo ngược kép</h3>
+      </div>
+      
+      <div class="linkage-content">
+        <div class="linkage-description">
+          <p>Hai cơ cấu bốn thanh song song bố trí ngược hướng; các bánh răng giúp nâng đồng thời.</p>
+          
+          <p><strong>Nhược điểm:</strong></p>
+          <ul class="pros-cons-list">
+            <li>Nặng</li>
+            <li>Nhiều chi tiết</li>
+            <li>Tốn chỗ</li>
+            <li>Dao động mạnh</li>
+          </ul>
+          
+          <div class="application-box">
+            Ứng dụng: Hệ thống nâng đặc biệt
+          </div>
+        </div>
+        
+        <div class="linkage-image-container">
+  <img src="img/m15.2.png" alt="Linkage 4 thanh đảo ngược kép">
+</div>
+      </div>
+    </div>
+
+    
+    <div class="linkage-item">
+      <div class="linkage-header">
+        <div class="linkage-number">3</div>
+        <h3 class="linkage-title">Linkage 6 thanh</h3>
+      </div>
+      
+      <div class="linkage-content">
+        <div class="linkage-description">
+          <p>Hai cơ cấu bốn thanh chồng lên nhau, chia sẻ hai thanh tạo thành sáu thanh.</p>
+          <p>Có thể mở rộng thành n thanh.</p>
+          
+          <div class="application-box">
+            Ứng dụng: Cơ cấu phức tạp
+          </div>
+        </div>
+        
+        <div class="linkage-image-container">
+  <img src="img/m15.3.jpg" alt="Linkage 6 thanh">
+</div>
+      </div>
+    </div>
+
+    
+    <div class="linkage-item">
+      <div class="linkage-header">
+        <div class="linkage-number">4</div>
+        <h3 class="linkage-title">Linkage kiểu cắt kéo</h3>
+      </div>
+      
+      <div class="linkage-content">
+        <div class="linkage-description">
+          <p>Tạo chuyển động tuyến tính nhưng cực nặng, phức tạp, khó điều khiển, dao động lớn.</p>
+          <p>Thường không nên dùng trong thi đấu; chỉ phù hợp thiết bị công nghiệp hạng nặng.</p>
+          
+          <div class="application-box">
+            Ứng dụng: Thiết bị công nghiệp hạng nặng
+          </div>
+        </div>
+        
+        <div class="linkage-image-container">
+  <img src="img/m15.4.jpg" alt="Linkage kiểu cắt kéo">
+</div>
+      </div>
+    </div>
+
+    
+    
+
+    
+    <div class="back-button">
+      <a href="mechanical.html">
+        <span>←</span> Quay lại Trang Cơ Khí
+      </a>
+    </div>
+  </div>
+
+  
+  <hr class="divider-blue">
+  <footer class="footer" id="contact">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="img/Logo Cắt nền.png" alt="FTC 31113 Logo">
+        <p>FTC 31113<br>High School for Gifted Students</p>
+      </div>
+      <table class="footer-table">
+        <tr>
+          <th>Contact</th>
+          <th>Resources</th>
+          <th>Resources</th>
+        </tr>
+        <tr>
+          <td>
+            <span class="footer-email">robotics.hsgs@gmail.com</span><br>
+            <a href="https://www.facebook.com/HSGSRoboLads?locale=vi_VN" target="_blank"
+              rel="noopener noreferrer">Facebook</a><br>
+            <a href="https://www.instagram.com/robolads_31113/?igsh=MWFiaTcycXVpcnNkYQ%3D%3D#" target="_blank"
+              rel="noopener noreferrer">Instagram</a>
+          </td>
+          <td>
+            <a href="mechanical.html#mechanical-section">Cơ Khí</a><br>
+            <a href="programming.html#programming-section">Lập Trình</a><br>
+            <a href="programming.html#electronics-section">Điện Tử</a>
+          </td>
+          <td>
+            <a href="mechanical.html#3dprinting-section">In 3D</a><br>
+            <a href="mechanical.html#cad-section">CAD</a><br>
+            <a href="business.html">Business</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="footer-bottom">
+      © 2025 FTC 31113. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

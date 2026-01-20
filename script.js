@@ -1,7 +1,7 @@
 
 
 document.addEventListener('DOMContentLoaded', function() {
-
+  
   setTimeout(function() {
     const splash = document.querySelector('.splash-screen');
     if (splash) {
@@ -12,23 +12,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }, 2000);
   
-
+  
   const glitchSound = new Audio('audio/Am_thanh_tieng_Dien_giat_dong_Dien-www_tiengdong_com.mp3');
   glitchSound.volume = 0.3;
   
-
+  
   const heroTitle = document.querySelector('.hero-content h1');
   const heroSubtitle = document.querySelector('.hero-content p');
   
   function triggerGlitch(element) {
-
+    
     glitchSound.currentTime = 0;
     glitchSound.play().catch(e => {
-
+      
     });
     
-
-    element.style.animation = 'simpleGlitch 0.3s';
+    
+    element.style.animation = 'simpleGlitch 0.3s';  
     setTimeout(() => {
       element.style.animation = '';
     }, 300);
@@ -46,17 +46,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-
+  
   document.addEventListener('click', function() {
     console.log("✅ Âm thanh đã sẵn sàng");
   });
 
-
+  
   
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   
   if (currentPage === 'index.html' || currentPage === '') {
-
+    
     const sections = {
       about: document.getElementById('about'),
       events: document.getElementById('events')
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(updateActiveMenuOnScroll, 100);
     
   } else {
-
+    
     const menuLinks = document.querySelectorAll('.menu-link');
     
     menuLinks.forEach(link => link.classList.remove('active'));
@@ -113,22 +113,44 @@ document.addEventListener('DOMContentLoaded', function() {
                currentPage === 'b2.html' ||
                currentPage === 'b3.html' ||
                currentPage === 'b4.html' ||
+               currentPage === 'b5.html' ||
                currentPage === 'm2.html' ||
                currentPage === 'm3.html' ||
                currentPage === 'm4.html' ||
                currentPage === 'm5.html' ||
                currentPage === 'm6.html' ||
                currentPage === 'm7.html' ||
+               currentPage === 'm8.html' ||
+               currentPage === 'm9.html' ||
+               currentPage === 'm10.html' ||
+               currentPage === 'm11.html' ||
+               currentPage === 'm12.html' ||
+               currentPage === 'm13.html' ||
+               currentPage === 'm14.html' ||
+               currentPage === 'm15.html' ||
+               currentPage === 'm16.html' ||
+               currentPage === 'm17.html' ||
+               currentPage === 'm18.html' ||
+               currentPage === 'm19.html' ||
+               currentPage === 'm20.html' ||
+
                currentPage === 'p2.html' ||
                currentPage === 'p3.html' ||
                currentPage === 'p4.html' ||
+               currentPage === 'p5.html' ||
+               currentPage === 'p6.html' ||
+               currentPage === 'p7.html' ||
+               currentPage === 'p8.html' ||
+               currentPage === 'p9.html' ||
+               currentPage === 'p10.html' ||
+               currentPage === 'p11.html' ||
                currentPage === 'p1.html') {
       const resourcesLink = document.querySelector('.menu-link[href="resources.html"]');
       if (resourcesLink) resourcesLink.classList.add('active');
     }
   }
   
-
+  
   
   const slides = document.querySelectorAll('.event-slide');
   const indicators = document.querySelectorAll('.indicator');
@@ -209,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (e.key === 'ArrowRight') nextSlide();
     });
     
-
+    
     function initSwipe() {
       const container = document.querySelector('.slides-container');
       if (!container) return;
@@ -239,7 +261,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSwipe();
   }
   
-
+  
   
   function createSnowEffect() {
     const container = document.getElementById('snow-container');
@@ -297,7 +319,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
   
-
+  
   
   function initTeamAnimations() {
     const teamSection = document.querySelector('.team-section');
@@ -331,7 +353,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   initTeamAnimations();
   
-
+  
   
   function initTeamMembers() {
     const memberCards = document.querySelectorAll('.member-card');
@@ -394,7 +416,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   initTeamMembers();
   
-
+  
   
   initCommentSystem();
 });
@@ -407,17 +429,17 @@ function initCommentSystem() {
   
   if (!commentForm || !commentsList) return;
   
-
+  
   function getPageId() {
     const path = window.location.pathname;
     const pageName = path.split('/').pop().replace('.html', '') || 'index';
-    return pageName; // Trả về tên trang: b1, m1, p1, etc.
+    return pageName; 
   }
   
   const pageId = getPageId();
   console.log('📝 Comment System - Trang:', pageId);
   
-
+  
   function getTimeAgo(timestamp) {
     const now = Date.now();
     const diff = now - timestamp;
@@ -441,7 +463,7 @@ function initCommentSystem() {
     return `${Math.floor(days / 365)} năm trước`;
   }
   
-
+  
   function createAvatar(name) {
     if (!name) return '??';
     const words = name.split(' ');
@@ -451,20 +473,20 @@ function initCommentSystem() {
     return name.substring(0, 2).toUpperCase();
   }
   
-
+  
   function getAvatarColor(pageType) {
     const colors = {
-      b: 'linear-gradient(135deg, #ff66aa, #ff99cc)',      // Business - Hồng
-      m: 'linear-gradient(135deg, #FF6B35, #FF8E53)',      // Mechanical - Cam
-      p: 'linear-gradient(135deg, #4CAF50, #2196F3)',      // Programming - Xanh
-      default: 'linear-gradient(135deg, #9C27B0, #673AB7)' // Mặc định - Tím
+      b: 'linear-gradient(135deg, #ff66aa, #ff99cc)',      
+      m: 'linear-gradient(135deg, #FF6B35, #FF8E53)',      
+      p: 'linear-gradient(135deg, #4CAF50, #2196F3)',      
+      default: 'linear-gradient(135deg, #9C27B0, #673AB7)' 
     };
     
     const firstChar = pageType.charAt(0).toLowerCase();
     return colors[firstChar] || colors.default;
   }
   
-
+  
   function createCommentElement(comment) {
     const commentDiv = document.createElement('div');
     commentDiv.className = 'comment-item';
@@ -488,7 +510,7 @@ function initCommentSystem() {
     return commentDiv;
   }
   
-
+  
   function getPageTypeName(pageId) {
     const types = {
       'b': 'Business',
@@ -507,7 +529,7 @@ function initCommentSystem() {
     return types[pageId] || 'Bài viết';
   }
   
-
+  
   function getPageComments() {
     try {
       const allComments = JSON.parse(localStorage.getItem('ftc_comments')) || {};
@@ -518,7 +540,7 @@ function initCommentSystem() {
     }
   }
   
-
+  
   function savePageComments(comments) {
     try {
       const allComments = JSON.parse(localStorage.getItem('ftc_comments')) || {};
@@ -531,19 +553,19 @@ function initCommentSystem() {
     }
   }
   
-
+  
   function displayComments() {
     const comments = getPageComments();
     const commentCount = document.querySelector('.comment-count');
     
-
+    
     const existingComments = commentsList.querySelectorAll('.comment-item');
     existingComments.forEach(comment => comment.remove());
     
-
+    
     const sortedComments = [...comments].sort((a, b) => b.timestamp - a.timestamp);
     
-
+    
     if (sortedComments.length > 0) {
       sortedComments.forEach(comment => {
         const commentElement = createCommentElement(comment);
@@ -551,13 +573,13 @@ function initCommentSystem() {
       });
     }
     
-
+    
     if (commentCount) {
       commentCount.textContent = sortedComments.length;
     }
   }
   
-
+  
   function showToast(message, type = 'success') {
     const oldToast = document.querySelector('.toast-notification');
     if (oldToast) oldToast.remove();
@@ -566,7 +588,7 @@ function initCommentSystem() {
     toast.className = `toast-notification toast-${type}`;
     toast.textContent = message;
     
-
+    
     Object.assign(toast.style, {
       position: 'fixed',
       top: '20px',
@@ -594,7 +616,7 @@ function initCommentSystem() {
     }, 3000);
   }
   
-
+  
   const style = document.createElement('style');
   style.textContent = `
     @keyframes slideIn {
@@ -724,7 +746,7 @@ function initCommentSystem() {
   
   document.head.appendChild(style);
   
-
+  
   commentForm.addEventListener('submit', function(e) {
     e.preventDefault();
     
@@ -739,7 +761,7 @@ function initCommentSystem() {
     const name = nameInput.value.trim();
     const text = textInput.value.trim();
     
-
+    
     if (!name) {
       showToast('Vui lòng nhập tên của bạn!', 'error');
       nameInput.focus();
@@ -764,7 +786,7 @@ function initCommentSystem() {
       return;
     }
     
-
+    
     const newComment = {
       id: 'comment_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
       name: name,
@@ -774,26 +796,26 @@ function initCommentSystem() {
       pageTitle: document.title
     };
     
-
+    
     let comments = getPageComments();
     
-
+    
     comments.unshift(newComment);
     
-
+    
     const saved = savePageComments(comments);
     
     if (saved) {
-
+      
       displayComments();
       
-
+      
       this.reset();
       
-
+      
       showToast(' Đã đăng bình luận thành công!');
       
-
+      
       setTimeout(() => {
         nameInput.focus();
       }, 100);
@@ -802,10 +824,10 @@ function initCommentSystem() {
     }
   });
   
-
+  
   displayComments();
   
-
+  
   if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
     const clearBtn = document.createElement('button');
     clearBtn.textContent = 'Xóa tất cả bình luận (DEV)';
@@ -846,7 +868,7 @@ function getCommentTheme() {
   } else if (currentPage.includes('e') || currentPage.includes('electronics')) {
     return 'electronics';
   }
-  return 'business'; // default
+  return 'business'; 
 }
 
 
